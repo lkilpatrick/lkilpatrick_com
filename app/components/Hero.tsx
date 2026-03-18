@@ -1,9 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { personalInfo, stats } from "../data/portfolio";
+import ContactModal from "./ContactModal";
 
 export default function Hero() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <>
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
       <section id="home" className="hero-section">
         {/* Background radial glow */}
         <div className="hero-glow" />
@@ -11,16 +18,27 @@ export default function Hero() {
         <div className="hero-inner">
           {/* Left: text */}
           <div className="hero-text">
-            <div className="hero-eyebrow">Developer Relations &amp; Developer Marketing</div>
+            <div className="hero-eyebrow">Developer Experience &amp; Product Marketing</div>
 
             <h1 className="hero-name">{personalInfo.name}</h1>
 
             <p className="hero-intro">
-              <strong>15+ years</strong> building developer programs, documentation, and
-              communities at <strong>Atlassian, Nutanix, Hazelcast, LinearB,</strong> and{" "}
-              <strong>Harness</strong>. I build the content, docs, and onboarding experiences
-              that turn complex infrastructure products into tools developers actually want to
-              use.
+              The hardest part of technology isn&apos;t building it. It&apos;s getting people to use it.
+            </p>
+            <p className="hero-intro">
+              I design the systems that make that happen across developer experience, product marketing,
+              and community, turning powerful ideas into widely adopted products.
+            </p>
+            <p className="hero-intro">
+              Over the past <strong>20+ years</strong>, I have led this work at{" "}
+              <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" className="hero-link">Atlassian</a>,{" "}
+              <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" className="hero-link">Nutanix</a>,{" "}
+              <a href="https://hazelcast.com/" target="_blank" rel="noopener noreferrer" className="hero-link">Hazelcast</a>,{" "}
+              <a href="https://linearb.io/" target="_blank" rel="noopener noreferrer" className="hero-link">LinearB</a>, and{" "}
+              <a href="https://www.harness.io/" target="_blank" rel="noopener noreferrer" className="hero-link">Harness</a>.
+              {" "}I am also the author of the{" "}
+              <a href="https://miakingtide.com/" target="_blank" rel="noopener noreferrer" className="hero-link">Mia Kingtide</a>{" "}
+              series, making complex systems understandable, engaging, and worth exploring.
             </p>
 
             {/* Meta */}
@@ -40,12 +58,12 @@ export default function Hero() {
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 View LinkedIn
               </a>
-              <a href="/resume.pdf" download className="btn-secondary">
+              <a href="/Luke K Director of DevRel -2026.pdf" download="Luke-Kilpatrick-Resume-2026.pdf" className="btn-secondary">
                 Download Resume ↓
               </a>
-              <a href={`mailto:${personalInfo.email}`} className="btn-secondary">
+              <button className="btn-secondary" onClick={() => setContactOpen(true)}>
                 Get In Touch
-              </a>
+              </button>
             </div>
 
             {/* Social row */}
@@ -133,6 +151,16 @@ export default function Hero() {
           margin-bottom: 22px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.15s forwards;
+        }
+        .hero-link {
+          color: var(--accent);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(74,158,229,0.35);
+          transition: border-color 0.2s, color 0.2s;
+        }
+        .hero-link:hover {
+          color: #6BB5F0;
+          border-bottom-color: #6BB5F0;
         }
         .hero-intro {
           font-size: 17px;

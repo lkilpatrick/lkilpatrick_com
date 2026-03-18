@@ -66,7 +66,7 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-controls">
-            <a href="/resume.pdf" download className="resume-btn">Resume ↓</a>
+            <a href="/Luke K Director of DevRel -2026.pdf" download="Luke-Kilpatrick-Resume-2026.pdf" className="resume-btn">Resume ↓</a>
             <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === "dark" ? "☀" : "☽"}
             </button>

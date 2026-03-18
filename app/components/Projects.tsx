@@ -1,4 +1,4 @@
-import { videos, personalVideos } from "../data/portfolio";
+import { videos, personalVideos, localVideos } from "../data/portfolio";
 import { SectionHeader } from "./shared";
 
 function getEmbedSrc(type: string, id: string) {
@@ -93,6 +93,45 @@ export default function Presentations() {
           <div className="video-grid-2col">
             {personalVideos.map((video) => (
               <VideoCard key={video.id} video={video} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Atlassian local MP4 videos */}
+      <section className="section-body" id="atlassian-videos">
+        <div className="content-wrap">
+          <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 12 }}>
+            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--accent)", letterSpacing: 1 }}>AT</span>
+            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>
+              Atlassian — Event & Program Videos
+            </h2>
+          </div>
+          <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 36, maxWidth: 600 }}>
+            Developer community activations, hackathons, and program events — produced and shot during my time at Atlassian.
+          </p>
+          <div className="video-grid-2col">
+            {localVideos.map((video) => (
+              <div key={video.id} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
+                <video
+                  controls
+                  preload="metadata"
+                  style={{ width: "100%", display: "block", background: "#000" }}
+                >
+                  <source src={video.file} type="video/mp4" />
+                </video>
+                <div style={{ padding: "14px 18px" }}>
+                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>
+                    {video.org}
+                  </div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>
+                    {video.title}
+                  </div>
+                  <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.5 }}>
+                    {video.description}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

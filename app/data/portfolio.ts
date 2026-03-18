@@ -222,6 +222,51 @@ export const socialAccounts = [
   },
 ];
 
+export const localVideos = [
+  {
+    id: 1,
+    org: "ATLASSIAN",
+    title: "Atlassian Arcade",
+    file: "/AtlassianArcade.mp4",
+    description: "Atlassian developer community event — arcade activation and developer engagement.",
+  },
+  {
+    id: 2,
+    org: "ATLASSIAN",
+    title: "Bad Ass Developer Activation",
+    file: "/BadAss.mp4",
+    description: "Developer community activation and engagement event.",
+  },
+  {
+    id: 3,
+    org: "ATLASSIAN",
+    title: "Connect Week Final",
+    file: "/Connect Week Final 2.mp4",
+    description: "Atlassian Connect Week — developer program event highlight reel.",
+  },
+  {
+    id: 4,
+    org: "ATLASSIAN",
+    title: "ShipIt 30 Lights",
+    file: "/ShipIt30Lights.mp4",
+    description: "ShipIt hackathon event — Atlassian's internal developer hackathon program.",
+  },
+  {
+    id: 5,
+    org: "ATLASSIAN",
+    title: "XpandIT",
+    file: "/XpandIT-SmallRender.mp4",
+    description: "XpandIT developer event production.",
+  },
+  {
+    id: 6,
+    org: "ATLASSIAN",
+    title: "Categories",
+    file: "/categories.mp4",
+    description: "Atlassian Marketplace categories video production.",
+  },
+];
+
 export const personalVideos = [
   {
     id: 1,
