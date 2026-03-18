@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/video",    label: "Video" },
   { href: "/impact",   label: "Impact" },
   { href: "/builder",  label: "Builder" },
+  { href: "/social",   label: "Social" },
 ];
 
 export default function Navbar() {

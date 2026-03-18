@@ -109,6 +109,8 @@ export const technicalContent = [
   },
 ];
 
+export type EmbedType = "youtube" | "vimeo" | "link";
+
 export const videos = [
   {
     id: 1,
@@ -116,6 +118,8 @@ export const videos = [
     title: "Interact Conference Keynote",
     link: "https://www.youtube.com/watch?v=26xiaX6SxEQ",
     description: "Presented globally in Fall 2022 — developer community strategy and ecosystem growth.",
+    embedType: "youtube" as EmbedType,
+    embedId: "26xiaX6SxEQ",
   },
   {
     id: 2,
@@ -123,6 +127,8 @@ export const videos = [
     title: "Developer Program Presentation",
     link: "https://youtu.be/rkpZpmwnjew?t=326",
     description: "Building and scaling a developer program from zero for a distributed computing platform.",
+    embedType: "youtube" as EmbedType,
+    embedId: "rkpZpmwnjew",
   },
   {
     id: 3,
@@ -130,6 +136,8 @@ export const videos = [
     title: "Build Intelligence Launch Video",
     link: "https://www.youtube.com/watch?v=hoxZr4dRjSo",
     description: "Product launch video for Harness CI's Build Intelligence feature — scripted, produced, shipped.",
+    embedType: "youtube" as EmbedType,
+    embedId: "hoxZr4dRjSo",
   },
   {
     id: 4,
@@ -137,6 +145,8 @@ export const videos = [
     title: "Azure DevOps to Harness Migration",
     link: "https://www.youtube.com/watch?v=zsmYoojBQig",
     description: "Technical walkthrough: step-by-step repository migration tutorial for CI/CD platform adoption.",
+    embedType: "youtube" as EmbedType,
+    embedId: "zsmYoojBQig",
   },
   {
     id: 5,
@@ -144,6 +154,8 @@ export const videos = [
     title: "DevRelCon: Building Developer Programs",
     link: "https://www.youtube.com/watch?v=TgO3yM1qSHw",
     description: "Conference talk on launching developer.nutanix.com and growing an infrastructure developer ecosystem.",
+    embedType: "youtube" as EmbedType,
+    embedId: "TgO3yM1qSHw",
   },
   {
     id: 6,
@@ -151,6 +163,8 @@ export const videos = [
     title: "DevRelCon: Developer Marketing",
     link: "https://www.youtube.com/watch?v=OF8bDgoLOkw",
     description: "Strategies for marketing to developers authentically — what works, what backfires, and why trust is everything.",
+    embedType: "youtube" as EmbedType,
+    embedId: "OF8bDgoLOkw",
   },
   {
     id: 7,
@@ -158,6 +172,8 @@ export const videos = [
     title: "Sencha Product Video — 246K Views",
     link: "https://vimeo.com/55486684",
     description: "Wrote, filmed, and edited. One of the highest-performing developer product videos of its era.",
+    embedType: "vimeo" as EmbedType,
+    embedId: "55486684",
   },
   {
     id: 8,
@@ -165,6 +181,44 @@ export const videos = [
     title: "SaaS Insider Podcast",
     link: "https://saasinsider.libsyn.com/037-interview-with-luke-kilpatrick-from-atlassian",
     description: "Interview on Atlassian's developer ecosystem strategy and marketplace growth.",
+    embedType: "link" as EmbedType,
+    embedId: "",
+  },
+];
+
+export const socialAccounts = [
+  {
+    id: 1,
+    platform: "YouTube",
+    handle: "@LukeKilpatrick",
+    url: "https://www.youtube.com/@LukeKilpatrick",
+    description: "Developer content, product launches, and conference talks. Sencha product video hit 246K views.",
+    embedType: "youtube-channel" as const,
+    channelId: "UCLukeKilpatrick",
+  },
+  {
+    id: 2,
+    platform: "TikTok",
+    handle: "@pitterpatterdiving",
+    url: "https://www.tiktok.com/@pitterpatterdiving",
+    description: "Ocean content channel — 10K followers in a single summer. Proof of concept for rapid audience growth.",
+    embedType: "tiktok" as const,
+  },
+  {
+    id: 3,
+    platform: "Instagram",
+    handle: "@lukekilpat",
+    url: "https://www.instagram.com/lukekilpat/",
+    description: "Monterey Peninsula life — ocean, diving, and the builder mindset behind the work.",
+    embedType: "instagram" as const,
+  },
+  {
+    id: 4,
+    platform: "LinkedIn",
+    handle: "lukekilpatrick",
+    url: "https://www.linkedin.com/in/lukekilpatrick/",
+    description: "15+ years of DevRel and developer marketing experience. Full work history, recommendations, and publications.",
+    embedType: "linkedin" as const,
   },
 ];
 
