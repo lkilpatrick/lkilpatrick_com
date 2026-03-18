@@ -38,7 +38,7 @@ export const sendContactEmail = onRequest({ secrets: [mailgunApiKey], invoker: "
   }
 
   try {
-    const auth = Buffer.from(`api:${mailgunApiKey.value()}`).toString("base64");
+    const auth = Buffer.from(`api:${mailgunApiKey.value().trim()}`).toString("base64");
 
     const body = new URLSearchParams({
       from: `${name} via lkilpatrick.com <${FROM_EMAIL}>`,
