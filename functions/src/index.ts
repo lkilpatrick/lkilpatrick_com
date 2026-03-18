@@ -12,7 +12,7 @@ const MAILGUN_DOMAIN = "pitterpatterdiving.com";
 const TO_EMAIL = "luke@lukek.ca";
 const FROM_EMAIL = `contact@${MAILGUN_DOMAIN}`;
 
-export const sendContactEmail = onRequest({ secrets: [mailgunApiKey] }, async (req, res) => {
+export const sendContactEmail = onRequest({ secrets: [mailgunApiKey], invoker: "public" }, async (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
   res.set("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.set("Access-Control-Allow-Headers", "Content-Type");
