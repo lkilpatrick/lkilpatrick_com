@@ -1,0 +1,564 @@
+const CASE_STUDIES = [
+  {
+    id: 1,
+    slug: "tech-challenge-kenya",
+    tag: "Flutter App",
+    tagColor: "purple",
+    company: "Personal / Nonprofit",
+    title: "Tech Challenge Kenya Admin Dashboard",
+    subtitle: "A production-grade platform managing Kenya's national STEM competition at scale.",
+    status: "Production",
+    year: "2024",
+    role: "Solo Builder",
+    sections: [
+      {
+        label: "The Problem",
+        body: "Kenya's national Tech Challenge competition was managing thousands of students, schools, teams, and judges across a fragmented mix of spreadsheets, email, and manual processes. There was no central system, no audit trail, no real-time data, and no way to coordinate the full lifecycle of a national competition.",
+      },
+      {
+        label: "What I Built",
+        body: "A full-stack admin platform in Flutter Web backed by Supabase. 15 modules covering the entire competition lifecycle: user authentication and role-based access control, school and team registration, judge assignment, scoring workflows, survey collection, communications, document management, audit logging, and real-time reporting dashboards. Built from zero to production.",
+      },
+      {
+        label: "Technical Decisions",
+        body: "Flutter Web was chosen for its single codebase across web and future mobile, Riverpod for state management, and Supabase for auth, database, storage, and real-time subscriptions. RBAC is enforced at both the UI and database row-level security layers. Audit logs are append-only. The entire system is multi-role: student, teacher, school admin, judge, national admin.",
+      },
+      {
+        label: "Why It Matters",
+        body: "This is a flagship demonstration of senior builder capability. Complex domain, multiple stakeholder roles, real data at national scale, zero tolerance for errors in a competition context. It was not a proof of concept — it ran the actual competition.",
+      },
+    ],
+    stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL", "RBAC", "Row-Level Security", "Real-time", "15 modules"],
+    link: null,
+    outcome: "Served thousands of students, schools, teams, and judges across the national competition.",
+  },
+  {
+    id: 2,
+    slug: "mpyc-raceday",
+    tag: "Race Management",
+    tagColor: "teal",
+    company: "MPYC / Personal",
+    title: "MPYC RaceDay",
+    subtitle: "Real-time race management platform for the Monterey Peninsula Yacht Club.",
+    status: "Production",
+    year: "2023",
+    role: "Solo Builder",
+    sections: [
+      {
+        label: "The Problem",
+        body: "The existing race management tools for small yacht clubs were either expensive commercial software designed for professional regattas, or simple spreadsheets that broke down on race day. There was no mobile-first, role-aware tool that worked for a community club with volunteer race officers, multiple boat classes, and real-time scoring needs.",
+      },
+      {
+        label: "What I Built",
+        body: "A role-based web platform covering the full race day workflow: fleet setup and class management, race officer controls, start sequence timers, finish line recording, handicap calculations, live leaderboards, and result publishing. Multiple roles operate simultaneously: race committee, scorer, protest committee, and participants.",
+      },
+      {
+        label: "Technical Decisions",
+        body: "Mobile-first from the ground up — race officers are standing on a dock with a phone. Weather integration pulls conditions for race records. Live data updates without page refresh. Designed to work in spotty coastal cell coverage with graceful offline handling.",
+      },
+      {
+        label: "Why It Matters",
+        body: "I built this because the existing tools were not good enough. That is usually why I build things. It is used by a real community every racing weekend on Monterey Bay.",
+      },
+    ],
+    stack: ["Role-based design", "Live scoring", "Weather API", "Mobile-first", "Offline-tolerant"],
+    link: null,
+    outcome: "In active use every racing weekend at MPYC on Monterey Bay.",
+  },
+  {
+    id: 3,
+    slug: "gitstream-docs",
+    tag: "Developer Platform",
+    tagColor: "blue",
+    company: "LinearB",
+    title: "gitStream Documentation Platform",
+    subtitle: "Zero to full developer portal for LinearB's workflow automation product.",
+    status: "Live",
+    year: "2022–2023",
+    role: "Developer Experience Lead",
+    sections: [
+      {
+        label: "The Problem",
+        body: "gitStream launched with a powerful product but minimal developer documentation. Developers who reached the product could not activate without sales assistance. The onboarding path was unclear, the automation library was undiscoverable, and there was no reference material for the plugin system or integrations. Activation was gated on human intervention.",
+      },
+      {
+        label: "What I Built",
+        body: "The complete documentation system for gitStream: quickstart guides, full automation library with searchable examples, integration guides for GitHub, GitLab, and Bitbucket, plugin development documentation, an interactive playground for testing automations, and a complete API and configuration reference. Structured so a developer could go from discovery to first automation without contacting anyone.",
+      },
+      {
+        label: "Content Strategy",
+        body: "Every piece of documentation was designed around a specific activation milestone. The quickstart gets you to first automation in under 10 minutes. The automation library is the long-tail SEO and reference layer. The integration docs handle the 'does this work with my stack' objection. The plugin guide handles the 'can I extend this' question. The structure reflects how developers actually think, not how the product team organized the feature list.",
+      },
+      {
+        label: "Why It Matters",
+        body: "Developers could activate without a sales call. Time-to-first-value dropped, support volume dropped, and ecosystem adoption accelerated. Good documentation is a product — it just lives outside the product UI.",
+      },
+    ],
+    stack: ["MkDocs", "API reference", "Automation library", "Interactive playground", "SEO structure", "Self-serve activation"],
+    link: "https://docs.gitstream.cm/",
+    outcome: "Self-serve activation enabled. Support volume reduced. Developer ecosystem grew without proportional sales motion.",
+  },
+  {
+    id: 4,
+    slug: "boat-daily-check",
+    tag: "AI + Automation",
+    tagColor: "teal",
+    company: "Personal",
+    title: "Boat Daily Check",
+    subtitle: "AI-assisted monitoring agent for overnight boat status reporting.",
+    status: "Running",
+    year: "2024",
+    role: "Solo Builder",
+    sections: [
+      {
+        label: "The Problem",
+        body: "I have two boats on the water in Monterey Bay. Bilge pumps, battery levels, solar charging status, and shore power connections all need regular monitoring — especially overnight. Checking manually every morning is tedious and easy to forget. Commercial monitoring solutions exist but require expensive hardware and subscriptions.",
+      },
+      {
+        label: "What I Built",
+        body: "A Python agent that runs on a cron schedule, queries the Victron VRM API for live data from both boats (battery state, solar yield, grid status, alarms), formats the results into a readable daily digest, and sends it via email every morning. The agent also publishes an open-source reference for the Victron VRM API, which had no official documentation.",
+      },
+      {
+        label: "The Interesting Part",
+        body: "The Victron VRM API was undocumented. I reverse-engineered the API by inspecting the VRM web app's network traffic, wrote my own reference documentation, and open-sourced the project. The reference has since been picked up by other Victron users in the community.",
+      },
+      {
+        label: "Why It Matters",
+        body: "This is applied AI that runs without intervention. It is not a demo, not a prototype, not a ChatGPT wrapper. It is a real automation solving a real operational problem and running in production every day.",
+      },
+    ],
+    stack: ["Python", "Victron VRM API", "Cron automation", "Email delivery", "Open source", "API reverse engineering"],
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    outcome: "Runs every morning without intervention. Open-source API reference adopted by the Victron community.",
+  },
+  {
+    id: 5,
+    slug: "mia-kingtide",
+    tag: "IP Ecosystem",
+    tagColor: "orange",
+    company: "Personal",
+    title: "Mia Kingtide",
+    subtitle: "Original IP across books, games, audiobooks, and ocean education.",
+    status: "Live",
+    year: "2021–present",
+    role: "Author, Builder, Publisher",
+    sections: [
+      {
+        label: "The Problem",
+        body: "Ocean conservation content for kids is either dry science or preachy activism. There was a gap for adventure-first storytelling that carries a conservation message without making it the point. I wanted to build IP that could work across formats — books, audio, games, video — and prove that conservation content can be commercially viable.",
+      },
+      {
+        label: "What I Built",
+        body: "4 books in the Mia Kingtide Ocean Adventures series, self-published and distributed through major retail channels. Audiobook versions on Spotify, INaudio, and streaming platforms. The OceanMatch browser game extending the universe interactively. A YouTube channel with read-aloud videos. 1,300+ copies sold across formats.",
+      },
+      {
+        label: "Content Systems",
+        body: "This is not a side hobby — it is a content system. Each format serves a different acquisition channel: books for direct sales and gift-giving, audiobooks for passive consumption, games for interactive engagement, YouTube for discoverability. The Pitter Patter Diving brand (10K TikTok, blog, tourism) acts as the top-of-funnel for the whole ecosystem.",
+      },
+      {
+        label: "Why It Matters",
+        body: "Content systems, brand building, and creative execution at scale. Building an audience from zero and converting that audience across formats is the same skill set as building a developer community — just applied to a different domain.",
+      },
+    ],
+    stack: ["4 published books", "Audiobooks (Spotify, INaudio)", "Browser game", "YouTube", "Self-publishing", "Retail distribution"],
+    link: "https://miakingtide.com/",
+    outcome: "1,300+ copies sold. Audiobooks on major streaming platforms. Active audience across formats.",
+  },
+  {
+    id: 6,
+    slug: "pitter-patter-diving",
+    tag: "Media Platform",
+    tagColor: "green",
+    company: "Personal",
+    title: "Pitter Patter Diving",
+    subtitle: "Ocean media brand, tourism business, and content platform on Monterey Bay.",
+    status: "Active",
+    year: "2022–present",
+    role: "Founder, Builder",
+    sections: [
+      {
+        label: "The Problem",
+        body: "The Monterey Peninsula is one of the most biologically rich diving destinations on Earth but has almost no modern content covering it for recreational divers. Most of the online dive content for the area is outdated, SEO-stuffed, and uninspiring. There was a clear gap for authentic, high-quality content about diving, ocean conditions, and marine life.",
+      },
+      {
+        label: "What I Built",
+        body: "A full media and commerce platform: a dive blog covering conditions, marine life, and trip reports; a YouTube channel; a TikTok channel grown to 10,000 followers in a single summer through consistent short-form content; a dive tourism booking business; and an AI monitoring agent for the boats (see Boat Daily Check). All built from zero audience.",
+      },
+      {
+        label: "The Growth Story",
+        body: "10K TikTok followers in one summer is not luck — it is a content strategy executed consistently. Short-form video, marine life identification, underwater footage, and local conditions created a niche audience with genuine interest. That audience then converts across the ecosystem: blog readers, book buyers, tour customers.",
+      },
+      {
+        label: "Why It Matters",
+        body: "Audience building from scratch, content-market fit found and validated in the wild. The skills that grow a niche content brand are the same skills that grow a developer ecosystem — understand your audience, produce content they actually want, show up consistently, measure what works.",
+      },
+    ],
+    stack: ["TikTok (10K)", "YouTube", "Blog (SEO)", "Tourism booking", "AI boat monitoring", "Audience funnel"],
+    link: "https://pitterpatterdiving.com/",
+    outcome: "10K TikTok followers built in one summer. Active tourism business. Cross-platform content ecosystem.",
+  },
+  {
+    id: 7,
+    slug: "nutanix-developer-portal",
+    tag: "Developer Experience",
+    tagColor: "blue",
+    company: "Nutanix",
+    title: "Nutanix Developer Portal",
+    subtitle: "Building the developer experience program and portal from zero.",
+    status: "Shipped",
+    year: "2019–2021",
+    role: "Head of Developer Experience",
+    sections: [
+      {
+        label: "The Problem",
+        body: "Nutanix had a powerful API-first platform but no structured developer experience. Developers were finding undocumented endpoints, navigating inconsistent SDKs, and reaching out to support for things that should be self-serve. There was no portal, no onboarding, no developer community, and no strategy.",
+      },
+      {
+        label: "What I Built",
+        body: "The Nutanix developer portal from zero: API reference documentation across all product APIs, SDK documentation and samples in multiple languages, a developer community program, 49+ open source repositories in the Nutanix GitHub org, the Nutanix Dev Live virtual event series, and the internal developer advocacy function. Also drove developer program strategy for the Nutanix .NEXT conference.",
+      },
+      {
+        label: "The Scale",
+        body: "The GitHub org went from near-zero to 49+ repositories with working code samples, integrations, and tools. The Dev Live virtual event series launched during COVID and reached developers globally when in-person events disappeared. The developer portal moved from 'call sales' to self-serve for the majority of developer use cases.",
+      },
+      {
+        label: "Why It Matters",
+        body: "This is the flagship professional work example. Taking a complex enterprise infrastructure platform and making it accessible to developers — that is the entire job. Portal, docs, community, events, open source, content, and strategy all owned and shipped by one function.",
+      },
+    ],
+    stack: ["Developer portal", "API reference", "49+ GitHub repos", "SDKs", "Dev Live virtual events", "Community program", "Developer advocacy"],
+    link: null,
+    outcome: "Developer portal launched. 49+ open source repos. Dev Live event series. Self-serve activation at scale.",
+  },
+];
+
+const TAG_COLORS: Record<string, { color: string; bg: string; border: string }> = {
+  purple: { color: "var(--purple)", bg: "var(--purple-glow)", border: "rgba(107,79,187,0.2)" },
+  teal:   { color: "var(--teal)",   bg: "var(--teal-glow)",   border: "rgba(11,158,138,0.2)" },
+  blue:   { color: "var(--accent)", bg: "var(--accent-glow)", border: "rgba(14,127,192,0.2)" },
+  orange: { color: "var(--orange)", bg: "var(--orange-glow)", border: "rgba(196,126,42,0.2)" },
+  green:  { color: "var(--green)",  bg: "var(--green-glow)",  border: "rgba(30,138,76,0.2)" },
+};
+
+export default function ProjectsCaseStudies() {
+  return (
+    <>
+      {/* Page header */}
+      <section className="cs-hero section-body">
+        <div className="content-wrap">
+          <div className="cs-eyebrow">Projects &amp; Case Studies</div>
+          <h1 className="cs-hero-title">Systems I have built.</h1>
+          <p className="cs-hero-sub">
+            Each entry covers the problem, what was built, the decisions behind it, and why it matters.
+            Not a portfolio grid. A record of real work.
+          </p>
+          <div className="cs-hero-meta">
+            <span className="cs-hero-meta-item">{CASE_STUDIES.length} systems documented</span>
+            <span className="cs-hero-meta-sep">·</span>
+            <span className="cs-hero-meta-item">Spanning 2019 to present</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Case studies */}
+      <section className="cs-body section-body">
+        <div className="content-wrap--wide">
+          <div className="cs-list">
+            {CASE_STUDIES.map((cs, idx) => {
+              const tag = TAG_COLORS[cs.tagColor] ?? TAG_COLORS.blue;
+              return (
+                <article key={cs.id} className="cs-card" id={cs.slug}>
+                  {/* Card header */}
+                  <div className="cs-card-header">
+                    <div className="cs-card-header-left">
+                      <span
+                        className="cs-tag"
+                        style={{ color: tag.color, background: tag.bg, border: `1px solid ${tag.border}` }}
+                      >
+                        {cs.tag}
+                      </span>
+                      <div className="cs-card-meta">
+                        <span>{cs.company}</span>
+                        <span className="cs-card-meta-sep">·</span>
+                        <span>{cs.year}</span>
+                        <span className="cs-card-meta-sep">·</span>
+                        <span>{cs.role}</span>
+                      </div>
+                    </div>
+                    <div className="cs-card-header-right">
+                      <span className="cs-status">{cs.status}</span>
+                      <span className="cs-index">0{idx + 1}</span>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h2 className="cs-card-title">
+                    {cs.link ? (
+                      <a href={cs.link} target="_blank" rel="noopener noreferrer" className="cs-card-title-link">
+                        {cs.title}
+                        <svg className="cs-ext-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                          <polyline points="15 3 21 3 21 9"/>
+                          <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                      </a>
+                    ) : cs.title}
+                  </h2>
+                  <p className="cs-card-subtitle">{cs.subtitle}</p>
+
+                  {/* Sections */}
+                  <div className="cs-sections">
+                    {cs.sections.map(section => (
+                      <div key={section.label} className="cs-section">
+                        <div className="cs-section-label">{section.label}</div>
+                        <p className="cs-section-body">{section.body}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Footer: stack + outcome */}
+                  <div className="cs-card-footer">
+                    <div className="cs-stack-wrap">
+                      <div className="cs-stack-label">Stack &amp; Scope</div>
+                      <div className="cs-stack">
+                        {cs.stack.map(s => (
+                          <span key={s} className="cs-stack-item">{s}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="cs-outcome">
+                      <div className="cs-outcome-label">Outcome</div>
+                      <div className="cs-outcome-text">{cs.outcome}</div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <style>{`
+        /* Hero */
+        .cs-hero {
+          background: var(--bg);
+          border-bottom: 1px solid var(--border);
+        }
+        .cs-eyebrow {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin-bottom: 16px;
+        }
+        .cs-hero-title {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: clamp(36px, 5vw, 64px);
+          font-weight: 400;
+          color: var(--heading);
+          line-height: 1.1;
+          letter-spacing: -1px;
+          margin-bottom: 20px;
+        }
+        .cs-hero-sub {
+          font-size: 18px;
+          color: var(--text-muted);
+          line-height: 1.75;
+          max-width: 600px;
+          margin-bottom: 28px;
+        }
+        .cs-hero-meta {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--text-dim);
+          letter-spacing: 0.5px;
+        }
+        .cs-hero-meta-sep { opacity: 0.4; }
+
+        /* Body */
+        .cs-body { background: var(--bg-subtle); }
+        .cs-list {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+        }
+
+        /* Card */
+        .cs-card {
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          padding: 40px;
+          box-shadow: var(--shadow-card);
+          transition: box-shadow 0.25s ease;
+        }
+        .cs-card:hover {
+          box-shadow: var(--shadow-card-hover);
+        }
+
+        .cs-card-header {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+        .cs-card-header-left {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .cs-card-header-right {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-shrink: 0;
+        }
+        .cs-tag {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          padding: 4px 10px;
+          border-radius: 6px;
+          font-weight: 600;
+          width: fit-content;
+        }
+        .cs-card-meta {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--text-dim);
+          flex-wrap: wrap;
+        }
+        .cs-card-meta-sep { opacity: 0.4; }
+        .cs-status {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: var(--green);
+          background: var(--green-glow);
+          border: 1px solid rgba(30,138,76,0.2);
+          padding: 3px 10px;
+          border-radius: 20px;
+        }
+        .cs-index {
+          font-family: var(--font-mono), monospace;
+          font-size: 13px;
+          color: var(--text-dim);
+          opacity: 0.4;
+          font-weight: 700;
+        }
+
+        .cs-card-title {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: clamp(24px, 2.8vw, 36px);
+          font-weight: 400;
+          color: var(--heading);
+          line-height: 1.15;
+          letter-spacing: -0.5px;
+          margin-bottom: 8px;
+        }
+        .cs-card-title-link {
+          color: var(--heading);
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          transition: color 0.2s;
+        }
+        .cs-card-title-link:hover { color: var(--accent); }
+        .cs-ext-icon {
+          flex-shrink: 0;
+          opacity: 0.5;
+          margin-top: 2px;
+        }
+        .cs-card-subtitle {
+          font-family: var(--font-mono), monospace;
+          font-size: 12px;
+          color: var(--text-dim);
+          margin-bottom: 32px;
+          letter-spacing: 0.2px;
+        }
+
+        /* Sections */
+        .cs-sections {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 28px 40px;
+          margin-bottom: 36px;
+          padding-bottom: 36px;
+          border-bottom: 1px solid var(--border);
+        }
+        .cs-section-label {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin-bottom: 8px;
+        }
+        .cs-section-body {
+          font-size: 14px;
+          color: var(--text-muted);
+          line-height: 1.8;
+        }
+
+        /* Footer */
+        .cs-card-footer {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+          align-items: start;
+        }
+        .cs-stack-label,
+        .cs-outcome-label {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: var(--text-dim);
+          margin-bottom: 12px;
+        }
+        .cs-stack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+        .cs-stack-item {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          color: var(--text-dim);
+          background: var(--bg-subtle);
+          border: 1px solid var(--border);
+          padding: 4px 10px;
+          border-radius: 5px;
+          letter-spacing: 0.3px;
+        }
+        .cs-outcome-text {
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--heading);
+          line-height: 1.6;
+        }
+
+        @media (max-width: 860px) {
+          .cs-card { padding: 28px 24px; }
+          .cs-sections { grid-template-columns: 1fr; gap: 24px; }
+          .cs-card-footer { grid-template-columns: 1fr; gap: 24px; }
+        }
+        @media (max-width: 540px) {
+          .cs-card { padding: 20px 16px; }
+        }
+      `}</style>
+    </>
+  );
+}

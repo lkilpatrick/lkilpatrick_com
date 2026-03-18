@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Presentations from "../components/Projects";
+import VideoContent from "../components/VideoContent";
 
 export const metadata: Metadata = {
   title: "Video & Presentations — Luke Kilpatrick",
@@ -13,7 +13,7 @@ export default function VideoPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        <Presentations />
+        <VideoContent />
       </main>
       <Footer />
     </>

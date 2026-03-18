@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import TechnicalContent from "../components/Experience";
+import WritingContent from "../components/WritingContent";
 
 export const metadata: Metadata = {
-  title: "Technical Content — Luke Kilpatrick",
-  description: "Blog posts, tutorials, and technical writing demonstrating hands-on developer experience.",
+  title: "Writing & Content — Luke Kilpatrick",
+  description: "Blog posts, tutorials, and technical writing that drives developer adoption.",
 };
 
 export default function ContentPage() {
@@ -13,7 +13,7 @@ export default function ContentPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        <TechnicalContent />
+        <WritingContent />
       </main>
       <Footer />
     </>
