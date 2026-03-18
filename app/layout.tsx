@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   title: "Luke Kilpatrick — Developer Experience, Product Marketing & Applied AI",
   description:
     "I help companies turn complex platforms into products developers understand, adopt, and want to use. 15+ years at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
   openGraph: {
     title: "Luke Kilpatrick — Developer Experience, Product Marketing & Applied AI",
     description:

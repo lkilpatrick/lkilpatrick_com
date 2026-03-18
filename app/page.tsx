@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import CapabilityPillars from "./components/CapabilityPillars";
 import SelectedSystems from "./components/SelectedSystems";
+import WhenToBringMeIn from "./components/WhenToBringMeIn";
 import CredibilityBar from "./components/CredibilityBar";
 import ContentPreview from "./components/ContentPreview";
 import PersonalSection from "./components/PersonalSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <CapabilityPillars />
       <SelectedSystems />
+      <WhenToBringMeIn />
       <CredibilityBar />
       <ContentPreview />
       <PersonalSection />

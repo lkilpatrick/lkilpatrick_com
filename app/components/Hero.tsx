@@ -28,33 +28,31 @@ export default function Hero() {
           <div className="hero-text">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot" />
-              Developer Experience &nbsp;&middot;&nbsp; Product Marketing &nbsp;&middot;&nbsp; Applied AI
+              Developer Platforms &nbsp;&middot;&nbsp; Product Marketing &nbsp;&middot;&nbsp; Applied AI
             </div>
 
             <h1 className="hero-headline">
-              The hardest part of technology{" "}
-              <span className="hero-headline-accent">isn&apos;t building it.</span>
+              The hardest part of technology<br />
+              is not building it.
             </h1>
-            <h1 className="hero-headline hero-headline-line2">
-              It&apos;s getting people to use it.
-            </h1>
+            <h2 className="hero-subheadline">
+              It is getting people to use it.
+            </h2>
 
             <p className="hero-sub">
-              I help companies turn complex platforms into products developers understand,
-              adopt, and want to use. I build the systems, from docs and onboarding to
-              applied AI workflows, that make that possible.
+              I build the systems that make that happen across developer platforms,
+              product marketing, and applied AI. From documentation and onboarding
+              to AI-powered workflows, I turn complex systems into products
+              developers actually adopt.
             </p>
 
             <div className="hero-ctas">
               <a href="#systems" className="btn-primary">
-                View My Work
+                See What I&apos;ve Built
               </a>
               <button className="btn-secondary" onClick={() => setContactOpen(true)}>
                 Get In Touch
               </button>
-              <a href="/Luke K Director of DevRel -2026.pdf" download="Luke-Kilpatrick-Resume-2026.pdf" className="btn-ghost">
-                Resume ↓
-              </a>
             </div>
 
             <div className="hero-meta">
@@ -66,6 +64,9 @@ export default function Hero() {
                 <span className="hero-pulse" />
                 {personalInfo.availability}
               </span>
+              <a href="/Luke K Director of DevRel -2026.pdf" download="Luke-Kilpatrick-Resume-2026.pdf" className="hero-resume-link">
+                Resume ↓
+              </a>
             </div>
 
             <div className="hero-company-strip">
@@ -83,15 +84,15 @@ export default function Hero() {
               <Image
                 src="/profile.jpg"
                 alt="Luke Kilpatrick"
-                width={360}
-                height={360}
+                width={400}
+                height={400}
                 priority
                 className="hero-photo"
               />
             </div>
             <div className="hero-photo-badge">
-              <span className="hero-badge-icon">&#x2726;</span>
-              <span>Applied AI</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+              <span>AI-native builder</span>
             </div>
           </div>
         </div>
@@ -180,33 +181,38 @@ export default function Hero() {
 
         .hero-headline {
           font-family: var(--font-serif), Georgia, serif;
-          font-size: clamp(36px, 4.8vw, 58px);
+          font-size: clamp(42px, 5.5vw, 68px);
           font-weight: 400;
-          line-height: 1.12;
+          line-height: 1.08;
           color: var(--heading);
-          margin-bottom: 8px;
+          margin-bottom: 12px;
+          letter-spacing: -1px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.15s forwards;
         }
-        .hero-headline-line2 {
-          margin-bottom: 28px;
-          animation-delay: 0.2s;
-        }
-        .hero-headline-accent {
+        .hero-subheadline {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: clamp(38px, 5vw, 62px);
+          font-weight: 400;
+          line-height: 1.08;
+          letter-spacing: -1px;
+          margin-bottom: 32px;
           background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          opacity: 0;
+          animation: fadeUp 0.6s ease 0.22s forwards;
         }
 
         .hero-sub {
           font-size: 18px;
           color: var(--text-muted);
-          line-height: 1.75;
+          line-height: 1.8;
           margin-bottom: 36px;
-          max-width: 560px;
+          max-width: 540px;
           opacity: 0;
-          animation: fadeUp 0.6s ease 0.28s forwards;
+          animation: fadeUp 0.6s ease 0.30s forwards;
         }
 
         .hero-ctas {
@@ -429,15 +435,26 @@ export default function Hero() {
           color: var(--text-dim);
         }
 
+        .hero-resume-link {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--text-dim);
+          text-decoration: none;
+          transition: color 0.2s;
+          border-bottom: 1px solid var(--border);
+          padding-bottom: 1px;
+        }
+        .hero-resume-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
         @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(16px); }
+          from { opacity: 0; transform: translateY(18px); }
           to   { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 960px) {
           .hero-inner {
             grid-template-columns: 1fr;
-            gap: 48px;
+            gap: 56px;
             text-align: center;
           }
           .hero-eyebrow { justify-content: center; }
@@ -445,12 +462,14 @@ export default function Hero() {
           .hero-ctas { justify-content: center; }
           .hero-meta { justify-content: center; }
           .hero-company-strip { justify-content: center; }
-          .hero-photo-wrap { justify-self: center; }
-          .hero-photo-ring { width: 240px; height: 240px; }
-          .hero-photo-badge { right: 0; }
+          .hero-photo-wrap { justify-self: center; order: -1; }
+          .hero-photo-ring { width: 220px; height: 220px; }
+          .hero-photo-badge { right: 0; bottom: 8px; }
+          .hero-text { order: 1; }
         }
         @media (max-width: 600px) {
-          .hero-section { padding-top: 100px; }
+          .hero-section { padding-top: 96px; }
+          .hero-inner { padding: 0 20px 56px; }
           .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
           .hero-stat:nth-child(2) { border-right: none; }
           .hero-stat:nth-child(3) { border-top: 1px solid var(--border); }

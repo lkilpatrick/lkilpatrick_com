@@ -9,7 +9,7 @@ export default function CTASection() {
   return (
     <>
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
-      <section className="cta-section">
+      <section id="cta" className="cta-section">
         <div className="cta-glow-left" />
         <div className="cta-glow-right" />
         <div className="content-wrap">
