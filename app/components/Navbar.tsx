@@ -66,6 +66,7 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-controls">
+            <a href="/resume.pdf" download className="resume-btn">Resume ↓</a>
             <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === "dark" ? "☀" : "☽"}
             </button>
@@ -163,6 +164,26 @@ export default function Navbar() {
           gap: 8px;
           flex-shrink: 0;
         }
+        .resume-btn {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          color: var(--accent);
+          padding: 6px 12px;
+          border: 1px solid var(--border-accent);
+          border-radius: 6px;
+          text-decoration: none;
+          white-space: nowrap;
+          transition: all 0.2s;
+          background: var(--accent-glow);
+        }
+        .resume-btn:hover {
+          background: var(--accent);
+          color: #fff;
+          border-color: var(--accent);
+        }
+        @media (max-width: 680px) { .resume-btn { display: none; } }
         .theme-btn {
           width: 36px; height: 36px;
           border-radius: 50%;

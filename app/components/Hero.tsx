@@ -40,6 +40,9 @@ export default function Hero() {
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 View LinkedIn
               </a>
+              <a href="/resume.pdf" download className="btn-secondary">
+                Download Resume ↓
+              </a>
               <a href={`mailto:${personalInfo.email}`} className="btn-secondary">
                 Get In Touch
               </a>

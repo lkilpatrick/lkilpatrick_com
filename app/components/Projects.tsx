@@ -110,55 +110,36 @@ export default function Presentations() {
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 28, maxWidth: 600 }}>
             Mia Kingtide Ocean Adventures — audiobook chapters and read-aloud videos from the middle-grade ocean conservation series. 4 books published, 1,000+ copies sold.
           </p>
-          <a
-            href="https://www.youtube.com/@LukeKilpatrick"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 24,
-              padding: "28px 32px",
-              background: "var(--bg-card)",
-              border: "1px solid var(--border)",
-              borderRadius: 12,
-              textDecoration: "none",
-              transition: "all 0.2s",
-            }}
-            className="yt-channel-card"
-          >
-            <div style={{
-              width: 56,
-              height: 56,
-              borderRadius: "50%",
-              background: "#FF0000",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-              fontSize: 22,
-              color: "#fff",
-            }}>▶</div>
-            <div>
-              <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 4 }}>
-                YouTube · @LukeKilpatrick
-              </div>
-              <div style={{ fontSize: 16, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>
-                Mia Kingtide Ocean Adventures
-              </div>
-              <div style={{ fontSize: 13, color: "var(--text-muted)" }}>
-                Audiobook chapters, read-aloud videos, and ocean adventures — view the full channel →
-              </div>
+          <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, background: "#000" }}>
+              <iframe
+                src="https://www.youtube.com/embed/GoIaxXyRIlo?rel=0&modestbranding=1"
+                title="Mia Kingtide: The Octopus' Gift — Chapter 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+              />
             </div>
-          </a>
-          <style>{`
-            .yt-channel-card:hover {
-              border-color: #FF0000;
-              background: var(--bg-card-hover);
-              transform: translateY(-2px);
-              box-shadow: 0 4px 20px rgba(255,0,0,0.08);
-            }
-          `}</style>
+            <div style={{ padding: "14px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
+              <div>
+                <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>
+                  @LukeKilpatrick · Mia Kingtide Ocean Adventures
+                </div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)" }}>
+                  The Octopus&apos; Gift — Chapter 1
+                </div>
+              </div>
+              <a
+                href="https://www.youtube.com/@LukeKilpatrick"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--accent)", padding: "6px 14px", border: "1px solid var(--border-accent)", borderRadius: 6, whiteSpace: "nowrap" }}
+              >
+                View Full Channel →
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
