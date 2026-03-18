@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ContentPreview from "../components/ContentPreview";
 import WritingContent from "../components/WritingContent";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function ContentPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
+        <ContentPreview />
         <WritingContent />
       </main>
       <Footer />

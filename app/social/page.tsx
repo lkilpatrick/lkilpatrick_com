@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import PersonalSection from "../components/PersonalSection";
 import SocialPageSection from "../components/SocialPage";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function SocialPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
+        <PersonalSection />
         <SocialPageSection />
       </main>
       <Footer />
