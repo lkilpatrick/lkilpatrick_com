@@ -33,7 +33,7 @@ export default function Footer() {
           ))}
         </div>
         <p style={{ fontSize: 12, color: "var(--text-dim)" }}>
-          &copy; 2026 Luke Kilpatrick. Built with code, coffee, and salt water.
+          &copy; 2026 Luke Kilpatrick. Built with code, sugar free red bull, and salt water.
         </p>
       </div>
     </footer>
