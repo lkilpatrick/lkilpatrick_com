@@ -22,13 +22,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luke Kilpatrick — Developer Relations & Developer Marketing",
+  title: "Luke Kilpatrick — Developer Experience, Product Marketing & Applied AI",
   description:
-    "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+    "I help companies turn complex platforms into products developers understand, adopt, and want to use. 15+ years at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
   openGraph: {
-    title: "Luke Kilpatrick — Developer Relations & Developer Marketing",
+    title: "Luke Kilpatrick — Developer Experience, Product Marketing & Applied AI",
     description:
-      "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+      "I help companies turn complex platforms into products developers understand, adopt, and want to use. 15+ years at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
     url: "https://lkilpatrick.com",
     siteName: "Luke Kilpatrick",
     locale: "en_US",

@@ -5,13 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "/",         label: "Home" },
-  { href: "/docs",     label: "Docs & Portals" },
-  { href: "/content",  label: "Content" },
-  { href: "/video",    label: "Video" },
-  { href: "/impact",   label: "Impact" },
-  { href: "/builder",  label: "Builder" },
-  { href: "/social",   label: "Social" },
+  { href: "/",        label: "Home" },
+  { href: "/docs",    label: "Docs & Portals" },
+  { href: "/content", label: "Content" },
+  { href: "/impact",  label: "Impact" },
+  { href: "/builder", label: "Systems" },
+  { href: "/video",   label: "Video" },
+  { href: "/social",  label: "Social" },
 ];
 
 export default function Navbar() {

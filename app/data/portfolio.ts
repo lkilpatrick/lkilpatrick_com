@@ -1,8 +1,8 @@
 export const personalInfo = {
   name: "Luke Kilpatrick",
-  title: "Developer Relations & Developer Marketing",
+  title: "Developer Experience & Product Marketing",
   tagline:
-    "15+ years building developer programs, documentation, and communities at Atlassian, VMware, Sencha, Nutanix, Hazelcast, LinearB, and Harness.",
+    "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
   intro:
     "I build the content, docs, and onboarding experiences that turn complex infrastructure products into tools developers actually want to use. I also write code, author books, and ship things.",
   location: "Sand City, CA — Monterey Peninsula",
@@ -14,10 +14,190 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { value: "15+", label: "Years in DevRel" },
-  { value: "246K", label: "Video Views (Sencha)" },
+  { value: "15+", label: "Years Experience" },
+  { value: "246K", label: "Video Views" },
   { value: "10K", label: "TikTok in 3 Months" },
   { value: "1,300+", label: "Books Sold" },
+];
+
+export const capabilities = [
+  {
+    id: 1,
+    icon: "terminal",
+    title: "Developer Experience",
+    description:
+      "Developer portals, onboarding systems, API documentation, and technical content that turn complex platforms into tools people actually adopt. Built from zero at Nutanix, LinearB, and Hazelcast.",
+    value: "Faster time-to-first-value. Less support burden. Higher ecosystem retention.",
+  },
+  {
+    id: 2,
+    icon: "megaphone",
+    title: "Product Marketing",
+    description:
+      "Launch strategy, positioning, competitive messaging, and release communications for developer-facing products. Comfort with technical depth and market narrative simultaneously.",
+    value: "Clear positioning that converts. Launches that land. Messaging that sticks.",
+  },
+  {
+    id: 3,
+    icon: "people",
+    title: "Developer Relations",
+    description:
+      "Community programs, ecosystem events, conference speaking, and developer advocacy at scale. Ran Codegeist at Atlassian. Built Nutanix Dev Live Twitch channel. Spoke at DevRelCon and beyond.",
+    value: "Ecosystems that grow themselves. Communities with real signal.",
+  },
+  {
+    id: 4,
+    icon: "sparkle",
+    title: "Applied AI Systems",
+    description:
+      "Generative AI workflows for content production, launch automation, and developer tooling. Built real operational AI systems including a Victron boat monitoring agent and automated reporting pipelines. Uses AI as a daily multiplier, not a talking point.",
+    value: "Faster execution. Higher output quality. Systems that run while you sleep.",
+  },
+];
+
+export const selectedSystems = [
+  {
+    id: 1,
+    tag: "AI + Automation",
+    tagColor: "teal" as const,
+    title: "Boat Daily Check",
+    subtitle: "Victron Monitoring + Automated Reporting",
+    description:
+      "Python agent that queries the Victron VRM API on a cron schedule, processes live boat power and battery telemetry, and sends a formatted daily email report. Reverse-engineered an undocumented API, published the reference docs, and open-sourced the project.",
+    highlights: ["Python agent", "Victron VRM API", "Cron automation", "Open source"],
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    proof: "Applied AI + automation. A real system solving a real problem.",
+    screenshot: "/screenshots/content-ai-agent-boats.jpg",
+  },
+  {
+    id: 2,
+    tag: "Developer Platform",
+    tagColor: "blue" as const,
+    title: "gitStream Documentation Platform",
+    subtitle: "LinearB — Developer Docs from Zero",
+    description:
+      "Built the complete documentation site for gitStream, LinearB's workflow automation product. Quickstart guides, automation library, integration docs, plugin development, interactive playground, and full API reference. Structured for zero-touch developer onboarding.",
+    highlights: ["MkDocs", "API reference", "Self-serve onboarding", "Automation library"],
+    link: "https://docs.gitstream.cm/",
+    proof: "Developer docs done right. No sales call required.",
+    screenshot: "/screenshots/gitstream-docs.jpg",
+  },
+  {
+    id: 3,
+    tag: "Race Management",
+    tagColor: "teal" as const,
+    title: "MPYC RaceDay / RaceSheet",
+    subtitle: "Real-Time Sailing Race Management Platform",
+    description:
+      "Role-based web platform for real-time race management at the Monterey Peninsula Yacht Club. Handles scoring, weather, live coordination, and race day operations across multiple roles simultaneously. Mobile-first, live data, built for a real community.",
+    highlights: ["Role-based design", "Live data", "Mobile + web", "Race scoring"],
+    link: null,
+    proof: "Real product. Real users. Real-time systems thinking.",
+    screenshot: null,
+  },
+  {
+    id: 4,
+    tag: "Flutter App",
+    tagColor: "purple" as const,
+    title: "Tech Challenge Kenya Admin Dashboard",
+    subtitle: "Flutter Web + Supabase + Firebase",
+    description:
+      "Production Flutter web admin dashboard serving thousands of students, schools, teams, and judges across Kenya's national STEM competition program. 15 production-ready modules covering auth, RBAC, audit logs, surveys, communications, scoring, and reporting.",
+    highlights: ["Flutter Web", "Supabase", "Riverpod", "RBAC + audit logs", "15 modules"],
+    link: null,
+    proof: "Senior builder capability. Production-grade. Real scale.",
+    screenshot: null,
+  },
+  {
+    id: 5,
+    tag: "IP + Brand System",
+    tagColor: "orange" as const,
+    title: "Mia Kingtide Ocean Adventures",
+    subtitle: "Books, Games, Audiobooks, and Ocean Education",
+    description:
+      "Built an original IP from zero across books, interactive games, audiobooks, YouTube, and a commerce ecosystem. 4 books published, 1,300+ copies sold, audiobooks on Spotify and INaudio, OceanMatch browser game, and a TikTok/YouTube audience built around ocean storytelling.",
+    highlights: ["4 published books", "Browser game", "Audiobooks", "Audience building"],
+    link: "https://miakingtide.com/",
+    proof: "Content systems. Brand building. Creative execution at scale.",
+    screenshot: "/screenshots/builder-mia-kingtide.jpg",
+  },
+  {
+    id: 6,
+    tag: "Browser Game",
+    tagColor: "orange" as const,
+    title: "OceanMatch",
+    subtitle: "Interactive Ocean Education Game",
+    description:
+      "Browser-based matching game built around the Mia Kingtide ocean conservation universe. Accessible interactive experience connecting characters, ocean species, and educational content for young readers. Part of a broader cross-format IP strategy.",
+    highlights: ["Browser game", "Ocean education", "Interactive", "IP extension"],
+    link: "https://miakingtide.com/",
+    proof: "Product thinking. Accessible design. Content meets interactivity.",
+    screenshot: null,
+  },
+  {
+    id: 7,
+    tag: "Media Platform",
+    tagColor: "green" as const,
+    title: "Pitter Patter Diving",
+    subtitle: "Ocean Media Brand + Tourism + Commerce",
+    description:
+      "Full media and commerce brand built around ocean adventures on the Monterey Peninsula. Blog, YouTube, TikTok (10K followers in one summer), dive tourism business, and an AI agent monitoring the boats. Proof of audience-first brand building from zero.",
+    highlights: ["10K TikTok", "Blog + YouTube", "Tourism brand", "Commerce"],
+    link: "https://pitterpatterdiving.com/",
+    proof: "Audience building from scratch. Content-market fit in the wild.",
+    screenshot: "/screenshots/builder-pitterpatter-blog.jpg",
+  },
+];
+
+export const contentPreviews = [
+  {
+    id: 1,
+    type: "Article",
+    org: "Personal",
+    title: "I Built an AI Agent That Monitors My Boats While I Sleep",
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    description: "Python + Victron VRM API + cron. A real working AI agent with open-source code and published API docs.",
+  },
+  {
+    id: 2,
+    type: "Article",
+    org: "DuploCloud",
+    title: "10 Prompts Every Engineer Doing DevOps Should Know",
+    link: "https://duplocloud.com/blog/10-prompts-every-engineer-doing-devops-should-know/",
+    description: "Practical AI prompt engineering for DevOps: SOC 2 automation, drift detection, incident response.",
+  },
+  {
+    id: 3,
+    type: "Talk",
+    org: "DevRelCon",
+    title: "Building Developer Programs from Zero",
+    link: "https://www.youtube.com/watch?v=TgO3yM1qSHw",
+    description: "Conference talk on launching nutanix.dev and growing an infrastructure developer ecosystem.",
+  },
+  {
+    id: 4,
+    type: "Book",
+    org: "SlashData",
+    title: "The Developer Marketing Essential Guide",
+    link: "https://a.co/d/eIgJG8o",
+    description: "Two authored chapters in the definitive guide to developer marketing, published by SlashData.",
+  },
+  {
+    id: 5,
+    type: "Article",
+    org: "LinearB",
+    title: "What is Continuous Merge?",
+    link: "https://linearb.io/blog/what-is-continuous-merge/",
+    description: "Concept introduction for a new engineering workflow category, explaining a novel approach to branch management.",
+  },
+  {
+    id: 6,
+    type: "Video",
+    org: "Harness",
+    title: "Build Intelligence Launch Video",
+    link: "https://www.youtube.com/watch?v=hoxZr4dRjSo",
+    description: "Product launch video for Harness CI Build Intelligence. Scripted, produced, shipped.",
+  },
 ];
 
 export const onboardingDocs = {

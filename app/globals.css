@@ -4,34 +4,58 @@
   --bg: #F6F7F9;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F0F2F5;
+  --bg-subtle: #F0F2F7;
   --border: #DDE0E6;
   --border-accent: #4A9EE5;
   --text: #2C2F36;
   --text-muted: #5C6070;
   --text-dim: #8B90A0;
-  --accent: #2872B8;
-  --accent-glow: rgba(40, 114, 184, 0.08);
-  --green: #2D8A56;
+  --accent: #0E7FC0;
+  --accent-light: #4AABDE;
+  --accent-glow: rgba(14, 127, 192, 0.08);
+  --accent-glow-strong: rgba(14, 127, 192, 0.15);
+  --teal: #0B9E8A;
+  --teal-glow: rgba(11, 158, 138, 0.1);
+  --green: #1E8A4C;
+  --green-glow: rgba(30, 138, 76, 0.1);
   --orange: #C47E2A;
-  --heading: #1A1D24;
+  --orange-glow: rgba(196, 126, 42, 0.1);
+  --purple: #6B4FBB;
+  --purple-glow: rgba(107, 79, 187, 0.1);
+  --heading: #0F1219;
   --grain-opacity: 0.015;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 4px 24px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06);
 }
 
 [data-theme="dark"] {
-  --bg: #0C0E12;
-  --bg-card: #13161C;
-  --bg-card-hover: #1A1E26;
-  --border: #1E2330;
-  --border-accent: #2A5C8A;
+  --bg: #080B10;
+  --bg-card: #0F1318;
+  --bg-card-hover: #161B24;
+  --bg-subtle: #0F1318;
+  --border: #1A2030;
+  --border-accent: #1E6A9E;
   --text: #E2E4E9;
   --text-muted: #8B90A0;
-  --text-dim: #5C6070;
-  --accent: #4A9EE5;
-  --accent-glow: rgba(74, 158, 229, 0.12);
-  --green: #3CB371;
+  --text-dim: #4A5060;
+  --accent: #38B2E8;
+  --accent-light: #6BCBF5;
+  --accent-glow: rgba(56, 178, 232, 0.1);
+  --accent-glow-strong: rgba(56, 178, 232, 0.18);
+  --teal: #14C4AC;
+  --teal-glow: rgba(20, 196, 172, 0.1);
+  --green: #2DC96E;
+  --green-glow: rgba(45, 201, 110, 0.1);
   --orange: #E89B3E;
-  --heading: #ffffff;
-  --grain-opacity: 0.03;
+  --orange-glow: rgba(232, 155, 62, 0.1);
+  --purple: #9B7FE8;
+  --purple-glow: rgba(155, 127, 232, 0.1);
+  --heading: #F0F2F8;
+  --grain-opacity: 0.025;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2);
+  --shadow-card-hover: 0 4px 24px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.3);
 }
 
 * {
@@ -78,9 +102,17 @@ section, header {
 
 /* Shared content width */
 .content-wrap {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
+}
+.content-wrap--wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 600px) {
+  .content-wrap, .content-wrap--wide { padding: 0 20px; }
 }
 
 /* Custom scrollbar */
@@ -91,10 +123,13 @@ section, header {
 
 /* Section layout */
 .section-body {
-  padding: 64px 0;
+  padding: 80px 0;
   border-bottom: 1px solid var(--border);
 }
 .section-body:last-of-type { border-bottom: none; }
+.section-alt {
+  background: var(--bg-subtle);
+}
 
 /* Card hover effects */
 .card-hover {
