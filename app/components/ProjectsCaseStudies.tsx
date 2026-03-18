@@ -1,4 +1,26 @@
-const CASE_STUDIES = [
+import Image from "next/image";
+
+type CaseStudy = {
+  id: number;
+  slug: string;
+  tag: string;
+  tagColor: string;
+  company: string;
+  title: string;
+  subtitle: string;
+  status: string;
+  year: string;
+  role: string;
+  screenshot: string | null;
+  screenshotAlt: string | null;
+  statHighlights: string[] | null;
+  sections: { label: string; body: string }[];
+  stack: string[];
+  link: string | null;
+  outcome: string;
+};
+
+const CASE_STUDIES: CaseStudy[] = [
   {
     id: 1,
     slug: "tech-challenge-kenya",
@@ -10,6 +32,9 @@ const CASE_STUDIES = [
     status: "Production",
     year: "2024",
     role: "Solo Builder",
+    screenshot: null,
+    screenshotAlt: null,
+    statHighlights: ["15 modules", "Multi-role RBAC", "National scale", "Zero to production"],
     sections: [
       {
         label: "The Problem",
@@ -17,15 +42,15 @@ const CASE_STUDIES = [
       },
       {
         label: "What I Built",
-        body: "A full-stack admin platform in Flutter Web backed by Supabase. 15 modules covering the entire competition lifecycle: user authentication and role-based access control, school and team registration, judge assignment, scoring workflows, survey collection, communications, document management, audit logging, and real-time reporting dashboards. Built from zero to production.",
+        body: "A full-stack admin platform in Flutter Web backed by Supabase. 15 modules covering the entire competition lifecycle: user auth and RBAC, school and team registration, judge assignment, scoring workflows, survey collection, communications, document management, audit logging, and real-time reporting dashboards.",
       },
       {
         label: "Technical Decisions",
-        body: "Flutter Web was chosen for its single codebase across web and future mobile, Riverpod for state management, and Supabase for auth, database, storage, and real-time subscriptions. RBAC is enforced at both the UI and database row-level security layers. Audit logs are append-only. The entire system is multi-role: student, teacher, school admin, judge, national admin.",
+        body: "Flutter Web for a single codebase across web and future mobile. Riverpod for state management. Supabase for auth, database, storage, and real-time subscriptions. RBAC enforced at both UI and database row-level security layers. Audit logs are append-only. Five distinct roles: student, teacher, school admin, judge, national admin.",
       },
       {
         label: "Why It Matters",
-        body: "This is a flagship demonstration of senior builder capability. Complex domain, multiple stakeholder roles, real data at national scale, zero tolerance for errors in a competition context. It was not a proof of concept — it ran the actual competition.",
+        body: "This is what senior builder capability looks like. Complex domain, multiple stakeholder roles, real data at national scale, zero tolerance for errors in a competition context. It was not a proof of concept — it ran the actual competition.",
       },
     ],
     stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL", "RBAC", "Row-Level Security", "Real-time", "15 modules"],
@@ -43,10 +68,13 @@ const CASE_STUDIES = [
     status: "Production",
     year: "2023",
     role: "Solo Builder",
+    screenshot: null,
+    screenshotAlt: null,
+    statHighlights: ["Live scoring", "Multi-role", "Mobile-first", "Used every weekend"],
     sections: [
       {
         label: "The Problem",
-        body: "The existing race management tools for small yacht clubs were either expensive commercial software designed for professional regattas, or simple spreadsheets that broke down on race day. There was no mobile-first, role-aware tool that worked for a community club with volunteer race officers, multiple boat classes, and real-time scoring needs.",
+        body: "The existing race management tools for small yacht clubs were either expensive commercial software designed for professional regattas, or simple spreadsheets that broke down on race day. No mobile-first, role-aware tool existed for a community club with volunteer race officers, multiple boat classes, and real-time scoring needs.",
       },
       {
         label: "What I Built",
@@ -58,7 +86,7 @@ const CASE_STUDIES = [
       },
       {
         label: "Why It Matters",
-        body: "I built this because the existing tools were not good enough. That is usually why I build things. It is used by a real community every racing weekend on Monterey Bay.",
+        body: "I built this because the existing tools were not good enough. That is usually why I build things. It runs every racing weekend for a real community on Monterey Bay.",
       },
     ],
     stack: ["Role-based design", "Live scoring", "Weather API", "Mobile-first", "Offline-tolerant"],
@@ -67,39 +95,6 @@ const CASE_STUDIES = [
   },
   {
     id: 3,
-    slug: "gitstream-docs",
-    tag: "Developer Platform",
-    tagColor: "blue",
-    company: "LinearB",
-    title: "gitStream Documentation Platform",
-    subtitle: "Zero to full developer portal for LinearB's workflow automation product.",
-    status: "Live",
-    year: "2022–2023",
-    role: "Developer Experience Lead",
-    sections: [
-      {
-        label: "The Problem",
-        body: "gitStream launched with a powerful product but minimal developer documentation. Developers who reached the product could not activate without sales assistance. The onboarding path was unclear, the automation library was undiscoverable, and there was no reference material for the plugin system or integrations. Activation was gated on human intervention.",
-      },
-      {
-        label: "What I Built",
-        body: "The complete documentation system for gitStream: quickstart guides, full automation library with searchable examples, integration guides for GitHub, GitLab, and Bitbucket, plugin development documentation, an interactive playground for testing automations, and a complete API and configuration reference. Structured so a developer could go from discovery to first automation without contacting anyone.",
-      },
-      {
-        label: "Content Strategy",
-        body: "Every piece of documentation was designed around a specific activation milestone. The quickstart gets you to first automation in under 10 minutes. The automation library is the long-tail SEO and reference layer. The integration docs handle the 'does this work with my stack' objection. The plugin guide handles the 'can I extend this' question. The structure reflects how developers actually think, not how the product team organized the feature list.",
-      },
-      {
-        label: "Why It Matters",
-        body: "Developers could activate without a sales call. Time-to-first-value dropped, support volume dropped, and ecosystem adoption accelerated. Good documentation is a product — it just lives outside the product UI.",
-      },
-    ],
-    stack: ["MkDocs", "API reference", "Automation library", "Interactive playground", "SEO structure", "Self-serve activation"],
-    link: "https://docs.gitstream.cm/",
-    outcome: "Self-serve activation enabled. Support volume reduced. Developer ecosystem grew without proportional sales motion.",
-  },
-  {
-    id: 4,
     slug: "boat-daily-check",
     tag: "AI + Automation",
     tagColor: "teal",
@@ -109,22 +104,25 @@ const CASE_STUDIES = [
     status: "Running",
     year: "2024",
     role: "Solo Builder",
+    screenshot: "/screenshots/content-ai-agent-boats.jpg",
+    screenshotAlt: "Boat Daily Check AI monitoring agent write-up on Pitter Patter Diving",
+    statHighlights: null,
     sections: [
       {
         label: "The Problem",
-        body: "I have two boats on the water in Monterey Bay. Bilge pumps, battery levels, solar charging status, and shore power connections all need regular monitoring — especially overnight. Checking manually every morning is tedious and easy to forget. Commercial monitoring solutions exist but require expensive hardware and subscriptions.",
+        body: "Two boats on the water in Monterey Bay need regular overnight monitoring — bilge pumps, battery levels, solar charging, shore power. Checking manually every morning is tedious. Commercial solutions require expensive hardware and subscriptions.",
       },
       {
         label: "What I Built",
-        body: "A Python agent that runs on a cron schedule, queries the Victron VRM API for live data from both boats (battery state, solar yield, grid status, alarms), formats the results into a readable daily digest, and sends it via email every morning. The agent also publishes an open-source reference for the Victron VRM API, which had no official documentation.",
+        body: "A Python agent on a cron schedule that queries the Victron VRM API for live data from both boats — battery state, solar yield, grid status, alarms — formats the results into a readable daily digest, and sends it via email every morning. Also published an open-source reference for the Victron VRM API, which had no official documentation.",
       },
       {
         label: "The Interesting Part",
-        body: "The Victron VRM API was undocumented. I reverse-engineered the API by inspecting the VRM web app's network traffic, wrote my own reference documentation, and open-sourced the project. The reference has since been picked up by other Victron users in the community.",
+        body: "The Victron VRM API was undocumented. I reverse-engineered it by inspecting the VRM web app's network traffic, wrote my own reference documentation, and open-sourced the project. The reference has since been picked up by other Victron users in the community.",
       },
       {
         label: "Why It Matters",
-        body: "This is applied AI that runs without intervention. It is not a demo, not a prototype, not a ChatGPT wrapper. It is a real automation solving a real operational problem and running in production every day.",
+        body: "Applied AI that runs without intervention. Not a demo, not a prototype, not a wrapper. A real automation solving a real operational problem, in production every day.",
       },
     ],
     stack: ["Python", "Victron VRM API", "Cron automation", "Email delivery", "Open source", "API reverse engineering"],
@@ -132,7 +130,7 @@ const CASE_STUDIES = [
     outcome: "Runs every morning without intervention. Open-source API reference adopted by the Victron community.",
   },
   {
-    id: 5,
+    id: 4,
     slug: "mia-kingtide",
     tag: "IP Ecosystem",
     tagColor: "orange",
@@ -142,22 +140,25 @@ const CASE_STUDIES = [
     status: "Live",
     year: "2021–present",
     role: "Author, Builder, Publisher",
+    screenshot: "/screenshots/builder-mia-kingtide.jpg",
+    screenshotAlt: "Mia Kingtide website and book series",
+    statHighlights: null,
     sections: [
       {
         label: "The Problem",
-        body: "Ocean conservation content for kids is either dry science or preachy activism. There was a gap for adventure-first storytelling that carries a conservation message without making it the point. I wanted to build IP that could work across formats — books, audio, games, video — and prove that conservation content can be commercially viable.",
+        body: "Ocean conservation content for kids is either dry science or preachy activism. There was a gap for adventure-first storytelling that carries a conservation message without making it the point — IP that could work across formats and prove conservation content can be commercially viable.",
       },
       {
         label: "What I Built",
-        body: "4 books in the Mia Kingtide Ocean Adventures series, self-published and distributed through major retail channels. Audiobook versions on Spotify, INaudio, and streaming platforms. The OceanMatch browser game extending the universe interactively. A YouTube channel with read-aloud videos. 1,300+ copies sold across formats.",
+        body: "4 books in the Mia Kingtide Ocean Adventures series, self-published and distributed through major retail channels. Audiobook versions on Spotify and INaudio. The OceanMatch browser game extending the universe interactively. A YouTube channel with read-aloud videos. 1,300+ copies sold across formats.",
       },
       {
         label: "Content Systems",
-        body: "This is not a side hobby — it is a content system. Each format serves a different acquisition channel: books for direct sales and gift-giving, audiobooks for passive consumption, games for interactive engagement, YouTube for discoverability. The Pitter Patter Diving brand (10K TikTok, blog, tourism) acts as the top-of-funnel for the whole ecosystem.",
+        body: "Each format serves a different acquisition channel: books for direct sales and gift-giving, audiobooks for passive consumption, games for interactive engagement, YouTube for discoverability. The Pitter Patter Diving brand acts as the top-of-funnel for the whole ecosystem.",
       },
       {
         label: "Why It Matters",
-        body: "Content systems, brand building, and creative execution at scale. Building an audience from zero and converting that audience across formats is the same skill set as building a developer community — just applied to a different domain.",
+        body: "Content systems, brand building, and creative execution at scale. Building an audience from zero and converting across formats is the same skill set as building a developer community — just applied to a different domain.",
       },
     ],
     stack: ["4 published books", "Audiobooks (Spotify, INaudio)", "Browser game", "YouTube", "Self-publishing", "Retail distribution"],
@@ -165,7 +166,7 @@ const CASE_STUDIES = [
     outcome: "1,300+ copies sold. Audiobooks on major streaming platforms. Active audience across formats.",
   },
   {
-    id: 6,
+    id: 5,
     slug: "pitter-patter-diving",
     tag: "Media Platform",
     tagColor: "green",
@@ -175,60 +176,30 @@ const CASE_STUDIES = [
     status: "Active",
     year: "2022–present",
     role: "Founder, Builder",
+    screenshot: "/screenshots/builder-pitterpatter-blog.jpg",
+    screenshotAlt: "Pitter Patter Diving blog and media platform",
+    statHighlights: null,
     sections: [
       {
         label: "The Problem",
-        body: "The Monterey Peninsula is one of the most biologically rich diving destinations on Earth but has almost no modern content covering it for recreational divers. Most of the online dive content for the area is outdated, SEO-stuffed, and uninspiring. There was a clear gap for authentic, high-quality content about diving, ocean conditions, and marine life.",
+        body: "The Monterey Peninsula is one of the most biologically rich diving destinations on Earth but has almost no modern content covering it. Most online dive content for the area is outdated and uninspiring. A clear gap existed for authentic, high-quality content about diving, ocean conditions, and marine life.",
       },
       {
         label: "What I Built",
-        body: "A full media and commerce platform: a dive blog covering conditions, marine life, and trip reports; a YouTube channel; a TikTok channel grown to 10,000 followers in a single summer through consistent short-form content; a dive tourism booking business; and an AI monitoring agent for the boats (see Boat Daily Check). All built from zero audience.",
+        body: "A full media and commerce platform: a dive blog covering conditions, marine life, and trip reports; a YouTube channel; a TikTok channel grown to 10,000 followers in a single summer; a dive tourism booking business; and an AI monitoring agent for the boats. All built from zero audience.",
       },
       {
         label: "The Growth Story",
-        body: "10K TikTok followers in one summer is not luck — it is a content strategy executed consistently. Short-form video, marine life identification, underwater footage, and local conditions created a niche audience with genuine interest. That audience then converts across the ecosystem: blog readers, book buyers, tour customers.",
+        body: "10K TikTok followers in one summer is a content strategy executed consistently. Short-form video, marine life identification, underwater footage, and local conditions created a niche audience with genuine interest. That audience converts across the ecosystem: blog readers, book buyers, tour customers.",
       },
       {
         label: "Why It Matters",
-        body: "Audience building from scratch, content-market fit found and validated in the wild. The skills that grow a niche content brand are the same skills that grow a developer ecosystem — understand your audience, produce content they actually want, show up consistently, measure what works.",
+        body: "Audience building from scratch, content-market fit found and validated in the wild. The skills that grow a niche content brand are identical to those that grow a developer ecosystem: understand your audience, produce content they want, show up consistently, measure what works.",
       },
     ],
     stack: ["TikTok (10K)", "YouTube", "Blog (SEO)", "Tourism booking", "AI boat monitoring", "Audience funnel"],
     link: "https://pitterpatterdiving.com/",
     outcome: "10K TikTok followers built in one summer. Active tourism business. Cross-platform content ecosystem.",
-  },
-  {
-    id: 7,
-    slug: "nutanix-developer-portal",
-    tag: "Developer Experience",
-    tagColor: "blue",
-    company: "Nutanix",
-    title: "Nutanix Developer Portal",
-    subtitle: "Building the developer experience program and portal from zero.",
-    status: "Shipped",
-    year: "2019–2021",
-    role: "Head of Developer Experience",
-    sections: [
-      {
-        label: "The Problem",
-        body: "Nutanix had a powerful API-first platform but no structured developer experience. Developers were finding undocumented endpoints, navigating inconsistent SDKs, and reaching out to support for things that should be self-serve. There was no portal, no onboarding, no developer community, and no strategy.",
-      },
-      {
-        label: "What I Built",
-        body: "The Nutanix developer portal from zero: API reference documentation across all product APIs, SDK documentation and samples in multiple languages, a developer community program, 49+ open source repositories in the Nutanix GitHub org, the Nutanix Dev Live virtual event series, and the internal developer advocacy function. Also drove developer program strategy for the Nutanix .NEXT conference.",
-      },
-      {
-        label: "The Scale",
-        body: "The GitHub org went from near-zero to 49+ repositories with working code samples, integrations, and tools. The Dev Live virtual event series launched during COVID and reached developers globally when in-person events disappeared. The developer portal moved from 'call sales' to self-serve for the majority of developer use cases.",
-      },
-      {
-        label: "Why It Matters",
-        body: "This is the flagship professional work example. Taking a complex enterprise infrastructure platform and making it accessible to developers — that is the entire job. Portal, docs, community, events, open source, content, and strategy all owned and shipped by one function.",
-      },
-    ],
-    stack: ["Developer portal", "API reference", "49+ GitHub repos", "SDKs", "Dev Live virtual events", "Community program", "Developer advocacy"],
-    link: null,
-    outcome: "Developer portal launched. 49+ open source repos. Dev Live event series. Self-serve activation at scale.",
   },
 ];
 
@@ -250,12 +221,13 @@ export default function ProjectsCaseStudies() {
           <h1 className="cs-hero-title">Systems I have built.</h1>
           <p className="cs-hero-sub">
             Each entry covers the problem, what was built, the decisions behind it, and why it matters.
-            Not a portfolio grid. A record of real work.
+            Developer platform and documentation work lives on the{" "}
+            <a href="/docs" className="cs-hero-link">Docs &amp; Portals</a> page.
           </p>
           <div className="cs-hero-meta">
             <span className="cs-hero-meta-item">{CASE_STUDIES.length} systems documented</span>
             <span className="cs-hero-meta-sep">·</span>
-            <span className="cs-hero-meta-item">Spanning 2019 to present</span>
+            <span className="cs-hero-meta-item">2021 to present</span>
           </div>
         </div>
       </section>
@@ -271,10 +243,7 @@ export default function ProjectsCaseStudies() {
                   {/* Card header */}
                   <div className="cs-card-header">
                     <div className="cs-card-header-left">
-                      <span
-                        className="cs-tag"
-                        style={{ color: tag.color, background: tag.bg, border: `1px solid ${tag.border}` }}
-                      >
+                      <span className="cs-tag" style={{ color: tag.color, background: tag.bg, border: `1px solid ${tag.border}` }}>
                         {cs.tag}
                       </span>
                       <div className="cs-card-meta">
@@ -306,6 +275,39 @@ export default function ProjectsCaseStudies() {
                   </h2>
                   <p className="cs-card-subtitle">{cs.subtitle}</p>
 
+                  {/* Screenshot or stat highlights */}
+                  {cs.screenshot ? (
+                    <div className="cs-screenshot-wrap">
+                      {cs.link ? (
+                        <a href={cs.link} target="_blank" rel="noopener noreferrer">
+                          <Image
+                            src={cs.screenshot}
+                            alt={cs.screenshotAlt ?? cs.title}
+                            width={1200}
+                            height={630}
+                            className="cs-screenshot"
+                            style={{ width: "100%", height: "auto", display: "block" }}
+                          />
+                        </a>
+                      ) : (
+                        <Image
+                          src={cs.screenshot}
+                          alt={cs.screenshotAlt ?? cs.title}
+                          width={1200}
+                          height={630}
+                          className="cs-screenshot"
+                          style={{ width: "100%", height: "auto", display: "block" }}
+                        />
+                      )}
+                    </div>
+                  ) : cs.statHighlights ? (
+                    <div className="cs-stat-strip">
+                      {cs.statHighlights.map(s => (
+                        <div key={s} className="cs-stat-item">{s}</div>
+                      ))}
+                    </div>
+                  ) : null}
+
                   {/* Sections */}
                   <div className="cs-sections">
                     {cs.sections.map(section => (
@@ -319,7 +321,7 @@ export default function ProjectsCaseStudies() {
                   {/* Footer: stack + outcome */}
                   <div className="cs-card-footer">
                     <div className="cs-stack-wrap">
-                      <div className="cs-stack-label">Stack &amp; Scope</div>
+                      <div className="cs-footer-label">Stack &amp; Scope</div>
                       <div className="cs-stack">
                         {cs.stack.map(s => (
                           <span key={s} className="cs-stack-item">{s}</span>
@@ -327,7 +329,7 @@ export default function ProjectsCaseStudies() {
                       </div>
                     </div>
                     <div className="cs-outcome">
-                      <div className="cs-outcome-label">Outcome</div>
+                      <div className="cs-footer-label">Outcome</div>
                       <div className="cs-outcome-text">{cs.outcome}</div>
                     </div>
                   </div>
@@ -335,11 +337,15 @@ export default function ProjectsCaseStudies() {
               );
             })}
           </div>
+
+          <div className="cs-see-also">
+            <p>Developer platform and documentation work at Nutanix, LinearB, and Harness lives on the</p>
+            <a href="/docs" className="cs-see-also-link">Docs &amp; Portals page &rarr;</a>
+          </div>
         </div>
       </section>
 
       <style>{`
-        /* Hero */
         .cs-hero {
           background: var(--bg);
           border-bottom: 1px solid var(--border);
@@ -365,9 +371,16 @@ export default function ProjectsCaseStudies() {
           font-size: 18px;
           color: var(--text-muted);
           line-height: 1.75;
-          max-width: 600px;
+          max-width: 620px;
           margin-bottom: 28px;
         }
+        .cs-hero-link {
+          color: var(--accent);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(14,127,192,0.3);
+          transition: border-color 0.2s;
+        }
+        .cs-hero-link:hover { border-bottom-color: var(--accent); }
         .cs-hero-meta {
           display: flex;
           align-items: center;
@@ -375,19 +388,12 @@ export default function ProjectsCaseStudies() {
           font-family: var(--font-mono), monospace;
           font-size: 11px;
           color: var(--text-dim);
-          letter-spacing: 0.5px;
         }
         .cs-hero-meta-sep { opacity: 0.4; }
 
-        /* Body */
         .cs-body { background: var(--bg-subtle); }
-        .cs-list {
-          display: flex;
-          flex-direction: column;
-          gap: 32px;
-        }
+        .cs-list { display: flex; flex-direction: column; gap: 28px; }
 
-        /* Card */
         .cs-card {
           background: var(--bg-card);
           border: 1px solid var(--border);
@@ -396,9 +402,7 @@ export default function ProjectsCaseStudies() {
           box-shadow: var(--shadow-card);
           transition: box-shadow 0.25s ease;
         }
-        .cs-card:hover {
-          box-shadow: var(--shadow-card-hover);
-        }
+        .cs-card:hover { box-shadow: var(--shadow-card-hover); }
 
         .cs-card-header {
           display: flex;
@@ -408,17 +412,9 @@ export default function ProjectsCaseStudies() {
           gap: 16px;
           flex-wrap: wrap;
         }
-        .cs-card-header-left {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-        .cs-card-header-right {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          flex-shrink: 0;
-        }
+        .cs-card-header-left { display: flex; flex-direction: column; gap: 8px; }
+        .cs-card-header-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
         .cs-tag {
           font-family: var(--font-mono), monospace;
           font-size: 10px;
@@ -460,12 +456,12 @@ export default function ProjectsCaseStudies() {
 
         .cs-card-title {
           font-family: var(--font-serif), Georgia, serif;
-          font-size: clamp(24px, 2.8vw, 36px);
+          font-size: clamp(22px, 2.5vw, 34px);
           font-weight: 400;
           color: var(--heading);
           line-height: 1.15;
           letter-spacing: -0.5px;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
         }
         .cs-card-title-link {
           color: var(--heading);
@@ -476,26 +472,59 @@ export default function ProjectsCaseStudies() {
           transition: color 0.2s;
         }
         .cs-card-title-link:hover { color: var(--accent); }
-        .cs-ext-icon {
-          flex-shrink: 0;
-          opacity: 0.5;
-          margin-top: 2px;
-        }
+        .cs-ext-icon { flex-shrink: 0; opacity: 0.5; margin-top: 2px; }
         .cs-card-subtitle {
           font-family: var(--font-mono), monospace;
           font-size: 12px;
           color: var(--text-dim);
+          margin-bottom: 28px;
+        }
+
+        /* Screenshot */
+        .cs-screenshot-wrap {
+          border-radius: 10px;
+          overflow: hidden;
+          border: 1px solid var(--border);
+          box-shadow: 0 4px 24px rgba(0,0,0,0.07);
           margin-bottom: 32px;
-          letter-spacing: 0.2px;
+          background: var(--bg-card);
+          transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .cs-screenshot-wrap:has(a):hover {
+          box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+          transform: translateY(-2px);
+        }
+        .cs-screenshot { display: block; width: 100%; height: auto; }
+
+        /* Stat strip (no screenshot) */
+        .cs-stat-strip {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-bottom: 32px;
+          padding: 20px 24px;
+          background: var(--bg-subtle);
+          border: 1px solid var(--border);
+          border-radius: 10px;
+        }
+        .cs-stat-item {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--accent);
+          background: var(--accent-glow);
+          border: 1px solid rgba(14,127,192,0.2);
+          padding: 5px 14px;
+          border-radius: 20px;
+          letter-spacing: 0.3px;
         }
 
         /* Sections */
         .cs-sections {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 28px 40px;
-          margin-bottom: 36px;
-          padding-bottom: 36px;
+          gap: 24px 40px;
+          margin-bottom: 32px;
+          padding-bottom: 32px;
           border-bottom: 1px solid var(--border);
         }
         .cs-section-label {
@@ -519,8 +548,7 @@ export default function ProjectsCaseStudies() {
           gap: 32px;
           align-items: start;
         }
-        .cs-stack-label,
-        .cs-outcome-label {
+        .cs-footer-label {
           font-family: var(--font-mono), monospace;
           font-size: 10px;
           letter-spacing: 2px;
@@ -528,11 +556,7 @@ export default function ProjectsCaseStudies() {
           color: var(--text-dim);
           margin-bottom: 12px;
         }
-        .cs-stack {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-        }
+        .cs-stack { display: flex; flex-wrap: wrap; gap: 6px; }
         .cs-stack-item {
           font-family: var(--font-mono), monospace;
           font-size: 10px;
@@ -541,7 +565,6 @@ export default function ProjectsCaseStudies() {
           border: 1px solid var(--border);
           padding: 4px 10px;
           border-radius: 5px;
-          letter-spacing: 0.3px;
         }
         .cs-outcome-text {
           font-size: 14px;
@@ -550,13 +573,43 @@ export default function ProjectsCaseStudies() {
           line-height: 1.6;
         }
 
+        /* See also */
+        .cs-see-also {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-top: 48px;
+          padding: 24px 28px;
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          flex-wrap: wrap;
+        }
+        .cs-see-also p {
+          font-size: 14px;
+          color: var(--text-muted);
+        }
+        .cs-see-also-link {
+          font-family: var(--font-mono), monospace;
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--accent);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(14,127,192,0.3);
+          padding-bottom: 1px;
+          white-space: nowrap;
+          transition: border-color 0.2s;
+        }
+        .cs-see-also-link:hover { border-bottom-color: var(--accent); }
+
         @media (max-width: 860px) {
-          .cs-card { padding: 28px 24px; }
-          .cs-sections { grid-template-columns: 1fr; gap: 24px; }
+          .cs-card { padding: 28px 20px; }
+          .cs-sections { grid-template-columns: 1fr; gap: 20px; }
           .cs-card-footer { grid-template-columns: 1fr; gap: 24px; }
         }
         @media (max-width: 540px) {
           .cs-card { padding: 20px 16px; }
+          .cs-stat-strip { padding: 16px; }
         }
       `}</style>
     </>
