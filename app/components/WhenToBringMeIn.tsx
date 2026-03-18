@@ -1,3 +1,8 @@
+"use client";
+
+import { useState } from "react";
+import ContactModal from "./ContactModal";
+
 const SCENARIOS = [
   {
     id: 1,
@@ -80,7 +85,11 @@ const COLOR_MAP: Record<string, { icon: string; border: string; bg: string }> = 
 import React from "react";
 
 export default function WhenToBringMeIn() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
+    <>
+    <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     <section id="when" className="when-section section-body">
       <div className="content-wrap--wide">
         <div className="when-header">
@@ -106,7 +115,7 @@ export default function WhenToBringMeIn() {
 
         <div className="when-footer">
           <p className="when-footer-text">Sound familiar?</p>
-          <a href="mailto:luke@lukek.ca" className="when-cta">Let&apos;s talk &rarr;</a>
+          <button onClick={() => setContactOpen(true)} className="when-cta" style={{ background: "none", border: "none", cursor: "pointer", padding: 0, font: "inherit" }}>Let&apos;s talk &rarr;</button>
         </div>
       </div>
 
@@ -216,5 +225,6 @@ export default function WhenToBringMeIn() {
         }
       `}</style>
     </section>
+    </>
   );
 }

@@ -1,41 +1,56 @@
-import { personalInfo } from "../data/portfolio";
+"use client";
 
-const links = [
+import { useState } from "react";
+import { personalInfo } from "../data/portfolio";
+import ContactModal from "./ContactModal";
+
+const EXT_LINKS = [
   { href: personalInfo.linkedin, label: "LinkedIn" },
   { href: personalInfo.github, label: "GitHub" },
   { href: personalInfo.youtube, label: "YouTube" },
-  { href: `mailto:${personalInfo.email}`, label: "Email" },
 ];
 
 export default function Footer() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
-    <footer style={{ padding: "48px 0", textAlign: "center" }}>
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 20,
-            marginBottom: 20,
-          }}
-        >
-          {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("mailto") ? undefined : "_blank"}
-              rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+    <>
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+      <footer style={{ padding: "48px 0", textAlign: "center" }}>
+        <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              gap: 20,
+              marginBottom: 20,
+            }}
+          >
+            {EXT_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                {link.label}
+              </a>
+            ))}
+            <button
+              onClick={() => setContactOpen(true)}
               className="footer-link"
+              style={{ background: "none", border: "none", cursor: "pointer", padding: 0, font: "inherit" }}
             >
-              {link.label}
-            </a>
-          ))}
+              Email
+            </button>
+          </div>
+          <p style={{ fontSize: 12, color: "var(--text-dim)" }}>
+            &copy; 2026 Luke Kilpatrick. Built with code, sugar free red bull, and salt water.
+          </p>
         </div>
-        <p style={{ fontSize: 12, color: "var(--text-dim)" }}>
-          &copy; 2026 Luke Kilpatrick. Built with code, sugar free red bull, and salt water.
-        </p>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
