@@ -1,5 +1,62 @@
-import { videos, personalVideos, localVideos } from "../data/portfolio";
+import Image from "next/image";
+import { technicalContent, videos, personalVideos, localVideos } from "../data/portfolio";
 import { SectionHeader } from "./shared";
+
+const CONTENT_SCREENSHOTS: Record<number, string> = {
+  1: "/screenshots/content-ai-agent-boats.jpg",
+  2: "/screenshots/content-duplocloud-prompts.jpg",
+  3: "/screenshots/content-duplocloud-paas.jpg",
+  4: "/screenshots/content-linearb-hacktoberfest.jpg",
+  5: "/screenshots/content-linearb-continuous-merge.jpg",
+};
+
+function ContentRow({ item, index }: { item: typeof technicalContent[0]; index: number }) {
+  const screenshot = CONTENT_SCREENSHOTS[item.id];
+  const isEven = index % 2 === 0;
+  return (
+    <div className={`portal-row ${isEven ? "" : "portal-row--reverse"}`}>
+      <a href={item.link} target="_blank" rel="noopener noreferrer" className="portal-screenshot-wrap">
+        {screenshot ? (
+          <Image
+            src={screenshot}
+            alt={`Screenshot of ${item.title}`}
+            width={600}
+            height={380}
+            className="portal-screenshot"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        ) : (
+          <div className="portal-screenshot-placeholder">
+            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--text-dim)" }}>
+              {item.link.replace("https://", "")}
+            </span>
+          </div>
+        )}
+      </a>
+      <div className="portal-text">
+        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 6 }}>
+          {item.org}
+        </div>
+        <h3 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 22, fontWeight: 400, color: "var(--heading)", marginBottom: 14, lineHeight: 1.3 }}>
+          <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: "var(--heading)" }}>
+            {item.title} ↗
+          </a>
+        </h3>
+        <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.7, marginBottom: 20 }}>
+          {item.description}
+        </p>
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--accent)", padding: "8px 16px", border: "1px solid var(--border-accent)", borderRadius: 6, display: "inline-block" }}
+        >
+          Read Article →
+        </a>
+      </div>
+    </div>
+  );
+}
 
 function getEmbedSrc(type: string, id: string) {
   if (type === "youtube") return `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
@@ -23,22 +80,8 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
           />
         </div>
       ) : (
-        <div style={{
-          height: 100,
-          background: "var(--bg-card-hover)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderBottom: "1px solid var(--border)",
-        }}>
-          <a href={video.link} target="_blank" rel="noopener noreferrer" style={{
-            fontFamily: "var(--font-mono), monospace",
-            fontSize: 13,
-            color: "var(--accent)",
-            padding: "10px 20px",
-            border: "1px solid var(--border-accent)",
-            borderRadius: 6,
-          }}>
+        <div style={{ height: 100, background: "var(--bg-card-hover)", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--border)" }}>
+          <a href={video.link} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-mono), monospace", fontSize: 13, color: "var(--accent)", padding: "10px 20px", border: "1px solid var(--border-accent)", borderRadius: 6 }}>
             ▶ Listen / Watch →
           </a>
         </div>
@@ -48,13 +91,9 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
           {video.org}
         </div>
         <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>
-          <a href={video.link} target="_blank" rel="noopener noreferrer" style={{ color: "var(--heading)" }}>
-            {video.title}
-          </a>
+          <a href={video.link} target="_blank" rel="noopener noreferrer" style={{ color: "var(--heading)" }}>{video.title}</a>
         </div>
-        <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.5 }}>
-          {video.description}
-        </div>
+        <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.5 }}>{video.description}</div>
       </div>
     </div>
   );
@@ -63,13 +102,28 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
 export default function Presentations() {
   return (
     <>
+      {/* Written content — portal-row layout */}
+      <section className="section-body" id="content">
+        <div className="content-wrap">
+          <SectionHeader number="02" title="Technical Content & Writing" />
+          <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 56, maxWidth: 600 }}>
+            Blog posts, tutorials, and technical articles — developer-first content that drives product adoption and community growth.
+          </p>
+          <div style={{ display: "grid", gap: 72 }}>
+            {technicalContent.map((item, i) => (
+              <ContentRow key={item.id} item={item} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Presentations / video */}
       <section className="section-body" id="presentations">
         <div className="content-wrap">
           <SectionHeader number="03" title="Presentations & Video" />
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 36, maxWidth: 600 }}>
             Conference talks, product launches, and developer program presentations — delivered on stages across four continents.
           </p>
-
           <div className="video-grid-2col">
             {videos.map((video) => (
               <VideoCard key={video.id} video={video} />
@@ -83,9 +137,7 @@ export default function Presentations() {
         <div className="content-wrap">
           <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 12 }}>
             <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--accent)", letterSpacing: 1 }}>CH</span>
-            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>
-              Personal & Channel Videos
-            </h2>
+            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>Personal & Channel Videos</h2>
           </div>
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 36, maxWidth: 600 }}>
             Event production, ocean adventures, and early creative work — demonstrating a video production practice that predates the DevRel career.
@@ -103,9 +155,7 @@ export default function Presentations() {
         <div className="content-wrap">
           <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 12 }}>
             <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--accent)", letterSpacing: 1 }}>AT</span>
-            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>
-              Atlassian — Event & Program Videos
-            </h2>
+            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>Atlassian — Event & Program Videos</h2>
           </div>
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 36, maxWidth: 600 }}>
             Developer community activations, hackathons, and program events — produced and shot during my time at Atlassian.
@@ -113,23 +163,13 @@ export default function Presentations() {
           <div className="video-grid-2col">
             {localVideos.map((video) => (
               <div key={video.id} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
-                <video
-                  controls
-                  preload="metadata"
-                  style={{ width: "100%", display: "block", background: "#000" }}
-                >
+                <video controls preload="metadata" style={{ width: "100%", display: "block", background: "#000" }}>
                   <source src={video.file} type="video/mp4" />
                 </video>
                 <div style={{ padding: "14px 18px" }}>
-                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>
-                    {video.org}
-                  </div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>
-                    {video.title}
-                  </div>
-                  <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.5 }}>
-                    {video.description}
-                  </div>
+                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>{video.org}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>{video.title}</div>
+                  <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.5 }}>{video.description}</div>
                 </div>
               </div>
             ))}
@@ -137,14 +177,12 @@ export default function Presentations() {
         </div>
       </section>
 
-      {/* @LukeKilpatrick YouTube channel — embed placeholder until video ID provided */}
+      {/* @LukeKilpatrick YouTube channel */}
       <section className="section-body" id="yt-channel">
         <div className="content-wrap">
           <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 12 }}>
             <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--accent)", letterSpacing: 1 }}>CH</span>
-            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>
-              YouTube Channel — @LukeKilpatrick
-            </h2>
+            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>YouTube Channel — @LukeKilpatrick</h2>
           </div>
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 28, maxWidth: 600 }}>
             Mia Kingtide Ocean Adventures — audiobook chapters and read-aloud videos from the middle-grade ocean conservation series. 4 books published, 1,000+ copies sold.
@@ -162,19 +200,10 @@ export default function Presentations() {
             </div>
             <div style={{ padding: "14px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
               <div>
-                <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>
-                  @LukeKilpatrick · Mia Kingtide Ocean Adventures
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)" }}>
-                  The Octopus&apos; Gift — Chapter 1
-                </div>
+                <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>@LukeKilpatrick · Mia Kingtide Ocean Adventures</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)" }}>The Octopus&apos; Gift — Chapter 1</div>
               </div>
-              <a
-                href="https://www.youtube.com/@LukeKilpatrick"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--accent)", padding: "6px 14px", border: "1px solid var(--border-accent)", borderRadius: 6, whiteSpace: "nowrap" }}
-              >
+              <a href="https://www.youtube.com/@LukeKilpatrick" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--accent)", padding: "6px 14px", border: "1px solid var(--border-accent)", borderRadius: 6, whiteSpace: "nowrap" }}>
                 View Full Channel →
               </a>
             </div>
@@ -183,15 +212,54 @@ export default function Presentations() {
       </section>
 
       <style>{`
+        .portal-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+          align-items: center;
+        }
+        .portal-row--reverse {
+          direction: rtl;
+        }
+        .portal-row--reverse > * {
+          direction: ltr;
+        }
+        .portal-screenshot-wrap {
+          display: block;
+          border-radius: 10px;
+          overflow: hidden;
+          border: 1px solid var(--border);
+          box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+          transition: box-shadow 0.2s, transform 0.2s;
+          background: var(--bg-card);
+        }
+        .portal-screenshot-wrap:hover {
+          box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+          transform: translateY(-2px);
+        }
+        .portal-screenshot { display: block; width: 100%; height: auto; }
+        .portal-screenshot-placeholder {
+          width: 100%;
+          aspect-ratio: 16/10;
+          background: var(--bg-card-hover);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+        }
+        .portal-text { direction: ltr; }
         .video-grid-2col {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 24px;
         }
         @media (max-width: 700px) {
-          .video-grid-2col {
+          .portal-row, .portal-row--reverse {
             grid-template-columns: 1fr;
+            direction: ltr;
+            gap: 24px;
           }
+          .video-grid-2col { grid-template-columns: 1fr; }
         }
       `}</style>
     </>

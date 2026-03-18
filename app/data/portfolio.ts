@@ -31,7 +31,7 @@ export const onboardingDocs = {
         "Conceived, launched, and grew the Nutanix developer portal from zero. Built the complete developer onboarding experience for an enterprise infrastructure platform: API reference, hands-on labs, code samples, technical blog, and a live Twitch developer streaming channel for interactive technical content. The portal continues to serve as Nutanix's primary developer resource today, with 49+ open-source repos on GitHub, self-paced labs, and a growing developer community.",
       extraLink: {
         text: "live Twitch developer streaming channel",
-        href: "https://www.nutanix.dev/2020/11/02/nutanix-dev-is-now-live-on-twitch/",
+        href: "https://www.twitch.tv/nutanixdevlive",
       },
     },
     {

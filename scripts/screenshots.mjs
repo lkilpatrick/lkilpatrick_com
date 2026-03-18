@@ -23,6 +23,77 @@ const SCREENSHOTS = [
     url: "https://developer.harness.io/release-notes/continuous-integration/#version-141",
     waitFor: "networkidle",
   },
+
+  // ── Content tab ────────────────────────────────────────────────────────────
+  {
+    name: "content-ai-agent-boats.jpg",
+    url: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "content-duplocloud-prompts.jpg",
+    url: "https://duplocloud.com/blog/10-prompts-every-engineer-doing-devops-should-know/",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "content-duplocloud-paas.jpg",
+    url: "https://duplocloud.com/blog/is-your-paas-passe/",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "content-linearb-hacktoberfest.jpg",
+    url: "https://linearb.io/blog/how-to-survive-the-pr-overload-from-hacktoberfest/",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "content-linearb-continuous-merge.jpg",
+    url: "https://linearb.io/blog/what-is-continuous-merge/",
+    waitFor: "domcontentloaded",
+  },
+
+  // ── Impact tab ─────────────────────────────────────────────────────────────
+  {
+    name: "impact-developer-marketing-guide.jpg",
+    url: "https://www.amazon.com/s?k=developer+marketing+essential+guide+slashdata",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "impact-codegeist.jpg",
+    url: "https://www.atlassian.com/blog/add-ons/announcing-codegeist-2015-winners",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "impact-nutanix-dev-launch.jpg",
+    url: "https://www.nutanix.dev/2018/08/16/welcome-to-developer-nutanix-com/",
+    waitFor: "domcontentloaded",
+  },
+
+  // ── Builder tab ────────────────────────────────────────────────────────────
+  {
+    name: "builder-mia-kingtide.jpg",
+    url: "https://miakingtide.com/",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "builder-amazon-author.jpg",
+    url: "https://www.amazon.com/author/lkilpatrick",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "builder-tiktok.jpg",
+    url: "https://www.tiktok.com/@pitterpatterdiving",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "builder-redbubble.jpg",
+    url: "https://www.redbubble.com/people/lkilpatrick/shop",
+    waitFor: "domcontentloaded",
+  },
+  {
+    name: "builder-pitterpatter-blog.jpg",
+    url: "https://pitterpatterdiving.com/",
+    waitFor: "domcontentloaded",
+  },
 ];
 
 const VIEWPORT = { width: 1280, height: 800 };
@@ -40,7 +111,7 @@ async function takeScreenshots() {
     console.log(`📸 Capturing ${shot.url}`);
     const page = await context.newPage();
     try {
-      await page.goto(shot.url, { waitUntil: shot.waitFor, timeout: 30000 });
+      await page.goto(shot.url, { waitUntil: shot.waitFor, timeout: 45000 });
       // Wait a beat for fonts/images to settle
       await page.waitForTimeout(1500);
       // Hide cookie banners / chat widgets that obscure content
