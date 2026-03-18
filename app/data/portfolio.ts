@@ -47,7 +47,7 @@ export const onboardingDocs = {
     {
       org: "HARNESS",
       title: "Harness CI Release Notes",
-      link: "https://developer.harness.io/release-notes/continuous-integration",
+      link: "https://developer.harness.io/release-notes/continuous-integration/#version-141",
       description:
         "Wrote and maintained release notes for Harness Continuous Integration — precise technical communication for a developer audience tracking breaking changes, new features, and migration guides.",
       tag: "Docs",
