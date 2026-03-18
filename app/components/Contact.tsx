@@ -3,8 +3,8 @@ import { SectionHeader, Card } from "./shared";
 
 export default function Builder() {
   return (
-    <section style={{ padding: "56px 0", borderBottom: "1px solid var(--border)" }} id="builder">
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px" }}>
+    <section className="section-body" id="builder">
+      <div className="content-wrap">
         <SectionHeader number="05" title="Builder & Maker" />
         <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 28, maxWidth: 600 }}>
           I don&apos;t just write about developer tools — I build with them. Current projects spanning data pipelines, AI agents, game development, and open source.

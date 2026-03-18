@@ -71,11 +71,30 @@ a {
 }
 a:hover { color: #6BB5F0; }
 
+/* Scroll offset for fixed nav */
+section, header {
+  scroll-margin-top: 64px;
+}
+
+/* Shared content width */
+.content-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Section layout */
+.section-body {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section-body:last-of-type { border-bottom: none; }
 
 /* Card hover effects */
 .card-hover {

@@ -3,8 +3,8 @@ import { SectionHeader, Stat, Card } from "./shared";
 
 export default function StrategicImpact() {
   return (
-    <section style={{ padding: "56px 0", borderBottom: "1px solid var(--border)" }} id="impact">
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px" }}>
+    <section className="section-body" id="impact">
+      <div className="content-wrap">
         <SectionHeader number="04" title="Strategic Impact" />
 
         <div

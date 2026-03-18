@@ -3,8 +3,8 @@ import { SectionHeader, Card } from "./shared";
 
 export default function TechnicalContent() {
   return (
-    <section style={{ padding: "56px 0", borderBottom: "1px solid var(--border)" }} id="content">
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px" }}>
+    <section className="section-body" id="content">
+      <div className="content-wrap">
         <SectionHeader number="02" title="Technical Content" />
         <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 28, maxWidth: 600 }}>
           Blog posts, tutorials, and technical writing that demonstrate I actually use the products I write about.

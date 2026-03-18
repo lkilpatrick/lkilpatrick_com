@@ -1,4 +1,4 @@
-import ThemeToggle from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import OnboardingDocs from "./components/About";
 import TechnicalContent from "./components/Experience";
@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <ThemeToggle />
+      <Navbar />
       <Hero />
       <main>
         <OnboardingDocs />
