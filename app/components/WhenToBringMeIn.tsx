@@ -106,7 +106,7 @@ export default function WhenToBringMeIn() {
 
         <div className="when-footer">
           <p className="when-footer-text">Sound familiar?</p>
-          <a href="#cta" className="when-cta">Let&apos;s talk &rarr;</a>
+          <a href="mailto:luke@lukek.ca" className="when-cta">Let&apos;s talk &rarr;</a>
         </div>
       </div>
 

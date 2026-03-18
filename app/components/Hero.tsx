@@ -47,7 +47,7 @@ export default function Hero() {
             </p>
 
             <div className="hero-ctas">
-              <a href="#systems" className="btn-primary">
+              <a href="/projects" className="btn-primary">
                 See What I&apos;ve Built
               </a>
               <button className="btn-secondary" onClick={() => setContactOpen(true)}>

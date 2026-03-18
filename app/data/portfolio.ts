@@ -7,7 +7,7 @@ export const personalInfo = {
     "I build the content, docs, and onboarding experiences that turn complex infrastructure products into tools developers actually want to use. I also write code, author books, and ship things.",
   location: "Sand City, CA — Monterey Peninsula",
   availability: "Available Now",
-  email: "luke@pitterpatterdiving.com",
+  email: "luke@lukek.ca",
   linkedin: "https://www.linkedin.com/in/lukekilpatrick/",
   github: "https://github.com/lkilpatrick",
   youtube: "https://www.youtube.com/@LukeKilpatrick",
