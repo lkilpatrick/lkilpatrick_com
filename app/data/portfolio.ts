@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Luke Kilpatrick",
   title: "Developer Relations & Developer Marketing",
   tagline:
-    "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+    "15+ years building developer programs, documentation, and communities at Atlassian, VMware, Sencha, Nutanix, Hazelcast, LinearB, and Harness.",
   intro:
     "I build the content, docs, and onboarding experiences that turn complex infrastructure products into tools developers actually want to use. I also write code, author books, and ship things.",
   location: "Sand City, CA — Monterey Peninsula",
@@ -17,7 +17,7 @@ export const stats = [
   { value: "15+", label: "Years in DevRel" },
   { value: "246K", label: "Video Views (Sencha)" },
   { value: "10K", label: "TikTok in 3 Months" },
-  { value: "1,000+", label: "Books Sold" },
+  { value: "1,300+", label: "Books Sold" },
 ];
 
 export const onboardingDocs = {
