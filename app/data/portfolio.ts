@@ -222,6 +222,63 @@ export const socialAccounts = [
   },
 ];
 
+export const personalVideos = [
+  {
+    id: 1,
+    org: "ATLASSIAN — JSCONF",
+    title: "Node Rockets at JSConf",
+    link: "https://youtu.be/UlA_GWx6by0",
+    description: "Atlassian-sponsored developer activation at JSConf — teams built and launched Arduino/Raspberry Pi rockets. Shot, edited, and produced.",
+    embedType: "youtube" as EmbedType,
+    embedId: "UlA_GWx6by0",
+  },
+  {
+    id: 2,
+    org: "VMWARE — VIDEO PRODUCTION",
+    title: "One Day in Redmond",
+    link: "https://youtu.be/xU8mDqd1yeM",
+    description: "~30 hours of production using Adobe Fireworks, Photoshop, Premiere, and Camtasia. Demonstrates early video production chops.",
+    embedType: "youtube" as EmbedType,
+    embedId: "xU8mDqd1yeM",
+  },
+  {
+    id: 3,
+    org: "VMWARE — VIDEO PRODUCTION",
+    title: "How To Make Money Playing COD",
+    link: "https://youtu.be/V-YKTjgdbYQ",
+    description: "Captured with a Black Magic Intensity HDMI card, edited in Adobe Premiere with custom overlays and audio production.",
+    embedType: "youtube" as EmbedType,
+    embedId: "V-YKTjgdbYQ",
+  },
+  {
+    id: 4,
+    org: "THREE DAY RULE — EVENT VIDEO",
+    title: "Santa Catalina Summer Kick Off",
+    link: "https://youtu.be/skkSP-txJlY",
+    description: "Event recap video for a 23-person group trip to Santa Catalina — diving, zip-lining, and ocean adventures.",
+    embedType: "youtube" as EmbedType,
+    embedId: "skkSP-txJlY",
+  },
+  {
+    id: 5,
+    org: "PERSONAL — OCEAN / DIVING",
+    title: "First Voyage of the Origami",
+    link: "https://youtu.be/IwSkghqdPe8",
+    description: "First dive from Point Lobos using the Porte-Bote folding boat. Whalers Cove, Monterey Peninsula.",
+    embedType: "youtube" as EmbedType,
+    embedId: "IwSkghqdPe8",
+  },
+  {
+    id: 6,
+    org: "PERSONAL — OCEAN / DIVING",
+    title: "Diving the YO-257 and San Pedro off Waikiki",
+    link: "https://youtu.be/ZYmSKGCGwso",
+    description: "First deep dive to two reefs off the coast of Oahu. Shot on GoPro Hero 3+ Black, mask-mounted — first-person perspective.",
+    embedType: "youtube" as EmbedType,
+    embedId: "ZYmSKGCGwso",
+  },
+];
+
 export const strategicWork = [
   {
     id: 1,

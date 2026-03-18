@@ -1,4 +1,4 @@
-import { videos } from "../data/portfolio";
+import { videos, personalVideos } from "../data/portfolio";
 import { SectionHeader } from "./shared";
 
 function getEmbedSrc(type: string, id: string) {
@@ -72,6 +72,26 @@ export default function Presentations() {
 
           <div className="video-grid-2col">
             {videos.map((video) => (
+              <VideoCard key={video.id} video={video} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Personal / channel videos */}
+      <section className="section-body" id="personal-videos">
+        <div className="content-wrap">
+          <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 12 }}>
+            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--accent)", letterSpacing: 1 }}>CH</span>
+            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>
+              Personal & Channel Videos
+            </h2>
+          </div>
+          <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 36, maxWidth: 600 }}>
+            Event production, ocean adventures, and early creative work — demonstrating a video production practice that predates the DevRel career.
+          </p>
+          <div className="video-grid-2col">
+            {personalVideos.map((video) => (
               <VideoCard key={video.id} video={video} />
             ))}
           </div>
