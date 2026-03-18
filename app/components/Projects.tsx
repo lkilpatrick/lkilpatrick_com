@@ -98,7 +98,7 @@ export default function Presentations() {
         </div>
       </section>
 
-      {/* @LukeKilpatrick YouTube channel */}
+      {/* @LukeKilpatrick YouTube channel — embed placeholder until video ID provided */}
       <section className="section-body" id="yt-channel">
         <div className="content-wrap">
           <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 12 }}>
@@ -110,35 +110,55 @@ export default function Presentations() {
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 28, maxWidth: 600 }}>
             Mia Kingtide Ocean Adventures — audiobook chapters and read-aloud videos from the middle-grade ocean conservation series. 4 books published, 1,000+ copies sold.
           </p>
-          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
-            <iframe
-              src="https://www.youtube.com/embed?listType=user_uploads&list=@LukeKilpatrick&rel=0&modestbranding=1"
-              title="Luke Kilpatrick YouTube Channel"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
-            />
-          </div>
-          <div style={{ marginTop: 16, textAlign: "right" }}>
-            <a
-              href="https://www.youtube.com/@LukeKilpatrick"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontFamily: "var(--font-mono), monospace",
-                fontSize: 12,
-                color: "var(--accent)",
-                padding: "8px 16px",
-                border: "1px solid var(--border-accent)",
-                borderRadius: 6,
-                display: "inline-block",
-                transition: "all 0.2s",
-              }}
-            >
-              View Full Channel →
-            </a>
-          </div>
+          <a
+            href="https://www.youtube.com/@LukeKilpatrick"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 24,
+              padding: "28px 32px",
+              background: "var(--bg-card)",
+              border: "1px solid var(--border)",
+              borderRadius: 12,
+              textDecoration: "none",
+              transition: "all 0.2s",
+            }}
+            className="yt-channel-card"
+          >
+            <div style={{
+              width: 56,
+              height: 56,
+              borderRadius: "50%",
+              background: "#FF0000",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+              fontSize: 22,
+              color: "#fff",
+            }}>▶</div>
+            <div>
+              <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 4 }}>
+                YouTube · @LukeKilpatrick
+              </div>
+              <div style={{ fontSize: 16, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>
+                Mia Kingtide Ocean Adventures
+              </div>
+              <div style={{ fontSize: 13, color: "var(--text-muted)" }}>
+                Audiobook chapters, read-aloud videos, and ocean adventures — view the full channel →
+              </div>
+            </div>
+          </a>
+          <style>{`
+            .yt-channel-card:hover {
+              border-color: #FF0000;
+              background: var(--bg-card-hover);
+              transform: translateY(-2px);
+              box-shadow: 0 4px 20px rgba(255,0,0,0.08);
+            }
+          `}</style>
         </div>
       </section>
 
