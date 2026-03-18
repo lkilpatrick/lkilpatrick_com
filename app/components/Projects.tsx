@@ -7,70 +7,133 @@ function getEmbedSrc(type: string, id: string) {
   return null;
 }
 
-export default function Presentations() {
+function VideoCard({ video }: { video: typeof videos[0] }) {
+  const src = getEmbedSrc(video.embedType, video.embedId);
   return (
-    <section className="section-body" id="presentations">
-      <div className="content-wrap">
-        <SectionHeader number="03" title="Presentations & Video" />
-        <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 36, maxWidth: 600 }}>
-          Conference talks, product launches, and developer program presentations — delivered on stages across four continents.
-        </p>
-
-        <div style={{ display: "grid", gap: 32 }}>
-          {videos.map((video) => {
-            const src = getEmbedSrc(video.embedType, video.embedId);
-            return (
-              <div key={video.id} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
-                {src ? (
-                  <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, background: "#000" }}>
-                    <iframe
-                      src={src}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
-                    />
-                  </div>
-                ) : (
-                  <div style={{
-                    height: 120,
-                    background: "var(--bg-card-hover)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderBottom: "1px solid var(--border)",
-                  }}>
-                    <a href={video.link} target="_blank" rel="noopener noreferrer" style={{
-                      fontFamily: "var(--font-mono), monospace",
-                      fontSize: 13,
-                      color: "var(--accent)",
-                      padding: "10px 20px",
-                      border: "1px solid var(--border-accent)",
-                      borderRadius: 6,
-                    }}>
-                      ▶ Listen / Watch →
-                    </a>
-                  </div>
-                )}
-                <div style={{ padding: "16px 20px" }}>
-                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 4 }}>
-                    {video.org}
-                  </div>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>
-                    <a href={video.link} target="_blank" rel="noopener noreferrer" style={{ color: "var(--heading)" }}>
-                      {video.title}
-                    </a>
-                  </div>
-                  <div style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.5 }}>
-                    {video.description}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+    <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden" }}>
+      {src ? (
+        <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, background: "#000" }}>
+          <iframe
+            src={src}
+            title={video.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+          />
+        </div>
+      ) : (
+        <div style={{
+          height: 100,
+          background: "var(--bg-card-hover)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderBottom: "1px solid var(--border)",
+        }}>
+          <a href={video.link} target="_blank" rel="noopener noreferrer" style={{
+            fontFamily: "var(--font-mono), monospace",
+            fontSize: 13,
+            color: "var(--accent)",
+            padding: "10px 20px",
+            border: "1px solid var(--border-accent)",
+            borderRadius: 6,
+          }}>
+            ▶ Listen / Watch →
+          </a>
+        </div>
+      )}
+      <div style={{ padding: "14px 18px" }}>
+        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>
+          {video.org}
+        </div>
+        <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)", marginBottom: 4 }}>
+          <a href={video.link} target="_blank" rel="noopener noreferrer" style={{ color: "var(--heading)" }}>
+            {video.title}
+          </a>
+        </div>
+        <div style={{ fontSize: 12.5, color: "var(--text-muted)", lineHeight: 1.5 }}>
+          {video.description}
         </div>
       </div>
-    </section>
+    </div>
+  );
+}
+
+export default function Presentations() {
+  return (
+    <>
+      <section className="section-body" id="presentations">
+        <div className="content-wrap">
+          <SectionHeader number="03" title="Presentations & Video" />
+          <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 36, maxWidth: 600 }}>
+            Conference talks, product launches, and developer program presentations — delivered on stages across four continents.
+          </p>
+
+          <div className="video-grid-2col">
+            {videos.map((video) => (
+              <VideoCard key={video.id} video={video} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* @LukeKilpatrick YouTube channel */}
+      <section className="section-body" id="yt-channel">
+        <div className="content-wrap">
+          <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 12 }}>
+            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--accent)", letterSpacing: 1 }}>CH</span>
+            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>
+              YouTube Channel — @LukeKilpatrick
+            </h2>
+          </div>
+          <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 28, maxWidth: 600 }}>
+            Mia Kingtide Ocean Adventures — audiobook chapters and read-aloud videos from the middle-grade ocean conservation series. 4 books published, 1,000+ copies sold.
+          </p>
+          <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: 12, overflow: "hidden", border: "1px solid var(--border)" }}>
+            <iframe
+              src="https://www.youtube.com/embed?listType=user_uploads&list=@LukeKilpatrick&rel=0&modestbranding=1"
+              title="Luke Kilpatrick YouTube Channel"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+            />
+          </div>
+          <div style={{ marginTop: 16, textAlign: "right" }}>
+            <a
+              href="https://www.youtube.com/@LukeKilpatrick"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "var(--font-mono), monospace",
+                fontSize: 12,
+                color: "var(--accent)",
+                padding: "8px 16px",
+                border: "1px solid var(--border-accent)",
+                borderRadius: 6,
+                display: "inline-block",
+                transition: "all 0.2s",
+              }}
+            >
+              View Full Channel →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <style>{`
+        .video-grid-2col {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 700px) {
+          .video-grid-2col {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+    </>
   );
 }
