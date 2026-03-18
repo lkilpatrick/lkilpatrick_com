@@ -1,0 +1,25 @@
+# Dependencies
+vendor/
+node_modules/
+
+# Build artifacts
+*.map
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.suo
+*.user
+
+# Sensitive
+*.env
+.env.local
+
+# Adobe
+*.psd
+
+# Logs
+*.log

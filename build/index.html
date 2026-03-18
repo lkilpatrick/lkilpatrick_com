@@ -1,0 +1,567 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for gitStream"
+        >
+    <title>gitStream Reference Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;yaml&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="yaml">yaml</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#step-0" class="toc-h2 toc-link" data-title="Step 0:">Step 0:</a>
+                  </li>
+                  <li>
+                    <a href="#step-1" class="toc-h2 toc-link" data-title="Step 1:">Step 1:</a>
+                  </li>
+                  <li>
+                    <a href="#step-2" class="toc-h2 toc-link" data-title="Step 2:">Step 2:</a>
+                  </li>
+                  <li>
+                    <a href="#step-3" class="toc-h2 toc-link" data-title="Step 3:">Step 3:</a>
+                  </li>
+                  <li>
+                    <a href="#installation" class="toc-h2 toc-link" data-title="Installation">Installation</a>
+                  </li>
+                  <li>
+                    <a href="#configuration" class="toc-h2 toc-link" data-title="Configuration">Configuration</a>
+                  </li>
+                  <li>
+                    <a href="#understanding-cm" class="toc-h2 toc-link" data-title="Understanding CM">Understanding CM</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#cm-file" class="toc-h1 toc-link" data-title=".CM file">.CM file</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#file-used" class="toc-h2 toc-link" data-title="File Used">File Used</a>
+                  </li>
+                  <li>
+                    <a href="#yaml" class="toc-h2 toc-link" data-title="YAML">YAML</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#conditions" class="toc-h1 toc-link" data-title="Conditions">Conditions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#gates" class="toc-h2 toc-link" data-title="Gates">Gates</a>
+                  </li>
+                  <li>
+                    <a href="#lanes" class="toc-h2 toc-link" data-title="Lanes">Lanes</a>
+                  </li>
+                  <li>
+                    <a href="#grammar" class="toc-h2 toc-link" data-title="Grammar">Grammar</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#actions" class="toc-h1 toc-link" data-title="Actions">Actions</a>
+          </li>
+          <li>
+            <a href="#commands" class="toc-h1 toc-link" data-title="Commands">Commands</a>
+          </li>
+          <li>
+            <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
+          </li>
+          <li>
+            <a href="#file-import-test" class="toc-h1 toc-link" data-title="File Import Test">File Import Test</a>
+          </li>
+          <li>
+            <a href="#dan-lines" class="toc-h1 toc-link" data-title="Dan Lines">Dan Lines</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#gitstream-rocks" class="toc-h2 toc-link" data-title="gitStream Rocks">gitStream Rocks</a>
+                  </li>
+                  <li>
+                    <a href="#cm-forevar" class="toc-h2 toc-link" data-title="CM forevar">CM forevar</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='http://gitStream.cm'>Sign up at gitStream.cm</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to gitStream. </p>
+
+<p>This site will contain all the infomation you need to get started with gitStream and Contniuous Merge!</p>
+<h1 id='getting-started'>Getting Started</h1>
+<p>To get started with gitStream CM automation do the following:</p>
+<h3 id='step-0'>Step 0:</h3>
+<p>choose a repo, or clone our playground repo: </p>
+
+<aside class="warning">TODO: move this repo to public access We should move it to continuous merge</aside>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>  git clone git@github.com:linear-b/gitstream-playground.git
+  <span class="nb">cd </span>gitstream-playground
+</code></pre></div><h3 id='step-1'>Step 1:</h3>
+<p>Create a .cm file in your repo root directory, you can use example below. You should create it at the following path  .cm/.gitstream.cm - I would like a line by line explanation of this file eventually</p>
+<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">manifest</span><span class="pi">:</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="m">1.0</span>
+
+<span class="na">checks</span><span class="pi">:</span>
+  <span class="na">content</span><span class="pi">:</span>
+    <span class="na">is</span><span class="pi">:</span>
+      <span class="na">asset_only</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">files | allExtensions(</span><span class="pi">[</span><span class="s1">'</span><span class="s">png'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">svg'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">jpg'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">gif'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">css'</span><span class="pi">]</span><span class="nv">)</span> <span class="pi">}}</span>
+      <span class="na">docs_only</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">files | allExtensions(</span><span class="pi">[</span><span class="s1">'</span><span class="s">md'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">txt'</span><span class="pi">]</span><span class="nv">)</span> <span class="pi">}}</span>
+      <span class="na">tests_only</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">files | allTests</span> <span class="pi">}}</span>
+  <span class="na">size</span><span class="pi">:</span>
+    <span class="na">is</span><span class="pi">:</span>
+      <span class="na">xsmall</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">branch.diff.size &lt; 20</span> <span class="pi">}}</span>
+      <span class="na">small_or_less</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">branch.diff.size &lt; 50</span> <span class="pi">}}</span>
+      <span class="na">medium_or_less</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">branch.diff.size &lt; 200</span> <span class="pi">}}</span>
+      <span class="na">large</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">branch.diff.size &gt;= 200</span> <span class="pi">}}</span>
+<span class="na">gates</span><span class="pi">:</span>
+  <span class="na">change_tests</span><span class="pi">:</span>
+    <span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">pull_request</span><span class="pi">]</span>
+    <span class="na">rules</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rule</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">checks.content.is.tests_only</span> <span class="pi">}}</span>
+    <span class="na">actions</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="na">exec</span><span class="pi">:</span> <span class="s">hmarr/auto-approve-action@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{'{{'}} secrets.GITHUB_TOKEN {{'}}'}}</span>
+      <span class="pi">-</span> <span class="na">exec</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">tests</span>
+  <span class="na">docs_update</span><span class="pi">:</span>
+    <span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">pull_request</span><span class="pi">]</span>
+    <span class="na">rules</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rule</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">checks.content.is.docs_only</span> <span class="pi">}}</span>
+    <span class="na">actions</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="na">exec</span><span class="pi">:</span> <span class="s">hmarr/auto-approve-action@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{'{{'}} secrets.GITHUB_TOKEN {{'}}'}}</span>
+      <span class="pi">-</span> <span class="na">exec</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">docs</span>
+  <span class="na">xsmall</span><span class="pi">:</span>
+    <span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">pull_request</span><span class="pi">]</span>
+    <span class="na">rules</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rule</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">checks.size.is.xsmall</span> <span class="pi">}}</span>
+    <span class="na">actions</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="na">exec</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">xsmall</span>
+  <span class="na">large_change</span><span class="pi">:</span>
+    <span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">pull_request</span><span class="pi">]</span>
+    <span class="na">rules</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">rule</span><span class="pi">:</span> <span class="pi">{{</span> <span class="nv">checks.size.is.large</span> <span class="pi">}}</span>
+    <span class="na">actions</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="na">exec</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">large</span>
+</code></pre></div><h3 id='step-2'>Step 2:</h3>
+<p>Create GitHub action workflow files by using the on-line generator (link) or download the cli tool (link). Place the action file at .github/workflows/gitstream.yml</p>
+
+<p>As an example for the above rules:</p>
+<div class="highlight"><pre class="highlight yaml tab-yaml"><code><span class="na">name</span><span class="pi">:</span> <span class="s">gitStream</span>
+<span class="s1">'</span><span class="s">on'</span><span class="err">:</span>
+  <span class="pi">-</span> <span class="s">pull_request</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">gitstream</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">outputs</span><span class="pi">:</span>
+      <span class="na">gate_change_tests_passed</span><span class="pi">:</span> <span class="s">${{ steps.checks.outputs.gate_change_tests_passed }}</span>
+      <span class="na">gate_docs_update_passed</span><span class="pi">:</span> <span class="s">${{ steps.checks.outputs.gate_docs_update_passed }}</span>
+      <span class="na">gate_xsmall_passed</span><span class="pi">:</span> <span class="s">${{ steps.checks.outputs.gate_xsmall_passed }}</span>
+      <span class="na">gate_large_change_passed</span><span class="pi">:</span> <span class="s">${{ steps.checks.outputs.gate_large_change_passed }}</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">echo "getting the repo code"</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Check out repository code</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run gitstream checks</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">linear-b/actions/gitstream@v1</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">checks</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">repo</span><span class="pi">:</span> <span class="s">${{ github.repository }}</span>
+          <span class="na">branch</span><span class="pi">:</span> <span class="s">${{ github.head_ref }}</span>
+          <span class="na">use_cache</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">gate_change_tests</span><span class="pi">:</span>
+    <span class="na">needs</span><span class="pi">:</span> <span class="s">gitstream</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">needs.gitstream.outputs.gate_change_tests_passed == 'true'</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+      <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
+      <span class="na">pull-requests</span><span class="pi">:</span> <span class="s">write</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">hmarr/auto-approve-action@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">tests</span>
+  <span class="na">gate_docs_update</span><span class="pi">:</span>
+    <span class="na">needs</span><span class="pi">:</span> <span class="s">gitstream</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">needs.gitstream.outputs.gate_docs_update_passed == 'true'</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+      <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
+      <span class="na">pull-requests</span><span class="pi">:</span> <span class="s">write</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">hmarr/auto-approve-action@v2</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github-token</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">docs</span>
+  <span class="na">gate_xsmall</span><span class="pi">:</span>
+    <span class="na">needs</span><span class="pi">:</span> <span class="s">gitstream</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">needs.gitstream.outputs.gate_xsmall_passed == 'true'</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+      <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
+      <span class="na">pull-requests</span><span class="pi">:</span> <span class="s">write</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">xsmall</span>
+  <span class="na">gate_large_change</span><span class="pi">:</span>
+    <span class="na">needs</span><span class="pi">:</span> <span class="s">gitstream</span>
+    <span class="na">if</span><span class="pi">:</span> <span class="s">needs.gitstream.outputs.gate_large_change_passed == 'true'</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">permissions</span><span class="pi">:</span>
+      <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span>
+      <span class="na">pull-requests</span><span class="pi">:</span> <span class="s">write</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions-ecosystem/action-add-labels@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">labels</span><span class="pi">:</span> <span class="s">large</span>
+</code></pre></div><h3 id='step-3'>Step 3:</h3>
+<p>Commit these 2 files into your default branch, usually main or master branch.</p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>  git add .cm/gitstream.cm
+  git add .github/workflows/gitstream.yml
+  git commit <span class="nt">-m</span> <span class="s2">"hello gitstream, goodbye toil"</span>
+  git push
+</code></pre></div>
+<p>For new branches, once you open a Pull Request the automation rules will be applied based on the checks results.</p>
+<h2 id='installation'>Installation</h2><h2 id='configuration'>Configuration</h2><h2 id='understanding-cm'>Understanding CM</h2><h1 id='cm-file'>.CM file</h1><h2 id='file-used'>File Used</h2><h2 id='yaml'>YAML</h2><h1 id='conditions'>Conditions</h1><h2 id='gates'>Gates</h2><h2 id='lanes'>Lanes</h2><h2 id='grammar'>Grammar</h2><h1 id='actions'>Actions</h1><h1 id='commands'>Commands</h1><h1 id='examples'>Examples</h1><h1 id='file-import-test'>File Import Test</h1>
+<p>This is an extra file to break our docs in to different ones</p>
+<h1 id='dan-lines'>Dan Lines</h1><h2 id='gitstream-rocks'>gitStream Rocks</h2><h2 id='cm-forevar'>CM forevar</h2>
+<p>This is an extra file to break our docs in to different ones</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="yaml">yaml</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
