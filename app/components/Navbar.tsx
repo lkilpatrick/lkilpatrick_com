@@ -1,44 +1,39 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "#home",          label: "Home" },
-  { href: "#onboarding",    label: "Docs & Portals" },
-  { href: "#content",       label: "Content" },
-  { href: "#presentations", label: "Video" },
-  { href: "#impact",        label: "Impact" },
-  { href: "#builder",       label: "Builder" },
+  { href: "/",         label: "Home" },
+  { href: "/docs",     label: "Docs & Portals" },
+  { href: "/content",  label: "Content" },
+  { href: "/video",    label: "Video" },
+  { href: "/impact",   label: "Impact" },
+  { href: "/builder",  label: "Builder" },
 ];
 
 export default function Navbar() {
-  const [theme, setTheme]     = useState<"dark" | "light">("dark");
-  const [active, setActive]   = useState("#home");
+  const pathname = usePathname();
+  const [theme, setTheme]       = useState<"dark" | "light">("light");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("theme") as "dark" | "light" | null;
-    const initial = saved ?? (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    const initial = saved ?? "light";
     setTheme(initial);
     document.documentElement.setAttribute("data-theme", initial);
   }, []);
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-      const sections = NAV_LINKS.map(l => document.querySelector(l.href));
-      let current = "#home";
-      sections.forEach((el) => {
-        if (el && el.getBoundingClientRect().top <= 100) {
-          current = `#${el.id}`;
-        }
-      });
-      setActive(current);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
@@ -47,36 +42,28 @@ export default function Navbar() {
     localStorage.setItem("theme", next);
   };
 
-  const scrollTo = (href: string) => {
-    setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <>
       <nav className={`site-nav${scrolled ? " site-nav--scrolled" : ""}`}>
         <div className="nav-inner">
-          {/* Logo / Name */}
-          <button className="nav-logo" onClick={() => scrollTo("#home")}>
-            LK
-          </button>
+          <Link href="/" className="nav-logo">LK</Link>
 
-          {/* Desktop links */}
           <ul className="nav-links">
             {NAV_LINKS.map(link => (
               <li key={link.href}>
-                <button
-                  className={`nav-link${active === link.href ? " nav-link--active" : ""}`}
-                  onClick={() => scrollTo(link.href)}
+                <Link
+                  href={link.href}
+                  className={`nav-link${isActive(link.href) ? " nav-link--active" : ""}`}
                 >
                   {link.label}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
 
-          {/* Right controls */}
           <div className="nav-controls">
             <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === "dark" ? "☀" : "☽"}
@@ -91,17 +78,16 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {menuOpen && (
           <div className="mobile-menu">
             {NAV_LINKS.map(link => (
-              <button
+              <Link
                 key={link.href}
-                className={`mobile-link${active === link.href ? " mobile-link--active" : ""}`}
-                onClick={() => scrollTo(link.href)}
+                href={link.href}
+                className={`mobile-link${isActive(link.href) ? " mobile-link--active" : ""}`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
         )}

@@ -22,13 +22,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luke Kilpatrick – Senior Engineering Leader",
+  title: "Luke Kilpatrick — Developer Relations & Developer Marketing",
   description:
-    "Portfolio and resume of Luke Kilpatrick, Senior Engineering Leader based in Pacifica, California.",
+    "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
   openGraph: {
-    title: "Luke Kilpatrick – Senior Engineering Leader",
+    title: "Luke Kilpatrick — Developer Relations & Developer Marketing",
     description:
-      "Portfolio and resume of Luke Kilpatrick, Senior Engineering Leader based in Pacifica, California.",
+      "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
     url: "https://lkilpatrick.com",
     siteName: "Luke Kilpatrick",
     locale: "en_US",
@@ -49,6 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
       className={`${dmSans.variable} ${dmSerif.variable} ${jetbrainsMono.variable} scroll-smooth antialiased`}
     >
       <body className="min-h-screen">{children}</body>
