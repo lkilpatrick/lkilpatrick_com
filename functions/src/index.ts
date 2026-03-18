@@ -40,7 +40,7 @@ export const sendContactEmail = onRequest({ secrets: [mailgunApiKey], invoker: "
 
   try {
     const mailgun = new Mailgun(FormData);
-    const mg = mailgun.client({ username: "api", key: mailgunApiKey.value() });
+    const mg = mailgun.client({ username: "api", key: mailgunApiKey.value(), url: "https://api.mailgun.net" });
 
     await mg.messages.create(MAILGUN_DOMAIN, {
       from: `${name} via lkilpatrick.com <${FROM_EMAIL}>`,
