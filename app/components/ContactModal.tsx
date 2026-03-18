@@ -38,7 +38,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://sendcontactemail-jwrarzkhna-uc.a.run.app", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
