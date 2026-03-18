@@ -1,8 +1,6 @@
 import * as admin from "firebase-admin";
 import { onRequest } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
-import FormData from "form-data";
-import Mailgun from "mailgun.js";
 
 admin.initializeApp();
 
@@ -11,6 +9,7 @@ const mailgunApiKey = defineSecret("MAILGUN_API_KEY");
 const MAILGUN_DOMAIN = "pitterpatterdiving.com";
 const TO_EMAIL = "luke@lukek.ca";
 const FROM_EMAIL = `contact@${MAILGUN_DOMAIN}`;
+const MAILGUN_URL = `https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`;
 
 export const sendContactEmail = onRequest({ secrets: [mailgunApiKey], invoker: "public" }, async (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
@@ -39,27 +38,36 @@ export const sendContactEmail = onRequest({ secrets: [mailgunApiKey], invoker: "
   }
 
   try {
-    const mailgun = new Mailgun(FormData);
-    const mg = mailgun.client({ username: "api", key: mailgunApiKey.value(), url: "https://api.mailgun.net" });
+    const auth = Buffer.from(`api:${mailgunApiKey.value()}`).toString("base64");
 
-    await mg.messages.create(MAILGUN_DOMAIN, {
+    const body = new URLSearchParams({
       from: `${name} via lkilpatrick.com <${FROM_EMAIL}>`,
-      to: [TO_EMAIL],
+      to: TO_EMAIL,
       "h:Reply-To": email,
       subject: `New contact from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      html: `
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <br/>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, "<br/>")}</p>
-      `,
+      html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p><br/><p><strong>Message:</strong></p><p>${message.replace(/\n/g, "<br/>")}</p>`,
     });
+
+    const response = await fetch(MAILGUN_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${auth}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: body.toString(),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      console.error("Mailgun error:", response.status, text);
+      res.status(500).json({ error: "Failed to send email" });
+      return;
+    }
 
     res.status(200).json({ success: true });
   } catch (err) {
-    console.error("Mailgun error:", err);
+    console.error("Mailgun fetch error:", err);
     res.status(500).json({ error: "Failed to send email" });
   }
 });
