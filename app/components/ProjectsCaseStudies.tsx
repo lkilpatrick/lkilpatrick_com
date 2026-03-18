@@ -275,48 +275,60 @@ export default function ProjectsCaseStudies() {
                   </h2>
                   <p className="cs-card-subtitle">{cs.subtitle}</p>
 
-                  {/* Screenshot or stat highlights */}
-                  {cs.screenshot ? (
-                    <div className="cs-screenshot-wrap">
-                      {cs.link ? (
-                        <a href={cs.link} target="_blank" rel="noopener noreferrer">
-                          <Image
-                            src={cs.screenshot}
-                            alt={cs.screenshotAlt ?? cs.title}
-                            width={1200}
-                            height={630}
-                            className="cs-screenshot"
-                            style={{ width: "100%", height: "auto", display: "block" }}
-                          />
-                        </a>
-                      ) : (
-                        <Image
-                          src={cs.screenshot}
-                          alt={cs.screenshotAlt ?? cs.title}
-                          width={1200}
-                          height={630}
-                          className="cs-screenshot"
-                          style={{ width: "100%", height: "auto", display: "block" }}
-                        />
-                      )}
-                    </div>
-                  ) : cs.statHighlights ? (
+                  {/* Stat strip (no screenshot) */}
+                  {!cs.screenshot && cs.statHighlights && (
                     <div className="cs-stat-strip">
                       {cs.statHighlights.map(s => (
                         <div key={s} className="cs-stat-item">{s}</div>
                       ))}
                     </div>
-                  ) : null}
+                  )}
 
-                  {/* Sections */}
-                  <div className="cs-sections">
-                    {cs.sections.map(section => (
-                      <div key={section.label} className="cs-section">
-                        <div className="cs-section-label">{section.label}</div>
-                        <p className="cs-section-body">{section.body}</p>
+                  {/* Body: screenshot + sections side-by-side when screenshot exists */}
+                  {cs.screenshot ? (
+                    <div className="cs-body-row">
+                      <div className="cs-screenshot-wrap">
+                        {cs.link ? (
+                          <a href={cs.link} target="_blank" rel="noopener noreferrer" className="cs-screenshot-link">
+                            <Image
+                              src={cs.screenshot}
+                              alt={cs.screenshotAlt ?? cs.title}
+                              width={600}
+                              height={380}
+                              className="cs-screenshot"
+                              style={{ width: "100%", height: "auto", display: "block" }}
+                            />
+                          </a>
+                        ) : (
+                          <Image
+                            src={cs.screenshot}
+                            alt={cs.screenshotAlt ?? cs.title}
+                            width={600}
+                            height={380}
+                            className="cs-screenshot"
+                            style={{ width: "100%", height: "auto", display: "block" }}
+                          />
+                        )}
                       </div>
-                    ))}
-                  </div>
+                      <div className="cs-sections cs-sections--sidebar">
+                        {cs.sections.map(section => (
+                          <div key={section.label} className="cs-section">
+                            <div className="cs-section-label">{section.label}</div>
+                            <p className="cs-section-body">{section.body}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="cs-sections">
+                      {cs.sections.map(section => (
+                        <div key={section.label} className="cs-section">
+                          <div className="cs-section-label">{section.label}</div>
+                          <p className="cs-section-body">{section.body}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Footer: stack + outcome */}
                   <div className="cs-card-footer">
@@ -480,21 +492,39 @@ export default function ProjectsCaseStudies() {
           margin-bottom: 28px;
         }
 
+        /* Two-column body row (screenshot + sections) */
+        .cs-body-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+          align-items: start;
+          margin-bottom: 32px;
+        }
+        .cs-sections--sidebar {
+          margin-bottom: 0;
+        }
+
         /* Screenshot */
         .cs-screenshot-wrap {
-          border-radius: 10px;
+          border-radius: 8px;
           overflow: hidden;
           border: 1px solid var(--border);
-          box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-          margin-bottom: 32px;
-          background: var(--bg-card);
+          box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+          background: var(--bg-subtle);
           transition: box-shadow 0.2s, transform 0.2s;
         }
-        .cs-screenshot-wrap:has(a):hover {
-          box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+        .cs-screenshot-link { display: block; }
+        .cs-screenshot-wrap:hover {
+          box-shadow: 0 6px 32px rgba(0,0,0,0.13);
           transform: translateY(-2px);
         }
         .cs-screenshot { display: block; width: 100%; height: auto; }
+
+        @media (max-width: 860px) {
+          .cs-body-row {
+            grid-template-columns: 1fr;
+          }
+        }
 
         /* Stat strip (no screenshot) */
         .cs-stat-strip {
