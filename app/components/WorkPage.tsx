@@ -5,57 +5,67 @@ import { onboardingDocs } from "../data/portfolio";
 
 // ─── Projects Section ────────────────────────────────────────────────────────
 
+type StatusType = "production" | "development";
+
 type Project = {
   id: number;
   tag: string;
   tagColor: string;
   title: string;
   subtitle: string;
+  context: string;
   what: string;
   built: string;
   matters: string;
   stack: string[];
   link: string | null;
   featured?: boolean;
+  status: StatusType;
 };
 
 const PROJECTS: Project[] = [
   {
     id: 1,
+    tag: "AI + Data Engineering",
+    tagColor: "green",
+    title: "Monterey Bay Morning Report",
+    subtitle: "Daily Ocean Intelligence System",
+    context: "Personal · 2024–present · Solo Builder",
+    what: "A daily intelligence email aggregating live data from 8+ sources across Monterey Bay — tides, surf conditions, NOAA buoys, weather forecasts, fishing regulations, marine species, and boat telemetry — delivered every morning before sunrise.",
+    built: "Modular Python system on the OpenClaw agent framework, orchestrated by cron. Each data source is its own standalone skill — independently testable and deployable. Sources include: NOAA Tides & Currents, NDBC Buoys (wave height, water temp, wind), NWS Weather, Surfline (5 spots), Victron VRM (two boats, reverse-engineered API), Marine Species Database (89 species with iNaturalist), CDFW Fishing Regulations, and an AI-generated fishing brief with 250+ GPS waypoints from my Simrad chartplotter. The Victron VRM skill is published to ClawHub as an open-source reference.",
+    matters: "This is not a demo or a wrapper. It is a real data engineering system in production every single day, solving a real problem for a real user. It integrates 8+ live data sources — several with undocumented or non-standard APIs — into a coherent daily product. This is what applied AI actually looks like: not a chatbot, but a system that quietly does useful work while you sleep.",
+    stack: ["Python", "OpenClaw", "Cron", "NOAA APIs", "Surfline", "NDBC Buoys", "Victron VRM", "CDFW Regulations", "iNaturalist", "GPX Parsing", "Email Delivery", "ClawHub"],
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    featured: true,
+    status: "production",
+  },
+  {
+    id: 2,
     tag: "Flutter App",
     tagColor: "purple",
     title: "Tech Challenge Kenya",
     subtitle: "National STEM Competition Platform",
-    what: "Production platform running Kenya's national STEM competition — students, schools, teams, and judges operating simultaneously across the entire country.",
-    built: "15 modules in Flutter Web + Supabase: multi-role auth with RBAC, row-level security, audit logs, survey engine, team management, live scoring, bulk communications, and national reporting. Zero to production, single developer.",
-    matters: "Complex domain. National scale. Real stakes. This is what engineering leadership looks like when there is no team to delegate to.",
+    context: "The Tech Interactive · 2023–present · Lead Developer",
+    what: "Full-stack platform built for Kenya's national STEM competition — students, schools, teams, and judges across the entire country. Built for The Tech Interactive.",
+    built: "15 modules in Flutter Web + Supabase: multi-role auth with RBAC, row-level security, audit logs, survey engine, team management, live scoring, bulk communications, and national reporting. Zero to production-grade, single developer.",
+    matters: "Complex domain. National scale. Real stakes. 15 modules, 5 RBAC roles, row-level security, append-only audit logging — production-grade architecture built by a single developer.",
     stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL RLS", "Multi-role RBAC", "15 modules"],
     link: null,
-    featured: true,
+    status: "development",
   },
   {
-    id: 2,
+    id: 3,
     tag: "Race Management",
     tagColor: "teal",
     title: "MPYC RaceDay",
     subtitle: "Real-Time Sailing Race Platform",
+    context: "Monterey Peninsula Yacht Club · 2023–present · Solo Builder",
     what: "Real-time race management platform for MPYC — 5 user roles, 57 courses, live weather from 11 stations, GPS tracking, and automated scoring published to Clubspot.",
     built: "Flutter + Firebase: 25+ Firestore collections, Cloud Functions fetching weather every 60 seconds, FCM push notifications, GPS race tracking, Clubspot API sync. Android, iOS, and Web from a single codebase.",
-    matters: "Production system used every racing weekend on Monterey Bay. One developer. SaaS-class complexity. Built because commercial tools cost thousands per year and still did not do what we needed.",
+    matters: "One developer. SaaS-class complexity. Built for a real club solving a real problem because commercial tools cost thousands per year and still did not do what we needed. Ready for race season.",
     stack: ["Flutter 3.x", "Firebase", "Cloud Functions", "GPS tracking", "11 weather stations", "Clubspot API"],
     link: null,
-  },
-  {
-    id: 3,
-    tag: "AI + Automation",
-    tagColor: "teal",
-    title: "Boat Daily Check",
-    subtitle: "Victron VRM Monitoring Agent",
-    what: "AI-powered overnight monitoring agent for two boats — queries live telemetry, processes power and battery data, and sends a formatted daily status report before I wake up.",
-    built: "Python agent on cron, querying a Victron VRM API I reverse-engineered from network traffic. Wrote the reference documentation myself and open-sourced the project. The reference has since been adopted by the Victron community.",
-    matters: "Real AI automation: not a demo, not a wrapper, not a proof of concept. A system that runs every day without intervention and solves a real operational problem.",
-    stack: ["Python", "Victron VRM API", "Cron automation", "AI summarisation", "Open source"],
-    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    status: "development",
   },
 ];
 
@@ -68,12 +78,19 @@ const PORTAL_SCREENSHOTS: Record<string, string> = {
 };
 
 const TAG_COLORS: Record<string, { color: string; bg: string; border: string }> = {
-  purple: { color: "var(--purple)", bg: "var(--purple-glow)", border: "rgba(107,79,187,0.2)" },
-  teal:   { color: "var(--teal)",   bg: "var(--teal-glow)",   border: "rgba(11,158,138,0.2)" },
-  blue:   { color: "var(--accent)", bg: "var(--accent-glow)", border: "rgba(14,127,192,0.2)" },
-  orange: { color: "var(--orange)", bg: "var(--orange-glow)", border: "rgba(196,126,42,0.2)" },
-  green:  { color: "var(--green)",  bg: "var(--green-glow)",  border: "rgba(30,138,76,0.2)" },
+  purple: { color: "var(--color-primary)",       bg: "rgba(12,74,110,0.07)",    border: "rgba(12,74,110,0.2)" },
+  teal:   { color: "var(--color-primary-light)", bg: "rgba(3,105,161,0.07)",    border: "rgba(3,105,161,0.2)" },
+  blue:   { color: "var(--color-primary-light)", bg: "rgba(3,105,161,0.07)",    border: "rgba(3,105,161,0.2)" },
+  orange: { color: "var(--color-accent)",        bg: "rgba(217,119,6,0.08)",    border: "rgba(217,119,6,0.2)" },
+  green:  { color: "var(--color-success)",       bg: "rgba(5,150,105,0.08)",    border: "rgba(5,150,105,0.2)" },
 };
+
+function StatusBadge({ status }: { status: StatusType }) {
+  if (status === "production") {
+    return <span className="wp-status-badge wp-status-production">● In Production</span>;
+  }
+  return <span className="wp-status-badge wp-status-development">○ In Development</span>;
+}
 
 function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: boolean }) {
   const tc = TAG_COLORS[project.tagColor] ?? TAG_COLORS.blue;
@@ -81,14 +98,17 @@ function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: bo
   if (isFeatured) {
     return (
       <div className="wp-featured">
-        <div className="wp-featured-badge">Flagship Project</div>
         <div className="wp-featured-inner">
           <div className="wp-featured-left">
-            <span className="wp-tag" style={{ color: tc.color, background: tc.bg, border: `1px solid ${tc.border}` }}>
-              {project.tag}
-            </span>
+            <div className="wp-featured-toprow">
+              <span className="wp-tag" style={{ color: tc.color, background: tc.bg, border: `1px solid ${tc.border}` }}>
+                {project.tag}
+              </span>
+              <StatusBadge status={project.status} />
+            </div>
             <h3 className="wp-featured-title">{project.title}</h3>
             <div className="wp-featured-sub">{project.subtitle}</div>
+            <div className="wp-featured-context">{project.context}</div>
             <div className="wp-wbm">
               <div className="wp-wbm-row">
                 <span className="wp-wbm-label">What</span>
@@ -121,15 +141,11 @@ function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: bo
         <span className="wp-tag" style={{ color: tc.color, background: tc.bg, border: `1px solid ${tc.border}` }}>
           {project.tag}
         </span>
-        {project.link && (
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--text-dim)" }}>
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-        )}
+        <StatusBadge status={project.status} />
       </div>
       <h3 className="wp-card-title">{project.title}</h3>
       <div className="wp-card-sub">{project.subtitle}</div>
+      <div className="wp-card-context">{project.context}</div>
       <div className="wp-wbm-card">
         <div className="wp-wbm-card-row">
           <span className="wp-wbm-label">What</span>
@@ -395,33 +411,47 @@ export default function WorkPage() {
         }
 
         /* ── Featured card ── */
+        .wp-status-badge {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          padding: 4px 10px;
+          border-radius: 4px;
+          white-space: nowrap;
+        }
+        .wp-status-production {
+          background: #ECFDF5;
+          color: var(--color-success);
+          border: 1px solid #A7F3D0;
+        }
+        .wp-status-development {
+          background: var(--color-accent-light);
+          color: var(--color-accent-hover);
+          border: 1px solid #FDE68A;
+        }
         .wp-featured {
-          background: var(--bg-card);
-          border: 1px solid var(--border);
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
           border-radius: var(--radius);
           margin-bottom: 28px;
           box-shadow: var(--shadow-card);
           position: relative;
           overflow: hidden;
         }
-        .wp-featured-badge {
-          font-family: var(--font-mono), monospace;
-          font-size: 9px;
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
-          color: var(--purple);
-          background: var(--purple-glow);
-          border-bottom: 1px solid rgba(107,79,187,0.2);
-          border-right: 1px solid rgba(107,79,187,0.2);
-          padding: 5px 16px;
-          display: inline-block;
-          border-radius: var(--radius) 0 var(--radius-sm) 0;
+        .wp-featured-toprow {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-wrap: wrap;
+          margin-bottom: 4px;
         }
         .wp-featured-inner {
           display: grid;
           grid-template-columns: 1fr 260px;
           gap: 48px;
-          padding: 32px 48px 48px;
+          padding: 40px 48px 48px;
         }
         .wp-featured-title {
           font-family: var(--font-serif), Georgia, serif;
@@ -436,6 +466,18 @@ export default function WorkPage() {
           font-size: 12px;
           color: var(--text-dim);
           margin-bottom: 4px;
+        }
+        .wp-featured-context {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--color-text-muted);
+          margin-bottom: 4px;
+        }
+        .wp-card-context {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          color: var(--color-text-muted);
+          margin-bottom: 12px;
         }
         .wp-featured-right {
           padding-top: 48px;
@@ -469,13 +511,13 @@ export default function WorkPage() {
           color: inherit;
         }
         .wp-card-link:hover .wp-card {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-card-hover), 0 0 0 1px rgba(14,127,192,0.08);
-          border-color: var(--border-accent);
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-card-hover);
+          border-color: var(--color-primary-light);
         }
         .wp-card {
-          background: var(--bg-card);
-          border: 1px solid var(--border);
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
           border-radius: var(--radius);
           padding: 32px;
           height: 100%;
@@ -507,10 +549,10 @@ export default function WorkPage() {
         .wp-proof {
           margin-top: 16px;
           padding-top: 16px;
-          border-top: 1px solid var(--border);
+          border-top: 1px solid var(--color-border-light);
           font-family: var(--font-mono), monospace;
           font-size: 11px;
-          color: var(--accent);
+          color: var(--color-primary);
           line-height: 1.5;
         }
 
@@ -550,7 +592,7 @@ export default function WorkPage() {
           font-size: 10px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          color: var(--accent);
+          color: var(--color-primary);
           margin-bottom: 6px;
         }
         .wp-portal-label {
@@ -576,8 +618,8 @@ export default function WorkPage() {
         .wp-portal-extra {
           font-family: var(--font-mono), monospace;
           font-size: 11px;
-          color: var(--accent);
-          border-bottom: 1px solid var(--border-accent);
+          color: var(--color-primary-light);
+          border-bottom: 1px solid var(--color-primary-light);
           padding-bottom: 1px;
           display: block;
           margin-bottom: 16px;
@@ -585,9 +627,9 @@ export default function WorkPage() {
         .wp-portal-btn {
           font-family: var(--font-mono), monospace;
           font-size: 11px;
-          color: var(--accent);
+          color: var(--color-primary);
           padding: 8px 16px;
-          border: 1px solid var(--border-accent);
+          border: 1.5px solid var(--color-primary);
           border-radius: 6px;
           display: inline-block;
           text-decoration: none;
@@ -595,9 +637,9 @@ export default function WorkPage() {
           margin-top: 4px;
         }
         .wp-portal-btn:hover {
-          background: var(--accent);
+          background: var(--color-primary);
           color: #fff;
-          border-color: var(--accent);
+          border-color: var(--color-primary);
         }
 
         /* ── Responsive ── */

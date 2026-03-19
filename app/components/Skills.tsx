@@ -52,7 +52,7 @@ const BOOK_CHAPTERS = [
   },
   {
     title: "Starting from Scratch Program",
-    file: "/Starting from Scratch Program.pdf",
+    file: "/Starting-from-Scratch-Program.pdf",
     download: "Developer-Marketing-Starting-From-Scratch.pdf",
     description: "How to build a developer program from zero — the playbook for launching at a company with no DevRel history.",
   },

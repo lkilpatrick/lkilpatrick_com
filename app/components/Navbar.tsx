@@ -14,16 +14,8 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [theme, setTheme]       = useState<"dark" | "light">("light");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme") as "dark" | "light" | null;
-    const initial = saved ?? "light";
-    setTheme(initial);
-    document.documentElement.setAttribute("data-theme", initial);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -33,13 +25,6 @@ export default function Navbar() {
 
   // Close mobile menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
-
-  const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  };
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -65,9 +50,6 @@ export default function Navbar() {
 
           <div className="nav-controls">
             <a href="/Luke-Kilpatrick-Director-DevRel-2026.pdf" download="Luke-Kilpatrick-Director-DevRel-2026.pdf" className="resume-btn">Resume ↓</a>
-            <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
-              {theme === "dark" ? "☀" : "☽"}
-            </button>
             <button
               className="hamburger"
               onClick={() => setMenuOpen(o => !o)}
@@ -103,9 +85,9 @@ export default function Navbar() {
           border-bottom: 1px solid transparent;
         }
         .site-nav--scrolled {
-          background: var(--bg);
-          border-color: var(--border);
-          box-shadow: 0 1px 24px rgba(0,0,0,0.18);
+          background: var(--color-bg);
+          border-color: var(--color-border);
+          box-shadow: 0 1px 16px rgba(0,0,0,0.08);
         }
         .nav-inner {
           max-width: 1000px;
@@ -128,7 +110,7 @@ export default function Navbar() {
           flex-shrink: 0;
           transition: color 0.2s;
         }
-        .nav-logo:hover { color: var(--accent); }
+        .nav-logo:hover { color: var(--color-primary); }
         .nav-links {
           display: flex;
           list-style: none;
@@ -142,19 +124,22 @@ export default function Navbar() {
           font-family: var(--font-sans), sans-serif;
           font-size: 13px;
           font-weight: 500;
-          color: var(--text-muted);
+          color: var(--color-text-secondary);
           padding: 6px 12px;
           border-radius: 6px;
-          transition: color 0.2s, background 0.2s;
+          transition: color 0.2s;
           white-space: nowrap;
         }
         .nav-link:hover {
-          color: var(--text);
-          background: var(--bg-card);
+          color: var(--color-primary);
         }
         .nav-link--active {
-          color: var(--accent) !important;
-          background: var(--accent-glow) !important;
+          color: var(--color-primary) !important;
+          font-weight: 700 !important;
+          border-bottom: 2px solid var(--color-primary);
+          border-radius: 0;
+          padding-bottom: 4px;
+          background: none !important;
         }
         .nav-controls {
           display: flex;
@@ -167,38 +152,21 @@ export default function Navbar() {
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.5px;
-          color: var(--accent);
+          color: var(--color-primary);
           padding: 6px 12px;
-          border: 1px solid var(--border-accent);
+          border: 1.5px solid var(--color-primary);
           border-radius: 6px;
           text-decoration: none;
           white-space: nowrap;
           transition: all 0.2s;
-          background: var(--accent-glow);
+          background: transparent;
         }
         .resume-btn:hover {
-          background: var(--accent);
+          background: var(--color-primary);
           color: #fff;
-          border-color: var(--accent);
+          border-color: var(--color-primary);
         }
         @media (max-width: 680px) { .resume-btn { display: none; } }
-        .theme-btn {
-          width: 36px; height: 36px;
-          border-radius: 50%;
-          border: 1px solid var(--border);
-          background: var(--bg-card);
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 16px;
-          color: var(--text-muted);
-          transition: all 0.2s;
-        }
-        .theme-btn:hover {
-          border-color: var(--border-accent);
-          color: var(--accent);
-        }
         .hamburger {
           display: none;
           width: 36px; height: 36px;
@@ -212,12 +180,12 @@ export default function Navbar() {
           color: var(--text-muted);
           transition: all 0.2s;
         }
-        .hamburger:hover { border-color: var(--border-accent); color: var(--accent); }
+        .hamburger:hover { border-color: var(--color-primary); color: var(--color-primary); }
         .mobile-menu {
           display: flex;
           flex-direction: column;
-          border-top: 1px solid var(--border);
-          background: var(--bg);
+          border-top: 1px solid var(--color-border);
+          background: var(--color-bg);
           padding: 8px 0 12px;
         }
         .mobile-link {
@@ -228,12 +196,12 @@ export default function Navbar() {
           font-family: var(--font-sans), sans-serif;
           font-size: 14px;
           font-weight: 500;
-          color: var(--text-muted);
+          color: var(--color-text-secondary);
           padding: 10px 24px;
-          transition: color 0.2s, background 0.2s;
+          transition: color 0.2s;
         }
-        .mobile-link:hover { color: var(--text); background: var(--bg-card); }
-        .mobile-link--active { color: var(--accent); }
+        .mobile-link:hover { color: var(--color-primary); }
+        .mobile-link--active { color: var(--color-primary); font-weight: 700; }
         @media (max-width: 680px) {
           .nav-links { display: none; }
           .hamburger { display: flex; }

@@ -14,9 +14,9 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { value: "15+", label: "Years Experience", link: null },
-  { value: "50+", label: "Events Spoken At", link: "/content" },
-  { value: "10K", label: "TikTok Followers", link: "https://www.tiktok.com/@pitterpatterdiving" },
+  { value: "15+", label: "Years in DevRel", link: null },
+  { value: "50+", label: "Events & Conferences", link: "/content" },
+  { value: "10K", label: "TikTok in One Summer", link: "https://www.tiktok.com/@pitterpatterdiving" },
   { value: "1,300+", label: "Books Sold", link: null },
 ];
 
@@ -233,6 +233,16 @@ export const onboardingDocs = {
       tag: "Docs",
       tagColor: "blue" as const,
     },
+    {
+      org: "OPEN SOURCE",
+      title: "Victron VRM API Reference ↗",
+      link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+      description:
+        "The Victron VRM API had no official documentation. I reverse-engineered it by inspecting the VRM web app's network traffic, wrote a complete API reference covering authentication, endpoints, data structures, and common integration patterns, and published it as an open-source skill on ClawHub. The reference has been adopted by other Victron users building their own monitoring and automation integrations. This is documentation work in its purest form — an undocumented API now has docs because I wrote them.",
+      tag: "API Reference",
+      tagColor: "green" as const,
+      subhead: "API Reference — Reverse-Engineered & Published",
+    },
   ],
 };
 
@@ -244,6 +254,16 @@ export const technicalContent = [
     link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
     description:
       "Full technical tutorial: Python agent querying the Victron VRM API, cron-scheduled email reports, open-source on GitHub. Reverse-engineered an under-documented API and published the reference docs myself. Demonstrates the kind of hands-on, build-first content I create.",
+    tag: "Code + Tutorial",
+    tagColor: "green" as const,
+  },
+  {
+    id: 6,
+    org: "PERSONAL — OPEN SOURCE",
+    title: "Building and Publishing a Victron VRM Monitoring Skill to ClawHub ↗",
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    description:
+      "Full build tutorial: reverse-engineering an undocumented IoT API, building a reusable monitoring skill on the OpenClaw framework, publishing it to ClawHub, and writing the API reference docs that didn't exist. Covers the full lifecycle from problem to open-source community adoption.",
     tag: "Code + Tutorial",
     tagColor: "green" as const,
   },

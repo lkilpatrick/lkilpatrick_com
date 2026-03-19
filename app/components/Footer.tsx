@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <>
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
-      <footer style={{ padding: "48px 0", textAlign: "center" }}>
+      <footer style={{ background: "var(--color-bg-footer)", padding: "48px 0", textAlign: "center" }}>
         <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px" }}>
           <div
             style={{
@@ -46,7 +46,7 @@ export default function Footer() {
               Email
             </button>
           </div>
-          <p style={{ fontSize: 12, color: "var(--text-dim)" }}>
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>
             &copy; 2026 Luke Kilpatrick. Built with code, sugar free red bull, and salt water.
           </p>
         </div>

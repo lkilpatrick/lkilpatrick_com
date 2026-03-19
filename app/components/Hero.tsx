@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="hero-text">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot" />
-              Developer Platforms &nbsp;&middot;&nbsp; Product Marketing &nbsp;&middot;&nbsp; <strong style={{color:"var(--purple)"}}>Applied AI</strong>
+              Developer Relations &nbsp;&middot;&nbsp; Developer Marketing &nbsp;&middot;&nbsp; <strong style={{color:"var(--color-primary)"}}>Builder</strong>
             </div>
 
             <h1 className="hero-headline">
@@ -41,9 +41,14 @@ export default function Hero() {
             </h2>
 
             <p className="hero-sub">
-              I build the systems that make that happen &mdash; developer portals, onboarding
-              systems, product launches, and AI-powered workflows that actually ship.
-              Complex systems into products developers adopt.
+              I have spent 15 years solving that problem &mdash; building developer portals, documentation
+              systems, and go-to-market programs at companies like Atlassian, Nutanix, and Hazelcast.
+              I also build things myself: a daily ocean intelligence report pulling from 8 data sources
+              across Monterey Bay, an open-source API reference adopted by the Victron community, a
+              children&apos;s book series reviewed by MBARI scientists.
+            </p>
+            <p className="hero-sub" style={{ marginTop: "-20px" }}>
+              I build things that work, and I make complex systems accessible to the people who need them.
             </p>
 
             <div className="hero-ctas">
@@ -94,7 +99,7 @@ export default function Hero() {
             </div>
             <div className="hero-photo-badge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
-              <span>AI-native builder</span>
+              <span>Builder &middot; Diver &middot; Author</span>
             </div>
           </div>
         </div>
@@ -130,7 +135,7 @@ export default function Hero() {
           top: -80px; right: -120px;
           width: 800px; height: 800px;
           border-radius: 50%;
-          background: radial-gradient(ellipse, rgba(14,127,192,0.12) 0%, transparent 65%);
+          background: radial-gradient(ellipse, rgba(12,74,110,0.08) 0%, transparent 65%);
           pointer-events: none;
         }
         .hero-glow-2 {
@@ -138,7 +143,7 @@ export default function Hero() {
           top: 220px; left: -200px;
           width: 600px; height: 600px;
           border-radius: 50%;
-          background: radial-gradient(ellipse, rgba(11,158,138,0.08) 0%, transparent 65%);
+          background: radial-gradient(ellipse, rgba(217,119,6,0.05) 0%, transparent 65%);
           pointer-events: none;
         }
         .hero-glow-3 {
@@ -182,19 +187,19 @@ export default function Hero() {
           font-size: 11px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          color: var(--accent);
+          color: var(--color-primary);
           margin-bottom: 28px;
           opacity: 0;
           animation: fadeUp 0.5s ease 0.05s forwards;
-          background: var(--accent-glow);
-          border: 1px solid rgba(14,127,192,0.2);
+          background: var(--color-bg-alt);
+          border: 1px solid var(--color-border);
           padding: 6px 14px;
           border-radius: 99px;
         }
         .hero-eyebrow-dot {
           width: 6px; height: 6px;
           border-radius: 50%;
-          background: var(--accent);
+          background: var(--color-primary);
           flex-shrink: 0;
         }
 
@@ -216,10 +221,7 @@ export default function Hero() {
           line-height: 1.06;
           letter-spacing: -1.5px;
           margin-bottom: 36px;
-          background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 60%, var(--purple) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: var(--color-primary);
           opacity: 0;
           animation: fadeUp 0.6s ease 0.22s forwards;
         }
@@ -246,7 +248,7 @@ export default function Hero() {
           display: inline-flex;
           align-items: center;
           padding: 12px 28px;
-          background: var(--accent);
+          background: var(--color-accent);
           color: #fff;
           font-family: var(--font-sans), sans-serif;
           font-size: 14px;
@@ -254,38 +256,37 @@ export default function Hero() {
           border-radius: 9px;
           transition: all 0.2s;
           text-decoration: none;
-          border: none;
+          border: 2px solid var(--color-accent);
           cursor: pointer;
           letter-spacing: 0.1px;
         }
         .btn-primary:hover {
-          background: var(--accent-light);
+          background: var(--color-accent-hover);
+          border-color: var(--color-accent-hover);
           color: #fff;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(14,127,192,0.3);
+          box-shadow: 0 8px 24px rgba(217,119,6,0.3);
         }
         .btn-secondary {
           display: inline-flex;
           align-items: center;
           padding: 12px 28px;
-          background: var(--bg-card);
-          color: var(--text);
+          background: transparent;
+          color: var(--color-primary);
           font-family: var(--font-sans), sans-serif;
           font-size: 14px;
           font-weight: 600;
           border-radius: 9px;
-          border: 1px solid var(--border);
+          border: 2px solid var(--color-primary);
           transition: all 0.2s;
           text-decoration: none;
           cursor: pointer;
-          box-shadow: var(--shadow-card);
         }
         .btn-secondary:hover {
-          border-color: var(--border-accent);
-          color: var(--accent);
-          background: var(--bg-card-hover);
+          background: var(--color-primary);
+          color: #fff;
           transform: translateY(-2px);
-          box-shadow: var(--shadow-card-hover);
+          box-shadow: 0 8px 24px rgba(12,74,110,0.2);
         }
         .btn-ghost {
           display: inline-flex;
@@ -389,8 +390,8 @@ export default function Hero() {
           width: 320px; height: 320px;
           border-radius: 50%;
           padding: 3px;
-          background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
-          box-shadow: 0 0 80px rgba(14,127,192,0.18), 0 0 40px rgba(11,158,138,0.12);
+          background: var(--color-primary);
+          box-shadow: 0 0 60px rgba(12,74,110,0.2);
         }
         .hero-photo {
           width: 100%;
@@ -402,13 +403,13 @@ export default function Hero() {
         .hero-photo-badge {
           position: absolute;
           bottom: 16px; right: -16px;
-          background: var(--bg-card);
-          border: 1px solid var(--border);
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border);
           border-radius: 99px;
           padding: 7px 16px;
           font-family: var(--font-mono), monospace;
           font-size: 11px;
-          color: var(--teal);
+          color: var(--color-primary);
           display: flex;
           align-items: center;
           gap: 6px;
@@ -419,8 +420,8 @@ export default function Hero() {
 
         /* Stats */
         .hero-stats-strip {
-          border-top: 1px solid var(--border);
-          background: var(--bg-card);
+          border-top: 1px solid var(--color-border);
+          background: var(--color-bg-alt);
         }
         .hero-stats-inner {
           max-width: 1100px;
@@ -440,7 +441,7 @@ export default function Hero() {
         .hero-stat--link { text-decoration: none; color: inherit; cursor: pointer; }
         .hero-stat--link:hover { background: var(--bg-card-hover); color: inherit; }
         .hero-stat--link .hero-stat-value { transition: color 0.2s; }
-        .hero-stat--link:hover .hero-stat-value { color: var(--accent); }
+        .hero-stat--link:hover .hero-stat-value { color: var(--color-accent); }
         .hero-stat-value {
           display: block;
           font-family: var(--font-serif), Georgia, serif;

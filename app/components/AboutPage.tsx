@@ -321,9 +321,9 @@ export default function AboutPage() {
               <h3 className="about-civic-title">MPYC Racing</h3>
               <p className="about-civic-desc">
                 I race at the Monterey Peninsula Yacht Club on Wednesday evenings and weekends. When the
-                race management software wasn&apos;t good enough, I built a replacement — Flutter + Firebase,
-                5 roles, 57 courses, live weather from 11 stations, GPS tracking, and Clubspot sync.
-                Production system used every racing weekend.
+                race management software wasn&apos;t good enough, I built a replacement.
+                Flutter + Firebase, 5 roles, 57 courses, live weather from 11 stations, GPS tracking,
+                and Clubspot sync. Built for race season.
               </p>
               <a href="/work#projects" className="about-civic-link">See the build on Work →</a>
             </div>

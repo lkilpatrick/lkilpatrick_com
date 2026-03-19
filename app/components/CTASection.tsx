@@ -18,8 +18,10 @@ export default function CTASection() {
               Let&apos;s build something<br />worth using.
             </h2>
             <p className="cta-sub">
-              Whether you need a developer program built from zero, a platform launch strategy,
-              a documentation system, or applied AI workflows that actually ship, reach out.
+              I have built developer programs from scratch at three companies, launched products to
+              developer audiences on four continents, and published the industry guide on how to do it.
+              If you need someone who can own developer experience end-to-end &mdash; portal to community
+              to launch &mdash; let&apos;s talk.
             </p>
             <button className="cta-btn-primary" onClick={() => setContactOpen(true)}>
               Get In Touch
@@ -32,8 +34,8 @@ export default function CTASection() {
         .cta-section {
           position: relative;
           padding: 100px 0;
-          background: var(--bg-card);
-          border-top: 1px solid var(--border);
+          background: var(--color-bg);
+          border-top: 1px solid var(--color-border);
           overflow: hidden;
         }
         .cta-glow-left {
@@ -41,7 +43,7 @@ export default function CTASection() {
           top: -100px; left: -200px;
           width: 600px; height: 600px;
           border-radius: 50%;
-          background: radial-gradient(ellipse, rgba(14,127,192,0.08) 0%, transparent 65%);
+          background: radial-gradient(ellipse, rgba(12,74,110,0.06) 0%, transparent 65%);
           pointer-events: none;
         }
         .cta-glow-right {
@@ -49,7 +51,7 @@ export default function CTASection() {
           bottom: -100px; right: -200px;
           width: 600px; height: 600px;
           border-radius: 50%;
-          background: radial-gradient(ellipse, rgba(11,158,138,0.07) 0%, transparent 65%);
+          background: radial-gradient(ellipse, rgba(217,119,6,0.05) 0%, transparent 65%);
           pointer-events: none;
         }
         .cta-inner {
@@ -76,22 +78,23 @@ export default function CTASection() {
           display: inline-flex;
           align-items: center;
           padding: 13px 32px;
-          background: var(--accent);
+          background: var(--color-accent);
           color: #fff;
           font-family: var(--font-sans), sans-serif;
           font-size: 15px;
           font-weight: 600;
           border-radius: 9px;
-          border: none;
+          border: 2px solid var(--color-accent);
           cursor: pointer;
           transition: all 0.2s;
           text-decoration: none;
         }
         .cta-btn-primary:hover {
-          background: var(--accent-light);
+          background: var(--color-accent-hover);
+          border-color: var(--color-accent-hover);
           color: #fff;
           transform: translateY(-2px);
-          box-shadow: 0 8px 28px rgba(14,127,192,0.3);
+          box-shadow: 0 8px 28px rgba(217,119,6,0.3);
         }
         @media (max-width: 540px) {
           .cta-btn-primary { width: 100%; justify-content: center; }
