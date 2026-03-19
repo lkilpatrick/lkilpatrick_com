@@ -103,7 +103,7 @@ export default function AboutPage() {
             <p className="about-desc">
               I am a <strong style={{ color: "var(--heading)" }}>PADI Divemaster</strong> — the
               first professional level in diving — and I dive Monterey Bay regularly. I own two
-              boats: <em>Pitter Patter</em>, a Shamrock 260 center console, and <em>Pegasus</em>,
+              boats: <em>Pitter Patter</em>, a Shamrock 260 express cruiser, and <em>Pegasus</em>,
               a CHB 34 motor cruiser. I race at MPYC on Wednesday evenings and weekends. I built
               the race management platform because the tools that existed were not good enough.
             </p>
@@ -180,7 +180,7 @@ export default function AboutPage() {
       {/* ── Section 2: Mia Kingtide ── */}
       <section className="about-mia section-body section-alt" id="mia-kingtide">
         <div className="content-wrap">
-          <div className="about-section-eyebrow">Section 02</div>
+          <div className="about-section-eyebrow">Books &amp; IP</div>
           <h2 className="about-section-title">Mia Kingtide Ocean Adventures</h2>
           <p className="about-section-intro">
             An original children&apos;s conservation IP built from zero — reviewed by scientists at three of the
@@ -257,7 +257,7 @@ export default function AboutPage() {
       {/* ── Section 3: Pitter Patter Ecosystem ── */}
       <section className="about-ppd section-body" id="pitter-patter">
         <div className="content-wrap">
-          <div className="about-section-eyebrow">Section 03</div>
+          <div className="about-section-eyebrow">Pitter Patter Diving</div>
           <h2 className="about-section-title">Pitter Patter Diving Ecosystem</h2>
           <p className="about-section-intro">
             A full media, tourism, and commerce platform built around the thing I care about most.
@@ -281,7 +281,7 @@ export default function AboutPage() {
             <a href="https://www.boatsetter.com/boats/vxbfqbx" target="_blank" rel="noopener noreferrer" className="about-ppd-card">
               <div className="about-ppd-icon">⛵</div>
               <div className="about-ppd-label">Boat Rental</div>
-              <div className="about-ppd-desc">Charter and dive tour operator on Monterey Bay. The Shamrock 260 listed on Boatsetter for half-day and full-day trips.</div>
+              <div className="about-ppd-desc">Charter and dive tour operator on Monterey Bay. Pitter Patter — a Shamrock 260 express cruiser — listed on Boatsetter for half-day and full-day trips.</div>
               <div className="about-ppd-link">Boatsetter listing →</div>
             </a>
             <a href="https://www.airbnb.com/rooms/2685574" target="_blank" rel="noopener noreferrer" className="about-ppd-card">
@@ -309,7 +309,7 @@ export default function AboutPage() {
       {/* ── Section 4: Community & Civic ── */}
       <section className="about-civic section-body section-alt" id="community">
         <div className="content-wrap">
-          <div className="about-section-eyebrow">Section 04</div>
+          <div className="about-section-eyebrow">Community &amp; Civic</div>
           <h2 className="about-section-title">Community &amp; Civic</h2>
           <p className="about-section-intro">
             The peninsula is not just where I live — it is where I show up.
