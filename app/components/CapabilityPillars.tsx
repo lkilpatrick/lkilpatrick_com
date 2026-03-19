@@ -4,10 +4,10 @@ const PILLARS = [
   {
     id: 1,
     icon: "terminal",
-    title: "Developer Experience",
+    title: "Developer Experience & Onboarding",
     description:
-      "Developer portals, API documentation, onboarding flows, and technical content that turn complex platforms into tools people actually adopt. Built from zero at Nutanix, LinearB, and Hazelcast.",
-    value: "Faster time-to-first-value. Lower support burden. Higher ecosystem retention.",
+      "Developer portals, onboarding systems, API documentation, and technical content that eliminate friction between a developer's first contact and their first success. The difference between a product developers adopt and one they abandon is almost always the onboarding. Built from zero at Nutanix, LinearB, and Hazelcast.",
+    value: "Faster time-to-first-value. Lower support burden. Higher activation and retention.",
     colorKey: "accent",
   },
   {

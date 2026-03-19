@@ -12,20 +12,28 @@ export default function PersonalSection() {
               to go back again even when conditions are rough.
             </p>
             <p className="personal-desc">
-              Outside of work I dive, sail, and write. I built{" "}
+              Outside of work I dive, sail, and write. I am a{" "}
+              <strong style={{ color: "var(--heading)" }}>PADI Divemaster</strong>{" "}
+              — the first professional level in diving — and I dive Monterey Bay regularly, one of
+              the richest and most challenging cold-water dive sites on Earth. I built{" "}
               <a href="https://pitterpatterdiving.com/" target="_blank" rel="noopener noreferrer" className="personal-link">
                 Pitter Patter Diving
               </a>{" "}
-              as a media and tourism business, and the{" "}
+              as a media, tourism, and commerce business around that: dive blog, underwater
+              photography, boat rentals, and the{" "}
+              <a href="https://www.airbnb.com/rooms/2685574" target="_blank" rel="noopener noreferrer" className="personal-link">
+                Ocean View at Monterey Bay
+              </a>{" "}
+              Airbnb.
+            </p>
+            <p className="personal-desc">
+              I also authored the{" "}
               <a href="https://miakingtide.com/" target="_blank" rel="noopener noreferrer" className="personal-link">
                 Mia Kingtide
               </a>{" "}
-              series as a proof of concept that great storytelling can carry a conservation message
-              without being preachy about it.
-            </p>
-            <p className="personal-desc">
-              I also race at the Monterey Peninsula Yacht Club, manage a fleet of two boats, and
-              built the race management system because the existing tools were not good enough.
+              ocean conservation series — reviewed by scientists at MBARI, Hopkins Marine Station,
+              and Moss Landing Marine Labs — and race at MPYC, where I built the race management
+              system because the existing tools were not good enough.
             </p>
             <div className="personal-links">
               <a href="https://pitterpatterdiving.com/" target="_blank" rel="noopener noreferrer" className="personal-pill">
@@ -36,6 +44,15 @@ export default function PersonalSection() {
               </a>
               <a href="https://www.amazon.com/author/lkilpatrick" target="_blank" rel="noopener noreferrer" className="personal-pill">
                 Books on Amazon
+              </a>
+              <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer" className="personal-pill">
+                Underwater Photography
+              </a>
+              <a href="https://www.boatsetter.com/boats/vxbfqbx" target="_blank" rel="noopener noreferrer" className="personal-pill">
+                Rent the Boat
+              </a>
+              <a href="https://www.airbnb.com/rooms/2685574" target="_blank" rel="noopener noreferrer" className="personal-pill">
+                Ocean View Airbnb
               </a>
               <a href="https://www.tiktok.com/@pitterpatterdiving" target="_blank" rel="noopener noreferrer" className="personal-pill">
                 TikTok
@@ -52,8 +69,8 @@ export default function PersonalSection() {
                   <path d="M2 6c2-4 6-4 8 0s6 4 8 0"/>
                 </svg>
               </div>
-              <div className="personal-card-title">Monterey Bay</div>
-              <div className="personal-card-sub">Diving the coldest, richest coast on Earth</div>
+              <div className="personal-card-title">PADI Divemaster</div>
+              <div className="personal-card-sub">Cold-water diving on Monterey Bay</div>
             </div>
             <div className="personal-card personal-card--books">
               <div className="personal-card-icon">

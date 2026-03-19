@@ -207,6 +207,43 @@ const CASE_STUDIES: CaseStudy[] = [
     pressLink: null,
     outcome: "10K TikTok followers built in one summer. Active tourism business. Cross-platform content ecosystem.",
   },
+  {
+    id: 6,
+    slug: "ocean-view-airbnb",
+    tag: "Hospitality",
+    tagColor: "orange",
+    company: "Personal",
+    title: "Ocean View at Monterey Bay",
+    subtitle: "5-star Airbnb guest suite in Sand City — ocean views, hot tub, and king bed on the Monterey Peninsula.",
+    status: "Active",
+    year: "2015–present",
+    role: "Host, Designer, Operator",
+    screenshot: "/screenshots/builder-ocean-view-airbnb.jpg",
+    screenshotAlt: "Ocean View at Monterey Bay Airbnb — hot tub deck with Monterey Bay views",
+    statHighlights: null,
+    pressLink: null,
+    sections: [
+      {
+        label: "What It Is",
+        body: "A fully self-managed short-term rental in Sand City, CA — steps from the Monterey Bay Coastal Trail and minutes from the aquarium, wharf, and dive sites. The property features ocean views, a private hot tub, king bed, and full amenities. Marketed under the Pitter Patter Diving brand with its own booking site at theoceanviewbnb.com.",
+      },
+      {
+        label: "What I Built",
+        body: "End-to-end hospitality operation built and managed independently: interior design, photography, Airbnb listing copy, pricing strategy, guest communications, cleaning operations, and maintenance. Integrated into the broader Pitter Patter Diving ecosystem alongside the boat rental and dive tourism business.",
+      },
+      {
+        label: "The Interesting Part",
+        body: "The same skills that make a great developer onboarding experience make a great guest experience: reduce friction, anticipate questions before they're asked, make the path to success obvious, and over-deliver on the first impression. Hospitality is product design with a human in the loop.",
+      },
+      {
+        label: "Why It Matters",
+        body: "Running a hospitality business sharpens the same muscles as product marketing: positioning, conversion copy, reviews as social proof, and retention through experience quality. It is also a consistent revenue stream that funds the boats, the diving, and the projects.",
+      },
+    ],
+    stack: ["Airbnb", "theoceanviewbnb.com", "Self-managed", "Interior design", "Pricing strategy", "Guest experience"],
+    link: "https://www.airbnb.com/rooms/2685574",
+    outcome: "Active since 2015. Consistently 5-star rated. Integrated with Pitter Patter Diving tourism ecosystem.",
+  },
 ];
 
 const TAG_COLORS: Record<string, { color: string; bg: string; border: string }> = {
