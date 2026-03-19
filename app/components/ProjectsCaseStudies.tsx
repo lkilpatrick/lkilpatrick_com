@@ -17,6 +17,7 @@ type CaseStudy = {
   sections: { label: string; body: string }[];
   stack: string[];
   link: string | null;
+  pressLink: { label: string; href: string } | null;
   outcome: string;
 };
 
@@ -55,6 +56,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL", "RBAC", "Row-Level Security", "Real-time", "15 modules"],
     link: null,
+    pressLink: null,
     outcome: "Served thousands of students, schools, teams, and judges across the national competition.",
   },
   {
@@ -91,6 +93,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     stack: ["Flutter 3.x", "Firebase / Firestore", "Riverpod 3.x", "GoRouter", "Cloud Functions", "FCM push", "NOAA / WU / Ambient weather", "Clubspot API", "GPS tracking", "Android + iOS + Web"],
     link: "https://github.com/lkilpatrick/mpyc-raceday",
+    pressLink: null,
     outcome: "In active use every racing weekend at MPYC. 57 courses, 4 boat classes, 5 roles, real-time across all devices.",
   },
   {
@@ -127,6 +130,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     stack: ["Python", "Victron VRM API", "Cron automation", "Email delivery", "Open source", "API reverse engineering"],
     link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    pressLink: null,
     outcome: "Runs every morning without intervention. Open-source API reference adopted by the Victron community.",
   },
   {
@@ -135,8 +139,8 @@ const CASE_STUDIES: CaseStudy[] = [
     tag: "IP Ecosystem",
     tagColor: "orange",
     company: "Personal",
-    title: "Mia Kingtide",
-    subtitle: "Original IP across books, games, audiobooks, and ocean education.",
+    title: "Mia Kingtide Ocean Adventures",
+    subtitle: "Children's conservation fiction series reviewed by scientists at MBARI, Hopkins Marine Station, and Moss Landing Marine Labs.",
     status: "Live",
     year: "2021–present",
     role: "Author, Builder, Publisher",
@@ -146,24 +150,25 @@ const CASE_STUDIES: CaseStudy[] = [
     sections: [
       {
         label: "The Problem",
-        body: "Ocean conservation content for kids is either dry science or preachy activism. There was a gap for adventure-first storytelling that carries a conservation message without making it the point — IP that could work across formats and prove conservation content can be commercially viable.",
+        body: "Ocean conservation content for kids is either dry science or preachy activism. There was a gap for adventure-first storytelling that carries real conservation science without being preachy about it — IP that could work across formats, hold up to scientific scrutiny, and prove conservation content can be commercially viable.",
       },
       {
         label: "What I Built",
-        body: "4 books in the Mia Kingtide Ocean Adventures series, self-published and distributed through major retail channels. Audiobook versions on Spotify and INaudio. The OceanMatch browser game extending the universe interactively. A YouTube channel with read-aloud videos. 1,300+ copies sold across formats.",
+        body: "4 books in the Mia Kingtide Ocean Adventures series — self-published and distributed through major retail channels. The series was reviewed by scientists at MBARI, Hopkins Marine Station, and Moss Landing Marine Labs for scientific accuracy. Audiobook versions on Spotify and INaudio. The OceanMatch browser game extending the universe interactively. A YouTube channel with read-aloud videos. 1,300+ copies sold across formats. Featured in Monterey County NOW. The books sailed aboard the Western Flyer — the legendary vessel from John Steinbeck and Ed Ricketts' Sea of Cortez expedition — during its restored journey back to the Sea of Cortez.",
       },
       {
-        label: "Content Systems",
-        body: "Each format serves a different acquisition channel: books for direct sales and gift-giving, audiobooks for passive consumption, games for interactive engagement, YouTube for discoverability. The Pitter Patter Diving brand acts as the top-of-funnel for the whole ecosystem.",
+        label: "Scientific Grounding",
+        body: "The series tackles real issues — climate change, overfishing, habitat destruction — with a deliberately hopeful framing. Scientists from three of the world's leading marine research institutions reviewed the books for accuracy. That credibility is not decorative: it is what separates this from generic ocean-themed kids content.",
       },
       {
         label: "Why It Matters",
-        body: "Content systems, brand building, and creative execution at scale. Building an audience from zero and converting across formats is the same skill set as building a developer community — just applied to a different domain.",
+        body: "Content systems, brand building, and creative execution grounded in real science and real community. Building an audience from zero, earning the endorsement of research institutions, and converting across formats is the same discipline as building a developer ecosystem — understand your audience, produce something worth their time, and show up consistently.",
       },
     ],
-    stack: ["4 published books", "Audiobooks (Spotify, INaudio)", "Browser game", "YouTube", "Self-publishing", "Retail distribution"],
+    stack: ["4 published books", "Audiobooks (Spotify, INaudio)", "Browser game", "YouTube", "MBARI reviewed", "Hopkins Marine Station", "Moss Landing Marine Labs", "Western Flyer Foundation", "Self-publishing", "Retail distribution"],
     link: "https://miakingtide.com/",
-    outcome: "1,300+ copies sold. Audiobooks on major streaming platforms. Active audience across formats.",
+    pressLink: { label: "Monterey County NOW ↗", href: "https://www.montereycountynow.com/entertainment/literature/first-time-author-crafts-a-series-of-environmental-adventures-for-young-readers/article_74462bff-0388-481b-8ebb-9613d75aa11b.html" },
+    outcome: "1,300+ copies sold. Reviewed by MBARI, Hopkins Marine Station, and Moss Landing Marine Labs. Books sailed aboard the restored Western Flyer to the Sea of Cortez. Featured in Monterey County NOW.",
   },
   {
     id: 5,
@@ -199,6 +204,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     stack: ["TikTok (10K)", "YouTube", "Blog (SEO)", "Tourism booking", "AI boat monitoring", "Audience funnel"],
     link: "https://pitterpatterdiving.com/",
+    pressLink: null,
     outcome: "10K TikTok followers built in one summer. Active tourism business. Cross-platform content ecosystem.",
   },
 ];
@@ -343,6 +349,11 @@ export default function ProjectsCaseStudies() {
                     <div className="cs-outcome">
                       <div className="cs-footer-label">Outcome</div>
                       <div className="cs-outcome-text">{cs.outcome}</div>
+                      {cs.pressLink && (
+                        <a href={cs.pressLink.href} target="_blank" rel="noopener noreferrer" className="cs-press-link">
+                          As seen in: {cs.pressLink.label}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </article>
@@ -601,6 +612,21 @@ export default function ProjectsCaseStudies() {
           font-weight: 600;
           color: var(--heading);
           line-height: 1.6;
+        }
+        .cs-press-link {
+          display: inline-block;
+          margin-top: 8px;
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--accent);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(14,127,192,0.3);
+          padding-bottom: 1px;
+          transition: border-color 0.2s, color 0.2s;
+        }
+        .cs-press-link:hover {
+          border-bottom-color: var(--accent);
+          color: var(--accent-light);
         }
 
         /* See also */
