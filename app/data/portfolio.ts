@@ -14,10 +14,10 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { value: "15+", label: "Years in DevRel", link: null },
+  { value: "15+", label: "Years in DevRel", link: "/about" },
   { value: "50+", label: "Events & Conferences", link: "/content" },
-  { value: "10K", label: "TikTok in One Summer", link: "https://www.tiktok.com/@pitterpatterdiving" },
-  { value: "1,300+", label: "Books Sold", link: null },
+  { value: "10K", label: "TikTok Followers", link: "https://www.tiktok.com/@pitterpatterdiving" },
+  { value: "1,300+", label: "Books Sold", link: "https://www.amazon.com/s?k=mia+kingtide" },
 ];
 
 export const capabilities = [
