@@ -8,7 +8,7 @@ const mailgunApiKey = defineSecret("MAILGUN_API_KEY");
 
 const MAILGUN_DOMAIN = "pitterpatterdiving.com";
 const TO_EMAIL = "luke@lukek.ca";
-const FROM_EMAIL = `contact@${MAILGUN_DOMAIN}`;
+const FROM_EMAIL = `luke@${MAILGUN_DOMAIN}`;
 const MAILGUN_URL = `https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`;
 
 export const sendContactEmail = onRequest({ secrets: [mailgunApiKey], invoker: "public" }, async (req, res) => {
