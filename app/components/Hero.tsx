@@ -100,10 +100,17 @@ export default function Hero() {
         <div className="hero-stats-strip">
           <div className="hero-stats-inner">
             {stats.map(s => (
-              <div key={s.label} className="hero-stat">
-                <span className="hero-stat-value">{s.value}</span>
-                <span className="hero-stat-label">{s.label}</span>
-              </div>
+              s.link ? (
+                <a key={s.label} href={s.link} target="_blank" rel="noopener noreferrer" className="hero-stat hero-stat--link">
+                  <span className="hero-stat-value">{s.value}</span>
+                  <span className="hero-stat-label">{s.label}</span>
+                </a>
+              ) : (
+                <div key={s.label} className="hero-stat">
+                  <span className="hero-stat-value">{s.value}</span>
+                  <span className="hero-stat-label">{s.label}</span>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -418,6 +425,10 @@ export default function Hero() {
         }
         .hero-stat:last-child { border-right: none; }
         .hero-stat:hover { background: var(--bg-card-hover); }
+        .hero-stat--link { text-decoration: none; color: inherit; cursor: pointer; }
+        .hero-stat--link:hover { background: var(--bg-card-hover); color: inherit; }
+        .hero-stat--link .hero-stat-value { transition: color 0.2s; }
+        .hero-stat--link:hover .hero-stat-value { color: var(--accent); }
         .hero-stat-value {
           display: block;
           font-family: var(--font-serif), Georgia, serif;
