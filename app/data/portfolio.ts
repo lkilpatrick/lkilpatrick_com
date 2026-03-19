@@ -15,7 +15,7 @@ export const personalInfo = {
 
 export const stats = [
   { value: "15+", label: "Years Experience", link: null },
-  { value: "246K", label: "Video Views", link: null },
+  { value: "50+", label: "Events Spoken At", link: "/video" },
   { value: "10K", label: "TikTok Followers", link: "https://www.tiktok.com/@pitterpatterdiving" },
   { value: "1,300+", label: "Books Sold", link: null },
 ];
