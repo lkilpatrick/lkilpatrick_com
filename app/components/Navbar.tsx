@@ -5,13 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "/",          label: "Home" },
-  { href: "/projects",  label: "Projects" },
-  { href: "/docs",      label: "Docs & Portals" },
-  { href: "/content",   label: "Writing" },
-  { href: "/impact",    label: "Impact" },
-  { href: "/video",     label: "Video" },
-  { href: "/social",    label: "Social" },
+  { href: "/",        label: "Home" },
+  { href: "/work",    label: "Work" },
+  { href: "/content", label: "Content" },
+  { href: "/impact",  label: "Impact" },
+  { href: "/about",   label: "About" },
 ];
 
 export default function Navbar() {
@@ -66,7 +64,7 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-controls">
-            <a href="/Luke K Director of DevRel -2026.pdf" download="Luke-Kilpatrick-Resume-2026.pdf" className="resume-btn">Resume ↓</a>
+            <a href="/Luke-Kilpatrick-Director-DevRel-2026.pdf" download="Luke-Kilpatrick-Director-DevRel-2026.pdf" className="resume-btn">Resume ↓</a>
             <button className="theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === "dark" ? "☀" : "☽"}
             </button>

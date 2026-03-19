@@ -45,9 +45,10 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
 export default function VideoContent() {
   return (
     <>
+      {/* ── Section 2: Talks & Presentations ── */}
       <section className="section-body" id="presentations">
         <div className="content-wrap">
-          <SectionHeader number="01" title="Presentations & Talks" />
+          <SectionHeader number="02" title="Talks & Presentations" />
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 36, maxWidth: 600 }}>
             Conference talks, product launches, and developer program presentations delivered on stages across four continents.
           </p>
@@ -59,21 +60,8 @@ export default function VideoContent() {
         </div>
       </section>
 
-      <section className="section-body" id="personal-videos">
-        <div className="content-wrap">
-          <SectionHeader number="02" title="Personal & Channel Videos" />
-          <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 36, maxWidth: 600 }}>
-            Event production, ocean adventures, and early creative work — a video production practice that predates the DevRel career.
-          </p>
-          <div className="video-grid-2col">
-            {personalVideos.map((video) => (
-              <VideoCard key={video.id} video={video} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-body" id="atlassian-videos">
+      {/* ── Section 3: Atlassian event videos ── */}
+      <section className="section-body section-alt" id="atlassian-videos">
         <div className="content-wrap">
           <SectionHeader number="03" title="Atlassian — Event & Program Videos" />
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 36, maxWidth: 600 }}>
@@ -96,33 +84,23 @@ export default function VideoContent() {
         </div>
       </section>
 
-      <section className="section-body" id="yt-channel">
+      {/* ── Earlier Work (collapsed) ── */}
+      <section className="section-body" id="earlier-work">
         <div className="content-wrap">
-          <SectionHeader number="04" title="YouTube Channel — @LukeKilpatrick" />
-          <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 28, maxWidth: 600 }}>
-            Mia Kingtide Ocean Adventures — audiobook chapters and read-aloud videos from the ocean conservation series. 4 books published, 1,300+ copies sold.
-          </p>
-          <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, overflow: "hidden", boxShadow: "var(--shadow-card)" }}>
-            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, background: "#000" }}>
-              <iframe
-                src="https://www.youtube.com/embed/GoIaxXyRIlo?rel=0&modestbranding=1"
-                title="Mia Kingtide: The Octopus' Gift — Chapter 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
-              />
-            </div>
-            <div style={{ padding: "14px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-              <div>
-                <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 3 }}>@LukeKilpatrick · Mia Kingtide Ocean Adventures</div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: "var(--heading)" }}>The Octopus&apos; Gift — Chapter 1</div>
+          <details className="earlier-work-details">
+            <summary className="earlier-work-summary">
+              <span className="earlier-work-label">Earlier Work</span>
+              <span className="earlier-work-sub">Event videos, ocean adventures, and early production work — closed by default</span>
+              <span className="earlier-work-arrow">▸</span>
+            </summary>
+            <div style={{ paddingTop: 32 }}>
+              <div className="video-grid-2col">
+                {personalVideos.map((video) => (
+                  <VideoCard key={video.id} video={video} />
+                ))}
               </div>
-              <a href="https://www.youtube.com/@LukeKilpatrick" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--accent)", padding: "6px 14px", border: "1px solid var(--border-accent)", borderRadius: 6, whiteSpace: "nowrap" }}>
-                View Full Channel →
-              </a>
             </div>
-          </div>
+          </details>
         </div>
       </section>
 
@@ -134,6 +112,50 @@ export default function VideoContent() {
         }
         @media (max-width: 700px) {
           .video-grid-2col { grid-template-columns: 1fr; }
+        }
+
+        /* ── Earlier Work accordion ── */
+        .earlier-work-details {
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          background: var(--bg-card);
+          overflow: hidden;
+        }
+        .earlier-work-details[open] .earlier-work-arrow { transform: rotate(90deg); }
+        .earlier-work-summary {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 20px 28px;
+          cursor: pointer;
+          list-style: none;
+          user-select: none;
+          transition: background 0.2s;
+        }
+        .earlier-work-summary::-webkit-details-marker { display: none; }
+        .earlier-work-summary:hover { background: var(--bg-card-hover); }
+        .earlier-work-label {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--text-muted);
+          font-weight: 600;
+          flex-shrink: 0;
+        }
+        .earlier-work-sub {
+          font-size: 13px;
+          color: var(--text-dim);
+          flex: 1;
+        }
+        .earlier-work-arrow {
+          font-size: 14px;
+          color: var(--text-dim);
+          transition: transform 0.2s;
+          flex-shrink: 0;
+        }
+        @media (max-width: 560px) {
+          .earlier-work-sub { display: none; }
         }
       `}</style>
     </>

@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# lkilpatrick.com
 
-## Getting Started
+**[lkilpatrick.com](https://lkilpatrick.com)** — personal site for Luke Kilpatrick.
 
-First, run the development server:
+> Developer Experience · Product Marketing · Applied AI · Monterey Bay
+
+---
+
+## The site
+
+Five pages. No fluff.
+
+| Page | Purpose |
+|---|---|
+| [Home](https://lkilpatrick.com) | Who I am and what I do |
+| [Work](https://lkilpatrick.com/work) | Production systems, developer portals, and documentation built from zero |
+| [Content](https://lkilpatrick.com/content) | Technical writing, conference talks, and product launch videos |
+| [Impact](https://lkilpatrick.com/impact) | Four capabilities, proof points, and the scenarios where I make the biggest difference |
+| [About](https://lkilpatrick.com/about) | Ocean first. Builder always. |
+
+---
+
+## Stack
+
+- **Next.js 16** — App Router, static export
+- **TypeScript** — strict mode
+- **TailwindCSS** — utility styling
+- **Firebase Hosting** — deployed via GitHub Actions on push to `main`
+- No CMS. No database. No backend. Just a fast static site that ships.
+
+---
+
+## Local dev
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
+Push to `main` — GitHub Actions handles the Firebase deploy automatically.
 
-To learn more about Next.js, take a look at the following resources:
+To deploy manually:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+firebase deploy --only hosting
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+app/
+  page.tsx              # Home
+  work/                 # Work page
+  content/              # Content page
+  impact/               # Impact page
+  about/                # About page
+  components/           # All UI components
+  data/portfolio.ts     # Single source of truth for all content
+public/
+  screenshots/          # Portal and content screenshots
+  profile.jpg           # Hero photo
+  *.pdf                 # Downloadable chapter PDFs
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All content lives in `app/data/portfolio.ts`. Changing a job title, stat, or link is a one-line edit.
+
+---
+
+## About
+
+15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.
+
+PADI Divemaster. Sailor. Author of the [Mia Kingtide Ocean Adventures](https://miakingtide.com) series. Sand City, CA.
+
+→ [lkilpatrick.com](https://lkilpatrick.com)

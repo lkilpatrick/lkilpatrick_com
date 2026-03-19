@@ -7,6 +7,7 @@ export const personalInfo = {
     "I build the content, docs, and onboarding experiences that turn complex infrastructure products into tools developers actually want to use. I also write code, author books, and ship things.",
   location: "Sand City, CA — Monterey Peninsula",
   availability: "Available Now",
+  availableForWork: true, // Toggle this to false to hide the "Available Now" badge sitewide
   email: "luke@lukek.ca",
   linkedin: "https://www.linkedin.com/in/lukekilpatrick/",
   github: "https://github.com/lkilpatrick",
@@ -15,7 +16,7 @@ export const personalInfo = {
 
 export const stats = [
   { value: "15+", label: "Years Experience", link: null },
-  { value: "50+", label: "Events Spoken At", link: "/video" },
+  { value: "50+", label: "Events Spoken At", link: "/content" },
   { value: "10K", label: "TikTok Followers", link: "https://www.tiktok.com/@pitterpatterdiving" },
   { value: "1,300+", label: "Books Sold", link: null },
 ];

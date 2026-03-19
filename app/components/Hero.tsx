@@ -47,7 +47,7 @@ export default function Hero() {
             </p>
 
             <div className="hero-ctas">
-              <a href="/projects" className="btn-primary">
+              <a href="/work" className="btn-primary">
                 See What I&apos;ve Built
               </a>
               <button className="btn-secondary" onClick={() => setContactOpen(true)}>
@@ -60,11 +60,13 @@ export default function Hero() {
                 <span className="hero-dot" />
                 {personalInfo.location}
               </span>
-              <span className="hero-meta-item hero-available">
-                <span className="hero-pulse" />
-                {personalInfo.availability}
-              </span>
-              <a href="/Luke K Director of DevRel -2026.pdf" download="Luke-Kilpatrick-Resume-2026.pdf" className="hero-resume-link">
+              {personalInfo.availableForWork && (
+                <span className="hero-meta-item hero-available">
+                  <span className="hero-pulse" />
+                  {personalInfo.availability}
+                </span>
+              )}
+              <a href="/Luke-Kilpatrick-Director-DevRel-2026.pdf" download="Luke-Kilpatrick-Director-DevRel-2026.pdf" className="hero-resume-link">
                 Resume ↓
               </a>
             </div>

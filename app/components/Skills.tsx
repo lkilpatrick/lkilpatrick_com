@@ -1,12 +1,47 @@
-import Image from "next/image";
-import { stats, strategicWork } from "../data/portfolio";
-import { SectionHeader, Stat } from "./shared";
-
-const IMPACT_SCREENSHOTS: Record<number, string> = {
-  1: "/screenshots/impact-developer-marketing-guide.jpg",
-  2: "/screenshots/impact-codegeist.jpg",
-  3: "/screenshots/impact-nutanix-dev-launch.jpg",
-};
+const PROOF_POINTS = [
+  {
+    org: "Nutanix",
+    title: "Built the developer portal from scratch.",
+    detail: "Still live today. 49+ open-source repos on GitHub. Self-paced labs, API reference, and a Twitch streaming channel.",
+    link: "/work#docs",
+    linkLabel: "See full case study →",
+  },
+  {
+    org: "Atlassian",
+    title: "Ran Atlassian's global developer hackathon.",
+    detail: "Codegeist — drove measurable marketplace growth and ecosystem adoption. App Week campaigns with quantifiable ROI.",
+    link: null,
+    linkLabel: null,
+  },
+  {
+    org: "SlashData",
+    title: "Authored two chapters in the definitive developer marketing guide.",
+    detail: "\"Scaling Down\" and \"Starting from Scratch Program\" — the playbooks for developer programs under constraints. Published by SlashData.",
+    link: "https://a.co/d/eIgJG8o",
+    linkLabel: "Book on Amazon →",
+  },
+  {
+    org: "LinearB",
+    title: "Built gitStream docs from zero.",
+    detail: "Complete documentation site: quickstarts, automation library, API reference, plugin development guides. Self-serve, no sales call required.",
+    link: "/work#docs",
+    linkLabel: "See full case study →",
+  },
+  {
+    org: "Harness",
+    title: "Shipped CI release notes and product launch video.",
+    detail: "Maintained Harness CI release notes for a developer audience tracking breaking changes and migration guides. Scripted and produced the Build Intelligence launch video.",
+    link: "/content",
+    linkLabel: "See on Content page →",
+  },
+  {
+    org: "DevRelCon",
+    title: "Conference speaker — London &amp; San Francisco.",
+    detail: "Talks on building developer programs from zero and developer marketing strategy. Representing Nutanix on global DevRel stages.",
+    link: "/content#presentations",
+    linkLabel: "Watch the talks →",
+  },
+];
 
 const BOOK_CHAPTERS = [
   {
@@ -23,88 +58,42 @@ const BOOK_CHAPTERS = [
   },
 ];
 
-function ImpactRow({ item, index }: { item: typeof strategicWork[0]; index: number }) {
-  const screenshot = IMPACT_SCREENSHOTS[item.id];
-  const isEven = index % 2 === 0;
-  const href = item.link ?? "#";
-  return (
-    <div className={`portal-row ${isEven ? "" : "portal-row--reverse"}`}>
-      <a href={href} target="_blank" rel="noopener noreferrer" className="portal-screenshot-wrap">
-        {screenshot ? (
-          <Image
-            src={screenshot}
-            alt={`Screenshot of ${item.title}`}
-            width={600}
-            height={380}
-            className="portal-screenshot"
-            style={{ width: "100%", height: "auto", display: "block" }}
-          />
-        ) : (
-          <div className="portal-screenshot-placeholder">
-            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--text-dim)" }}>
-              {href.replace("https://", "")}
-            </span>
-          </div>
-        )}
-      </a>
-      <div className="portal-text">
-        <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 6 }}>
-          {item.org}
-        </div>
-        <h3 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 22, fontWeight: 400, color: "var(--heading)", marginBottom: 14, lineHeight: 1.3 }}>
-          <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: "var(--heading)" }}>
-            {item.title} ↗
-          </a>
-        </h3>
-        <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.7, marginBottom: 20 }}>
-          {item.description}
-        </p>
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--accent)", padding: "8px 16px", border: "1px solid var(--border-accent)", borderRadius: 6, display: "inline-block" }}
-        >
-          View →
-        </a>
-      </div>
-    </div>
-  );
-}
-
 export default function StrategicImpact() {
   return (
     <>
-      <section className="section-body" id="impact">
+      {/* ── Proof Points ── */}
+      <section className="section-body section-alt" id="proof-points">
         <div className="content-wrap">
-          <SectionHeader number="04" title="Strategic Impact" />
-          <p style={{ fontSize: 15, color: "var(--text-muted)", marginTop: -20, marginBottom: 36, maxWidth: 600 }}>
-            Programs, platforms, and published work that moved the needle — developer ecosystems built from zero, global hackathons, and industry-recognized thought leadership.
-          </p>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 12, marginBottom: 64 }}>
-            {stats.map((s) => (
-              <Stat key={s.label} value={s.value} label={s.label} />
-            ))}
+          <div className="pp-header">
+            <div className="pp-eyebrow">Proof Points</div>
+            <h2 className="pp-title">Shipped. Measured. Still running.</h2>
+            <p className="pp-subtitle">
+              The concise version. Each entry links to the full case study on Work or Content.
+            </p>
           </div>
 
-          <div style={{ display: "grid", gap: 72 }}>
-            {strategicWork.map((item, i) => (
-              <ImpactRow key={item.id} item={item} index={i} />
+          <div className="pp-grid">
+            {PROOF_POINTS.map((item) => (
+              <div key={item.title} className="pp-card">
+                <div className="pp-org">{item.org}</div>
+                <div className="pp-title-line" dangerouslySetInnerHTML={{ __html: item.title }} />
+                <p className="pp-detail">{item.detail}</p>
+                {item.link && (
+                  <a href={item.link} className="pp-link">
+                    {item.linkLabel}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Book chapters */}
+      {/* ── Book chapter PDFs ── */}
       <section className="section-body" id="book-chapters">
         <div className="content-wrap">
-          <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 8 }}>
-            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 12, color: "var(--accent)", letterSpacing: 1 }}>PDF</span>
-            <h2 style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: 26, color: "var(--heading)", fontWeight: 400 }}>
-              Developer Marketing Essential Guide — Chapters
-            </h2>
-          </div>
+          <div className="pp-eyebrow" style={{ marginBottom: 12 }}>SlashData — Free Download</div>
+          <h2 className="pp-title" style={{ marginBottom: 8 }}>Developer Marketing Essential Guide — Chapters</h2>
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 28, maxWidth: 600 }}>
             Two chapters I authored in the SlashData-published guide to developer marketing. Free to download.
           </p>
@@ -127,38 +116,85 @@ export default function StrategicImpact() {
       </section>
 
       <style>{`
-        .portal-row {
+        /* ── Proof Points ── */
+        .pp-header { margin-bottom: 52px; }
+        .pp-eyebrow {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin-bottom: 12px;
+        }
+        .pp-title {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: clamp(26px, 3vw, 38px);
+          font-weight: 400;
+          color: var(--heading);
+          margin-bottom: 14px;
+          letter-spacing: -0.4px;
+          line-height: 1.15;
+        }
+        .pp-subtitle {
+          font-size: 16px;
+          color: var(--text-muted);
+          max-width: 520px;
+          line-height: 1.7;
+        }
+        .pp-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 48px;
-          align-items: center;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
         }
-        .portal-row--reverse { direction: rtl; }
-        .portal-row--reverse > * { direction: ltr; }
-        .portal-screenshot-wrap {
-          display: block;
-          border-radius: 10px;
-          overflow: hidden;
-          border: 1px solid var(--border);
-          box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-          transition: box-shadow 0.2s, transform 0.2s;
+        .pp-card {
           background: var(--bg-card);
-        }
-        .portal-screenshot-wrap:hover {
-          box-shadow: 0 8px 40px rgba(0,0,0,0.14);
-          transform: translateY(-2px);
-        }
-        .portal-screenshot { display: block; width: 100%; height: auto; }
-        .portal-screenshot-placeholder {
-          width: 100%;
-          aspect-ratio: 16/10;
-          background: var(--bg-card-hover);
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          padding: 28px 24px;
+          box-shadow: var(--shadow-card);
           display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 10px;
+          flex-direction: column;
+          gap: 8px;
+          transition: all 0.2s ease;
         }
-        .portal-text { direction: ltr; }
+        .pp-card:hover {
+          border-color: var(--border-accent);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-card-hover);
+        }
+        .pp-org {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--accent);
+        }
+        .pp-title-line {
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--heading);
+          line-height: 1.4;
+        }
+        .pp-detail {
+          font-size: 13px;
+          color: var(--text-muted);
+          line-height: 1.7;
+          flex: 1;
+        }
+        .pp-link {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--accent);
+          text-decoration: none;
+          border-bottom: 1px solid var(--border-accent);
+          padding-bottom: 1px;
+          align-self: flex-start;
+          transition: color 0.2s, border-color 0.2s;
+          margin-top: 4px;
+        }
+        .pp-link:hover { color: var(--accent-light); border-bottom-color: var(--accent-light); }
+
+        /* ── PDF download cards ── */
         .chapter-card {
           display: flex;
           align-items: flex-start;
@@ -192,12 +228,12 @@ export default function StrategicImpact() {
           transition: all 0.2s;
           letter-spacing: 0.5px;
         }
-        @media (max-width: 700px) {
-          .portal-row, .portal-row--reverse {
-            grid-template-columns: 1fr;
-            direction: ltr;
-            gap: 24px;
-          }
+
+        @media (max-width: 900px) {
+          .pp-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+          .pp-grid { grid-template-columns: 1fr; }
         }
       `}</style>
     </>

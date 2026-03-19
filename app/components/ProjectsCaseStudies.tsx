@@ -265,7 +265,7 @@ export default function ProjectsCaseStudies() {
           <p className="cs-hero-sub">
             Each entry covers the problem, what was built, the decisions behind it, and why it matters.
             Developer platform and documentation work lives on the{" "}
-            <a href="/docs" className="cs-hero-link">Docs &amp; Portals</a> page.
+            <a href="/work#docs" className="cs-hero-link">Developer Portals &amp; Docs</a> page.
           </p>
           <div className="cs-hero-meta">
             <span className="cs-hero-meta-item">{CASE_STUDIES.length} systems documented</span>
@@ -400,7 +400,7 @@ export default function ProjectsCaseStudies() {
 
           <div className="cs-see-also">
             <p>Developer platform and documentation work at Nutanix, LinearB, and Harness lives on the</p>
-            <a href="/docs" className="cs-see-also-link">Docs &amp; Portals page &rarr;</a>
+            <a href="/work#docs" className="cs-see-also-link">Developer Portals &amp; Docs →</a>
           </div>
         </div>
       </section>
