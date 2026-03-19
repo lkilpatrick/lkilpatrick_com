@@ -233,27 +233,12 @@ export default function WorkPage() {
 
   return (
     <>
-      {/* ── Page header ── */}
-      <section className="wp-hero section-body">
-        <div className="content-wrap">
-          <div className="wp-hero-eyebrow">Work</div>
-          <h1 className="wp-hero-title">Systems I&apos;ve built. Problems I&apos;ve solved.</h1>
-          <p className="wp-hero-sub">
-            Production systems, developer platforms, and documentation sites — built from zero, used by real people.
-            Each entry is a finished thing, not a proposal.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Section 1: Projects & Systems ── */}
-      <section className="section-body section-alt" id="projects">
+      {/* ── Page header + Projects ── */}
+      <section className="section-body" id="projects">
         <div className="content-wrap--wide">
-          <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Section 01</div>
-            <h2 className="wp-section-title">Projects &amp; Systems</h2>
-            <p className="wp-section-sub">
-              Production systems with real users, real data, and real constraints. Built independently or as lead developer.
-            </p>
+          <div className="wp-page-header">
+            <div className="wp-hero-eyebrow">Work</div>
+            <h1 className="wp-hero-title">What I&apos;ve built.</h1>
           </div>
 
           {featured.map(p => (
@@ -269,15 +254,11 @@ export default function WorkPage() {
       </section>
 
       {/* ── Section 2: Developer Portals & Documentation ── */}
-      <section className="section-body" id="docs">
+      <section className="section-body section-alt" id="docs">
         <div className="content-wrap">
           <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Section 02</div>
-            <h2 className="wp-section-title">Developer Portals &amp; Documentation</h2>
-            <p className="wp-section-sub">
-              The portals, docs, and onboarding systems that let developers self-serve — no sales call required.
-              This is what I do first at every company.
-            </p>
+            <div className="wp-section-eyebrow">Developer Portals &amp; Documentation</div>
+            <h2 className="wp-section-title">The systems that let developers self-serve.</h2>
           </div>
 
           <div style={{ display: "grid", gap: 72 }}>
@@ -294,15 +275,17 @@ export default function WorkPage() {
       </section>
 
       <style>{`
-        /* ── Hero ── */
-        .wp-hero { background: var(--bg); padding-bottom: 0 !important; }
+        /* ── Page header ── */
+        .wp-page-header {
+          margin-bottom: 48px;
+        }
         .wp-hero-eyebrow {
           font-family: var(--font-mono), monospace;
           font-size: 10px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
-          color: var(--accent);
-          margin-bottom: 16px;
+          color: var(--color-primary);
+          margin-bottom: 14px;
         }
         .wp-hero-title {
           font-family: var(--font-serif), Georgia, serif;
@@ -311,13 +294,6 @@ export default function WorkPage() {
           color: var(--heading);
           letter-spacing: -0.5px;
           line-height: 1.12;
-          margin-bottom: 20px;
-        }
-        .wp-hero-sub {
-          font-size: 17px;
-          color: var(--text-muted);
-          line-height: 1.75;
-          max-width: 600px;
         }
 
         /* ── Section headers ── */
@@ -329,7 +305,7 @@ export default function WorkPage() {
           font-size: 10px;
           letter-spacing: 2.5px;
           text-transform: uppercase;
-          color: var(--accent);
+          color: var(--color-primary);
           margin-bottom: 12px;
         }
         .wp-section-title {
@@ -337,15 +313,8 @@ export default function WorkPage() {
           font-size: clamp(26px, 3.5vw, 40px);
           font-weight: 400;
           color: var(--heading);
-          margin-bottom: 12px;
           letter-spacing: -0.5px;
           line-height: 1.15;
-        }
-        .wp-section-sub {
-          font-size: 16px;
-          color: var(--text-muted);
-          max-width: 540px;
-          line-height: 1.7;
         }
 
         /* ── Tags / chips ── */
