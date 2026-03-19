@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ContentPreview from "../components/ContentPreview";
-import WritingContent from "../components/WritingContent";
-import VideoContent from "../components/VideoContent";
+import ContentHub from "../components/ContentHub";
 
 export const metadata: Metadata = {
   title: "Content — Writing, Talks & Presentations — Luke Kilpatrick",
@@ -20,9 +18,7 @@ export default function ContentPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        <ContentPreview />
-        <WritingContent />
-        <VideoContent />
+        <ContentHub />
       </main>
       <Footer />
     </>
