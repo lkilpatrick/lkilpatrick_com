@@ -5,10 +5,10 @@ const SYSTEMS = [
     tagColor: "purple",
     title: "Tech Challenge Kenya",
     subtitle: "Admin Dashboard",
-    what: "A production-grade web platform serving thousands of students, schools, teams, and judges across Kenya's national STEM competition.",
-    built: "15 modules in Flutter Web backed by Supabase: auth, RBAC, audit logs, surveys, team management, scoring, communications, and reporting. Built from zero to production.",
-    matters: "This is what senior builder capability looks like. Complex domain, real scale, shipped.",
-    stack: ["Flutter Web", "Supabase", "Riverpod", "RBAC", "Multi-role", "15 modules"],
+    what: "Production platform running Kenya's national STEM competition — students, schools, teams, and judges operating simultaneously across the entire country.",
+    built: "15 modules in Flutter Web + Supabase: multi-role auth with RBAC, row-level security, audit logs, survey engine, team management, live scoring, bulk communications, and national reporting. Zero to production, single developer.",
+    matters: "Complex domain. National scale. Real stakes. This is what engineering leadership looks like when there is no team to delegate to.",
+    stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL RLS", "Multi-role RBAC", "15 modules", "National scale"],
     link: null,
     featured: true,
   },
@@ -18,10 +18,10 @@ const SYSTEMS = [
     tagColor: "teal",
     title: "MPYC RaceDay",
     subtitle: "Real-Time Sailing Race Platform",
-    what: "A role-based web platform for real-time race management at the Monterey Peninsula Yacht Club.",
-    built: "Live scoring, weather integration, race day coordination across multiple simultaneous roles. Mobile-first, built for a real community that actually uses it every weekend.",
-    matters: "I built this because the existing tools were not good enough. That is usually why I build things.",
-    stack: ["Role-based design", "Live data", "Mobile-first", "Race scoring"],
+    what: "Real-time race management platform for MPYC — 5 user roles, 57 courses, live weather from 11 stations, GPS tracking, and automated scoring published to Clubspot.",
+    built: "Flutter + Firebase: 25+ Firestore collections, Cloud Functions fetching weather every 60 seconds, FCM push notifications, GPS race tracking, Clubspot API sync. Android, iOS, and Web from a single codebase.",
+    matters: "Production system used every racing weekend on Monterey Bay. One developer. SaaS-class complexity. Built because commercial tools cost thousands per year and still did not do what we needed.",
+    stack: ["Flutter 3.x", "Firebase", "Cloud Functions", "GPS tracking", "11 weather stations", "Clubspot API", "5 roles"],
     link: null,
     featured: false,
   },
@@ -31,10 +31,10 @@ const SYSTEMS = [
     tagColor: "blue",
     title: "gitStream Docs Platform",
     subtitle: "LinearB — Zero to Full Developer Portal",
-    what: "The complete documentation system for gitStream, LinearB's workflow automation product.",
-    built: "Quickstart guides, automation library, integration docs, plugin development guides, interactive playground, and full API reference. Zero-touch developer onboarding.",
-    matters: "Developers could activate without a sales call. That is the point.",
-    stack: ["MkDocs", "API reference", "Automation library", "Self-serve"],
+    what: "Full developer portal and documentation system for gitStream — LinearB's AI-assisted workflow automation product for engineering teams.",
+    built: "Quickstart guides, automation library reference, integration docs, plugin development guides, interactive playground, and full API reference. Designed so developers could activate without a sales call.",
+    matters: "Self-serve onboarding that removes humans from the critical path. When documentation is done right, the support queue shrinks and activation improves. Both happened.",
+    stack: ["MkDocs", "API reference", "Automation library", "Interactive playground", "Self-serve onboarding"],
     link: "https://docs.gitstream.cm/",
     featured: false,
   },
@@ -44,10 +44,10 @@ const SYSTEMS = [
     tagColor: "teal",
     title: "Boat Daily Check",
     subtitle: "Victron Monitoring Agent",
-    what: "An AI-assisted monitoring agent that checks my boats overnight and sends a daily status report.",
-    built: "Python agent querying the Victron VRM API on a cron schedule. Reverse-engineered an undocumented API, published the reference docs, and open-sourced the project.",
-    matters: "Applied AI that runs without intervention. A real system solving a real problem.",
-    stack: ["Python", "Victron VRM API", "Cron automation", "Open source"],
+    what: "AI-powered overnight monitoring agent for two boats — queries live telemetry, processes power and battery data, and sends a formatted daily status report before I wake up.",
+    built: "Python agent on cron, querying a Victron VRM API I reverse-engineered from network traffic. Wrote the reference documentation myself and open-sourced the project. The reference has since been adopted by the Victron community.",
+    matters: "Real AI automation: not a demo, not a wrapper, not a proof of concept. A system that runs every day without intervention and solves a real operational problem.",
+    stack: ["Python", "Victron VRM API", "Cron automation", "AI summarisation", "Open source"],
     link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
     featured: false,
   },
@@ -57,10 +57,10 @@ const SYSTEMS = [
     tagColor: "orange",
     title: "Mia Kingtide",
     subtitle: "Books, Games, Audiobooks, Ocean Education",
-    what: "An original IP built from zero across books, interactive games, audiobooks, and a content ecosystem.",
-    built: "4 books published, 1,300+ copies sold, audiobooks on Spotify and INaudio, OceanMatch browser game, TikTok and YouTube audience built around ocean storytelling.",
-    matters: "Content systems. Brand building. Creative execution at scale.",
-    stack: ["4 published books", "Browser game", "Audiobooks", "Audience building"],
+    what: "Original children's conservation IP built from zero — reviewed by scientists at MBARI, Hopkins Marine Station, and Moss Landing Marine Labs, featured in Monterey County NOW, and sailed aboard the restored Western Flyer to the Sea of Cortez.",
+    built: "4 books, 1,300+ copies sold, audiobooks on Spotify and INaudio, OceanMatch browser game, YouTube and TikTok audience. Full cross-format content system with science credibility built in.",
+    matters: "The same discipline that builds a developer ecosystem: understand your audience, earn credibility, produce content worth their time, show up across formats. Applied to conservation fiction.",
+    stack: ["4 published books", "Audiobooks", "Browser game", "MBARI reviewed", "Western Flyer", "1,300+ sold"],
     link: "https://miakingtide.com/",
     featured: false,
   },
@@ -70,10 +70,10 @@ const SYSTEMS = [
     tagColor: "orange",
     title: "OceanMatch",
     subtitle: "Interactive Ocean Education Game",
-    what: "A browser-based matching game built around the Mia Kingtide ocean conservation universe.",
-    built: "Accessible interactive experience connecting ocean species, characters, and educational content. Part of a cross-format IP strategy designed to extend reach beyond books.",
-    matters: "Product thinking applied to content. Accessible design. IP that works across formats.",
-    stack: ["Browser game", "Ocean education", "Interactive", "IP extension"],
+    what: "Browser-based ocean education game extending the Mia Kingtide universe — species identification, conservation storytelling, and interactive learning in one accessible experience.",
+    built: "Standalone web game tied to the Mia Kingtide IP ecosystem. Part of a deliberate cross-format strategy: books → audiobooks → game → YouTube → TikTok. Each format targets a different acquisition channel.",
+    matters: "IP that works across formats does not happen by accident. It requires product thinking applied to content: clear audience, clear channel, clear value per format.",
+    stack: ["Browser game", "Ocean education", "Cross-format IP", "Accessible design"],
     link: "https://miakingtide.com/",
     featured: false,
   },
@@ -83,10 +83,10 @@ const SYSTEMS = [
     tagColor: "green",
     title: "Pitter Patter Diving",
     subtitle: "Ocean Media Brand + Tourism + Commerce",
-    what: "A full media and commerce brand built around ocean adventures on the Monterey Peninsula.",
-    built: "Blog, YouTube, TikTok channel grown to 10K followers in a single summer, dive tourism business, and an AI agent monitoring the boats. Built from zero audience.",
-    matters: "Audience building from scratch. Content-market fit found and validated in the wild.",
-    stack: ["10K TikTok", "Blog + YouTube", "Tourism business", "AI monitoring"],
+    what: "Full media, tourism, and commerce platform built around ocean adventures on the Monterey Peninsula — blog, YouTube, TikTok, boat rentals, Airbnb, underwater photography, and an AI monitoring agent.",
+    built: "10K TikTok followers in a single summer from zero. SEO blog. YouTube channel. Boatsetter boat rental listing. 5-star Airbnb (active since 2015). Underwater photography art store. AI agent monitoring the fleet overnight.",
+    matters: "Same skills as building a developer ecosystem — find content-market fit, build the audience, convert across channels. Validated in the wild with real revenue and real community.",
+    stack: ["10K TikTok", "Blog + YouTube", "Boat rental", "5-star Airbnb", "AI monitoring", "Art store"],
     link: "https://pitterpatterdiving.com/",
     featured: false,
   },
@@ -116,10 +116,10 @@ export default function SelectedSystems() {
     <section id="systems" className="sys-section section-body section-alt">
       <div className="content-wrap--wide">
         <div className="sys-header">
-          <div className="sys-eyebrow">Selected Systems</div>
-          <h2 className="sys-title">What I build when the problem is real.</h2>
+          <div className="sys-eyebrow">Systems I&apos;ve Built</div>
+          <h2 className="sys-title">Real systems. Real scale. Real use.</h2>
           <p className="sys-subtitle">
-            Each of these is a system, not a project. What it is, what I built, why it matters.
+            Every item here is in production, used by real people, solving a real problem. What it is, what I built, why it matters.
           </p>
         </div>
 
@@ -245,8 +245,8 @@ export default function SelectedSystems() {
           background: var(--bg-card);
           border: 1px solid var(--border);
           border-radius: var(--radius);
-          padding: 40px;
-          margin-bottom: 24px;
+          padding: 48px;
+          margin-bottom: 28px;
           display: grid;
           grid-template-columns: 1fr 260px;
           gap: 48px;
@@ -359,16 +359,17 @@ export default function SelectedSystems() {
           color: inherit;
         }
         .sys-card-link:hover .sys-card {
-          transform: translateY(-4px);
-          box-shadow: var(--shadow-card-hover);
+          transform: translateY(-5px);
+          box-shadow: var(--shadow-card-hover), 0 0 0 1px rgba(14,127,192,0.08);
           border-color: var(--border-accent);
+          background: linear-gradient(160deg, var(--bg-card) 70%, var(--accent-glow) 100%);
         }
         .sys-card-link:hover .sys-link-icon { color: var(--accent); }
         .sys-card {
           background: var(--bg-card);
           border: 1px solid var(--border);
           border-radius: var(--radius);
-          padding: 28px;
+          padding: 32px;
           height: 100%;
           transition: all 0.25s ease;
           box-shadow: var(--shadow-card);

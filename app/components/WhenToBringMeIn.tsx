@@ -93,10 +93,10 @@ export default function WhenToBringMeIn() {
     <section id="when" className="when-section section-body">
       <div className="content-wrap--wide">
         <div className="when-header">
-          <div className="when-eyebrow">When To Bring Me In</div>
-          <h2 className="when-title">You have a complex system. Someone needs to make it usable.</h2>
+          <div className="when-eyebrow">When Teams Bring Me In</div>
+          <h2 className="when-title">You have a complex system.<br/>Someone needs to make it usable.</h2>
           <p className="when-subtitle">
-            These are the moments I do my best work.
+            Developer platform launches. Broken onboarding. AI workflows that need to actually ship. These are the problems I solve.
           </p>
         </div>
 

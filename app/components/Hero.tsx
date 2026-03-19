@@ -22,13 +22,14 @@ export default function Hero() {
       <section id="home" className="hero-section">
         <div className="hero-glow-1" />
         <div className="hero-glow-2" />
+        <div className="hero-glow-3" />
         <div className="hero-grid-bg" />
 
         <div className="hero-inner">
           <div className="hero-text">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot" />
-              Developer Platforms &nbsp;&middot;&nbsp; Product Marketing &nbsp;&middot;&nbsp; Applied AI
+              Developer Platforms &nbsp;&middot;&nbsp; Product Marketing &nbsp;&middot;&nbsp; <strong style={{color:"var(--purple)"}}>Applied AI</strong>
             </div>
 
             <h1 className="hero-headline">
@@ -40,10 +41,9 @@ export default function Hero() {
             </h2>
 
             <p className="hero-sub">
-              I build the systems that make that happen across developer platforms,
-              product marketing, and applied AI. From documentation and onboarding
-              to AI-powered workflows, I turn complex systems into products
-              developers actually adopt.
+              I build the systems that make that happen &mdash; developer portals, onboarding
+              systems, product launches, and AI-powered workflows that actually ship.
+              Complex systems into products developers adopt.
             </p>
 
             <div className="hero-ctas">
@@ -119,25 +119,34 @@ export default function Hero() {
       <style>{`
         .hero-section {
           position: relative;
-          padding: 148px 0 0;
+          padding: 172px 0 0;
           overflow: hidden;
           background: var(--bg);
         }
         .hero-glow-1 {
           position: absolute;
-          top: -60px; right: -100px;
-          width: 700px; height: 700px;
+          top: -80px; right: -120px;
+          width: 800px; height: 800px;
           border-radius: 50%;
-          background: radial-gradient(ellipse, rgba(14,127,192,0.09) 0%, transparent 65%);
+          background: radial-gradient(ellipse, rgba(14,127,192,0.12) 0%, transparent 65%);
           pointer-events: none;
         }
         .hero-glow-2 {
           position: absolute;
-          top: 200px; left: -200px;
-          width: 500px; height: 500px;
+          top: 220px; left: -200px;
+          width: 600px; height: 600px;
           border-radius: 50%;
-          background: radial-gradient(ellipse, rgba(11,158,138,0.06) 0%, transparent 65%);
+          background: radial-gradient(ellipse, rgba(11,158,138,0.08) 0%, transparent 65%);
           pointer-events: none;
+        }
+        .hero-glow-3 {
+          position: absolute;
+          bottom: 0; left: 50%;
+          transform: translateX(-50%);
+          width: 100%; height: 200px;
+          background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+          pointer-events: none;
+          z-index: 1;
         }
         .hero-grid-bg {
           position: absolute;
@@ -154,12 +163,13 @@ export default function Hero() {
         .hero-inner {
           max-width: 1100px;
           margin: 0 auto;
-          padding: 0 32px 72px;
+          padding: 0 32px 96px;
           display: grid;
           grid-template-columns: 1fr 360px;
           gap: 80px;
           align-items: center;
           position: relative;
+          z-index: 2;
         }
 
         .hero-eyebrow {
@@ -188,23 +198,23 @@ export default function Hero() {
 
         .hero-headline {
           font-family: var(--font-serif), Georgia, serif;
-          font-size: clamp(42px, 5.5vw, 68px);
+          font-size: clamp(46px, 6vw, 76px);
           font-weight: 400;
-          line-height: 1.08;
+          line-height: 1.06;
           color: var(--heading);
-          margin-bottom: 12px;
-          letter-spacing: -1px;
+          margin-bottom: 10px;
+          letter-spacing: -1.5px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.15s forwards;
         }
         .hero-subheadline {
           font-family: var(--font-serif), Georgia, serif;
-          font-size: clamp(38px, 5vw, 62px);
+          font-size: clamp(40px, 5.5vw, 70px);
           font-weight: 400;
-          line-height: 1.08;
-          letter-spacing: -1px;
-          margin-bottom: 32px;
-          background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
+          line-height: 1.06;
+          letter-spacing: -1.5px;
+          margin-bottom: 36px;
+          background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 60%, var(--purple) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -215,9 +225,9 @@ export default function Hero() {
         .hero-sub {
           font-size: 18px;
           color: var(--text-muted);
-          line-height: 1.8;
-          margin-bottom: 36px;
-          max-width: 540px;
+          line-height: 1.85;
+          margin-bottom: 40px;
+          max-width: 560px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.30s forwards;
         }
@@ -479,7 +489,7 @@ export default function Hero() {
           .hero-text { order: 1; }
         }
         @media (max-width: 600px) {
-          .hero-section { padding-top: 96px; }
+          .hero-section { padding-top: 100px; }
           .hero-inner { padding: 0 20px 56px; }
           .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
           .hero-stat:nth-child(2) { border-right: none; }
