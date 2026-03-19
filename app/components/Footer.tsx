@@ -46,11 +46,6 @@ export default function Footer() {
               Email
             </button>
           </div>
-          <p style={{ fontSize: 12, color: "var(--text-dim)", marginBottom: 8 }}>
-            <a href={`mailto:${personalInfo.email}`} style={{ color: "var(--text-dim)", textDecoration: "none", borderBottom: "1px solid var(--border)" }}>
-              {personalInfo.email}
-            </a>
-          </p>
           <p style={{ fontSize: 12, color: "var(--text-dim)" }}>
             &copy; 2026 Luke Kilpatrick. Built with code, sugar free red bull, and salt water.
           </p>

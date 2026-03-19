@@ -84,7 +84,7 @@ const SYSTEMS = [
     title: "Pitter Patter Diving",
     subtitle: "Ocean Media Brand + Tourism + Commerce",
     what: "Full media, tourism, and commerce platform built around ocean adventures on the Monterey Peninsula — blog, YouTube, TikTok, boat rentals, Airbnb, underwater photography, and an AI monitoring agent.",
-    built: "10K TikTok followers in a single summer from zero. SEO blog. YouTube channel. Boatsetter boat rental listing. 5-star Airbnb (active since 2015). Underwater photography art store. AI agent monitoring the fleet overnight.",
+    built: "10K TikTok followers in a single summer from zero. SEO blog. YouTube channel. Boatsetter boat rental listing. 5-star Airbnb (active since 2020). Underwater photography art store. AI agent monitoring the fleet overnight.",
     matters: "Same skills as building a developer ecosystem — find content-market fit, build the audience, convert across channels. Validated in the wild with real revenue and real community.",
     stack: ["10K TikTok", "Blog + YouTube", "Boat rental", "5-star Airbnb", "AI monitoring", "Art store"],
     link: "https://pitterpatterdiving.com/",

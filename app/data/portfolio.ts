@@ -8,7 +8,6 @@ export const personalInfo = {
   location: "Sand City, CA — Monterey Peninsula",
   availability: "Available Now",
   availableForWork: true, // Toggle this to false to hide the "Available Now" badge sitewide
-  email: "luke@lukek.ca",
   linkedin: "https://www.linkedin.com/in/lukekilpatrick/",
   github: "https://github.com/lkilpatrick",
   youtube: "https://www.youtube.com/@LukeKilpatrick",
