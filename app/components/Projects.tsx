@@ -4,8 +4,8 @@ import { SectionHeader } from "./shared";
 
 const CONTENT_SCREENSHOTS: Record<number, string> = {
   1: "/screenshots/content-ai-agent-boats.jpg",
-  2: "https://duplocloud.com/wp-content/uploads/2025/09/devops-1024x682.webp",
-  3: "https://duplocloud.com/wp-content/uploads/2025/09/PaaSisPasseHeade2064-1080-1024x540.webp",
+  2: "/screenshots/content-duplocloud-prompts.webp",
+  3: "/screenshots/content-duplocloud-paas.webp",
   4: "/screenshots/content-linearb-hacktoberfest.jpg",
   5: "/screenshots/content-linearb-continuous-merge.jpg",
 };
