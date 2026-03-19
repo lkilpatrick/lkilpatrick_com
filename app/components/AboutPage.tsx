@@ -283,27 +283,27 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <div className="about-mia-series-label" style={{ marginTop: 28 }}>Audiobooks</div>
+              <div className="about-mia-series-label" style={{ marginTop: 28 }}>Audiobooks — Listen on Spotify</div>
               <div className="about-mia-audio-list">
-                <a href="https://open.spotify.com/show/miakingtide" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
-                  <span className="about-mia-audio-icon">♪</span>
-                  <span className="about-mia-audio-body">
-                    <span className="about-mia-audio-platform">Spotify</span>
-                    <span className="about-mia-audio-desc">All 4 audiobooks — listen on Spotify ↗</span>
-                  </span>
-                </a>
-                <a href="https://www.inaudio.org/book-author/luke-kilpatrick/" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
-                  <span className="about-mia-audio-icon">♪</span>
-                  <span className="about-mia-audio-body">
-                    <span className="about-mia-audio-platform">INaudio</span>
-                    <span className="about-mia-audio-desc">All 4 audiobooks on INaudio ↗</span>
-                  </span>
-                </a>
-                <a href="https://elevenlabs.io/text-reader" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
+                {[
+                  { title: "The Octopus's Gift", link: "https://open.spotify.com/show/7rFEzmP52SHH2Jo781GEvq" },
+                  { title: "Guardian of the Coast", link: "https://open.spotify.com/show/5itdlUy2EET3om8xfJEM8U" },
+                  { title: "Journey to the Sea of Cortez", link: "https://open.spotify.com/show/5MSyIroaCuyiD0QuRebv9L" },
+                  { title: "The Vanishing Sanctuary", link: "https://open.spotify.com/show/5wPlY546le3afOVe1hI6yw" },
+                ].map((ab) => (
+                  <a key={ab.title} href={ab.link} target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
+                    <span className="about-mia-audio-icon">♪</span>
+                    <span className="about-mia-audio-body">
+                      <span className="about-mia-audio-platform">{ab.title}</span>
+                      <span className="about-mia-audio-desc">Listen on Spotify ↗</span>
+                    </span>
+                  </a>
+                ))}
+                <a href="https://elevenreader.io/authors/FS38IhgzssBAtrwUD4Ob" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
                   <span className="about-mia-audio-icon">◈</span>
                   <span className="about-mia-audio-body">
-                    <span className="about-mia-audio-platform">ElevenReader</span>
-                    <span className="about-mia-audio-desc">Available on ElevenReader ↗</span>
+                    <span className="about-mia-audio-platform">All 4 books on ElevenReader</span>
+                    <span className="about-mia-audio-desc">Listen with AI narration ↗</span>
                   </span>
                 </a>
               </div>
