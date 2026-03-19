@@ -183,43 +183,45 @@ export default function AboutPage() {
           <div className="about-section-eyebrow">Books &amp; IP</div>
           <h2 className="about-section-title">Mia Kingtide Ocean Adventures</h2>
           <p className="about-section-intro">
-            An original children&apos;s conservation IP built from zero — reviewed by scientists at three of the
-            world&apos;s leading marine research institutions, sailed aboard the restored Western Flyer to the Sea
-            of Cortez, and featured in Monterey County NOW.
+            An original conservation IP built from zero. Four novels, two illustrated children&apos;s books,
+            four audiobooks on Spotify — reviewed by scientists at MBARI, Hopkins Marine Station, and Moss
+            Landing Marine Labs, sailed aboard the restored Western Flyer to the Sea of Cortez, and
+            featured in Monterey County NOW.
           </p>
 
           <div className="about-mia-grid">
             <div className="about-mia-text">
               <p className="about-desc">
-                The Mia Kingtide series tackles climate change, overfishing, and habitat destruction
-                through adventure-first storytelling with a deliberately hopeful framing. Scientists
-                at <strong>MBARI</strong>, <strong>Hopkins Marine Station</strong>, and{" "}
-                <strong>Moss Landing Marine Labs</strong> reviewed the books for scientific accuracy.
-                That credibility is not decorative — it is what separates this from generic ocean-themed
-                kids content.
+                Mia Kingtide is a 12-year-old who lives on the Monterey Peninsula, dives, sails, and fights
+                to protect the ocean. The novels follow her from Monterey Bay to the Sea of Cortez and back —
+                tackling overfishing, habitat destruction, and climate change through adventure-first
+                storytelling with a deliberately hopeful frame. Written for middle-grade readers who are
+                already paying attention to the world.
               </p>
               <p className="about-desc">
-                The books sailed aboard the <strong>Western Flyer</strong> — the legendary vessel from
-                John Steinbeck and Ed Ricketts&apos; Sea of Cortez expedition — during its restored journey
-                back to the Sea of Cortez. Featured in <strong>Monterey County NOW</strong>.
+                Scientists at <strong>MBARI</strong>, <strong>Hopkins Marine Station</strong>, and{" "}
+                <strong>Moss Landing Marine Labs</strong> reviewed the books for scientific accuracy.
+                Physical copies sailed aboard the <strong>Western Flyer</strong> — John Steinbeck and
+                Ed Ricketts&apos; legendary vessel — on its restored voyage back to the Sea of Cortez.
+                Featured in <strong>Monterey County NOW</strong>.
               </p>
 
               <div className="about-mia-stats">
-                <div className="about-mini-stat"><strong>4</strong> books published</div>
+                <div className="about-mini-stat"><strong>4</strong> novels</div>
+                <div className="about-mini-stat"><strong>2</strong> illustrated children&apos;s books</div>
+                <div className="about-mini-stat"><strong>4</strong> audiobooks on Spotify</div>
                 <div className="about-mini-stat"><strong>1,300+</strong> copies sold</div>
-                <div className="about-mini-stat"><strong>Spotify &amp; INaudio</strong> audiobooks</div>
-                <div className="about-mini-stat"><strong>OceanMatch</strong> browser game</div>
               </div>
 
               <div className="about-mia-links">
-                <a href="https://miakingtide.com/" target="_blank" rel="noopener noreferrer" className="about-pill-primary">
-                  miakingtide.com ↗
+                <a href="https://pitterpatterdiving.com/shop/" target="_blank" rel="noopener noreferrer" className="about-pill-primary">
+                  Buy the Books ↗
                 </a>
-                <a href="https://www.amazon.com/author/lkilpatrick" target="_blank" rel="noopener noreferrer" className="about-pill">
-                  Books on Amazon
+                <a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" className="about-pill">
+                  Amazon →
                 </a>
                 <a href="https://www.montereycountynow.com/entertainment/literature/first-time-author-crafts-a-series-of-environmental-adventures-for-young-readers/article_74462bff-0388-481b-8ebb-9613d75aa11b.html" target="_blank" rel="noopener noreferrer" className="about-pill">
-                  Monterey County NOW
+                  Monterey County NOW →
                 </a>
               </div>
             </div>
@@ -239,6 +241,72 @@ export default function AboutPage() {
               <a href="https://www.youtube.com/@LukeKilpatrick" target="_blank" rel="noopener noreferrer" className="about-pill" style={{ marginTop: 12, display: "inline-block" }}>
                 Full YouTube Channel →
               </a>
+            </div>
+          </div>
+
+          {/* ── Full series list ── */}
+          <div className="about-mia-series">
+            <div className="about-mia-series-col">
+              <div className="about-mia-series-label">Novels — Mia Kingtide&apos;s Ocean Adventures</div>
+              <div className="about-mia-book-list">
+                {[
+                  { title: "The Octopus's Gift", link: "https://www.amazon.com/dp/B0DSZVMYD3", desc: "Where it starts. Monterey Bay, a mysterious connection to the ocean, and the fight to protect what she loves." },
+                  { title: "Guardian of the Coast", link: "https://www.amazon.com/dp/B0DVT5PBQP", desc: "Mia takes on a threat to the California coastline — marine biology, family, and the weight of responsibility." },
+                  { title: "Journey to the Sea of Cortez", link: "https://www.amazon.com/dp/B0F1LY4HPT", desc: "Inspired by Steinbeck and Ricketts. A two-month voyage aboard Pegasus exploring the west coast of North America." },
+                  { title: "The Vanishing Sanctuary", link: "https://www.amazon.com/dp/B0FY22H14T", desc: "The fight to save Monterey Bay. Innovation, marine biology, and what it costs to protect something you love." },
+                ].map((book, i) => (
+                  <a key={book.title} href={book.link} target="_blank" rel="noopener noreferrer" className="about-mia-book-row">
+                    <span className="about-mia-book-num">0{i + 1}</span>
+                    <span className="about-mia-book-body">
+                      <span className="about-mia-book-title">{book.title} ↗</span>
+                      <span className="about-mia-book-desc">{book.desc}</span>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="about-mia-series-col">
+              <div className="about-mia-series-label">Illustrated Children&apos;s Books</div>
+              <div className="about-mia-book-list">
+                {[
+                  { title: "The Octopus's Gift — The Secret of the…", link: "https://www.amazon.com/dp/B0GK8HPLX2", desc: "Full-colour illustrated edition. Designed for younger readers and classroom use." },
+                  { title: "The Octopus Gift — Where It All Began", link: "https://www.amazon.com/dp/B0GGDFGHLJ", desc: "The origin story in illustrated form. Ocean science made accessible for early readers." },
+                ].map((book, i) => (
+                  <a key={book.title} href={book.link} target="_blank" rel="noopener noreferrer" className="about-mia-book-row">
+                    <span className="about-mia-book-num">0{i + 1}</span>
+                    <span className="about-mia-book-body">
+                      <span className="about-mia-book-title">{book.title} ↗</span>
+                      <span className="about-mia-book-desc">{book.desc}</span>
+                    </span>
+                  </a>
+                ))}
+              </div>
+
+              <div className="about-mia-series-label" style={{ marginTop: 28 }}>Audiobooks</div>
+              <div className="about-mia-audio-list">
+                <a href="https://open.spotify.com/show/miakingtide" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
+                  <span className="about-mia-audio-icon">♪</span>
+                  <span className="about-mia-audio-body">
+                    <span className="about-mia-audio-platform">Spotify</span>
+                    <span className="about-mia-audio-desc">All 4 audiobooks — listen on Spotify ↗</span>
+                  </span>
+                </a>
+                <a href="https://www.inaudio.org/book-author/luke-kilpatrick/" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
+                  <span className="about-mia-audio-icon">♪</span>
+                  <span className="about-mia-audio-body">
+                    <span className="about-mia-audio-platform">INaudio</span>
+                    <span className="about-mia-audio-desc">All 4 audiobooks on INaudio ↗</span>
+                  </span>
+                </a>
+                <a href="https://elevenlabs.io/text-reader" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
+                  <span className="about-mia-audio-icon">◈</span>
+                  <span className="about-mia-audio-body">
+                    <span className="about-mia-audio-platform">ElevenReader</span>
+                    <span className="about-mia-audio-desc">Available on ElevenReader ↗</span>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -533,6 +601,113 @@ export default function AboutPage() {
           background: var(--accent-glow);
         }
         .about-mia-video { }
+
+        /* ── Series list ── */
+        .about-mia-series {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+          margin-top: 48px;
+          padding-top: 40px;
+          border-top: 1px solid var(--color-border-light);
+        }
+        .about-mia-series-label {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: var(--color-text-muted);
+          margin-bottom: 16px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid var(--color-border-light);
+        }
+        .about-mia-book-list {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+        .about-mia-book-row {
+          display: flex;
+          align-items: flex-start;
+          gap: 14px;
+          padding: 12px 14px;
+          border-radius: 8px;
+          text-decoration: none;
+          color: inherit;
+          transition: background 0.15s;
+        }
+        .about-mia-book-row:hover { background: rgba(12,74,110,0.04); color: inherit; }
+        .about-mia-book-num {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          color: var(--color-primary);
+          font-weight: 700;
+          flex-shrink: 0;
+          margin-top: 3px;
+          letter-spacing: 1px;
+        }
+        .about-mia-book-body {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+        .about-mia-book-title {
+          font-size: 14px;
+          font-weight: 700;
+          color: var(--heading);
+          line-height: 1.3;
+        }
+        .about-mia-book-row:hover .about-mia-book-title { color: var(--color-primary); }
+        .about-mia-book-desc {
+          font-size: 12px;
+          color: var(--color-text-secondary);
+          line-height: 1.55;
+        }
+
+        /* ── Audio rows ── */
+        .about-mia-audio-list {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+        .about-mia-audio-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 10px 14px;
+          border-radius: 8px;
+          text-decoration: none;
+          color: inherit;
+          transition: background 0.15s;
+          border: 1px solid transparent;
+        }
+        .about-mia-audio-row:hover {
+          background: rgba(12,74,110,0.04);
+          border-color: var(--color-border-light);
+          color: inherit;
+        }
+        .about-mia-audio-icon {
+          font-size: 16px;
+          color: var(--color-primary);
+          flex-shrink: 0;
+          width: 28px;
+          text-align: center;
+        }
+        .about-mia-audio-body {
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+        }
+        .about-mia-audio-platform {
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--heading);
+        }
+        .about-mia-audio-desc {
+          font-size: 12px;
+          color: var(--color-text-secondary);
+        }
+
         .about-video-wrap {
           position: relative;
           padding-bottom: 56.25%;
@@ -722,6 +897,7 @@ export default function AboutPage() {
           .about-hero-inner { grid-template-columns: 1fr; gap: 48px; }
           .about-stat-row { grid-template-columns: repeat(2, 1fr); }
           .about-mia-grid { grid-template-columns: 1fr; }
+          .about-mia-series { grid-template-columns: 1fr; gap: 32px; }
           .about-ppd-grid { grid-template-columns: repeat(2, 1fr); }
           .about-civic-grid { grid-template-columns: 1fr; }
         }
