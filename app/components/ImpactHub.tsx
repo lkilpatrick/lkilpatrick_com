@@ -228,7 +228,7 @@ Before you build a developer program, answer two questions: who are you trying t
                 <div className="ih-four-examples">Examples: Nutanix, Cisco, VMware</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Built from zero at Nutanix: team 1 to 5, nutanix.dev portal, 49+ open-source repos, API Accelerator labs in 11 cities, 400+ developers trained. Iterated from hackathon (New Orleans) to lab day (London: 5 of 46 were developers) to conference + lab (Anaheim: 140 attendees, 89% rated 4-5 out of 5).</p>
+                  <p className="ih-four-exp-text">Built from zero at Nutanix: team 1 to 5, nutanix.dev portal, 49+ open-source repos. Ran API Accelerator labs in 11 cities, 400+ developers trained. Learned the hard way in London (5 of 46 attendees were actual developers) and redesigned the format until it worked.</p>
                 </div>
               </div>
             </div>

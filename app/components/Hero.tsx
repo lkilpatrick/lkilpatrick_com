@@ -41,32 +41,30 @@ export default function Hero() {
             </h2>
 
             <p className="hero-sub">
-              I have spent 15 years building developer programs from scratch &mdash; portals, documentation,
-              events, and go-to-market &mdash; at companies like{" "}
+              15 years building developer programs at{" "}
               <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Atlassian</a>,{" "}
               <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Nutanix</a>, and{" "}
               <a href="https://hazelcast.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Hazelcast</a>.
-              I wrote two chapters of the{" "}
-              <a href="https://a.co/d/eIgJG8o" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>SlashData Developer Marketing Essential Guide</a>,
-              including the framework for identifying which type of developer program a company actually needs before building it.
+              I wrote the{" "}
+              <a href="https://a.co/d/eIgJG8o" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>SlashData framework</a>{" "}
+              for identifying which type of developer program a company needs before building it.
+              Outside work: a{" "}
+              <a href="https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>daily ocean intelligence system</a>,
+              a{" "}<a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>book series with 1,300+ copies sold</a>,
+              and a boat rental company on Monterey Bay.
             </p>
-            <p className="hero-sub" style={{ marginTop: "-20px" }}>
-              I also build things for myself: a{" "}
-              <a href="https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>daily ocean intelligence system</a>{" "}
-              pulling 8 live data sources across Monterey Bay,{" "}
-              <a href="https://pitterpatterdiving.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>home automation and IoT systems</a>,
-              a{" "}<a href="https://www.boatsetter.com/boats/vxbfqbx" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>successful boat rental company</a>,
-              and a{" "}<a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>children&apos;s book series</a>{" "}
-              that has sold over 1,300 copies.
-            </p>
+
+            <div className="hero-proof-chips">
+              <a href="/impact#four-types" className="hero-chip hero-chip--blue">4 Program Types Framework</a>
+              <a href="/work" className="hero-chip hero-chip--blue">3 Developer Portals Built</a>
+              <a href="/content#talks" className="hero-chip hero-chip--blue">15K+ People Presented To</a>
+              <a href="https://a.co/d/eIgJG8o" target="_blank" rel="noopener noreferrer" className="hero-chip hero-chip--amber">SlashData Author</a>
+            </div>
 
             <div className="hero-ctas">
               <a href="/work" className="btn-primary">
                 See What I&apos;ve Built
               </a>
-              <button className="btn-secondary" onClick={() => setContactOpen(true)}>
-                Get In Touch
-              </button>
             </div>
 
             <div className="hero-meta">
@@ -236,13 +234,53 @@ export default function Hero() {
         }
 
         .hero-sub {
-          font-size: 18px;
+          font-size: 17px;
           color: var(--text-muted);
-          line-height: 1.85;
-          margin-bottom: 40px;
+          line-height: 1.8;
+          margin-bottom: 20px;
           max-width: 560px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.30s forwards;
+        }
+
+        .hero-proof-chips {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-bottom: 28px;
+          opacity: 0;
+          animation: fadeUp 0.6s ease 0.34s forwards;
+        }
+        .hero-chip {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+          padding: 5px 12px;
+          border-radius: 99px;
+          text-decoration: none;
+          transition: all 0.2s;
+          white-space: nowrap;
+        }
+        .hero-chip--blue {
+          color: var(--color-primary);
+          background: rgba(12,74,110,0.07);
+          border: 1px solid rgba(12,74,110,0.2);
+        }
+        .hero-chip--blue:hover {
+          background: var(--color-primary);
+          color: #fff;
+          border-color: var(--color-primary);
+        }
+        .hero-chip--amber {
+          color: var(--color-accent-hover);
+          background: var(--color-accent-light);
+          border: 1px solid rgba(217,119,6,0.3);
+        }
+        .hero-chip--amber:hover {
+          background: var(--color-accent);
+          color: #fff;
+          border-color: var(--color-accent);
         }
 
         .hero-ctas {
@@ -251,7 +289,7 @@ export default function Hero() {
           gap: 12px;
           margin-bottom: 28px;
           opacity: 0;
-          animation: fadeUp 0.6s ease 0.38s forwards;
+          animation: fadeUp 0.6s ease 0.42s forwards;
         }
         .btn-primary {
           display: inline-flex;
