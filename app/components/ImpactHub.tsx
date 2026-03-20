@@ -163,7 +163,7 @@ const PROOF_NUMBERS = [
   { value: "3×", label: "Developer programs built from zero", sub: "Nutanix · LinearB · Hazelcast", link: "/work#docs" },
   { value: "49+", label: "Open-source repos shipped", sub: "Nutanix GitHub org — still live", link: "https://github.com/nutanix" },
   { value: "50+", label: "Events & conference appearances", sub: "Four continents", link: "/content" },
-  { value: "140", label: "Attendees at Anaheim lab day", sub: "89% rated 4-5 out of 5", link: "/work" },
+  { value: "15K+", label: "People presented to", sub: "Since 2008, four continents", link: "/content" },
   { value: "10K", label: "TikTok followers", sub: "Zero to 10K in one summer", link: "https://www.tiktok.com/@pitterpatterdiving" },
   { value: "1,300+", label: "Books sold", sub: "Mia Kingtide ocean science series", link: "https://www.amazon.com/s?k=mia+kingtide" },
 ];
