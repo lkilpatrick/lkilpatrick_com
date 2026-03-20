@@ -197,7 +197,7 @@ export default function ImpactHub() {
           <div className="ih-eyebrow" style={{ marginBottom: 12 }}>From the SlashData Developer Marketing Essential Guide</div>
           <h2 className="ih-section-title">The Four Types of Developer Programs</h2>
           <p className="ih-section-sub" style={{ marginBottom: 40, maxWidth: 680 }}>
-            Before you build a developer program, you have to answer two questions: who are you trying to reach, and why do you want to reach them? The answer determines your content, your events, your metrics, and who you hire first. Get it wrong and you end up with the wrong people in the room. I defined four types:
+Before you build a developer program, answer two questions: who are you trying to reach, and why? The answer determines your content, events, metrics, and who you hire first. I defined four types:
           </p>
 
           <div className="ih-four-grid">
@@ -208,11 +208,11 @@ export default function ImpactHub() {
                 <div className="ih-four-type" style={{ color: "var(--color-primary)" }}>MARKETPLACE ECOSYSTEMS</div>
               </div>
               <div className="ih-four-body">
-                <p className="ih-four-desc">Your product is extensible. You want developers building apps, plugins, or extensions that expand your platform. The primary motivation for developers in this ecosystem is financial — businesses can be built on your platform.</p>
+                <p className="ih-four-desc">Your product is extensible. Developers build apps, plugins, or extensions that expand your platform. Their primary motivation is financial: businesses can be built on your platform.</p>
                 <div className="ih-four-examples">Examples: Atlassian Marketplace, Apple App Store, Shopify</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Ran Codegeist, Atlassian&apos;s global developer hackathon — 3 years, 1,500+ new developers, 314 new marketplace apps. Created App Week — 7 events, 60–100 developers each, 280+ new and updated apps, NPS scores 74–86. Codegeist returned its financial investment in under 6 months.</p>
+                  <p className="ih-four-exp-text">Ran Codegeist at Atlassian: 3 years, 1,500+ developers, 314 new marketplace apps, ROI returned in under 6 months. Created App Week: 7 events, 60-100 developers each, NPS scores 74-86.</p>
                 </div>
               </div>
             </div>
@@ -224,11 +224,11 @@ export default function ImpactHub() {
                 <div className="ih-four-type" style={{ color: "var(--color-primary-light)" }}>API ADOPTION</div>
               </div>
               <div className="ih-four-body">
-                <p className="ih-four-desc">Your product has APIs. Developers at your customer companies need to integrate, automate, and build workflows. They work for someone who already bought your product — your job is to make them successful with it. This is where DevOps lives.</p>
+                <p className="ih-four-desc">Your product has APIs. Developers at customer companies need to integrate, automate, and build workflows. They work for someone who already bought your product. Your job is to make them successful with it.</p>
                 <div className="ih-four-examples">Examples: Nutanix, Cisco, VMware</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Built the entire developer marketing program from zero at Nutanix. Hired and grew the team from 1 to 5 in 18 months. Launched nutanix.dev — portal, API reference, labs, blog, Twitch streaming, 49+ open-source repos. Ran API Accelerator labs across 11 cities, training 400+ developers. Iterated format from hackathon (New Orleans) to lab day (London — only 5 of 46 attendees were developers) to conference + lab (Anaheim — 140 attendees, 89% rated 4–5 out of 5, directly expanded sales pipeline).</p>
+                  <p className="ih-four-exp-text">Built from zero at Nutanix: team 1 to 5, nutanix.dev portal, 49+ open-source repos, API Accelerator labs in 11 cities, 400+ developers trained. Iterated from hackathon (New Orleans) to lab day (London: 5 of 46 were developers) to conference + lab (Anaheim: 140 attendees, 89% rated 4-5 out of 5).</p>
                 </div>
               </div>
             </div>
@@ -240,44 +240,28 @@ export default function ImpactHub() {
                 <div className="ih-four-type" style={{ color: "var(--color-accent)" }}>DEVELOPER TOOLS</div>
               </div>
               <div className="ih-four-body">
-                <p className="ih-four-desc">Your product IS the tool developers use. Individual developers try it, adopt it, and pull it into their teams. Bottom-up adoption. Closest to traditional marketing, but this audience will not tolerate being marketed to.</p>
+                <p className="ih-four-desc">Your product is the tool developers use directly. Individual developers try it, adopt it, and pull it into their teams. Bottom-up adoption. This audience will not tolerate being marketed to.</p>
                 <div className="ih-four-examples">Examples: Sencha, New Relic, Sentry, LinearB</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Built developer programs at Sencha and LinearB. Product video at Sencha hit 246K views. Built gitStream docs from scratch at LinearB — quickstarts, automation library, API reference, plugin development, interactive playground. Structured for self-serve onboarding with zero sales contact required.</p>
+                  <p className="ih-four-exp-text">Built programs at Sencha and LinearB. Product video at Sencha: 246K views. Built gitStream docs from scratch: quickstarts, automation library, API reference, plugin guides, interactive playground. Zero sales contact required.</p>
                 </div>
               </div>
             </div>
 
             {/* Card 4 */}
-            <div className="ih-four-card ih-four-card--wide">
+            <div className="ih-four-card">
               <div className="ih-four-card-header" style={{ background: "rgba(5,150,105,0.06)", borderColor: "rgba(5,150,105,0.18)" }}>
                 <div className="ih-four-num" style={{ color: "var(--color-success)" }}>04</div>
                 <div className="ih-four-type" style={{ color: "var(--color-success)" }}>THE LEGO BRICK</div>
               </div>
               <div className="ih-four-body">
-                <p className="ih-four-desc">Your product is a building block. It does one thing well and developers snap it together with other building blocks to make something larger. Without developers choosing your brick, you have no adoption. Your product does not work on its own — it only has value as part of someone else&apos;s stack.</p>
-                <p className="ih-four-desc" style={{ marginTop: 12 }}>This is the fastest-growing category in software. Every layer of the modern stack is now a Lego brick that a developer — or increasingly, an AI agent — evaluates, selects, and wires into a larger system:</p>
-                <div className="ih-four-lego-grid">
-                  {[
-                    ["Databases", "Supabase, PlanetScale, Neon, CockroachDB"],
-                    ["AI & ML", "OpenAI, Anthropic, Replicate, Pinecone"],
-                    ["Auth", "Auth0, Clerk, Supabase Auth, Firebase Auth"],
-                    ["Payments", "Stripe, Square, Adyen"],
-                    ["Messaging", "Twilio, Resend, Postmark, Stream"],
-                    ["Search", "Algolia, Typesense, Meilisearch"],
-                    ["Storage & CDN", "Cloudflare R2, Vercel Blob, AWS S3"],
-                    ["Frontend", "Vercel, Netlify, Fly.io, Railway"],
-                    ["Monitoring", "Datadog, Sentry, PostHog"],
-                  ].map(([cat, ex]) => (
-                    <div key={cat} className="ih-four-lego-item">
-                      <span className="ih-four-lego-cat">{cat}</span>
-                      <span className="ih-four-lego-ex">{ex}</span>
-                    </div>
-                  ))}
+                <p className="ih-four-desc">Your product is a building block. Developers snap it together with other tools to build something larger. It has no value on its own. Every layer of the modern stack is now a Lego brick: databases, auth, payments, messaging, search, storage, monitoring. The developer experience IS the go-to-market.</p>
+                <div className="ih-four-examples">Examples: Stripe, Auth0, Twilio, Supabase, Algolia, Pinecone</div>
+                <div className="ih-four-experience">
+                  <div className="ih-four-exp-label">Why it matters</div>
+                  <p className="ih-four-exp-text">If it takes longer than 10 minutes to reach &ldquo;hello world,&rdquo; you lose. AI agents now select infrastructure the same way developers do: by evaluating docs, SDK quality, and time-to-integrate. The bricks with the best DX get chosen first.</p>
                 </div>
-                <p className="ih-four-desc" style={{ marginTop: 16 }}>In every case, the developer experience IS the go-to-market. Your getting-started guide, your SDK, your API reference, and your first-five-minutes experience determine whether you get chosen or your competitor does. If it takes longer than 10 minutes to get to &ldquo;hello world,&rdquo; you lose.</p>
-                <p className="ih-four-desc" style={{ marginTop: 12 }}>This is also where AI agents change the game. When an agent is selecting infrastructure on behalf of a developer, it evaluates documentation quality, SDK ergonomics, and integration simplicity the same way a human developer does. The Lego bricks with the best developer experience will be the ones agents reach for first.</p>
               </div>
             </div>
           </div>
