@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect } from "react";
 import { socialAccounts } from "../data/portfolio";
 
@@ -101,33 +102,26 @@ export default function AboutPage() {
               back again even when conditions are rough.
             </p>
             <p className="about-desc">
-              I am a <strong style={{ color: "var(--heading)" }}>PADI Divemaster</strong> — the
-              first professional level in diving — and I dive Monterey Bay regularly. I own two
-              boats: <em>Pitter Patter</em>, a Shamrock 260 express cruiser, and <em>Pegasus</em>,
-              a CHB 34 motor cruiser. I race at MPYC on Wednesday evenings and weekends. I built
-              the race management platform because the tools that existed were not good enough.
-            </p>
-            <p className="about-desc">
-              The same instinct — see a problem, build the solution — runs through everything here.
-              Developer portals, monitoring agents, race systems, book series. If something is worth
-              doing, it is worth building properly.
+              PADI Divemaster. Two boats on Monterey Bay. Racing at MPYC on Wednesday evenings.
+              The same instinct runs through everything here: see a problem, build the solution.
+              Developer portals, monitoring agents, race systems, book series.
             </p>
             <div className="about-stat-row">
               <div className="about-stat">
-                <div className="about-stat-value">PADI</div>
-                <div className="about-stat-label">Divemaster</div>
+                <div className="about-stat-value">15+</div>
+                <div className="about-stat-label">Years Building</div>
+              </div>
+              <div className="about-stat">
+                <div className="about-stat-value">4</div>
+                <div className="about-stat-label">Books Published</div>
               </div>
               <div className="about-stat">
                 <div className="about-stat-value">2</div>
                 <div className="about-stat-label">Boats</div>
               </div>
               <div className="about-stat">
-                <div className="about-stat-value">15+</div>
-                <div className="about-stat-label">Years Building</div>
-              </div>
-              <div className="about-stat">
-                <div className="about-stat-value">Sand City</div>
-                <div className="about-stat-label">Monterey Peninsula</div>
+                <div className="about-stat-value">10K</div>
+                <div className="about-stat-label">TikTok Followers</div>
               </div>
             </div>
           </div>
@@ -244,70 +238,53 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* ── Full series list ── */}
-          <div className="about-mia-series">
-            <div className="about-mia-series-col">
-              <div className="about-mia-series-label">Novels — Mia Kingtide&apos;s Ocean Adventures</div>
-              <div className="about-mia-book-list">
-                {[
-                  { title: "The Octopus's Gift", link: "https://www.amazon.com/dp/B0DSZVMYD3", desc: "Where it starts. Monterey Bay, a mysterious connection to the ocean, and the fight to protect what she loves." },
-                  { title: "Guardian of the Coast", link: "https://www.amazon.com/dp/B0DVT5PBQP", desc: "Mia takes on a threat to the California coastline — marine biology, family, and the weight of responsibility." },
-                  { title: "Journey to the Sea of Cortez", link: "https://www.amazon.com/dp/B0F1LY4HPT", desc: "Inspired by Steinbeck and Ricketts. A two-month voyage aboard Pegasus exploring the west coast of North America." },
-                  { title: "The Vanishing Sanctuary", link: "https://www.amazon.com/dp/B0FY22H14T", desc: "The fight to save Monterey Bay. Innovation, marine biology, and what it costs to protect something you love." },
-                ].map((book, i) => (
-                  <a key={book.title} href={book.link} target="_blank" rel="noopener noreferrer" className="about-mia-book-row">
-                    <span className="about-mia-book-num">0{i + 1}</span>
-                    <span className="about-mia-book-body">
-                      <span className="about-mia-book-title">{book.title} ↗</span>
-                      <span className="about-mia-book-desc">{book.desc}</span>
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="about-mia-series-col">
-              <div className="about-mia-series-label">Illustrated Children&apos;s Books</div>
-              <div className="about-mia-book-list">
-                {[
-                  { title: "The Octopus's Gift — The Secret of the…", link: "https://www.amazon.com/dp/B0GK8HPLX2", desc: "Full-colour illustrated edition. Designed for younger readers and classroom use." },
-                  { title: "The Octopus Gift — Where It All Began", link: "https://www.amazon.com/dp/B0GGDFGHLJ", desc: "The origin story in illustrated form. Ocean science made accessible for early readers." },
-                ].map((book, i) => (
-                  <a key={book.title} href={book.link} target="_blank" rel="noopener noreferrer" className="about-mia-book-row">
-                    <span className="about-mia-book-num">0{i + 1}</span>
-                    <span className="about-mia-book-body">
-                      <span className="about-mia-book-title">{book.title} ↗</span>
-                      <span className="about-mia-book-desc">{book.desc}</span>
-                    </span>
-                  </a>
-                ))}
-              </div>
-
-              <div className="about-mia-series-label" style={{ marginTop: 28 }}>Audiobooks — Listen on Spotify</div>
-              <div className="about-mia-audio-list">
-                {[
-                  { title: "The Octopus's Gift", link: "https://open.spotify.com/show/7rFEzmP52SHH2Jo781GEvq" },
-                  { title: "Guardian of the Coast", link: "https://open.spotify.com/show/5itdlUy2EET3om8xfJEM8U" },
-                  { title: "Journey to the Sea of Cortez", link: "https://open.spotify.com/show/5MSyIroaCuyiD0QuRebv9L" },
-                  { title: "The Vanishing Sanctuary", link: "https://open.spotify.com/show/5wPlY546le3afOVe1hI6yw" },
-                ].map((ab) => (
-                  <a key={ab.title} href={ab.link} target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
-                    <span className="about-mia-audio-icon">♪</span>
-                    <span className="about-mia-audio-body">
-                      <span className="about-mia-audio-platform">{ab.title}</span>
-                      <span className="about-mia-audio-desc">Listen on Spotify ↗</span>
-                    </span>
-                  </a>
-                ))}
-                <a href="https://elevenreader.io/authors/FS38IhgzssBAtrwUD4Ob" target="_blank" rel="noopener noreferrer" className="about-mia-audio-row">
-                  <span className="about-mia-audio-icon">◈</span>
-                  <span className="about-mia-audio-body">
-                    <span className="about-mia-audio-platform">All 4 books on ElevenReader</span>
-                    <span className="about-mia-audio-desc">Listen with AI narration ↗</span>
-                  </span>
+          {/* ── Book cover grid ── */}
+          <div className="about-mia-covers">
+            {[
+              { num: "01", title: "The Octopus's Gift", price: "$12.99", img: "/screenshots/mia-book-1-octopus-gift.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-the-octopus-gift/", amazon: "https://www.amazon.com/dp/B0DSZVMYD3", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
+              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "/screenshots/mia-book-2-guardian-coast.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-guardian-of-the-coast/", amazon: "https://www.amazon.com/dp/B0DVT5PBQP", desc: "California coastline. New threats. Growing responsibility." },
+              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "/screenshots/mia-book-3-sea-of-cortez.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-journey-to-the-sea-of-cortez/", amazon: "https://www.amazon.com/dp/B0F1LY4HPT", desc: "Two months aboard Pegasus. Inspired by Steinbeck and Ricketts." },
+              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "/screenshots/mia-book-4-vanishing-sanctuary.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-the-vanishing-sanctuary-a-story-about-marine-biology-innovation/", amazon: "https://www.amazon.com/dp/B0FY22H14T", desc: "Saving Monterey Bay. Innovation vs. exploitation." },
+            ].map((book) => (
+              <div key={book.num} className="about-book-card">
+                <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
+                  <Image
+                    src={book.img}
+                    alt={book.title}
+                    width={220}
+                    height={350}
+                    className="about-book-cover"
+                  />
+                  <div className="about-book-num">{book.num}</div>
                 </a>
+                <div className="about-book-meta">
+                  <div className="about-book-title">{book.title}</div>
+                  <div className="about-book-desc">{book.desc}</div>
+                  <div className="about-book-actions">
+                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">Buy {book.price} ↗</a>
+                    <a href={book.amazon} target="_blank" rel="noopener noreferrer" className="about-book-amz">Amazon →</a>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* ── Audiobooks ── */}
+          <div className="about-mia-audio-strip">
+            <div className="about-mia-audio-label">Also on</div>
+            {[
+              { platform: "Spotify", desc: "All 4 audiobooks", link: "https://open.spotify.com/show/7rFEzmP52SHH2Jo781GEvq", icon: "♪" },
+              { platform: "ElevenReader", desc: "AI narration", link: "https://elevenreader.io/authors/FS38IhgzssBAtrwUD4Ob", icon: "◈" },
+              { platform: "Amazon Author Page", desc: "All formats", link: "https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK", icon: "▶" },
+            ].map(a => (
+              <a key={a.platform} href={a.link} target="_blank" rel="noopener noreferrer" className="about-audio-chip">
+                <span className="about-audio-chip-icon">{a.icon}</span>
+                <span className="about-audio-chip-body">
+                  <span className="about-audio-chip-platform">{a.platform}</span>
+                  <span className="about-audio-chip-desc">{a.desc}</span>
+                </span>
+              </a>
+            ))}
           </div>
 
           <div className="about-science-bar">
@@ -388,21 +365,12 @@ export default function AboutPage() {
               <div className="about-civic-tag">Yacht Club</div>
               <h3 className="about-civic-title">MPYC Racing</h3>
               <p className="about-civic-desc">
-                I race at the Monterey Peninsula Yacht Club on Wednesday evenings and weekends. When the
-                race management software wasn&apos;t good enough, I built a replacement.
+                Racing at the Monterey Peninsula Yacht Club on Wednesday evenings and weekends.
+                When the race management software was not good enough, I built a replacement:
                 Flutter + Firebase, 5 roles, 57 courses, live weather from 11 stations, GPS tracking,
-                and Clubspot sync. Built for race season.
+                and Clubspot sync.
               </p>
               <a href="/work#projects" className="about-civic-link">See the build on Work →</a>
-            </div>
-            <div className="about-civic-card">
-              <div className="about-civic-tag">Local Government</div>
-              <h3 className="about-civic-title">Sand City Council</h3>
-              <p className="about-civic-desc">
-                Ran for Sand City City Council in 2024. Lost by 3 votes. Endorsed by Monterey County NOW.
-                The same instinct that drives building developer communities — show up, do the work, earn
-                the trust — applies to civic participation. Running for Mayor in November 2026.
-              </p>
             </div>
           </div>
         </div>
@@ -602,109 +570,155 @@ export default function AboutPage() {
         }
         .about-mia-video { }
 
-        /* ── Series list ── */
-        .about-mia-series {
+        /* ── Book cover grid ── */
+        .about-mia-covers {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 48px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 28px;
           margin-top: 48px;
           padding-top: 40px;
           border-top: 1px solid var(--color-border-light);
         }
-        .about-mia-series-label {
-          font-family: var(--font-mono), monospace;
-          font-size: 10px;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          color: var(--color-text-muted);
-          margin-bottom: 16px;
-          padding-bottom: 10px;
-          border-bottom: 1px solid var(--color-border-light);
-        }
-        .about-mia-book-list {
+        .about-book-card {
           display: flex;
           flex-direction: column;
-          gap: 2px;
-        }
-        .about-mia-book-row {
-          display: flex;
-          align-items: flex-start;
           gap: 14px;
-          padding: 12px 14px;
-          border-radius: 8px;
-          text-decoration: none;
-          color: inherit;
-          transition: background 0.15s;
         }
-        .about-mia-book-row:hover { background: rgba(12,74,110,0.04); color: inherit; }
-        .about-mia-book-num {
+        .about-book-cover-link {
+          position: relative;
+          display: block;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .about-book-cover-link:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+        .about-book-cover {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        .about-book-num {
+          position: absolute;
+          top: 10px;
+          left: 10px;
           font-family: var(--font-mono), monospace;
           font-size: 10px;
-          color: var(--color-primary);
           font-weight: 700;
-          flex-shrink: 0;
-          margin-top: 3px;
           letter-spacing: 1px;
+          color: #fff;
+          background: rgba(12,74,110,0.85);
+          padding: 3px 8px;
+          border-radius: 4px;
         }
-        .about-mia-book-body {
+        .about-book-meta {
           display: flex;
           flex-direction: column;
-          gap: 3px;
+          gap: 6px;
         }
-        .about-mia-book-title {
+        .about-book-title {
           font-size: 14px;
           font-weight: 700;
           color: var(--heading);
           line-height: 1.3;
         }
-        .about-mia-book-row:hover .about-mia-book-title { color: var(--color-primary); }
-        .about-mia-book-desc {
+        .about-book-desc {
           font-size: 12px;
           color: var(--color-text-secondary);
-          line-height: 1.55;
+          line-height: 1.5;
+        }
+        .about-book-actions {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          margin-top: 4px;
+        }
+        .about-book-buy {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          font-weight: 600;
+          color: #fff;
+          background: var(--color-accent);
+          border: 1px solid var(--color-accent);
+          padding: 5px 12px;
+          border-radius: 6px;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        .about-book-buy:hover {
+          background: var(--color-accent-hover);
+          border-color: var(--color-accent-hover);
+        }
+        .about-book-amz {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          font-weight: 600;
+          color: var(--color-primary);
+          background: transparent;
+          border: 1px solid rgba(12,74,110,0.25);
+          padding: 5px 12px;
+          border-radius: 6px;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        .about-book-amz:hover {
+          background: var(--color-primary);
+          color: #fff;
+          border-color: var(--color-primary);
         }
 
-        /* ── Audio rows ── */
-        .about-mia-audio-list {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-        }
-        .about-mia-audio-row {
+        /* ── Audio strip ── */
+        .about-mia-audio-strip {
           display: flex;
           align-items: center;
           gap: 12px;
-          padding: 10px 14px;
+          margin-top: 32px;
+          flex-wrap: wrap;
+        }
+        .about-mia-audio-label {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: var(--color-text-muted);
+          white-space: nowrap;
+        }
+        .about-audio-chip {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 14px;
           border-radius: 8px;
+          border: 1px solid var(--color-border-light);
+          background: var(--color-bg-card);
           text-decoration: none;
           color: inherit;
-          transition: background 0.15s;
-          border: 1px solid transparent;
+          transition: all 0.2s;
         }
-        .about-mia-audio-row:hover {
+        .about-audio-chip:hover {
+          border-color: var(--color-primary);
           background: rgba(12,74,110,0.04);
-          border-color: var(--color-border-light);
           color: inherit;
         }
-        .about-mia-audio-icon {
-          font-size: 16px;
+        .about-audio-chip-icon {
+          font-size: 14px;
           color: var(--color-primary);
-          flex-shrink: 0;
-          width: 28px;
-          text-align: center;
         }
-        .about-mia-audio-body {
+        .about-audio-chip-body {
           display: flex;
           flex-direction: column;
           gap: 1px;
         }
-        .about-mia-audio-platform {
+        .about-audio-chip-platform {
           font-size: 13px;
           font-weight: 700;
           color: var(--heading);
         }
-        .about-mia-audio-desc {
-          font-size: 12px;
+        .about-audio-chip-desc {
+          font-size: 11px;
           color: var(--color-text-secondary);
         }
 
@@ -897,6 +911,7 @@ export default function AboutPage() {
           .about-hero-inner { grid-template-columns: 1fr; gap: 48px; }
           .about-stat-row { grid-template-columns: repeat(2, 1fr); }
           .about-mia-grid { grid-template-columns: 1fr; }
+          .about-mia-covers { grid-template-columns: repeat(2, 1fr); }
           .about-mia-series { grid-template-columns: 1fr; gap: 32px; }
           .about-ppd-grid { grid-template-columns: repeat(2, 1fr); }
           .about-civic-grid { grid-template-columns: 1fr; }

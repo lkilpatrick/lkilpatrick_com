@@ -287,16 +287,6 @@ export const technicalContent = [
     tag: "Code + Tutorial",
     tagColor: "green" as const,
   },
-  {
-    id: 6,
-    org: "PERSONAL — OPEN SOURCE",
-    title: "Building and Publishing a Victron VRM Monitoring Skill to ClawHub ↗",
-    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
-    description:
-      "Full build tutorial: reverse-engineering an undocumented IoT API, building a reusable monitoring skill on the OpenClaw framework, publishing it to ClawHub, and writing the API reference docs that didn't exist. Covers the full lifecycle from problem to open-source community adoption.",
-    tag: "Code + Tutorial",
-    tagColor: "green" as const,
-  },
 ];
 
 export type EmbedType = "youtube" | "vimeo" | "link";
