@@ -430,7 +430,8 @@ export default function Hero() {
         /* Stats */
         .hero-stats-strip {
           border-top: 1px solid var(--color-border);
-          background: var(--color-bg-alt);
+          border-bottom: 1px solid var(--color-border);
+          background: #fff;
         }
         .hero-stats-inner {
           max-width: 1100px;
@@ -442,21 +443,21 @@ export default function Hero() {
         .hero-stat {
           padding: 28px 20px;
           text-align: center;
-          border-right: 1px solid var(--color-border-light);
+          border-right: 1px solid var(--color-border);
           transition: background 0.2s;
         }
         .hero-stat:last-child { border-right: none; }
-        .hero-stat:hover { background: rgba(12,74,110,0.03); }
+        .hero-stat:hover { background: rgba(12,74,110,0.04); }
         .hero-stat--link { text-decoration: none; color: inherit; cursor: pointer; }
         .hero-stat--link:hover { background: rgba(12,74,110,0.04); color: inherit; }
         .hero-stat--link .hero-stat-value { transition: color 0.2s; }
         .hero-stat--link:hover .hero-stat-value { color: var(--color-accent); }
-        .hero-stat--link .hero-stat-label::after { content: " ↗"; opacity: 0.5; font-size: 10px; }
+        .hero-stat--link .hero-stat-label::after { content: " ↗"; opacity: 0.4; font-size: 10px; }
         .hero-stat-value {
           display: block;
           font-family: var(--font-serif), Georgia, serif;
-          font-size: 36px;
-          color: var(--color-primary);
+          font-size: 38px;
+          color: #0F172A;
           line-height: 1;
           margin-bottom: 8px;
           font-weight: 400;
@@ -467,7 +468,7 @@ export default function Hero() {
           font-size: 11px;
           letter-spacing: 1px;
           text-transform: uppercase;
-          color: var(--color-text-secondary);
+          color: #475569;
           font-weight: 500;
         }
 
