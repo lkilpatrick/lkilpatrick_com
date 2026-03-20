@@ -5,7 +5,7 @@ export const personalInfo = {
     "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
   intro:
     "I build the content, docs, and onboarding experiences that turn complex infrastructure products into tools developers actually want to use. I also write code, author books, and ship things.",
-  location: "Sand City, CA — Monterey Peninsula",
+  location: "SF Bay Area, CA",
   availability: "Available Now",
   availableForWork: true, // Toggle this to false to hide the "Available Now" badge sitewide
   linkedin: "https://www.linkedin.com/in/lukekilpatrick/",

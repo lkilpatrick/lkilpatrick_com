@@ -1,10 +1,10 @@
-const CREDENTIALS = [
+const CREDENTIALS: { label: string; sub: string; link?: string }[] = [
   { label: "3 Developer Programs", sub: "Built from Zero" },
   { label: "DevRelCon Speaker", sub: "London + San Francisco" },
   { label: "SlashData Author", sub: "4 Program Types Framework" },
   { label: "49+ Open Source Repos", sub: "Nutanix GitHub Org" },
   { label: "10K TikTok", sub: "Zero to 10K in One Summer" },
-  { label: "1,300+ Books Sold", sub: "Mia Kingtide Series" },
+  { label: "12+ Books Published", sub: "Mia Kingtide Series", link: "https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" },
 ];
 
 const COMPANIES = [
@@ -33,7 +33,12 @@ export default function CredibilityBar() {
         <div className="cred-divider" />
 
         <div className="cred-grid">
-          {CREDENTIALS.map(c => (
+          {CREDENTIALS.map(c => c.link ? (
+            <a key={c.label} href={c.link} target="_blank" rel="noopener noreferrer" className="cred-item cred-item--link">
+              <div className="cred-item-label">{c.label}</div>
+              <div className="cred-item-sub">{c.sub}</div>
+            </a>
+          ) : (
             <div key={c.label} className="cred-item">
               <div className="cred-item-label">{c.label}</div>
               <div className="cred-item-sub">{c.sub}</div>
@@ -104,6 +109,11 @@ export default function CredibilityBar() {
           border-color: var(--border-accent);
           transform: translateY(-2px);
           box-shadow: var(--shadow-card);
+        }
+        .cred-item--link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
         }
         .cred-item-label {
           font-size: 13px;

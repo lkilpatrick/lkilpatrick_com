@@ -95,9 +95,9 @@ export default function AboutPage() {
             <div className="about-eyebrow">About</div>
             <h1 className="about-title">Ocean first. Builder always.</h1>
             <p className="about-desc">
-              I live in Sand City on the Monterey Peninsula — one of the most biologically rich
-              coastlines on Earth, twenty minutes from the Monterey Bay Aquarium, steps from the
-              coastal trail, and a short drive from the best cold-water diving in California.
+              I live on the Monterey Peninsula — one of the most biologically rich coastlines
+              on Earth, twenty minutes from the Monterey Bay Aquarium and a short drive from the
+              best cold-water diving in California. I work across the SF Bay Area.
               The ocean shapes how I think: systems, patience, depth, and the discipline to go
               back again even when conditions are rough.
             </p>
@@ -332,7 +332,7 @@ export default function AboutPage() {
             <a href="https://www.airbnb.com/rooms/2685574" target="_blank" rel="noopener noreferrer" className="about-ppd-card">
               <div className="about-ppd-icon">🏠</div>
               <div className="about-ppd-label">Ocean View Airbnb</div>
-              <div className="about-ppd-desc">5-star guest suite in Sand City — ocean views, hot tub, king bed. Active since 2015. Consistently top-rated on Monterey Peninsula.</div>
+              <div className="about-ppd-desc">5-star guest suite on the Monterey Peninsula — ocean views, hot tub, king bed. Active since 2015. Consistently top-rated.</div>
               <div className="about-ppd-link">Airbnb listing →</div>
             </a>
             <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer" className="about-ppd-card">

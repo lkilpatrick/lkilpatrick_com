@@ -125,7 +125,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </div>
 
             {status === "error" && (
-              <p className="modal-error">Something went wrong. Please try again or email me directly.</p>
+              <p className="modal-error">Something went wrong. Please try again.</p>
             )}
 
             <button

@@ -181,7 +181,7 @@ export default function Hero() {
           display: grid;
           grid-template-columns: 1fr 360px;
           gap: 80px;
-          align-items: center;
+          align-items: start;
           position: relative;
           z-index: 2;
         }
@@ -212,22 +212,22 @@ export default function Hero() {
 
         .hero-headline {
           font-family: var(--font-serif), Georgia, serif;
-          font-size: clamp(46px, 6vw, 76px);
+          font-size: clamp(26px, 3vw, 40px);
           font-weight: 400;
-          line-height: 1.06;
+          line-height: 1.1;
           color: var(--heading);
-          margin-bottom: 10px;
-          letter-spacing: -1.5px;
+          margin-bottom: 6px;
+          letter-spacing: -0.5px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.15s forwards;
         }
         .hero-subheadline {
           font-family: var(--font-serif), Georgia, serif;
-          font-size: clamp(40px, 5.5vw, 70px);
+          font-size: clamp(22px, 2.8vw, 36px);
           font-weight: 400;
-          line-height: 1.06;
-          letter-spacing: -1.5px;
-          margin-bottom: 36px;
+          line-height: 1.1;
+          letter-spacing: -0.5px;
+          margin-bottom: 28px;
           color: var(--color-primary);
           opacity: 0;
           animation: fadeUp 0.6s ease 0.22s forwards;

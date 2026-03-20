@@ -37,7 +37,7 @@ export default function Footer() {
               className="footer-link"
               style={{ background: "none", border: "none", cursor: "pointer", padding: 0, font: "inherit" }}
             >
-              luke@lukek.ca
+              Email
             </button>
           </div>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", marginTop: 8 }}>
