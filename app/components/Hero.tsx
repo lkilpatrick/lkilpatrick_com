@@ -135,7 +135,7 @@ export default function Hero() {
       <style>{`
         .hero-section {
           position: relative;
-          padding: 172px 0 0;
+          padding: 100px 0 0;
           overflow: hidden;
           background: var(--bg);
         }
@@ -505,7 +505,7 @@ export default function Hero() {
           .hero-text { order: 1; }
         }
         @media (max-width: 600px) {
-          .hero-section { padding-top: 100px; }
+          .hero-section { padding-top: 80px; }
           .hero-inner { padding: 0 20px 56px; }
           .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
           .hero-stat:nth-child(2) { border-right: none; }

@@ -80,13 +80,12 @@ export default function Navbar() {
           position: fixed;
           top: 0; left: 0; right: 0;
           z-index: 500;
-          background: transparent;
-          transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
-          border-bottom: 1px solid transparent;
+          background: rgba(255,255,255,0.97);
+          border-bottom: 1px solid var(--color-border);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
         }
         .site-nav--scrolled {
-          background: var(--color-bg);
-          border-color: var(--color-border);
           box-shadow: 0 1px 16px rgba(0,0,0,0.08);
         }
         .nav-inner {
