@@ -248,36 +248,6 @@ export const onboardingDocs = {
 
 export const technicalContent = [
   {
-    id: 1,
-    org: "PERSONAL — TECHNICAL BUILD",
-    title: "I Built an AI Agent That Monitors My Boats While I Sleep",
-    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
-    description:
-      "Full technical tutorial: Python agent querying the Victron VRM API, cron-scheduled email reports, open-source on GitHub. Reverse-engineered an under-documented API and published the reference docs myself. Demonstrates the kind of hands-on, build-first content I create.",
-    tag: "Code + Tutorial",
-    tagColor: "green" as const,
-  },
-  {
-    id: 6,
-    org: "PERSONAL — OPEN SOURCE",
-    title: "Building and Publishing a Victron VRM Monitoring Skill to ClawHub ↗",
-    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
-    description:
-      "Full build tutorial: reverse-engineering an undocumented IoT API, building a reusable monitoring skill on the OpenClaw framework, publishing it to ClawHub, and writing the API reference docs that didn't exist. Covers the full lifecycle from problem to open-source community adoption.",
-    tag: "Code + Tutorial",
-    tagColor: "green" as const,
-  },
-  {
-    id: 2,
-    org: "DUPLOCLOUD",
-    title: "10 Prompts Every Engineer Doing DevOps Should Know",
-    link: "https://duplocloud.com/blog/10-prompts-every-engineer-doing-devops-should-know/",
-    description:
-      "Practical AI prompt engineering for DevOps practitioners — SOC 2 automation, drift detection, cost attribution, and incident response. Published on both DuploCloud blog and Medium.",
-    tag: "Blog",
-    tagColor: "blue" as const,
-  },
-  {
     id: 3,
     org: "DUPLOCLOUD",
     title: "Is Your PaaS Passé?",
@@ -298,6 +268,16 @@ export const technicalContent = [
     tagColor: "blue" as const,
   },
   {
+    id: 2,
+    org: "DUPLOCLOUD",
+    title: "10 Prompts Every Engineer Doing DevOps Should Know",
+    link: "https://duplocloud.com/blog/10-prompts-every-engineer-doing-devops-should-know/",
+    description:
+      "Practical AI prompt engineering for DevOps practitioners — SOC 2 automation, drift detection, cost attribution, and incident response. Published on both DuploCloud blog and Medium.",
+    tag: "Blog",
+    tagColor: "blue" as const,
+  },
+  {
     id: 5,
     org: "LINEARB",
     title: "What is Continuous Merge?",
@@ -306,6 +286,26 @@ export const technicalContent = [
       "Concept introduction for a new engineering workflow category — explaining a novel approach to branch management for engineering teams.",
     tag: "Blog",
     tagColor: "blue" as const,
+  },
+  {
+    id: 1,
+    org: "PERSONAL — TECHNICAL BUILD",
+    title: "I Built an AI Agent That Monitors My Boats While I Sleep",
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    description:
+      "Full technical tutorial: Python agent querying the Victron VRM API, cron-scheduled email reports, open-source on GitHub. Reverse-engineered an under-documented API and published the reference docs myself. Demonstrates the kind of hands-on, build-first content I create.",
+    tag: "Code + Tutorial",
+    tagColor: "green" as const,
+  },
+  {
+    id: 6,
+    org: "PERSONAL — OPEN SOURCE",
+    title: "Building and Publishing a Victron VRM Monitoring Skill to ClawHub ↗",
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    description:
+      "Full build tutorial: reverse-engineering an undocumented IoT API, building a reusable monitoring skill on the OpenClaw framework, publishing it to ClawHub, and writing the API reference docs that didn't exist. Covers the full lifecycle from problem to open-source community adoption.",
+    tag: "Code + Tutorial",
+    tagColor: "green" as const,
   },
 ];
 
