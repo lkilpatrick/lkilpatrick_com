@@ -13,8 +13,8 @@
 
   /* ── Neutrals ── */
   --color-text:           #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted:     #94A3B8;
+  --color-text-secondary: #334155;
+  --color-text-muted:     #475569;
 
   /* ── Backgrounds ── */
   --color-bg:             #FFFFFF;
@@ -41,8 +41,8 @@
   --border:           #E2E8F0;
   --border-accent:    #D97706;
   --text:             #0F172A;
-  --text-muted:       #94A3B8;
-  --text-dim:         #94A3B8;
+  --text-muted:       #475569;
+  --text-dim:         #64748B;
   --accent:           #D97706;
   --accent-hover:     #B45309;
   --accent-light:     #FEF3C7;

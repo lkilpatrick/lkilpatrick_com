@@ -57,8 +57,8 @@ export default function Hero() {
             <div className="hero-proof-chips">
               <a href="/impact#four-types" className="hero-chip hero-chip--blue">4 Program Types Framework</a>
               <a href="/work" className="hero-chip hero-chip--blue">3 Developer Portals Built</a>
-              <a href="/content#talks" className="hero-chip hero-chip--blue">15K+ People Presented To</a>
-              <a href="https://a.co/d/eIgJG8o" target="_blank" rel="noopener noreferrer" className="hero-chip hero-chip--amber">SlashData Author</a>
+              <a href="/content#talks" className="hero-chip hero-chip--bold">15K+ People Presented To</a>
+              <a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" className="hero-chip hero-chip--amber">12+ Books Published</a>
             </div>
 
             <div className="hero-ctas">
@@ -282,12 +282,25 @@ export default function Hero() {
           color: #fff;
           border-color: var(--color-accent);
         }
+        .hero-chip--bold {
+          color: #fff;
+          background: #0C4A6E;
+          border: 1px solid #0C4A6E;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.1px;
+        }
+        .hero-chip--bold:hover {
+          background: #082F49;
+          border-color: #082F49;
+          color: #fff;
+        }
 
         .hero-ctas {
           display: flex;
           flex-wrap: wrap;
           gap: 12px;
-          margin-bottom: 28px;
+          margin-bottom: 20px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.42s forwards;
         }
@@ -360,7 +373,7 @@ export default function Hero() {
           display: flex;
           flex-wrap: wrap;
           gap: 20px;
-          margin-bottom: 32px;
+          margin-bottom: 20px;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.48s forwards;
         }
@@ -398,6 +411,7 @@ export default function Hero() {
           flex-wrap: wrap;
           align-items: center;
           gap: 8px;
+          margin-top: 0;
           opacity: 0;
           animation: fadeUp 0.6s ease 0.56s forwards;
         }
