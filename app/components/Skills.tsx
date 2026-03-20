@@ -15,8 +15,8 @@ const PROOF_POINTS = [
   },
   {
     org: "SlashData",
-    title: "Authored two chapters in the definitive developer marketing guide.",
-    detail: "\"Scaling Down\" and \"Starting from Scratch Program\" — the playbooks for developer programs under constraints. Published by SlashData.",
+    title: "Authored two chapters in the SlashData Developer Marketing Essential Guide.",
+    detail: "\"Starting from Scratch\" defines four types of developer programs — marketplace, API adoption, developer tools, and the Lego brick — and the playbook for building each from zero: hiring order, portal strategy, event formats, and the mistakes that cost real money. \"Scaling Down\" covers how programs survive budget cuts without losing momentum.",
     link: "https://a.co/d/eIgJG8o",
     linkLabel: "Book on Amazon →",
   },

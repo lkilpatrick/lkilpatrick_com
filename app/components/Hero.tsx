@@ -41,14 +41,23 @@ export default function Hero() {
             </h2>
 
             <p className="hero-sub">
-              I have spent 15 years solving that problem &mdash; building developer portals, documentation
-              systems, and go-to-market programs at companies like Atlassian, Nutanix, and Hazelcast.
-              I also build things myself: a daily ocean intelligence report pulling from 8 data sources
-              across Monterey Bay, an open-source API reference adopted by the Victron community, a
-              children&apos;s book series reviewed by MBARI scientists.
+              I have spent 15 years building developer programs from scratch &mdash; portals, documentation,
+              events, and go-to-market &mdash; at companies like{" "}
+              <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Atlassian</a>,{" "}
+              <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Nutanix</a>, and{" "}
+              <a href="https://hazelcast.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Hazelcast</a>.
+              I wrote two chapters of the{" "}
+              <a href="https://a.co/d/eIgJG8o" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>SlashData Developer Marketing Essential Guide</a>,
+              including the framework for identifying which type of developer program a company actually needs before building it.
             </p>
             <p className="hero-sub" style={{ marginTop: "-20px" }}>
-              I build things that work, and I make complex systems accessible to the people who need them.
+              I also build things for myself: a{" "}
+              <a href="https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>daily ocean intelligence system</a>{" "}
+              pulling 8 live data sources across Monterey Bay,{" "}
+              <a href="https://pitterpatterdiving.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>home automation and IoT systems</a>,
+              a{" "}<a href="https://www.boatsetter.com/boats/vxbfqbx" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>successful boat rental company</a>,
+              and a{" "}<a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>children&apos;s book series</a>{" "}
+              that has sold over 1,300 copies.
             </p>
 
             <div className="hero-ctas">

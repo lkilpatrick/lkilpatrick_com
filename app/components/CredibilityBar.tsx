@@ -1,7 +1,7 @@
 const CREDENTIALS = [
   { label: "3 Developer Programs", sub: "Built from Zero" },
-  { label: "DevRelCon Speaker", sub: "London + SF" },
-  { label: "SlashData Author", sub: "Developer Marketing Guide" },
+  { label: "DevRelCon Speaker", sub: "London + San Francisco" },
+  { label: "SlashData Author", sub: "4 Program Types Framework" },
   { label: "49+ Open Source Repos", sub: "Nutanix GitHub Org" },
   { label: "10K TikTok", sub: "Zero to 10K in One Summer" },
   { label: "1,300+ Books Sold", sub: "Mia Kingtide Series" },

@@ -411,7 +411,7 @@ export default function AboutPage() {
       {/* ── Section 5: Social Channels ── */}
       <section className="about-social section-body" id="channels">
         <div className="content-wrap">
-          <div className="about-section-eyebrow">Section 05</div>
+          <div className="about-section-eyebrow">Social &amp; Channels</div>
           <h2 className="about-section-title">Social &amp; Channels</h2>
           <p className="about-section-intro">
             Where I build in public — developer content, ocean life, and audience experiments.

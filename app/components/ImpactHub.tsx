@@ -163,7 +163,7 @@ const PROOF_NUMBERS = [
   { value: "3×", label: "Developer programs built from zero", sub: "Nutanix · LinearB · Hazelcast", link: "/work#docs" },
   { value: "49+", label: "Open-source repos shipped", sub: "Nutanix GitHub org — still live", link: "https://github.com/nutanix" },
   { value: "50+", label: "Events & conference appearances", sub: "Four continents", link: "/content" },
-  { value: "246K", label: "Views on a single product video", sub: "Sencha — written, filmed, edited", link: "https://vimeo.com/55486684" },
+  { value: "140", label: "Attendees at Anaheim lab day", sub: "89% rated 4-5 out of 5", link: "/work" },
   { value: "10K", label: "TikTok followers", sub: "Zero to 10K in one summer", link: "https://www.tiktok.com/@pitterpatterdiving" },
   { value: "1,300+", label: "Books sold", sub: "Mia Kingtide ocean science series", link: "https://www.amazon.com/s?k=mia+kingtide" },
 ];
@@ -191,10 +191,115 @@ export default function ImpactHub() {
         </div>
       </section>
 
-      {/* ── Four program types (tab + detail) ── */}
-      <section className="section-body section-alt" id="programs">
+      {/* ── The Four Types of Developer Programs (SlashData framework) ── */}
+      <section className="section-body section-alt" id="four-types">
         <div className="content-wrap">
-          <div className="ih-prog-eyebrow">Four Program Types</div>
+          <div className="ih-eyebrow" style={{ marginBottom: 12 }}>From the SlashData Developer Marketing Essential Guide</div>
+          <h2 className="ih-section-title">The Four Types of Developer Programs</h2>
+          <p className="ih-section-sub" style={{ marginBottom: 40, maxWidth: 680 }}>
+            Before you build a developer program, you have to answer two questions: who are you trying to reach, and why do you want to reach them? The answer determines your content, your events, your metrics, and who you hire first. Get it wrong and you end up with the wrong people in the room. I defined four types:
+          </p>
+
+          <div className="ih-four-grid">
+            {/* Card 1 */}
+            <div className="ih-four-card">
+              <div className="ih-four-card-header" style={{ background: "rgba(12,74,110,0.06)", borderColor: "rgba(12,74,110,0.18)" }}>
+                <div className="ih-four-num" style={{ color: "var(--color-primary)" }}>01</div>
+                <div className="ih-four-type" style={{ color: "var(--color-primary)" }}>MARKETPLACE ECOSYSTEMS</div>
+              </div>
+              <div className="ih-four-body">
+                <p className="ih-four-desc">Your product is extensible. You want developers building apps, plugins, or extensions that expand your platform. The primary motivation for developers in this ecosystem is financial — businesses can be built on your platform.</p>
+                <div className="ih-four-examples">Examples: Atlassian Marketplace, Apple App Store, Shopify</div>
+                <div className="ih-four-experience">
+                  <div className="ih-four-exp-label">What I did</div>
+                  <p className="ih-four-exp-text">Ran Codegeist, Atlassian&apos;s global developer hackathon — 3 years, 1,500+ new developers, 314 new marketplace apps. Created App Week — 7 events, 60–100 developers each, 280+ new and updated apps, NPS scores 74–86. Codegeist returned its financial investment in under 6 months.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="ih-four-card">
+              <div className="ih-four-card-header" style={{ background: "rgba(3,105,161,0.06)", borderColor: "rgba(3,105,161,0.18)" }}>
+                <div className="ih-four-num" style={{ color: "var(--color-primary-light)" }}>02</div>
+                <div className="ih-four-type" style={{ color: "var(--color-primary-light)" }}>API ADOPTION</div>
+              </div>
+              <div className="ih-four-body">
+                <p className="ih-four-desc">Your product has APIs. Developers at your customer companies need to integrate, automate, and build workflows. They work for someone who already bought your product — your job is to make them successful with it. This is where DevOps lives.</p>
+                <div className="ih-four-examples">Examples: Nutanix, Cisco, VMware</div>
+                <div className="ih-four-experience">
+                  <div className="ih-four-exp-label">What I did</div>
+                  <p className="ih-four-exp-text">Built the entire developer marketing program from zero at Nutanix. Hired and grew the team from 1 to 5 in 18 months. Launched nutanix.dev — portal, API reference, labs, blog, Twitch streaming, 49+ open-source repos. Ran API Accelerator labs across 11 cities, training 400+ developers. Iterated format from hackathon (New Orleans) to lab day (London — only 5 of 46 attendees were developers) to conference + lab (Anaheim — 140 attendees, 89% rated 4–5 out of 5, directly expanded sales pipeline).</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="ih-four-card">
+              <div className="ih-four-card-header" style={{ background: "rgba(217,119,6,0.06)", borderColor: "rgba(217,119,6,0.18)" }}>
+                <div className="ih-four-num" style={{ color: "var(--color-accent)" }}>03</div>
+                <div className="ih-four-type" style={{ color: "var(--color-accent)" }}>DEVELOPER TOOLS</div>
+              </div>
+              <div className="ih-four-body">
+                <p className="ih-four-desc">Your product IS the tool developers use. Individual developers try it, adopt it, and pull it into their teams. Bottom-up adoption. Closest to traditional marketing, but this audience will not tolerate being marketed to.</p>
+                <div className="ih-four-examples">Examples: Sencha, New Relic, Sentry, LinearB</div>
+                <div className="ih-four-experience">
+                  <div className="ih-four-exp-label">What I did</div>
+                  <p className="ih-four-exp-text">Built developer programs at Sencha and LinearB. Product video at Sencha hit 246K views. Built gitStream docs from scratch at LinearB — quickstarts, automation library, API reference, plugin development, interactive playground. Structured for self-serve onboarding with zero sales contact required.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="ih-four-card ih-four-card--wide">
+              <div className="ih-four-card-header" style={{ background: "rgba(5,150,105,0.06)", borderColor: "rgba(5,150,105,0.18)" }}>
+                <div className="ih-four-num" style={{ color: "var(--color-success)" }}>04</div>
+                <div className="ih-four-type" style={{ color: "var(--color-success)" }}>THE LEGO BRICK</div>
+              </div>
+              <div className="ih-four-body">
+                <p className="ih-four-desc">Your product is a building block. It does one thing well and developers snap it together with other building blocks to make something larger. Without developers choosing your brick, you have no adoption. Your product does not work on its own — it only has value as part of someone else&apos;s stack.</p>
+                <p className="ih-four-desc" style={{ marginTop: 12 }}>This is the fastest-growing category in software. Every layer of the modern stack is now a Lego brick that a developer — or increasingly, an AI agent — evaluates, selects, and wires into a larger system:</p>
+                <div className="ih-four-lego-grid">
+                  {[
+                    ["Databases", "Supabase, PlanetScale, Neon, CockroachDB"],
+                    ["AI & ML", "OpenAI, Anthropic, Replicate, Pinecone"],
+                    ["Auth", "Auth0, Clerk, Supabase Auth, Firebase Auth"],
+                    ["Payments", "Stripe, Square, Adyen"],
+                    ["Messaging", "Twilio, Resend, Postmark, Stream"],
+                    ["Search", "Algolia, Typesense, Meilisearch"],
+                    ["Storage & CDN", "Cloudflare R2, Vercel Blob, AWS S3"],
+                    ["Frontend", "Vercel, Netlify, Fly.io, Railway"],
+                    ["Monitoring", "Datadog, Sentry, PostHog"],
+                  ].map(([cat, ex]) => (
+                    <div key={cat} className="ih-four-lego-item">
+                      <span className="ih-four-lego-cat">{cat}</span>
+                      <span className="ih-four-lego-ex">{ex}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="ih-four-desc" style={{ marginTop: 16 }}>In every case, the developer experience IS the go-to-market. Your getting-started guide, your SDK, your API reference, and your first-five-minutes experience determine whether you get chosen or your competitor does. If it takes longer than 10 minutes to get to &ldquo;hello world,&rdquo; you lose.</p>
+                <p className="ih-four-desc" style={{ marginTop: 12 }}>This is also where AI agents change the game. When an agent is selecting infrastructure on behalf of a developer, it evaluates documentation quality, SDK ergonomics, and integration simplicity the same way a human developer does. The Lego bricks with the best developer experience will be the ones agents reach for first.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Callout */}
+          <div className="ih-four-callout">
+            <div className="ih-four-quote">&ldquo;There is nothing worse than doing an event and getting the wrong folks in the room.&rdquo;</div>
+            <div className="ih-four-quote-attr">&mdash; Starting from Scratch, SlashData Developer Marketing Essential Guide</div>
+            <div className="ih-four-callout-links">
+              Download the full chapters: &nbsp;
+              <a href="/ScalingDown.pdf" download="Developer-Marketing-Scaling-Down.pdf" className="ih-four-dl-link">Scaling Down (PDF)</a>
+              &nbsp;·&nbsp;
+              <a href="/Starting-from-Scratch-Program.pdf" download="Developer-Marketing-Starting-From-Scratch.pdf" className="ih-four-dl-link">Starting from Scratch (PDF)</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Evidence by program type (portfolio tabs) ── */}
+      <section className="section-body" id="programs">
+        <div className="content-wrap">
+          <div className="ih-prog-eyebrow">Portfolio Evidence by Program Type</div>
 
           {/* Tab strip */}
           <div className="ih-tabs">
@@ -317,9 +422,9 @@ export default function ImpactHub() {
       <section className="section-body" id="contact">
         <div className="content-wrap">
           <div className="ih-cta-inner">
-            <h2 className="ih-cta-title">If you need a developer program built, I have done it before.</h2>
+            <h2 className="ih-cta-title">I have built developer programs at three companies, launched to developer audiences on four continents, and published the playbook for how to do it.</h2>
             <p className="ih-cta-sub">
-              Three times from zero. Playbooks published. Portals still live. If the scenario fits, let&apos;s talk.
+              First question I always ask: what type of developer program are you actually building? The answer changes everything. Let&apos;s talk.
             </p>
             <button className="ih-cta-btn" onClick={() => setContactOpen(true)}>
               Get In Touch
@@ -668,6 +773,141 @@ export default function ImpactHub() {
           box-shadow: 0 8px 24px rgba(217,119,6,0.25);
         }
 
+        /* ── Four Types cards ── */
+        .ih-four-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          margin-bottom: 40px;
+        }
+        .ih-four-card {
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: var(--shadow-card);
+          display: flex;
+          flex-direction: column;
+        }
+        .ih-four-card--wide {
+          grid-column: span 2;
+        }
+        .ih-four-card-header {
+          padding: 20px 24px 16px;
+          border-bottom: 1px solid;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+        .ih-four-num {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          flex-shrink: 0;
+        }
+        .ih-four-type {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+        .ih-four-body {
+          padding: 24px;
+          flex: 1;
+        }
+        .ih-four-desc {
+          font-size: 14px;
+          color: var(--color-text-secondary);
+          line-height: 1.75;
+          margin: 0;
+        }
+        .ih-four-examples {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 0.5px;
+          color: var(--color-text-muted);
+          margin-top: 12px;
+          margin-bottom: 16px;
+        }
+        .ih-four-experience {
+          background: var(--color-bg-alt);
+          border-radius: 8px;
+          padding: 14px 16px;
+        }
+        .ih-four-exp-label {
+          font-family: var(--font-mono), monospace;
+          font-size: 9px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: var(--color-text-muted);
+          margin-bottom: 6px;
+        }
+        .ih-four-exp-text {
+          font-size: 13px;
+          color: var(--color-text);
+          line-height: 1.7;
+        }
+        .ih-four-lego-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+          margin: 16px 0;
+        }
+        .ih-four-lego-item {
+          background: var(--color-bg-alt);
+          border-radius: 6px;
+          padding: 8px 10px;
+        }
+        .ih-four-lego-cat {
+          display: block;
+          font-family: var(--font-mono), monospace;
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: var(--color-success);
+          margin-bottom: 2px;
+        }
+        .ih-four-lego-ex {
+          display: block;
+          font-size: 11px;
+          color: var(--color-text-secondary);
+          line-height: 1.4;
+        }
+        .ih-four-callout {
+          border: 1px solid var(--color-border-light);
+          border-left: 4px solid var(--color-primary);
+          background: var(--color-bg-card);
+          border-radius: 0 10px 10px 0;
+          padding: 24px 28px;
+        }
+        .ih-four-quote {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 18px;
+          font-style: italic;
+          color: var(--heading);
+          line-height: 1.5;
+          margin-bottom: 6px;
+        }
+        .ih-four-quote-attr {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--color-text-muted);
+          margin-bottom: 16px;
+        }
+        .ih-four-callout-links {
+          font-size: 13px;
+          color: var(--color-text-secondary);
+        }
+        .ih-four-dl-link {
+          color: var(--color-primary);
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .ih-four-dl-link:hover { color: var(--color-accent); }
+
         /* ── Responsive ── */
         @media (max-width: 1000px) {
           .ih-tabs { grid-template-columns: repeat(2, 1fr); }
@@ -678,10 +918,14 @@ export default function ImpactHub() {
           .ih-numbers-grid { grid-template-columns: repeat(2, 1fr); }
           .ih-downloads { grid-template-columns: 1fr; }
           .ih-panel { padding: 24px; }
+          .ih-four-grid { grid-template-columns: 1fr; }
+          .ih-four-card--wide { grid-column: span 1; }
+          .ih-four-lego-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 480px) {
           .ih-tabs { grid-template-columns: 1fr; }
           .ih-numbers-grid { grid-template-columns: 1fr; }
+          .ih-four-lego-grid { grid-template-columns: 1fr; }
         }
       `}</style>
     </>

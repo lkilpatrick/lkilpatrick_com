@@ -12,7 +12,7 @@ const SCENARIOS = [
       </svg>
     ),
     trigger: "Launching a developer platform",
-    description: "You have infrastructure, APIs, or tooling that developers need to adopt. You need the portal, docs, onboarding system, and go-to-market strategy that make it actually happen.",
+    description: "You have infrastructure, APIs, or tooling that developers need to adopt. You need the portal, docs, onboarding system, and go-to-market strategy that make it actually happen. First question: which of the four program types are you building? The answer changes your portal, your content strategy, your events, and who you hire first.",
     colorKey: "accent",
   },
   {
@@ -69,7 +69,7 @@ const SCENARIOS = [
       </svg>
     ),
     trigger: "Building something from scratch",
-    description: "No program, no community, no documentation. You need someone who has done it before and can move fast. Nutanix developer portal, gitStream docs, Hazelcast program: all started at zero.",
+    description: "No program, no community, no documentation. I have built from zero three times and published the playbook. Content person first, then evangelist, then community manager. Portal before events. Add friction to registration so the right people show up — I learned that the hard way in London, where only 5 of 46 attendees were actual developers. The order matters and the mistakes are expensive.",
     colorKey: "teal",
   },
 ];
