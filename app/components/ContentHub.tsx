@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { technicalContent, videos, localVideos } from "../data/portfolio";
+import { technicalContent, videos } from "../data/portfolio";
 
 // ─── Screenshots map ─────────────────────────────────────────────────────────
 
@@ -25,7 +25,6 @@ const TAG_STYLES: Record<string, { color: string; bg: string; border: string }> 
 const TABS = [
   { id: "writing",  label: "Writing" },
   { id: "talks",    label: "Talks & Presentations" },
-  { id: "videos",   label: "Atlassian Videos" },
 ];
 
 // ─── Writing row ─────────────────────────────────────────────────────────────
@@ -111,20 +110,6 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
   );
 }
 
-function LocalVideoCard({ video }: { video: typeof localVideos[0] }) {
-  return (
-    <div className="ch-video-card">
-      <video controls preload="metadata" style={{ width: "100%", display: "block", background: "#000" }}>
-        <source src={video.file} type="video/mp4" />
-      </video>
-      <div className="ch-video-meta">
-        <div className="ch-org">{video.org}</div>
-        <div className="ch-video-title">{video.title}</div>
-        <div className="ch-video-desc">{video.description}</div>
-      </div>
-    </div>
-  );
-}
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
@@ -187,16 +172,6 @@ export default function ContentHub() {
         </section>
       )}
 
-      {/* ── Atlassian Videos ── */}
-      {activeTab === "videos" && (
-        <section className="section-body section-alt" id="videos">
-          <div className="content-wrap">
-            <div className="ch-video-grid">
-              {localVideos.map(v => <LocalVideoCard key={v.id} video={v} />)}
-            </div>
-          </div>
-        </section>
-      )}
 
       <style>{`
         /* ── Page header ── */
