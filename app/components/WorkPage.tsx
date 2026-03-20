@@ -234,7 +234,7 @@ export default function WorkPage() {
   return (
     <>
       {/* ── Page header + Projects ── */}
-      <section className="section-body" id="projects">
+      <section className="section-body section-alt" id="projects">
         <div className="content-wrap--wide">
           <div className="wp-page-header">
             <div className="wp-hero-eyebrow">Work</div>
@@ -254,7 +254,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── Section 2: Developer Portals & Documentation ── */}
-      <section className="section-body section-alt" id="docs">
+      <section className="section-body" id="docs">
         <div className="content-wrap">
           <div className="wp-section-header">
             <div className="wp-section-eyebrow">Developer Portals &amp; Documentation</div>

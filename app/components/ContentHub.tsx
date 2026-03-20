@@ -160,7 +160,7 @@ export default function ContentHub() {
 
       {/* ── Writing ── */}
       {activeTab === "writing" && (
-        <section className="section-body" id="writing">
+        <section className="section-body section-alt" id="writing">
           <div className="content-wrap">
             <div style={{ display: "grid", gap: 72 }}>
               {technicalContent.map((item, i) => (
@@ -189,7 +189,7 @@ export default function ContentHub() {
 
       {/* ── Atlassian Videos ── */}
       {activeTab === "videos" && (
-        <section className="section-body" id="videos">
+        <section className="section-body section-alt" id="videos">
           <div className="content-wrap">
             <div className="ch-video-grid">
               {localVideos.map(v => <LocalVideoCard key={v.id} video={v} />)}

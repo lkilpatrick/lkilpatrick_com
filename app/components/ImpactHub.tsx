@@ -363,7 +363,7 @@ export default function ImpactHub() {
       </section>
 
       {/* ── Numbers that mean something ── */}
-      <section className="section-body" id="numbers">
+      <section className="section-body section-alt" id="numbers">
         <div className="content-wrap">
           <div className="ih-eyebrow" style={{ marginBottom: 12 }}>By the numbers</div>
           <h2 className="ih-section-title">Data points with receipts.</h2>
@@ -382,7 +382,7 @@ export default function ImpactHub() {
       </section>
 
       {/* ── Downloads ── */}
-      <section className="section-body section-alt" id="downloads">
+      <section className="section-body" id="downloads">
         <div className="content-wrap">
           <div className="ih-eyebrow" style={{ marginBottom: 12 }}>SlashData — Free Download</div>
           <h2 className="ih-section-title">The playbooks. In writing.</h2>
@@ -419,7 +419,7 @@ export default function ImpactHub() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section-body" id="contact">
+      <section className="section-body section-alt" id="contact">
         <div className="content-wrap">
           <div className="ih-cta-inner">
             <h2 className="ih-cta-title">I have built developer programs at three companies, launched to developer audiences on four continents, and published the playbook for how to do it.</h2>
