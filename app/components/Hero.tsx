@@ -40,6 +40,8 @@ export default function Hero() {
               It is getting people to use it.
             </h2>
 
+            <div className="hero-byline">— Luke Kilpatrick</div>
+
             <p className="hero-sub">
               15 years building developer programs at{" "}
               <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Atlassian</a>,{" "}
@@ -231,6 +233,17 @@ export default function Hero() {
           color: var(--color-primary);
           opacity: 0;
           animation: fadeUp 0.6s ease 0.22s forwards;
+        }
+
+        .hero-byline {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 15px;
+          color: var(--color-primary);
+          font-style: italic;
+          margin-bottom: 28px;
+          opacity: 0;
+          animation: fadeUp 0.6s ease 0.26s forwards;
+          letter-spacing: 0.2px;
         }
 
         .hero-sub {
