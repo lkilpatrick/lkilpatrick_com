@@ -40,7 +40,7 @@ export default function Hero() {
               It is getting people to use it.
             </h2>
 
-            <div className="hero-byline">— Luke Kilpatrick</div>
+            <div className="hero-byline">— <a href="/about" className="hero-byline-link">Luke Kilpatrick</a></div>
 
             <p className="hero-sub">
               15 years building developer programs at{" "}
@@ -113,29 +113,12 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-stats-strip">
-          <div className="hero-stats-inner">
-            {stats.map(s => (
-              s.link ? (
-                <a key={s.label} href={s.link} target="_blank" rel="noopener noreferrer" className="hero-stat hero-stat--link">
-                  <span className="hero-stat-value">{s.value}</span>
-                  <span className="hero-stat-label">{s.label}</span>
-                </a>
-              ) : (
-                <div key={s.label} className="hero-stat">
-                  <span className="hero-stat-value">{s.value}</span>
-                  <span className="hero-stat-label">{s.label}</span>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
       </section>
 
       <style>{`
         .hero-section {
           position: relative;
-          padding: 100px 0 0;
+          padding: 100px 0 80px;
           overflow: hidden;
           background: var(--bg);
         }
@@ -244,6 +227,19 @@ export default function Hero() {
           opacity: 0;
           animation: fadeUp 0.6s ease 0.26s forwards;
           letter-spacing: 0.2px;
+          text-align: right;
+          max-width: 560px;
+        }
+        .hero-byline-link {
+          color: var(--color-primary);
+          text-decoration: none;
+          font-style: italic;
+          border-bottom: 1px solid rgba(12,74,110,0.3);
+          transition: border-color 0.2s, color 0.2s;
+        }
+        .hero-byline-link:hover {
+          color: var(--color-accent);
+          border-bottom-color: var(--color-accent);
         }
 
         .hero-sub {

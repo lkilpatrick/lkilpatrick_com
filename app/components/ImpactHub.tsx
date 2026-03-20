@@ -188,16 +188,16 @@ export default function ImpactHub() {
           <p className="ih-sub">
             Not a list of responsibilities. Each entry links to something real — a portal still live, a talk on YouTube, a chapter you can download.
           </p>
+          <p className="ih-sub" style={{ marginTop: 20, maxWidth: 680, fontStyle: "italic", borderLeft: "3px solid var(--color-primary)", paddingLeft: 16, color: "var(--color-text-secondary)" }}>
+            Before you build a developer program, answer two questions: who are you trying to reach, and why? The answer determines your content, events, metrics, and who you hire first.
+            <span style={{ display: "block", marginTop: 8, fontStyle: "normal", fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--color-primary)", letterSpacing: 1 }}>SlashData Developer Marketing Essential Guide</span>
+          </p>
         </div>
       </section>
 
       {/* ── The Four Types of Developer Programs (SlashData framework) ── */}
       <section className="section-body section-alt" id="four-types">
         <div className="content-wrap">
-          <p className="ih-section-sub" style={{ marginBottom: 40, maxWidth: 680 }}>
-            Before you build a developer program, answer two questions: who are you trying to reach, and why? The answer determines your content, events, metrics, and who you hire first. <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--color-primary)", letterSpacing: 1 }}>SlashData Developer Marketing Essential Guide</span>
-          </p>
-
           <div className="ih-four-grid">
             {/* Card 1 */}
             <div className="ih-four-card">
