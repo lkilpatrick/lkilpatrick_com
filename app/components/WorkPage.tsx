@@ -233,29 +233,13 @@ export default function WorkPage() {
 
   return (
     <>
-      {/* ── Page header + Projects ── */}
-      <section className="section-body section-alt" id="projects">
-        <div className="content-wrap--wide">
+      {/* ── Section 1: Developer Portals & Documentation ── */}
+      <section className="section-body" id="docs">
+        <div className="content-wrap">
           <div className="wp-page-header">
             <div className="wp-hero-eyebrow">Work</div>
             <h1 className="wp-hero-title">What I&apos;ve built.</h1>
           </div>
-
-          {featured.map(p => (
-            <ProjectCard key={p.id} project={p} isFeatured={true} />
-          ))}
-
-          <div className="wp-grid">
-            {rest.map(p => (
-              <ProjectCard key={p.id} project={p} isFeatured={false} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 2: Developer Portals & Documentation ── */}
-      <section className="section-body" id="docs">
-        <div className="content-wrap">
           <div className="wp-section-header">
             <div className="wp-section-eyebrow">Developer Portals &amp; Documentation</div>
             <h2 className="wp-section-title">The systems that let developers self-serve.</h2>
@@ -269,6 +253,26 @@ export default function WorkPage() {
                 screenshot={PORTAL_SCREENSHOTS[item.title]}
                 index={i}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 2: Projects ── */}
+      <section className="section-body section-alt" id="projects">
+        <div className="content-wrap--wide">
+          <div className="wp-section-header">
+            <div className="wp-section-eyebrow">Projects</div>
+            <h2 className="wp-section-title">Coded from scratch.</h2>
+          </div>
+
+          {featured.map(p => (
+            <ProjectCard key={p.id} project={p} isFeatured={true} />
+          ))}
+
+          <div className="wp-grid">
+            {rest.map(p => (
+              <ProjectCard key={p.id} project={p} isFeatured={false} />
             ))}
           </div>
         </div>

@@ -233,16 +233,6 @@ export const onboardingDocs = {
       tag: "Docs",
       tagColor: "blue" as const,
     },
-    {
-      org: "OPEN SOURCE",
-      title: "Victron VRM API Reference ↗",
-      link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
-      description:
-        "The Victron VRM API had no official documentation. I reverse-engineered it by inspecting the VRM web app's network traffic, wrote a complete API reference covering authentication, endpoints, data structures, and common integration patterns, and published it as an open-source skill on ClawHub. The reference has been adopted by other Victron users building their own monitoring and automation integrations. This is documentation work in its purest form — an undocumented API now has docs because I wrote them.",
-      tag: "API Reference",
-      tagColor: "green" as const,
-      subhead: "API Reference — Reverse-Engineered & Published",
-    },
   ],
 };
 
