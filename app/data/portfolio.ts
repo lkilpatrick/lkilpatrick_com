@@ -17,7 +17,7 @@ export const stats = [
   { value: "15+", label: "Years in DevRel", link: "/about" },
   { value: "50+", label: "Speaking Events", link: "/content" },
   { value: "10K", label: "TikTok in One Summer", link: "https://www.tiktok.com/@pitterpatterdiving" },
-  { value: "1,300+", label: "Books Sold", link: "https://www.amazon.com/s?k=mia+kingtide" },
+  { value: "1,300+", label: "Books Published", link: "https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" },
 ];
 
 export const capabilities = [
