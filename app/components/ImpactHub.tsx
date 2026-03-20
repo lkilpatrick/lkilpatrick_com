@@ -194,10 +194,8 @@ export default function ImpactHub() {
       {/* ── The Four Types of Developer Programs (SlashData framework) ── */}
       <section className="section-body section-alt" id="four-types">
         <div className="content-wrap">
-          <div className="ih-eyebrow" style={{ marginBottom: 12 }}>From the SlashData Developer Marketing Essential Guide</div>
-          <h2 className="ih-section-title">The Four Types of Developer Programs</h2>
           <p className="ih-section-sub" style={{ marginBottom: 40, maxWidth: 680 }}>
-Before you build a developer program, answer two questions: who are you trying to reach, and why? The answer determines your content, events, metrics, and who you hire first. I defined four types:
+            Before you build a developer program, answer two questions: who are you trying to reach, and why? The answer determines your content, events, metrics, and who you hire first. <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--color-primary)", letterSpacing: 1 }}>SlashData Developer Marketing Essential Guide</span>
           </p>
 
           <div className="ih-four-grid">
