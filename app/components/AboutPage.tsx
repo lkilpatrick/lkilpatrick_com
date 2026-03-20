@@ -93,18 +93,21 @@ export default function AboutPage() {
         <div className="about-hero-inner content-wrap">
           <div className="about-hero-text">
             <div className="about-eyebrow">About</div>
-            <h1 className="about-title">Ocean first. Builder always.</h1>
+            <h1 className="about-title">I make complex things<br />easy to care about.</h1>
             <p className="about-desc">
-              I live on the Monterey Peninsula — one of the most biologically rich coastlines
-              on Earth, twenty minutes from the Monterey Bay Aquarium and a short drive from the
-              best cold-water diving in California. I work across the SF Bay Area.
-              The ocean shapes how I think: systems, patience, depth, and the discipline to go
-              back again even when conditions are rough.
+              My career is a single thread: take something technical and hard, find the story
+              inside it, and put that story in front of the people who need it most. At
+              Atlassian, Nutanix, LinearB, and Hazelcast that meant developer portals, onboarding
+              flows, and programs that turned engineers into advocates. Outside work, it means
+              a series of middle-grade novels where a 12-year-old dives Monterey Bay, sails to
+              the Sea of Cortez, and fights to protect the ocean — with the marine biology
+              reviewed by scientists at MBARI and Hopkins Marine Station.
             </p>
             <p className="about-desc">
-              PADI Divemaster. Two boats on Monterey Bay. Racing at MPYC on Wednesday evenings.
-              The same instinct runs through everything here: see a problem, build the solution.
-              Developer portals, monitoring agents, race systems, book series.
+              The skill is the same in both. Reduce the complexity. Find the hook. Build the
+              world around the idea until the audience can&apos;t look away. Whether the audience
+              is a senior engineer evaluating an API or an eight-year-old on a long car ride,
+              the job is identical: make them feel like the subject was made for them.
             </p>
             <div className="about-stat-row">
               <div className="about-stat">
@@ -126,46 +129,25 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="about-hero-cards">
-            <div className="about-card about-card--ocean">
-              <div className="about-card-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2 12c2-4 6-4 8 0s6 4 8 0"/>
-                  <path d="M2 18c2-4 6-4 8 0s6 4 8 0"/>
-                  <path d="M2 6c2-4 6-4 8 0s6 4 8 0"/>
-                </svg>
+          <div className="about-parallel">
+            <div className="about-parallel-col about-parallel-col--dev">
+              <div className="about-parallel-eyebrow">Developer Programs</div>
+              <div className="about-parallel-items">
+                <div className="about-parallel-item">Turn a complex API into a story a developer wants to follow</div>
+                <div className="about-parallel-item">Build the portal, docs, and samples that make the first hour work</div>
+                <div className="about-parallel-item">15+ years, five companies, four continents</div>
               </div>
-              <div className="about-card-title">PADI Divemaster</div>
-              <div className="about-card-sub">Cold-water diving on Monterey Bay</div>
             </div>
-            <div className="about-card about-card--sailing">
-              <div className="about-card-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2L2 19h20L12 2z"/><path d="M12 2v17"/>
-                </svg>
-              </div>
-              <div className="about-card-title">MPYC Racing</div>
-              <div className="about-card-sub">Monterey Peninsula Yacht Club</div>
+            <div className="about-parallel-divider">
+              <span className="about-parallel-equals">=</span>
             </div>
-            <div className="about-card about-card--books">
-              <div className="about-card-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                </svg>
+            <div className="about-parallel-col about-parallel-col--books">
+              <div className="about-parallel-eyebrow">Books &amp; Storytelling</div>
+              <div className="about-parallel-items">
+                <div className="about-parallel-item">Turn marine biology and climate science into stories a child wants to finish</div>
+                <div className="about-parallel-item">Build the world, the characters, and the science that make the first chapter stick</div>
+                <div className="about-parallel-item">12+ books, reviewed by MBARI and Hopkins Marine Station</div>
               </div>
-              <div className="about-card-title">4 Books Published</div>
-              <div className="about-card-sub">Mia Kingtide Ocean Adventures</div>
-            </div>
-            <div className="about-card about-card--ai">
-              <div className="about-card-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
-                </svg>
-              </div>
-              <div className="about-card-title">AI Builder</div>
-              <div className="about-card-sub">Agents, automation, real systems</div>
             </div>
           </div>
         </div>
@@ -452,37 +434,71 @@ export default function AboutPage() {
           color: var(--text-dim);
         }
 
-        /* ── Personal cards ── */
-        .about-hero-cards {
+        /* ── Parallel callout ── */
+        .about-parallel {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-          align-self: center;
-        }
-        .about-card {
-          background: var(--bg-card);
+          grid-template-columns: 1fr auto 1fr;
+          gap: 0;
+          align-items: stretch;
           border: 1px solid var(--border);
           border-radius: var(--radius);
-          padding: 24px 20px;
-          transition: all 0.25s ease;
-          box-shadow: var(--shadow-card);
+          overflow: hidden;
+          align-self: start;
         }
-        .about-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card-hover); }
-        .about-card--ocean:hover { border-color: var(--accent); }
-        .about-card--sailing:hover { border-color: var(--teal); }
-        .about-card--books:hover { border-color: var(--orange); }
-        .about-card--ai:hover { border-color: var(--purple); }
-        .about-card--ocean .about-card-icon { color: var(--accent); }
-        .about-card--sailing .about-card-icon { color: var(--teal); }
-        .about-card--books .about-card-icon { color: var(--orange); }
-        .about-card--ai .about-card-icon { color: var(--purple); }
-        .about-card-icon { margin-bottom: 14px; }
-        .about-card-title { font-size: 15px; font-weight: 700; color: var(--heading); margin-bottom: 6px; }
-        .about-card-sub {
+        .about-parallel-col {
+          padding: 28px 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .about-parallel-col--dev {
+          background: rgba(12,74,110,0.04);
+        }
+        .about-parallel-col--books {
+          background: rgba(217,119,6,0.04);
+        }
+        .about-parallel-eyebrow {
           font-family: var(--font-mono), monospace;
-          font-size: 11px;
-          color: var(--text-dim);
-          line-height: 1.5;
+          font-size: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        .about-parallel-col--dev .about-parallel-eyebrow { color: var(--color-primary); }
+        .about-parallel-col--books .about-parallel-eyebrow { color: var(--color-accent-hover); }
+        .about-parallel-items {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .about-parallel-item {
+          font-size: 14px;
+          color: var(--color-text-secondary);
+          line-height: 1.55;
+          padding-left: 14px;
+          border-left: 2px solid var(--border);
+        }
+        .about-parallel-col--dev .about-parallel-item {
+          border-left-color: rgba(12,74,110,0.3);
+        }
+        .about-parallel-col--books .about-parallel-item {
+          border-left-color: rgba(217,119,6,0.3);
+        }
+        .about-parallel-divider {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          background: var(--bg-card);
+          border-left: 1px solid var(--border);
+          border-right: 1px solid var(--border);
+        }
+        .about-parallel-equals {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 28px;
+          color: var(--color-primary);
+          opacity: 0.4;
+          font-weight: 400;
         }
 
         /* ── Section headers ── */
@@ -911,6 +927,8 @@ export default function AboutPage() {
           .about-hero-inner { grid-template-columns: 1fr; gap: 48px; }
           .about-stat-row { grid-template-columns: repeat(2, 1fr); }
           .about-mia-grid { grid-template-columns: 1fr; }
+          .about-parallel { grid-template-columns: 1fr; }
+          .about-parallel-divider { width: 100%; height: 40px; border-left: none; border-right: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
           .about-mia-covers { grid-template-columns: repeat(2, 1fr); }
           .about-mia-series { grid-template-columns: 1fr; gap: 32px; }
           .about-ppd-grid { grid-template-columns: repeat(2, 1fr); }
