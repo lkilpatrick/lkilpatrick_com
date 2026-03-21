@@ -13,12 +13,12 @@ const PROGRAMS = [
     type: "Developer Portal & DX",
     headline: "Building the infrastructure developers need to self-serve.",
     description:
-      "Before you can grow a developer ecosystem, developers need somewhere to land. A portal with real docs, real quickstarts, and a path from zero to working in under an hour. I have built this from scratch at three companies — each time inheriting nothing and shipping something developers actually use.",
+      "Before you can grow a developer ecosystem, developers need somewhere to land. A portal with real docs, real quickstarts, and a path from zero to working in under an hour. I have built this from scratch at three companies — each time inheriting nothing and shipping something developers actually use. At Nutanix, this meant convincing a hardware company mid-pivot to software that developers were worth a multi-year investment before the revenue showed up.",
     companies: ["Nutanix", "LinearB", "Hazelcast"],
     evidence: [
       {
-        label: "Nutanix.dev",
-        detail: "Built from zero. 49+ open-source repos. Self-paced labs, API reference, Twitch live coding. Still live.",
+        label: "Nutanix.dev — Built from Zero",
+        detail: "Nutanix was pivoting from hardware to software when the developer program didn't exist. Secured VP-level executive sponsorship, built the team from 1 to 5, launched nutanix.dev with 49+ open-source repos, self-paced labs, API reference, and Twitch live coding. Spent the first 6 months establishing baseline metrics — portal visits, event attendance, mailing list growth — before tying anything to revenue.",
         link: "/work#docs",
         external: false,
       },
@@ -46,12 +46,24 @@ const PROGRAMS = [
     type: "Community & Ecosystem",
     headline: "Events, advocacy, and ecosystems that grow themselves.",
     description:
-      "Developer communities are not built by posting on Twitter. They are built by showing up — at conferences, at hackathons, in forums, on stages. I ran Codegeist at Atlassian, built the Nutanix Dev Live Twitch channel, spoke at DevRelCon London and San Francisco, and published the industry guide on how to do it at scale.",
+      "Developer communities are not built by posting on Twitter. They are built by showing up — at conferences, at hackathons, in forums, on stages. I programmed and produced AtlasCamp and Atlassian Summit for years, created and ran the App Week program, ran Codegeist, built the Nutanix developer event series, spoke at DevRelCon London and San Francisco, and published the industry guide on how to do it at scale.",
     companies: ["Atlassian", "Nutanix", "DevRelCon"],
     evidence: [
       {
+        label: "AtlasCamp & Atlassian Summit — 4 AtlasCamps, 5 Summits",
+        detail: "Programmed and produced AtlasCamp (Atlassian's developer conference, growing from ~80 to 700 attendees) and Atlassian Summit (growing to 5,000 attendees). 4 AtlasCamps and 5 Summits total.",
+        link: null,
+        external: false,
+      },
+      {
+        label: "App Week — Created and Ran the Program",
+        detail: "Created Atlassian's invite-only App Week: focused work weeks of 120 developers + 30-40 Atlassian staff. Theme-based, low attendee-to-staff ratio designed for deep two-way dialogue rather than broadcast.",
+        link: null,
+        external: false,
+      },
+      {
         label: "Codegeist — Atlassian Global Hackathon",
-        detail: "Ran Atlassian's global developer hackathon. Drove measurable Marketplace growth and ecosystem adoption across the partner ecosystem.",
+        detail: "Ran Atlassian's global developer hackathon for 3 years: 1,500+ developers, 314 new Marketplace apps, ROI returned in under 6 months.",
         link: null,
         external: false,
       },
@@ -210,7 +222,7 @@ export default function ImpactHub() {
                 <div className="ih-four-examples">Examples: Atlassian Marketplace, Apple App Store, Shopify</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Ran Codegeist at Atlassian: 3 years, 1,500+ developers, 314 new marketplace apps, ROI returned in under 6 months. Created App Week: 7 events, 60-100 developers each, NPS scores 74-86.</p>
+                  <p className="ih-four-exp-text">Programmed and produced 4 AtlasCamps and 5 Atlassian Summits. Created App Week — Atlassian&apos;s invite-only focused work week: 120 developers, 30-40 Atlassian staff, theme-based, designed to rebuild the personal connections that scale erodes. Ran Codegeist hackathon for 3 years: 1,500+ developers, 314 new Marketplace apps.</p>
                 </div>
               </div>
             </div>
@@ -226,7 +238,7 @@ export default function ImpactHub() {
                 <div className="ih-four-examples">Examples: Nutanix, Cisco, VMware</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Built from zero at Nutanix: team 1 to 5, nutanix.dev portal, 49+ open-source repos. Ran API Accelerator labs in 11 cities, 400+ developers trained. Learned the hard way in London (5 of 46 attendees were actual developers) and redesigned the format until it worked.</p>
+                  <p className="ih-four-exp-text">Nutanix was a hardware company mid-pivot to software with no developer program. Secured VP-level buy-in, built team 1 to 5, launched nutanix.dev with 49+ open-source repos. Ran API Accelerator labs in 11 cities, 400+ developers trained. Learned the hard way in London — 5 of 46 attendees were actual developers — and redesigned the format until it worked.</p>
                 </div>
               </div>
             </div>

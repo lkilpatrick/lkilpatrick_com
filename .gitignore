@@ -45,6 +45,8 @@ progress.txt
 /public/*.mp4
 /public/*.pdf
 !/public/ResumeLukeKilpatrickDevRel2026.pdf
+!/public/Starting-from-Scratch-Program.pdf
+!/public/ScalingDown.pdf
 
 # yarn berry (not used)
 /.pnp
