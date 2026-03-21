@@ -85,7 +85,7 @@ const PROGRAMS = [
     type: "Product Launch & GTM",
     headline: "Launches that land with developer audiences.",
     description:
-      "Getting a developer tool to market is not the same as getting any other product to market. The narrative has to be technically credible. The content has to be genuinely useful. The messaging has to survive contact with an audience that will immediately call out anything that is not true. I have shipped launches at Harness, Nutanix, and LinearB — and the videos, release notes, and conference talks are still out there.",
+      "Getting a developer tool to market is not the same as getting any other product to market. The narrative has to be technically credible. The content has to be genuinely useful. The messaging has to survive contact with an audience that will immediately call out anything that is not true. I have shipped launches at Harness, Nutanix, and LinearB — and the talks, release notes, and docs are still out there.",
     companies: ["Harness", "Nutanix", "LinearB"],
     evidence: [
       {
@@ -242,7 +242,7 @@ export default function ImpactHub() {
                 <div className="ih-four-examples">Examples: LinearB, New Relic, Sentry, GitHub</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Built the LinearB developer program for gitStream — an open-source workflow automation tool developers adopt individually and pull into their teams. Keynoted Devoxx UK 2022 in London (the UK&apos;s premier Java developer conference), then ran a global conference tour through Fall 2022 to drive adoption. Built gitStream docs from scratch: quickstarts, automation library, API reference, plugin guides, and an interactive playground. Zero sales contact required.</p>
+                  <p className="ih-four-exp-text">Built the LinearB developer program around gitStream — a free PR automation tool that makes pull requests faster and easier. The strategy was a deliberate loss leader: developers adopt gitStream, save time on code review, then ask how much time they&apos;re saving. That question leads them to LinearB, the developer metrics platform. Keynoted Devoxx UK 2022 in London (the UK&apos;s premier Java developer conference), then ran a global conference tour through Fall 2022 to drive adoption. Built gitStream docs from scratch: quickstarts, automation library, API reference, plugin guides, and an interactive playground.</p>
                 </div>
               </div>
             </div>
