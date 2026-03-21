@@ -258,7 +258,7 @@ export default function ImpactHub() {
                 <div className="ih-four-examples">Examples: Sencha Ext JS, Stripe, Auth0, Twilio</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Sencha was the defining UI framework of the Flash-to-HTML5 transition — 140+ components, 2M+ developers, 60% of the Fortune 100. I ran developer relations during the critical adoption window: spoke at SenchaCon 2013, led user group tours across multiple cities to bring developers onto Ext JS and Sencha Touch as the industry was choosing its HTML5 stack. The window was narrow. Getting developers to commit to a framework in that moment meant winning accounts for years.</p>
+                  <p className="ih-four-exp-text">Sencha was the defining UI framework of the Flash-to-HTML5 transition — 140+ components, 2M+ developers, 60% of the Fortune 100. I ran developer relations during the critical adoption window: produced and track-led SenchaCon 2013 at the Swan &amp; Dolphin in Orlando for 2,000+ attendees, and ran user group tours across multiple cities to bring developers onto Ext JS and Sencha Touch as the industry was choosing its HTML5 stack. The window was narrow. Getting developers to commit to a framework in that moment meant winning accounts for years.</p>
                 </div>
               </div>
             </div>
