@@ -35,7 +35,7 @@ export default function Footer() {
             <button
               onClick={() => setContactOpen(true)}
               className="footer-link"
-              style={{ background: "none", border: "none", cursor: "pointer", padding: 0, font: "inherit" }}
+              style={{ cursor: "pointer", font: "inherit" }}
             >
               Email
             </button>

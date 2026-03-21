@@ -49,7 +49,7 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-controls">
-            <a href="/Luke-Kilpatrick-Director-DevRel-2026.pdf" download="Luke-Kilpatrick-Director-DevRel-2026.pdf" className="resume-btn">Resume ↓</a>
+            <a href="/ResumeLukeKilpatrickDevRel2026.pdf" download="ResumeLukeKilpatrickDevRel2026.pdf" className="resume-btn">Resume ↓</a>
             <button
               className="hamburger"
               onClick={() => setMenuOpen(o => !o)}
