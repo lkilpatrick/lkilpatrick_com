@@ -85,9 +85,15 @@ const PROGRAMS = [
     type: "Product Launch & GTM",
     headline: "Launches that land with developer audiences.",
     description:
-      "Getting a developer tool to market is not the same as getting any other product to market. The narrative has to be technically credible. The content has to be genuinely useful. The messaging has to survive contact with an audience that will immediately call out anything that is not true. I have shipped launches at Harness, Nutanix, and Sencha — and the videos, release notes, and positioning documents are still out there.",
-    companies: ["Harness", "Nutanix", "Sencha"],
+      "Getting a developer tool to market is not the same as getting any other product to market. The narrative has to be technically credible. The content has to be genuinely useful. The messaging has to survive contact with an audience that will immediately call out anything that is not true. I have shipped launches at Harness, Nutanix, and LinearB — and the videos, release notes, and conference talks are still out there.",
+    companies: ["Harness", "Nutanix", "LinearB"],
     evidence: [
+      {
+        label: "Devoxx UK 2022 — Keynote, London",
+        detail: "Keynoted Devoxx UK, the UK's premier Java developer conference, to drive gitStream adoption. Followed by a global conference tour through Fall 2022.",
+        link: "https://www.devoxx.co.uk/",
+        external: true,
+      },
       {
         label: "Harness Build Intelligence — Launch Video",
         detail: "Scripted, produced, and shipped. Product launch video for Harness CI's Build Intelligence feature.",
@@ -98,12 +104,6 @@ const PROGRAMS = [
         label: "Harness CI Release Notes",
         detail: "Wrote and maintained release notes for Harness CI — precise technical communication for developers tracking breaking changes and migration paths.",
         link: "https://developer.harness.io/release-notes/continuous-integration/#version-141",
-        external: true,
-      },
-      {
-        label: "Sencha Product Video — 246K Views",
-        detail: "Wrote, filmed, and edited. One of the highest-performing developer product videos of its era. Still on Vimeo.",
-        link: "https://vimeo.com/55486684",
         external: true,
       },
       {
@@ -239,10 +239,10 @@ export default function ImpactHub() {
               </div>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product is the tool developers use directly. Individual developers try it, adopt it, and pull it into their teams. Bottom-up adoption. This audience will not tolerate being marketed to.</p>
-                <div className="ih-four-examples">Examples: Sencha, New Relic, Sentry, LinearB</div>
+                <div className="ih-four-examples">Examples: LinearB, New Relic, Sentry, GitHub</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
-                  <p className="ih-four-exp-text">Built programs at Sencha and LinearB. Product video at Sencha: 246K views. Built gitStream docs from scratch: quickstarts, automation library, API reference, plugin guides, interactive playground. Zero sales contact required.</p>
+                  <p className="ih-four-exp-text">Built the LinearB developer program for gitStream — an open-source workflow automation tool developers adopt individually and pull into their teams. Keynoted Devoxx UK 2022 in London (the UK&apos;s premier Java developer conference), then ran a global conference tour through Fall 2022 to drive adoption. Built gitStream docs from scratch: quickstarts, automation library, API reference, plugin guides, and an interactive playground. Zero sales contact required.</p>
                 </div>
               </div>
             </div>
