@@ -543,6 +543,24 @@ export default function Hero() {
           padding-bottom: 1px;
         }
         .hero-resume-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+        @media (max-width: 680px) {
+          .hero-resume-link {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1.5px solid var(--color-primary);
+            border-radius: 8px;
+            color: var(--color-primary);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: transparent;
+          }
+          .hero-resume-link:hover {
+            background: var(--color-primary);
+            color: #fff;
+            border-color: var(--color-primary);
+          }
+        }
 
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(18px); }

@@ -71,6 +71,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href="/ResumeLukeKilpatrickDevRel2026.pdf"
+              download="ResumeLukeKilpatrickDevRel2026.pdf"
+              className="mobile-resume-btn"
+            >
+              📄 Download Resume
+            </a>
           </div>
         )}
       </nav>
@@ -166,6 +173,22 @@ export default function Navbar() {
           border-color: var(--color-primary);
         }
         @media (max-width: 680px) { .resume-btn { display: none; } }
+        .mobile-resume-btn {
+          display: block;
+          margin: 8px 16px 16px;
+          padding: 12px 20px;
+          background: var(--color-primary);
+          color: #fff;
+          font-family: var(--font-mono), monospace;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center;
+          transition: background 0.2s;
+        }
+        .mobile-resume-btn:hover { background: var(--color-primary-dark); color: #fff; }
         .hamburger {
           display: none;
           width: 36px; height: 36px;
