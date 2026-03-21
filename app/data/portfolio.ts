@@ -177,10 +177,10 @@ export const contentPreviews = [
   {
     id: 4,
     type: "Book",
-    org: "SlashData",
+    org: "Developer Marketing Essential Guide",
     title: "The Developer Marketing Essential Guide",
     link: "https://a.co/d/eIgJG8o",
-    description: "Two authored chapters in the definitive guide to developer marketing, published by SlashData.",
+    description: "Two authored chapters in the definitive guide to developer marketing.",
   },
   {
     id: 5,
@@ -507,11 +507,11 @@ export const personalVideos = [
 export const strategicWork = [
   {
     id: 1,
-    org: "SLASHDATA — PUBLISHED AUTHOR",
+    org: "DEVELOPER MARKETING ESSENTIAL GUIDE — AUTHOR",
     title: "The Developer Marketing Essential Guide",
     link: "https://a.co/d/eIgJG8o",
     description:
-      "Authored two chapters in the definitive guide to developer marketing, published by SlashData. Covers developer program strategy, community building, and measuring developer marketing ROI.",
+      "Authored two chapters in the definitive guide to developer marketing. Covers developer program strategy, community building, and measuring developer marketing ROI.",
     tag: "Book",
     tagColor: "orange" as const,
   },

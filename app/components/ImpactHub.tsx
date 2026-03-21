@@ -4,7 +4,7 @@ import { useState } from "react";
 import ContactModal from "./ContactModal";
 
 // ─── Four DevRel Program Types ────────────────────────────────────────────────
-// Based on Luke's SlashData chapters and career pattern across 5 companies.
+// Based on Luke's Developer Marketing Essential Guide chapters and career pattern across 5 companies.
 
 const PROGRAMS = [
   {
@@ -62,8 +62,8 @@ const PROGRAMS = [
         external: false,
       },
       {
-        label: "SlashData Developer Marketing Guide",
-        detail: "Authored two chapters: 'Scaling Down' (programs under budget constraints) and 'Starting from Scratch Program' (zero-to-one playbook). Published by SlashData.",
+        label: "Developer Marketing Essential Guide",
+        detail: "Authored two chapters: 'Scaling Down' (programs under budget constraints) and 'Starting from Scratch Program' (zero-to-one playbook).",
         link: "https://a.co/d/eIgJG8o",
         external: true,
       },
@@ -124,11 +124,11 @@ const PROGRAMS = [
     type: "Starting from Scratch",
     headline: "No program, no docs, no community. Here is what I do first.",
     description:
-      "The hardest version of this job is when there is nothing. No portal, no docs, no community, no process, no headcount. I have done this three times. I wrote the industry playbook on how to do it — literally published by SlashData as a chapter in the Developer Marketing Essential Guide. The pattern is consistent: audit what exists, ship something developers can use in week one, build the infrastructure that lets you scale.",
+      "The hardest version of this job is when there is nothing. No portal, no docs, no community, no process, no headcount. I have done this three times. I wrote the industry playbook on how to do it — published as a chapter in the Developer Marketing Essential Guide. The pattern is consistent: audit what exists, ship something developers can use in week one, build the infrastructure that lets you scale.",
     companies: ["Nutanix", "LinearB", "Hazelcast"],
     evidence: [
       {
-        label: "SlashData Chapter: 'Starting from Scratch Program'",
+        label: "'Starting from Scratch Program' — Developer Marketing Essential Guide",
         detail: "The zero-to-one playbook for developer programs. How to launch a program at a company with no DevRel history, no budget baseline, and no community. Free to download.",
         link: "/Starting-from-Scratch-Program.pdf",
         external: false,
@@ -136,7 +136,7 @@ const PROGRAMS = [
         downloadName: "Developer-Marketing-Starting-From-Scratch.pdf",
       },
       {
-        label: "SlashData Chapter: 'Scaling Down'",
+        label: "'Scaling Down' — Developer Marketing Essential Guide",
         detail: "How developer programs survive and grow under budget constraints. Written from experience running programs that had to do more with less.",
         link: "/ScalingDown.pdf",
         external: false,
@@ -190,12 +190,12 @@ export default function ImpactHub() {
           </p>
           <p className="ih-sub" style={{ marginTop: 20, maxWidth: 680, fontStyle: "italic", borderLeft: "3px solid var(--color-primary)", paddingLeft: 16, color: "var(--color-text-secondary)" }}>
             Before you build a developer program, answer two questions: who are you trying to reach, and why? The answer determines your content, events, metrics, and who you hire first.
-            <span style={{ display: "block", marginTop: 8, fontStyle: "normal", fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--color-primary)", letterSpacing: 1 }}>SlashData Developer Marketing Essential Guide</span>
+            <span style={{ display: "block", marginTop: 8, fontStyle: "normal", fontFamily: "var(--font-mono), monospace", fontSize: 11, color: "var(--color-primary)", letterSpacing: 1 }}>Luke Kilpatrick, Developer Marketing Essential Guide</span>
           </p>
         </div>
       </section>
 
-      {/* ── The Four Types of Developer Programs (SlashData framework) ── */}
+      {/* ── The Four Types of Developer Programs ── */}
       <section className="section-body section-alt" id="four-types">
         <div className="content-wrap">
           <div className="ih-four-grid">
@@ -267,7 +267,7 @@ export default function ImpactHub() {
           {/* Callout */}
           <div className="ih-four-callout">
             <div className="ih-four-quote">&ldquo;There is nothing worse than doing an event and getting the wrong folks in the room.&rdquo;</div>
-            <div className="ih-four-quote-attr">&mdash; Starting from Scratch, SlashData Developer Marketing Essential Guide</div>
+            <div className="ih-four-quote-attr">&mdash; Starting from Scratch, Developer Marketing Essential Guide</div>
             <div className="ih-four-callout-links">
               Download the full chapters: &nbsp;
               <a href="/ScalingDown.pdf" download="Developer-Marketing-Scaling-Down.pdf" className="ih-four-dl-link">Scaling Down (PDF)</a>
@@ -366,10 +366,10 @@ export default function ImpactHub() {
       {/* ── Downloads ── */}
       <section className="section-body" id="downloads">
         <div className="content-wrap">
-          <div className="ih-eyebrow" style={{ marginBottom: 12 }}>SlashData — Free Download</div>
+          <div className="ih-eyebrow" style={{ marginBottom: 12 }}>Free Download</div>
           <h2 className="ih-section-title">The playbooks. In writing.</h2>
           <p className="ih-section-sub" style={{ marginBottom: 36 }}>
-            Two chapters I authored in the SlashData Developer Marketing Essential Guide. The actual frameworks, not a summary.
+            Two chapters I authored in the Developer Marketing Essential Guide. The actual frameworks, not a summary.
           </p>
           <div className="ih-downloads">
             {[
@@ -389,7 +389,7 @@ export default function ImpactHub() {
               <a key={ch.title} href={ch.file} download={ch.download} className="ih-download-card">
                 <div className="ih-download-icon">PDF</div>
                 <div className="ih-download-body">
-                  <div className="ih-download-pub">SlashData — Developer Marketing Essential Guide</div>
+                  <div className="ih-download-pub">Luke Kilpatrick — Developer Marketing Essential Guide</div>
                   <div className="ih-download-title">{ch.title}</div>
                   <div className="ih-download-desc">{ch.desc}</div>
                 </div>

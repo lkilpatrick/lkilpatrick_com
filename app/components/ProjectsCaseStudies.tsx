@@ -216,7 +216,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: "Ocean View at Monterey Bay",
     subtitle: "5-star Airbnb guest suite in Sand City — ocean views, hot tub, and king bed on the Monterey Peninsula.",
     status: "Active",
-    year: "2015–present",
+    year: "2020–present",
     role: "Host, Designer, Operator",
     screenshot: "/screenshots/builder-ocean-view-airbnb.jpg",
     screenshotAlt: "Ocean View at Monterey Bay Airbnb — hot tub deck with Monterey Bay views",
@@ -242,7 +242,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     stack: ["Airbnb", "theoceanviewbnb.com", "Self-managed", "Interior design", "Pricing strategy", "Guest experience"],
     link: "https://www.airbnb.com/rooms/2685574",
-    outcome: "Active since 2015. Consistently 5-star rated. Integrated with Pitter Patter Diving tourism ecosystem.",
+    outcome: "Active since 2020. Consistently 5-star rated. Integrated with Pitter Patter Diving tourism ecosystem.",
   },
 ];
 

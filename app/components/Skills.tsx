@@ -14,8 +14,8 @@ const PROOF_POINTS = [
     linkLabel: null,
   },
   {
-    org: "SlashData",
-    title: "Authored two chapters in the SlashData Developer Marketing Essential Guide.",
+    org: "Developer Marketing Essential Guide",
+    title: "Authored two chapters in the Developer Marketing Essential Guide.",
     detail: "\"Starting from Scratch\" defines four types of developer programs — marketplace, API adoption, developer tools, and the Lego brick — and the playbook for building each from zero: hiring order, portal strategy, event formats, and the mistakes that cost real money. \"Scaling Down\" covers how programs survive budget cuts without losing momentum.",
     link: "https://a.co/d/eIgJG8o",
     linkLabel: "Book on Amazon →",
@@ -92,10 +92,10 @@ export default function StrategicImpact() {
       {/* ── Book chapter PDFs ── */}
       <section className="section-body" id="book-chapters">
         <div className="content-wrap">
-          <div className="pp-eyebrow" style={{ marginBottom: 12 }}>SlashData — Free Download</div>
+          <div className="pp-eyebrow" style={{ marginBottom: 12 }}>Free Download</div>
           <h2 className="pp-title" style={{ marginBottom: 8 }}>Developer Marketing Essential Guide — Chapters</h2>
           <p style={{ fontSize: 15, color: "var(--text-muted)", marginBottom: 28, maxWidth: 600 }}>
-            Two chapters I authored in the SlashData-published guide to developer marketing. Free to download.
+            Two chapters I authored on developer marketing strategy. Free to download.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: 16 }}>
             {BOOK_CHAPTERS.map((chapter) => (
@@ -103,7 +103,7 @@ export default function StrategicImpact() {
                 <div className="chapter-icon">PDF</div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--accent)", marginBottom: 4 }}>
-                    SlashData — Developer Marketing Essential Guide
+                    Luke Kilpatrick — Developer Marketing Essential Guide
                   </div>
                   <div style={{ fontSize: 15, fontWeight: 600, color: "var(--heading)", marginBottom: 6 }}>{chapter.title}</div>
                   <div style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.5 }}>{chapter.description}</div>

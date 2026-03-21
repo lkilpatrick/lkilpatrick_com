@@ -314,7 +314,7 @@ export default function AboutPage() {
             <a href="https://www.airbnb.com/rooms/2685574" target="_blank" rel="noopener noreferrer" className="about-ppd-card">
               <div className="about-ppd-icon">🏠</div>
               <div className="about-ppd-label">Ocean View Airbnb</div>
-              <div className="about-ppd-desc">5-star guest suite on the Monterey Peninsula — ocean views, hot tub, king bed. Active since 2015. Consistently top-rated.</div>
+              <div className="about-ppd-desc">5-star guest suite on the Monterey Peninsula — ocean views, hot tub, king bed. Active since 2020. Consistently top-rated.</div>
               <div className="about-ppd-link">Airbnb listing →</div>
             </a>
             <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer" className="about-ppd-card">
