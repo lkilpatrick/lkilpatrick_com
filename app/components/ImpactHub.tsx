@@ -255,10 +255,10 @@ export default function ImpactHub() {
               </div>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product is a building block. Developers snap it together with other tools to build something larger. It has no value on its own. Every layer of the modern stack is now a Lego brick: databases, auth, payments, messaging, search, storage, monitoring. The developer experience IS the go-to-market.</p>
-                <div className="ih-four-examples">Examples: Stripe, Auth0, Twilio, Supabase, Algolia, Pinecone</div>
+                <div className="ih-four-examples">Examples: Sencha Ext JS, Stripe, Auth0, Twilio</div>
                 <div className="ih-four-experience">
-                  <div className="ih-four-exp-label">Why it matters</div>
-                  <p className="ih-four-exp-text">If it takes longer than 10 minutes to reach &ldquo;hello world,&rdquo; you lose. AI agents now select infrastructure the same way developers do: by evaluating docs, SDK quality, and time-to-integrate. The bricks with the best DX get chosen first.</p>
+                  <div className="ih-four-exp-label">What I did</div>
+                  <p className="ih-four-exp-text">Sencha was the defining UI framework of the Flash-to-HTML5 transition — 140+ components, 2M+ developers, 60% of the Fortune 100. I ran developer relations during the critical adoption window: spoke at SenchaCon 2013, led user group tours across multiple cities to bring developers onto Ext JS and Sencha Touch as the industry was choosing its HTML5 stack. The window was narrow. Getting developers to commit to a framework in that moment meant winning accounts for years.</p>
                 </div>
               </div>
             </div>
