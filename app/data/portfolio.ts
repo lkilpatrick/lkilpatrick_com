@@ -215,12 +215,40 @@ export const onboardingDocs = {
       },
     },
     {
+      label: "Full-Stack SaaS — Built From Experience",
+      title: "OpenSTR",
+      link: "https://openstr.dev",
+      org: "PERSONAL — PRODUCT BUILDER",
+      description:
+        "AI-powered short-term rental operations platform built to solve real problems from operating my own Airbnb. OpenSTR helps short-term rental operators manage properties, automate workflows, and deliver better guest experiences. Built from operating a real property and solving the problems firsthand — not a demo, a real product addressing a real operational gap.",
+      secondaryLink: {
+        text: "Launch App",
+        href: "https://app.openstr.dev",
+      },
+      extraLink: {
+        text: "View Source on GitHub",
+        href: "https://github.com/lkilpatrick/OpenSTR",
+      },
+    },
+    {
       label: "Documentation Site — Built From Scratch",
       title: "gitStream Documentation Portal",
       link: "https://docs.gitstream.cm/",
       org: "LINEARB",
       description:
         "Built the complete developer documentation site for gitStream, LinearB's workflow automation product. Includes quickstart guides, automation library with copy-paste examples, integration docs, plugin development guides, interactive playground, and full API reference. MkDocs-based, structured for self-serve developer onboarding with zero sales contact required.",
+    },
+    {
+      label: "Ocean Platform — Built From Real Expeditions",
+      title: "Pitter Patter Diving",
+      link: "https://pitterpatterdiving.com",
+      org: "PERSONAL — OPERATOR + STORYTELLER",
+      description:
+        "Ocean exploration, diving, and storytelling platform built around real diving expeditions in Monterey Bay. Brings together charter boat operations, underwater photography, the Mia Kingtide book series, and an AI agent that monitors the boats overnight — all under a single brand focused on connecting people to the ocean. Built from scratch: 10K TikTok followers in one summer, SEO blog, YouTube channel, and a functioning tourism business.",
+      extraLink: {
+        text: "Read the Blog",
+        href: "https://pitterpatterdiving.com/blog",
+      },
     },
   ],
   cards: [

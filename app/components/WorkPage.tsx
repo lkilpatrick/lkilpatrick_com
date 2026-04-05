@@ -72,9 +72,10 @@ const PROJECTS: Project[] = [
 // ─── Docs Section ─────────────────────────────────────────────────────────────
 
 const PORTAL_SCREENSHOTS: Record<string, string> = {
-  "Nutanix.dev — Developer Portal": "/screenshots/nutanix-dev.jpg",
-  "gitStream Documentation Portal": "/screenshots/gitstream-docs.jpg",
-  "Harness CI Release Notes":       "/screenshots/harness-ci.jpg",
+  "Nutanix.dev — Developer Portal":  "/screenshots/nutanix-dev.jpg",
+  "gitStream Documentation Portal":  "/screenshots/gitstream-docs.jpg",
+  "Harness CI Release Notes":        "/screenshots/harness-ci.jpg",
+  "Pitter Patter Diving":            "/screenshots/builder-pitterpatter-blog.jpg",
 };
 
 const TAG_COLORS: Record<string, { color: string; bg: string; border: string }> = {
@@ -171,7 +172,7 @@ function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: bo
 }
 
 function PortalRow({ item, screenshot, index }: {
-  item: { label: string; title: string; link: string; org: string; description: string; extraLink?: { text: string; href: string } };
+  item: { label: string; title: string; link: string; org: string; description: string; extraLink?: { text: string; href: string }; secondaryLink?: { text: string; href: string } };
   screenshot: string | undefined;
   index: number;
 }) {
@@ -203,14 +204,21 @@ function PortalRow({ item, screenshot, index }: {
           </a>
         </h3>
         <p className="wp-portal-desc">{item.description}</p>
+        <div className="wp-portal-ctas">
+          <a href={item.link} target="_blank" rel="noopener noreferrer" className="wp-portal-btn">
+            View Site →
+          </a>
+          {item.secondaryLink && (
+            <a href={item.secondaryLink.href} target="_blank" rel="noopener noreferrer" className="wp-portal-btn wp-portal-btn--secondary">
+              {item.secondaryLink.text} →
+            </a>
+          )}
+        </div>
         {item.extraLink && (
           <a href={item.extraLink.href} target="_blank" rel="noopener noreferrer" className="wp-portal-extra">
             {item.extraLink.text} →
           </a>
         )}
-        <a href={item.link} target="_blank" rel="noopener noreferrer" className="wp-portal-btn">
-          View Live Site →
-        </a>
       </div>
     </div>
   );
@@ -597,6 +605,13 @@ export default function WorkPage() {
           display: block;
           margin-bottom: 16px;
         }
+        .wp-portal-ctas {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 4px;
+          margin-bottom: 12px;
+        }
         .wp-portal-btn {
           font-family: var(--font-mono), monospace;
           font-size: 11px;
@@ -607,12 +622,20 @@ export default function WorkPage() {
           display: inline-block;
           text-decoration: none;
           transition: all 0.2s;
-          margin-top: 4px;
         }
         .wp-portal-btn:hover {
           background: var(--color-primary);
           color: #fff;
           border-color: var(--color-primary);
+        }
+        .wp-portal-btn--secondary {
+          color: var(--color-success);
+          border-color: var(--color-success);
+        }
+        .wp-portal-btn--secondary:hover {
+          background: var(--color-success);
+          color: #fff;
+          border-color: var(--color-success);
         }
 
         /* ── Responsive ── */
