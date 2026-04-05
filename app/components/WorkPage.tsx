@@ -75,6 +75,7 @@ const PORTAL_SCREENSHOTS: Record<string, string> = {
   "Nutanix.dev — Developer Portal":  "/screenshots/nutanix-dev.jpg",
   "gitStream Documentation Portal":  "/screenshots/gitstream-docs.jpg",
   "Harness CI Release Notes":        "/screenshots/harness-ci.jpg",
+  "OpenSTR":                         "/screenshots/openstr.jpg",
   "Pitter Patter Diving":            "/screenshots/builder-pitterpatter-blog.jpg",
 };
 
