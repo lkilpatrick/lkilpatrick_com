@@ -150,6 +150,14 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── TikTok widget ── */}
+      <section className="about-tiktok-section section-body">
+        <div className="content-wrap">
+          <div className="about-tiktok-label">★ TikTok Channel — @pitterpatterdiving</div>
+          <TikTokEmbed />
+        </div>
+      </section>
+
       {/* ── Section 2: Mia Kingtide ── */}
       <section className="about-mia section-body section-alt" id="mia-kingtide">
         <div className="content-wrap">
@@ -227,12 +235,36 @@ export default function AboutPage() {
             ].map((book) => (
               <div key={book.num} className="about-book-card">
                 <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
+                  <Image src={book.img} alt={book.title} width={220} height={350} className="about-book-cover" />
+                  <div className="about-book-num">{book.num}</div>
+                </a>
+                <div className="about-book-meta">
+                  <div className="about-book-title">{book.title}</div>
+                  <div className="about-book-desc">{book.desc}</div>
+                  <div className="about-book-actions">
+                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">Buy {book.price} ↗</a>
+                    <a href={book.amazon} target="_blank" rel="noopener noreferrer" className="about-book-amz">Amazon →</a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ── Picture books ── */}
+          <div className="about-section-eyebrow" style={{ marginTop: 48 }}>Illustrated Children&apos;s Books</div>
+          <div className="about-mia-covers about-mia-covers--landscape">
+            {[
+              { num: "PB1", title: "The Octopus' Gift: Where it all began", price: "$9.99", img: "/screenshots/mia-book-pb-self-confidence.jpg", link: "https://www.amazon.com/Mia-Kingtide-Self-Confidence-Illustrated-Adventures-ebook/dp/B0GGDFGHLJ/", amazon: "https://www.amazon.com/Mia-Kingtide-Self-Confidence-Illustrated-Adventures-ebook/dp/B0GGDFGHLJ/", desc: "A beautifully illustrated picture book for younger readers. Mia meets a magical octopus and discovers the power of self-confidence." },
+              { num: "PB2", title: "The Octopus' Gift: The Secret of the Shell", price: "$9.99", img: "/screenshots/mia-book-pb-discovery.jpg", link: "https://www.amazon.com/Mia-Kingtide-Discovery-Illustrated-Adventures-ebook/dp/B0FTXFRJLF/", amazon: "https://www.amazon.com/Mia-Kingtide-Discovery-Illustrated-Adventures-ebook/dp/B0FTXFRJLF/", desc: "Mia dives deeper into the mystery of the glowing shell. A vibrant illustrated adventure celebrating curiosity and ocean discovery." },
+            ].map((book) => (
+              <div key={book.num} className="about-book-card about-book-card--landscape">
+                <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
                   <Image
                     src={book.img}
                     alt={book.title}
-                    width={220}
-                    height={350}
-                    className="about-book-cover"
+                    width={340}
+                    height={220}
+                    className="about-book-cover about-book-cover--landscape"
                   />
                   <div className="about-book-num">{book.num}</div>
                 </a>
@@ -353,32 +385,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Section 4: Community & Civic ── */}
-      <section className="about-civic section-body section-alt" id="community">
-        <div className="content-wrap">
-          <div className="about-section-eyebrow">Community &amp; Civic</div>
-          <h2 className="about-section-title">Community &amp; Civic</h2>
-          <p className="about-section-intro">
-            The peninsula is not just where I live — it is where I show up.
-          </p>
-
-          <div className="about-civic-grid">
-            <div className="about-civic-card">
-              <div className="about-civic-tag">Yacht Club</div>
-              <h3 className="about-civic-title">MPYC Racing</h3>
-              <p className="about-civic-desc">
-                Racing at the Monterey Peninsula Yacht Club on Wednesday evenings and weekends.
-                When the race management software was not good enough, I built a replacement:
-                Flutter + Firebase, 5 roles, 57 courses, live weather from 11 stations, GPS tracking,
-                and Clubspot sync.
-              </p>
-              <a href="/work#projects" className="about-civic-link">See the build on Work →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 5: Social Channels ── */}
+      {/* ── Section 4: Social Channels ── */}
       <section className="about-social section-body" id="channels">
         <div className="content-wrap">
           <div className="about-section-eyebrow">Social &amp; Channels</div>
@@ -393,10 +400,6 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div style={{ marginBottom: 16 }}>
-            <div className="about-tiktok-label">★ TikTok Channel — @pitterpatterdiving</div>
-            <TikTokEmbed />
-          </div>
         </div>
       </section>
 
@@ -711,10 +714,32 @@ export default function AboutPage() {
           padding-top: 40px;
           border-top: 1px solid var(--color-border-light);
         }
+        .about-mia-covers--landscape {
+          grid-template-columns: repeat(2, 1fr);
+        }
         .about-book-card {
           display: flex;
           flex-direction: column;
           gap: 14px;
+        }
+        .about-book-card--landscape .about-book-cover--landscape {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 340 / 220;
+          object-fit: cover;
+        }
+        .about-tiktok-section {
+          background: var(--color-bg);
+          padding-top: 40px !important;
+          padding-bottom: 40px !important;
+        }
+        .about-tiktok-label {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: var(--color-primary);
+          margin-bottom: 20px;
         }
         .about-book-cover-link {
           position: relative;
