@@ -220,7 +220,7 @@ export const onboardingDocs = {
       link: "https://openstr.dev",
       org: "PERSONAL — PRODUCT BUILDER",
       description:
-        "AI-powered short-term rental operations platform built to solve real problems from operating my own Airbnb. OpenSTR helps short-term rental operators manage properties, automate workflows, and deliver better guest experiences. Built from operating a real property and solving the problems firsthand — not a demo, a real product addressing a real operational gap.",
+        "Short-term rental operations platform built from the ground up to handle the real workflow between checkout and guest-ready. Combines a TypeScript and Express API, React admin panel, Flutter mobile app, and PostgreSQL into a system for scheduling, checklists, photo verification, and cleaner workflows across properties. Includes a MkDocs-based developer portal, marketing site on Firebase, and a core platform designed to run locally for full control and security. Built from operating a real Airbnb — not a demo.",
       secondaryLink: {
         text: "Launch App",
         href: "https://app.openstr.dev",
