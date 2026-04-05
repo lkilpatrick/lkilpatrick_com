@@ -18,7 +18,7 @@ It is getting people to use it.
 
 15+ years turning complex technical products into things people actually want to use — at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.
 
-I build the **developer portals**, **onboarding systems**, **API docs**, and **community programs** that close the gap between "we shipped it" and "developers are using it." I also wrote the [SlashData Developer Marketing Essential Guide](https://a.co/d/eIgJG8o) framework on the four types of developer programs — used by teams across the industry to decide what to build before they build it.
+I build the **developer portals**, **onboarding systems**, **API docs**, and **community programs** that close the gap between "we shipped it" and "developers are using it." I also authored the Developer Marketing Essential Guide — a framework on the four types of developer programs used by teams across the industry to decide what to build before they build it.
 
 Outside work: PADI Divemaster, racing sailor at MPYC, and author of the [Mia Kingtide Ocean Adventures](https://miakingtide.com) middle-grade series (12+ books, 1,300+ copies sold, science reviewed by MBARI and Hopkins Marine Station).
 
@@ -56,7 +56,7 @@ Five pages. Each one links to something real — a portal still live, a talk on 
 ```
 Next.js 16 (App Router, static export)
 TypeScript · TailwindCSS
-Deployed to Netlify via GitHub push to main
+Deployed to Firebase Hosting via GitHub push to main
 No CMS. No database. No backend.
 ```
 
