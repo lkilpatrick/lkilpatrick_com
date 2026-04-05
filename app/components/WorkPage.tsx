@@ -188,7 +188,7 @@ function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: bo
 }
 
 function PortalRow({ item, screenshot, index }: {
-  item: { label: string; title: string; link: string; org: string; description: string; extraLink?: { text: string; href: string }; secondaryLink?: { text: string; href: string } };
+  item: { label: string; title: string; link: string; org: string; description: string; primaryLinkText?: string; extraLink?: { text: string; href: string }; secondaryLink?: { text: string; href: string } };
   screenshot: string | undefined;
   index: number;
 }) {
@@ -222,7 +222,7 @@ function PortalRow({ item, screenshot, index }: {
         <p className="wp-portal-desc">{item.description}</p>
         <div className="wp-portal-ctas">
           <a href={item.link} target="_blank" rel="noopener noreferrer" className="wp-portal-btn">
-            View Site →
+            {item.primaryLinkText ?? "View Site"} →
           </a>
           {item.secondaryLink && (
             <a href={item.secondaryLink.href} target="_blank" rel="noopener noreferrer" className="wp-portal-btn wp-portal-btn--secondary">

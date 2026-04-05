@@ -221,12 +221,13 @@ export const onboardingDocs = {
       org: "PERSONAL — PRODUCT BUILDER",
       description:
         "Short-term rental operations platform built from the ground up to handle the real workflow between checkout and guest-ready. Combines a TypeScript and Express API, React admin panel, Flutter mobile app, and PostgreSQL into a system for scheduling, checklists, photo verification, and cleaner workflows across properties. Includes a MkDocs-based developer portal, marketing site on Firebase, and a core platform designed to run locally for full control and security. Built from operating a real Airbnb — not a demo.",
+      primaryLinkText: "View Marketing Site",
       secondaryLink: {
-        text: "Launch App",
-        href: "https://app.openstr.dev",
+        text: "View Docs",
+        href: "https://docs.openstr.dev",
       },
       extraLink: {
-        text: "View Source on GitHub",
+        text: "GitHub Repo",
         href: "https://github.com/lkilpatrick/OpenSTR",
       },
     },
