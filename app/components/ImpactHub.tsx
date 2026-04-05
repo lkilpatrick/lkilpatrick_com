@@ -238,9 +238,9 @@ export default function ImpactHub() {
                 <div className="ih-four-num" style={{ color: "var(--color-primary-light)" }}>02</div>
                 <div className="ih-four-type" style={{ color: "var(--color-primary-light)" }}>API ADOPTION</div>
               </div>
-              <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
-                <Image src="/screenshots/impact-nutanix.jpg" alt="Nutanix" width={640} height={320} className="ih-card-screenshot" />
-                <span className="ih-card-screenshot-label">nutanix.com</span>
+              <a href="https://www.nutanix.dev/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
+                <Image src="/screenshots/impact-nutanix.jpg" alt="Nutanix.dev" width={640} height={320} className="ih-card-screenshot" />
+                <span className="ih-card-screenshot-label">nutanix.dev</span>
               </a>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product has APIs. Developers at customer companies need to integrate, automate, and build workflows. They work for someone who already bought your product. Your job is to make them successful with it.</p>
