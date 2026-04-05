@@ -140,27 +140,6 @@ export default function AboutPage() {
                 priority
               />
             </div>
-            <div className="about-parallel">
-            <div className="about-parallel-col about-parallel-col--dev">
-              <div className="about-parallel-eyebrow">Developer Programs</div>
-              <div className="about-parallel-items">
-                <div className="about-parallel-item">Turn a complex API into a story a developer wants to follow</div>
-                <div className="about-parallel-item">Build the portal, docs, and samples that make the first hour work</div>
-                <div className="about-parallel-item">15+ years, five companies, four continents</div>
-              </div>
-            </div>
-            <div className="about-parallel-divider">
-              <span className="about-parallel-equals">=</span>
-            </div>
-            <div className="about-parallel-col about-parallel-col--books">
-              <div className="about-parallel-eyebrow">Books &amp; Storytelling</div>
-              <div className="about-parallel-items">
-                <div className="about-parallel-item">Turn marine biology and climate science into stories a child wants to finish</div>
-                <div className="about-parallel-item">Build the world, the characters, and the science that make the first chapter stick</div>
-                <div className="about-parallel-item">12+ books, reviewed by MBARI and Hopkins Marine Station</div>
-              </div>
-            </div>
-          </div>
             </div>
         </div>
       </section>
