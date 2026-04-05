@@ -224,7 +224,7 @@ export const onboardingDocs = {
       primaryLinkText: "View Marketing Site",
       secondaryLink: {
         text: "View Docs",
-        href: "https://docs.openstr.dev",
+        href: "https://openstr.dev/docs/",
       },
       extraLink: {
         text: "GitHub Repo",
