@@ -292,6 +292,29 @@ export default function AboutPage() {
             convert across channels. Validated in the wild with real revenue and real community.
           </p>
 
+          {/* ── Photo mosaic ── */}
+          <div className="about-photo-mosaic">
+            <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer" className="about-photo-tile about-photo-tile--tall">
+              <Image src="/photos/about-diver-reef.jpg" alt="Diver on coral reef" fill style={{ objectFit: "cover" }} />
+              <div className="about-photo-caption">Coral reef, Indo-Pacific</div>
+            </a>
+            <div className="about-photo-col">
+              <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer" className="about-photo-tile">
+                <Image src="/photos/about-clownfish.jpg" alt="Clownfish pair in anemone" fill style={{ objectFit: "cover" }} />
+                <div className="about-photo-caption">Clownfish pair</div>
+              </a>
+              <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer" className="about-photo-tile">
+                <Image src="/photos/about-whale.jpg" alt="Humpback whale breaching" fill style={{ objectFit: "cover" }} />
+                <div className="about-photo-caption">Humpback, Monterey Bay</div>
+              </a>
+            </div>
+            <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer" className="about-photo-tile about-photo-tile--tall">
+              <Image src="/photos/about-underwater-1.jpg" alt="Hermit crab macro, Monterey" fill style={{ objectFit: "cover" }} />
+              <div className="about-photo-caption">Hermit crab, Monterey Bay</div>
+            </a>
+          </div>
+          <div className="about-photo-credit">Underwater photography by Luke Kilpatrick &mdash; <a href="https://pitterpatterdiving.artstorefronts.com/" target="_blank" rel="noopener noreferrer">prints available</a></div>
+
           <div className="about-ppd-grid">
             <a href="https://pitterpatterdiving.com/" target="_blank" rel="noopener noreferrer" className="about-ppd-card">
               <div className="about-ppd-icon">✍</div>
@@ -381,6 +404,73 @@ export default function AboutPage() {
       </section>
 
       <style>{`
+        /* ── Photo mosaic ── */
+        .about-photo-mosaic {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 8px;
+          margin-bottom: 12px;
+          border-radius: 12px;
+          overflow: hidden;
+          height: 400px;
+        }
+        .about-photo-col {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          gap: 8px;
+        }
+        .about-photo-tile {
+          position: relative;
+          overflow: hidden;
+          display: block;
+          background: var(--bg-card);
+        }
+        .about-photo-tile--tall {
+          grid-row: span 1;
+        }
+        .about-photo-tile img {
+          transition: transform 0.4s ease;
+        }
+        .about-photo-tile:hover img {
+          transform: scale(1.04);
+        }
+        .about-photo-caption {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 6px 10px;
+          background: linear-gradient(transparent, rgba(0,0,0,0.55));
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          color: rgba(255,255,255,0.85);
+          letter-spacing: 0.5px;
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+        .about-photo-tile:hover .about-photo-caption {
+          opacity: 1;
+        }
+        .about-photo-credit {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--text-dim);
+          margin-bottom: 40px;
+          text-align: right;
+        }
+        .about-photo-credit a {
+          color: var(--color-primary-light);
+          border-bottom: 1px solid var(--color-primary-light);
+          padding-bottom: 1px;
+        }
+        @media (max-width: 700px) {
+          .about-photo-mosaic {
+            grid-template-columns: 1fr 1fr;
+            height: 280px;
+          }
+          .about-photo-tile--tall:last-child { display: none; }
+        }
+
         /* ── Hero ── */
         .about-hero { background: var(--bg); }
         .about-hero-inner {
