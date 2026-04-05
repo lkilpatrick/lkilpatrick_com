@@ -91,17 +91,6 @@ export default function AboutPage() {
       {/* ── Section 1: Personal Story ── */}
       <section className="about-hero section-body">
         <div className="about-hero-inner content-wrap">
-          <div className="about-hero-portrait">
-            <Image
-              src="/photos/about-portrait.jpg"
-              alt="Luke Kilpatrick"
-              width={600}
-              height={800}
-              className="about-portrait-img"
-              priority
-            />
-          </div>
-
           <div className="about-hero-text">
             <div className="about-eyebrow">About</div>
             <h1 className="about-title">I make complex things<br />easy to care about.</h1>
@@ -140,7 +129,18 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="about-parallel">
+          <div className="about-hero-right">
+            <div className="about-hero-portrait">
+              <Image
+                src="/photos/about-portrait.jpg"
+                alt="Luke Kilpatrick"
+                width={600}
+                height={646}
+                className="about-portrait-img"
+                priority
+              />
+            </div>
+            <div className="about-parallel">
             <div className="about-parallel-col about-parallel-col--dev">
               <div className="about-parallel-eyebrow">Developer Programs</div>
               <div className="about-parallel-items">
@@ -161,6 +161,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+            </div>
         </div>
       </section>
 
@@ -474,20 +475,11 @@ export default function AboutPage() {
           border-bottom: 1px solid var(--color-primary-light);
           padding-bottom: 1px;
         }
-        @media (max-width: 1000px) {
-          .about-hero-inner {
-            grid-template-columns: 220px 1fr;
-            grid-template-rows: auto auto;
-          }
-          .about-parallel {
-            grid-column: 1 / -1;
-          }
-        }
-        @media (max-width: 700px) {
+        @media (max-width: 860px) {
           .about-hero-inner {
             grid-template-columns: 1fr;
           }
-          .about-hero-portrait { max-width: 260px; }
+          .about-hero-right { max-width: 400px; }
         }
         @media (max-width: 860px) {
           .about-photo-mosaic {
@@ -501,12 +493,17 @@ export default function AboutPage() {
         .about-hero { background: var(--bg); }
         .about-hero-inner {
           display: grid;
-          grid-template-columns: 280px 1fr 1fr;
-          gap: 56px;
+          grid-template-columns: 1fr 380px;
+          gap: 64px;
           align-items: start;
         }
+        .about-hero-right {
+          display: flex;
+          flex-direction: column;
+          gap: 28px;
+        }
         .about-hero-portrait {
-          position: relative;
+          width: 100%;
         }
         .about-portrait-img {
           width: 100%;
