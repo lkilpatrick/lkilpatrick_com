@@ -43,14 +43,21 @@ export default function Hero() {
             <div className="hero-byline">— <a href="/about" className="hero-byline-link">Luke Kilpatrick</a></div>
 
             <p className="hero-sub">
-              15 years building developer programs at{" "}
+              I design the systems that make that happen across{" "}
+              <a href="/impact" style={{ color: "var(--color-primary-light)" }}>developer experience</a>,{" "}
+              <a href="/content" style={{ color: "var(--color-primary-light)" }}>product marketing</a>, and{" "}
+              <a href="/impact#four-types" style={{ color: "var(--color-primary-light)" }}>community</a>{" "}
+              — turning powerful ideas into widely adopted products.
+            </p>
+            <p className="hero-sub" style={{ marginTop: 12 }}>
+              Over the past 20+ years, I have led this work at{" "}
               <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Atlassian</a>,{" "}
-              <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Nutanix</a>, and{" "}
-              <a href="https://hazelcast.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Hazelcast</a>.
-              Outside work: a{" "}
-              <a href="https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>daily ocean intelligence system</a>{" "}
-              built on live marine data, and a{" "}<a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>middle-grade book series with 1,300+ copies sold</a>{" "}
-              reviewed by scientists at MBARI and Hopkins Marine Station.
+              <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Nutanix</a>,{" "}
+              <a href="https://hazelcast.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Hazelcast</a>,{" "}
+              <a href="https://linearb.io/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>LinearB</a>, and{" "}
+              <a href="https://www.harness.io/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Harness</a>. I am also the author of the{" "}
+              <a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Mia Kingtide series</a>,{" "}
+              making complex systems understandable, engaging, and worth exploring.
             </p>
 
             <div className="hero-proof-chips">
