@@ -218,9 +218,9 @@ export default function ImpactHub() {
                 <div className="ih-four-num" style={{ color: "var(--color-primary)" }}>01</div>
                 <div className="ih-four-type" style={{ color: "var(--color-primary)" }}>MARKETPLACE ECOSYSTEMS</div>
               </div>
-              <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
-                <Image src="/screenshots/impact-atlassian.jpg" alt="Atlassian" width={640} height={320} className="ih-card-screenshot" />
-                <span className="ih-card-screenshot-label">atlassian.com</span>
+              <a href="https://marketplace.atlassian.com/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
+                <Image src="/screenshots/impact-atlassian.jpg" alt="Atlassian Marketplace" width={640} height={320} className="ih-card-screenshot" />
+                <span className="ih-card-screenshot-label">marketplace.atlassian.com</span>
               </a>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product is extensible. Developers build apps, plugins, or extensions that expand your platform. Their primary motivation is financial: businesses can be built on your platform.</p>
