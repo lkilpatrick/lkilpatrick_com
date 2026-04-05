@@ -91,6 +91,17 @@ export default function AboutPage() {
       {/* ── Section 1: Personal Story ── */}
       <section className="about-hero section-body">
         <div className="about-hero-inner content-wrap">
+          <div className="about-hero-portrait">
+            <Image
+              src="/photos/about-portrait.jpg"
+              alt="Luke Kilpatrick"
+              width={600}
+              height={800}
+              className="about-portrait-img"
+              priority
+            />
+          </div>
+
           <div className="about-hero-text">
             <div className="about-eyebrow">About</div>
             <h1 className="about-title">I make complex things<br />easy to care about.</h1>
@@ -463,7 +474,22 @@ export default function AboutPage() {
           border-bottom: 1px solid var(--color-primary-light);
           padding-bottom: 1px;
         }
+        @media (max-width: 1000px) {
+          .about-hero-inner {
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: auto auto;
+          }
+          .about-parallel {
+            grid-column: 1 / -1;
+          }
+        }
         @media (max-width: 700px) {
+          .about-hero-inner {
+            grid-template-columns: 1fr;
+          }
+          .about-hero-portrait { max-width: 260px; }
+        }
+        @media (max-width: 860px) {
           .about-photo-mosaic {
             grid-template-columns: 1fr 1fr;
             height: 280px;
@@ -475,9 +501,19 @@ export default function AboutPage() {
         .about-hero { background: var(--bg); }
         .about-hero-inner {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 80px;
+          grid-template-columns: 280px 1fr 1fr;
+          gap: 56px;
           align-items: start;
+        }
+        .about-hero-portrait {
+          position: relative;
+        }
+        .about-portrait-img {
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
+          display: block;
+          object-fit: cover;
         }
         .about-eyebrow {
           font-family: var(--font-mono), monospace;
