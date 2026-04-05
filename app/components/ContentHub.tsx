@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { technicalContent, videos } from "../data/portfolio";
 
 // ─── Screenshots map ─────────────────────────────────────────────────────────
@@ -20,47 +19,35 @@ const TAG_STYLES: Record<string, { color: string; bg: string; border: string }> 
   blue:  { color: "var(--color-primary-light)", bg: "rgba(3,105,161,0.07)", border: "rgba(3,105,161,0.2)" },
 };
 
-// ─── Sub-nav ─────────────────────────────────────────────────────────────────
+// ─── Writing card ─────────────────────────────────────────────────────────────
 
-const TABS = [
-  { id: "writing",  label: "Writing" },
-  { id: "talks",    label: "Talks & Presentations" },
-];
-
-// ─── Writing row ─────────────────────────────────────────────────────────────
-
-function WritingRow({ item, index }: { item: typeof technicalContent[0]; index: number }) {
+function WritingCard({ item }: { item: typeof technicalContent[0] }) {
   const screenshot = WRITING_SCREENSHOTS[item.id];
   const tc = TAG_STYLES[item.tagColor] ?? TAG_STYLES.blue;
-  const isEven = index % 2 === 0;
 
   return (
-    <div className={`ch-row${isEven ? "" : " ch-row--reverse"}`}>
-      <a href={item.link} target="_blank" rel="noopener noreferrer" className="ch-img-wrap">
-        {screenshot ? (
+    <div className="ch-writing-card">
+      {screenshot && (
+        <a href={item.link} target="_blank" rel="noopener noreferrer" className="ch-writing-img-wrap">
           <Image
             src={screenshot}
             alt={item.title}
-            width={600} height={380}
+            width={600} height={340}
             style={{ width: "100%", height: "auto", display: "block" }}
           />
-        ) : (
-          <div className="ch-img-placeholder">
-            <span>{item.link.replace("https://", "")}</span>
-          </div>
-        )}
-      </a>
-      <div className="ch-row-text">
-        <div className="ch-row-top">
+        </a>
+      )}
+      <div className="ch-writing-body">
+        <div className="ch-writing-top">
           <span className="ch-tag" style={{ color: tc.color, background: tc.bg, border: `1px solid ${tc.border}` }}>
             {item.tag}
           </span>
           <span className="ch-org">{item.org}</span>
         </div>
-        <h3 className="ch-row-title">
+        <h3 className="ch-writing-title">
           <a href={item.link} target="_blank" rel="noopener noreferrer">{item.title} ↗</a>
         </h3>
-        <p className="ch-row-desc">{item.description}</p>
+        <p className="ch-writing-desc">{item.description}</p>
         <a href={item.link} target="_blank" rel="noopener noreferrer" className="ch-row-btn">
           Read →
         </a>
@@ -110,12 +97,9 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
   );
 }
 
-
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function ContentHub() {
-  const [activeTab, setActiveTab] = useState("writing");
-
   return (
     <>
       {/* ── Page header ── */}
@@ -126,56 +110,47 @@ export default function ContentHub() {
         </div>
       </section>
 
-      {/* ── Sticky sub-nav ── */}
-      <div className="ch-subnav-wrap">
-        <div className="content-wrap">
-          <nav className="ch-subnav">
-            {TABS.map(tab => (
-              <button
-                key={tab.id}
-                className={`ch-subnav-btn${activeTab === tab.id ? " ch-subnav-btn--active" : ""}`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </nav>
+      {/* ── Two-column layout ── */}
+      <section className="section-body section-alt">
+        <div className="content-wrap--wide">
+          <div className="ch-two-col">
+
+            {/* ── Left: Talks & Presentations ── */}
+            <div className="ch-col" id="talks">
+              <div className="ch-col-header">
+                <div className="ch-col-eyebrow">Talks &amp; Presentations</div>
+                <h2 className="ch-col-title">On stage and on camera.</h2>
+              </div>
+              <div className="ch-video-stack">
+                {videos.map(v => <VideoCard key={v.id} video={v} />)}
+              </div>
+            </div>
+
+            {/* ── Right: Writing ── */}
+            <div className="ch-col" id="writing">
+              <div className="ch-col-header">
+                <div className="ch-col-eyebrow">Writing</div>
+                <h2 className="ch-col-title">Articles, tutorials, and guides.</h2>
+              </div>
+              <div className="ch-writing-stack">
+                {technicalContent.map(item => (
+                  <WritingCard key={item.id} item={item} />
+                ))}
+              </div>
+              <div className="ch-more-links">
+                <a href="https://pitterpatterdiving.com/" target="_blank" rel="noopener noreferrer" className="ch-more-btn">
+                  More on the blog →
+                </a>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
-
-      {/* ── Writing ── */}
-      {activeTab === "writing" && (
-        <section className="section-body section-alt" id="writing">
-          <div className="content-wrap">
-            <div style={{ display: "grid", gap: 72 }}>
-              {technicalContent.map((item, i) => (
-                <WritingRow key={item.id} item={item} index={i} />
-              ))}
-            </div>
-            <div className="ch-more-links">
-              <a href="https://pitterpatterdiving.com/" target="_blank" rel="noopener noreferrer" className="ch-more-btn">
-                More on the blog →
-              </a>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Talks & Presentations ── */}
-      {activeTab === "talks" && (
-        <section className="section-body" id="talks">
-          <div className="content-wrap">
-            <div className="ch-video-grid">
-              {videos.map(v => <VideoCard key={v.id} video={v} />)}
-            </div>
-          </div>
-        </section>
-      )}
-
+      </section>
 
       <style>{`
         /* ── Page header ── */
-        .ch-hero { background: var(--color-bg); padding-bottom: 0 !important; border-bottom: none !important; }
+        .ch-hero { background: var(--color-bg); }
         .ch-eyebrow {
           font-family: var(--font-mono), monospace;
           font-size: 10px;
@@ -193,156 +168,40 @@ export default function ContentHub() {
           line-height: 1.12;
         }
 
-        /* ── Sub-nav ── */
-        .ch-subnav-wrap {
-          position: sticky;
-          top: 64px;
-          z-index: 100;
-          background: var(--color-bg);
-          border-bottom: 1px solid var(--color-border);
-        }
-        .ch-subnav {
-          display: flex;
-          gap: 0;
-          padding: 0;
-        }
-        .ch-subnav-btn {
-          background: none;
-          border: none;
-          border-bottom: 2px solid transparent;
-          cursor: pointer;
-          font-family: var(--font-sans), sans-serif;
-          font-size: 13px;
-          font-weight: 500;
-          color: var(--color-text-secondary);
-          padding: 14px 20px;
-          transition: color 0.15s, border-color 0.15s;
-          white-space: nowrap;
-        }
-        .ch-subnav-btn:hover { color: var(--color-primary); }
-        .ch-subnav-btn--active {
-          color: var(--color-primary);
-          font-weight: 700;
-          border-bottom-color: var(--color-primary);
-        }
-
-        /* ── Writing rows (same pattern as portal rows) ── */
-        .ch-row {
+        /* ── Two-column layout ── */
+        .ch-two-col {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 48px;
-          align-items: center;
+          gap: 64px;
+          align-items: start;
         }
-        .ch-row--reverse { direction: rtl; }
-        .ch-row--reverse > * { direction: ltr; }
-        .ch-img-wrap {
-          display: block;
-          border-radius: 10px;
-          overflow: hidden;
-          border: 1px solid var(--color-border-light);
-          box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-          transition: box-shadow 0.2s, transform 0.2s;
-          background: var(--color-bg-card);
+        .ch-col-header {
+          margin-bottom: 32px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid var(--color-border);
         }
-        .ch-img-wrap:hover {
-          box-shadow: 0 8px 40px rgba(0,0,0,0.12);
-          transform: translateY(-2px);
-        }
-        .ch-img-placeholder {
-          width: 100%;
-          aspect-ratio: 16/10;
-          background: var(--color-bg-alt);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .ch-img-placeholder span {
-          font-family: var(--font-mono), monospace;
-          font-size: 12px;
-          color: var(--color-text-muted);
-        }
-        .ch-row-text { direction: ltr; }
-        .ch-row-top {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
-          flex-wrap: wrap;
-        }
-        .ch-tag {
+        .ch-col-eyebrow {
           font-family: var(--font-mono), monospace;
           font-size: 10px;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
           text-transform: uppercase;
-          padding: 4px 10px;
-          border-radius: 99px;
-          font-weight: 600;
+          color: var(--color-primary);
+          margin-bottom: 8px;
         }
-        .ch-org {
-          font-family: var(--font-mono), monospace;
-          font-size: 10px;
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
-          color: var(--color-text-muted);
-        }
-        .ch-row-title {
+        .ch-col-title {
           font-family: var(--font-serif), Georgia, serif;
-          font-size: clamp(18px, 2vw, 24px);
+          font-size: clamp(20px, 2vw, 26px);
           font-weight: 400;
           color: var(--heading);
-          margin-bottom: 14px;
-          line-height: 1.3;
-        }
-        .ch-row-title a { color: var(--heading); text-decoration: none; }
-        .ch-row-title a:hover { color: var(--color-primary); }
-        .ch-row-desc {
-          font-size: 14px;
-          color: var(--color-text-secondary);
-          line-height: 1.75;
-          margin-bottom: 20px;
-        }
-        .ch-row-btn {
-          font-family: var(--font-mono), monospace;
-          font-size: 11px;
-          color: var(--color-primary);
-          padding: 8px 16px;
-          border: 1.5px solid var(--color-primary);
-          border-radius: 6px;
-          display: inline-block;
-          text-decoration: none;
-          transition: all 0.2s;
-        }
-        .ch-row-btn:hover {
-          background: var(--color-primary);
-          color: #fff;
+          letter-spacing: -0.3px;
+          line-height: 1.2;
         }
 
-        /* ── More links ── */
-        .ch-more-links {
-          margin-top: 56px;
+        /* ── Video stack ── */
+        .ch-video-stack {
           display: flex;
+          flex-direction: column;
           gap: 20px;
-          flex-wrap: wrap;
-        }
-        .ch-more-btn {
-          font-family: var(--font-mono), monospace;
-          font-size: 12px;
-          color: var(--color-text-secondary);
-          text-decoration: none;
-          border-bottom: 1px solid var(--color-border);
-          padding-bottom: 2px;
-          transition: color 0.2s, border-color 0.2s;
-        }
-        .ch-more-btn:hover {
-          color: var(--color-primary);
-          border-color: var(--color-primary);
-        }
-
-        /* ── Video grid ── */
-        .ch-video-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
         }
         .ch-video-card {
           background: var(--color-bg-card);
@@ -384,15 +243,116 @@ export default function ContentHub() {
           margin-top: 4px;
         }
 
+        /* ── Writing stack ── */
+        .ch-writing-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .ch-writing-card {
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: var(--shadow-card);
+          transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .ch-writing-card:hover {
+          box-shadow: var(--shadow-card-hover);
+          transform: translateY(-2px);
+        }
+        .ch-writing-img-wrap {
+          display: block;
+          overflow: hidden;
+        }
+        .ch-writing-img-wrap img {
+          transition: transform 0.3s ease;
+        }
+        .ch-writing-img-wrap:hover img {
+          transform: scale(1.02);
+        }
+        .ch-writing-body {
+          padding: 20px 24px;
+        }
+        .ch-writing-top {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px;
+          flex-wrap: wrap;
+        }
+        .ch-writing-title {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 17px;
+          font-weight: 400;
+          color: var(--heading);
+          margin-bottom: 10px;
+          line-height: 1.35;
+        }
+        .ch-writing-title a { color: var(--heading); text-decoration: none; }
+        .ch-writing-title a:hover { color: var(--color-primary); }
+        .ch-writing-desc {
+          font-size: 13px;
+          color: var(--color-text-secondary);
+          line-height: 1.7;
+          margin-bottom: 16px;
+        }
+
+        /* ── Shared ── */
+        .ch-tag {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          padding: 4px 10px;
+          border-radius: 99px;
+          font-weight: 600;
+        }
+        .ch-org {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--color-text-muted);
+        }
+        .ch-row-btn {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--color-primary);
+          padding: 7px 14px;
+          border: 1.5px solid var(--color-primary);
+          border-radius: 6px;
+          display: inline-block;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        .ch-row-btn:hover {
+          background: var(--color-primary);
+          color: #fff;
+        }
+        .ch-more-links {
+          margin-top: 24px;
+        }
+        .ch-more-btn {
+          font-family: var(--font-mono), monospace;
+          font-size: 12px;
+          color: var(--color-text-secondary);
+          text-decoration: none;
+          border-bottom: 1px solid var(--color-border);
+          padding-bottom: 2px;
+          transition: color 0.2s, border-color 0.2s;
+        }
+        .ch-more-btn:hover {
+          color: var(--color-primary);
+          border-color: var(--color-primary);
+        }
+
         /* ── Responsive ── */
-        @media (max-width: 700px) {
-          .ch-row, .ch-row--reverse {
+        @media (max-width: 860px) {
+          .ch-two-col {
             grid-template-columns: 1fr;
-            direction: ltr;
-            gap: 24px;
+            gap: 56px;
           }
-          .ch-video-grid { grid-template-columns: 1fr; }
-          .ch-subnav { overflow-x: auto; }
         }
       `}</style>
     </>
