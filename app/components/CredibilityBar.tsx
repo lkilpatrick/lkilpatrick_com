@@ -1,7 +1,7 @@
 const CREDENTIALS: { label: string; sub: string; link?: string }[] = [
   { label: "3 Developer Programs", sub: "Built from Zero" },
   { label: "DevRelCon Speaker", sub: "London + San Francisco" },
-  { label: "SlashData Author", sub: "4 Program Types Framework" },
+  { label: "Dev Marketing Guide Author", sub: "4 Program Types Framework", link: "https://a.co/d/eIgJG8o" },
   { label: "49+ Open Source Repos", sub: "Nutanix GitHub Org" },
   { label: "10K TikTok", sub: "Zero to 10K in One Summer" },
   { label: "12+ Books Published", sub: "Mia Kingtide Series", link: "https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" },
