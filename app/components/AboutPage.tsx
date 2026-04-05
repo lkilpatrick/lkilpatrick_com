@@ -96,12 +96,18 @@ export default function AboutPage() {
             <h1 className="about-title">I make complex things<br />easy to care about.</h1>
             <p className="about-desc">
               My career is a single thread: take something technical and hard, find the story
-              inside it, and put that story in front of the people who need it most. At
-              Atlassian, Nutanix, LinearB, and Hazelcast that meant developer portals, onboarding
-              flows, and programs that turned engineers into advocates. Outside work, it means
-              a series of middle-grade novels where a 12-year-old dives Monterey Bay, sails to
-              the Sea of Cortez, and fights to protect the ocean — with the marine biology
-              reviewed by scientists at MBARI and Hopkins Marine Station.
+              inside it, and put that story in front of the people who need it most. At{" "}
+              <a href="https://www.atlassian.com" target="_blank" rel="noopener noreferrer" className="about-inline-link">Atlassian</a>,{" "}
+              <a href="https://www.nutanix.com" target="_blank" rel="noopener noreferrer" className="about-inline-link">Nutanix</a>,{" "}
+              <a href="https://linearb.io" target="_blank" rel="noopener noreferrer" className="about-inline-link">LinearB</a>, and{" "}
+              <a href="https://hazelcast.com" target="_blank" rel="noopener noreferrer" className="about-inline-link">Hazelcast</a> that
+              meant developer portals, onboarding flows, and programs that turned engineers into
+              advocates. Outside work, it means the{" "}
+              <a href="https://pitterpatterdiving.com/shop/" target="_blank" rel="noopener noreferrer" className="about-inline-link">Mia Kingtide Ocean Adventures</a>{" "}
+              series, where a 12-year-old dives Monterey Bay, sails to the Sea of Cortez, and
+              fights to protect the ocean. The marine biology is reviewed by scientists at{" "}
+              <a href="https://www.mbari.org" target="_blank" rel="noopener noreferrer" className="about-inline-link">MBARI</a> and{" "}
+              <a href="https://hopkinsmarine.stanford.edu" target="_blank" rel="noopener noreferrer" className="about-inline-link">Hopkins Marine Station</a>.
             </p>
             <p className="about-desc">
               The skill is the same in both. Reduce the complexity. Find the hook. Build the
@@ -508,6 +514,14 @@ export default function AboutPage() {
           line-height: 1.1;
           margin-bottom: 24px;
         }
+        .about-inline-link {
+          color: var(--color-primary-light);
+          border-bottom: 1px solid var(--color-primary-light);
+          padding-bottom: 1px;
+          text-decoration: none;
+          transition: opacity 0.15s;
+        }
+        .about-inline-link:hover { opacity: 0.75; }
         .about-desc {
           font-size: 16px;
           color: var(--text-muted);
