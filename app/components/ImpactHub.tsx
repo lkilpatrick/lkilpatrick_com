@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import ContactModal from "./ContactModal";
 
 // ─── Four DevRel Program Types ────────────────────────────────────────────────
@@ -217,6 +218,10 @@ export default function ImpactHub() {
                 <div className="ih-four-num" style={{ color: "var(--color-primary)" }}>01</div>
                 <div className="ih-four-type" style={{ color: "var(--color-primary)" }}>MARKETPLACE ECOSYSTEMS</div>
               </div>
+              <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
+                <Image src="/screenshots/impact-atlassian.jpg" alt="Atlassian" width={640} height={320} className="ih-card-screenshot" />
+                <span className="ih-card-screenshot-label">atlassian.com</span>
+              </a>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product is extensible. Developers build apps, plugins, or extensions that expand your platform. Their primary motivation is financial: businesses can be built on your platform.</p>
                 <div className="ih-four-examples">Examples: Atlassian Marketplace, Apple App Store, Shopify</div>
@@ -233,6 +238,10 @@ export default function ImpactHub() {
                 <div className="ih-four-num" style={{ color: "var(--color-primary-light)" }}>02</div>
                 <div className="ih-four-type" style={{ color: "var(--color-primary-light)" }}>API ADOPTION</div>
               </div>
+              <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
+                <Image src="/screenshots/impact-nutanix.jpg" alt="Nutanix" width={640} height={320} className="ih-card-screenshot" />
+                <span className="ih-card-screenshot-label">nutanix.com</span>
+              </a>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product has APIs. Developers at customer companies need to integrate, automate, and build workflows. They work for someone who already bought your product. Your job is to make them successful with it.</p>
                 <div className="ih-four-examples">Examples: Nutanix, Cisco, VMware</div>
@@ -249,6 +258,10 @@ export default function ImpactHub() {
                 <div className="ih-four-num" style={{ color: "var(--color-accent)" }}>03</div>
                 <div className="ih-four-type" style={{ color: "var(--color-accent)" }}>DEVELOPER TOOLS</div>
               </div>
+              <a href="https://linearb.io/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
+                <Image src="/screenshots/impact-linearb.jpg" alt="LinearB" width={640} height={320} className="ih-card-screenshot" />
+                <span className="ih-card-screenshot-label">linearb.io</span>
+              </a>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product is the tool developers use directly. Individual developers try it, adopt it, and pull it into their teams. Bottom-up adoption. This audience will not tolerate being marketed to.</p>
                 <div className="ih-four-examples">Examples: LinearB, New Relic, Sentry, GitHub</div>
@@ -265,6 +278,10 @@ export default function ImpactHub() {
                 <div className="ih-four-num" style={{ color: "var(--color-success)" }}>04</div>
                 <div className="ih-four-type" style={{ color: "var(--color-success)" }}>THE LEGO BRICK</div>
               </div>
+              <a href="https://sencha.com/" target="_blank" rel="noopener noreferrer" className="ih-card-screenshot-wrap">
+                <Image src="/screenshots/impact-sencha.jpg" alt="Sencha" width={640} height={320} className="ih-card-screenshot" />
+                <span className="ih-card-screenshot-label">sencha.com</span>
+              </a>
               <div className="ih-four-body">
                 <p className="ih-four-desc">Your product is a building block. Developers snap it together with other tools to build something larger. It has no value on its own. Every layer of the modern stack is now a Lego brick: databases, auth, payments, messaging, search, storage, monitoring. The developer experience IS the go-to-market.</p>
                 <div className="ih-four-examples">Examples: Sencha Ext JS, Stripe, Auth0, Twilio</div>
@@ -383,6 +400,23 @@ export default function ImpactHub() {
           <p className="ih-section-sub" style={{ marginBottom: 36 }}>
             Two chapters I authored in the Developer Marketing Essential Guide. The actual frameworks, not a summary.
           </p>
+          <div className="ih-book-cover-wrap">
+            <a href="https://www.amazon.com/Developer-Marketing-Relations-Essential-Guide/dp/B08KH3T5TN/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/screenshots/impact-dev-marketing-guide.jpg"
+                alt="Developer Marketing & Relations Essential Guide"
+                width={280}
+                height={280}
+                className="ih-book-cover"
+              />
+            </a>
+            <div className="ih-book-cover-meta">
+              <div className="ih-book-cover-title">Developer Marketing &amp; Relations Essential Guide</div>
+              <div className="ih-book-cover-desc">The chapters below are from this book — free to download. Luke authored two: <em>Starting from Scratch Program</em> and <em>Scaling Down</em>.</div>
+              <a href="https://www.amazon.com/Developer-Marketing-Relations-Essential-Guide/dp/B08KH3T5TN/" target="_blank" rel="noopener noreferrer" className="ih-book-cover-link">View on Amazon ↗</a>
+            </div>
+          </div>
+
           <div className="ih-downloads">
             {[
               {
@@ -785,6 +819,85 @@ export default function ImpactHub() {
         }
         .ih-four-card--wide {
           grid-column: span 2;
+        }
+        .ih-card-screenshot-wrap {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          border-bottom: 1px solid var(--color-border-light);
+          line-height: 0;
+        }
+        .ih-card-screenshot {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: transform 0.3s ease;
+        }
+        .ih-card-screenshot-wrap:hover .ih-card-screenshot {
+          transform: scale(1.02);
+        }
+        .ih-card-screenshot-label {
+          position: absolute;
+          bottom: 8px;
+          right: 10px;
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          color: rgba(255,255,255,0.85);
+          background: rgba(0,0,0,0.45);
+          padding: 2px 7px;
+          border-radius: 4px;
+          letter-spacing: 0.5px;
+          line-height: 1.6;
+        }
+        .ih-book-cover-wrap {
+          display: flex;
+          gap: 32px;
+          align-items: flex-start;
+          margin-bottom: 36px;
+          padding: 24px;
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
+          border-radius: 12px;
+        }
+        .ih-book-cover {
+          border-radius: 8px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+          flex-shrink: 0;
+          width: 160px;
+          height: auto;
+        }
+        .ih-book-cover-meta {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          justify-content: center;
+        }
+        .ih-book-cover-title {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 18px;
+          font-weight: 400;
+          color: var(--heading);
+          line-height: 1.3;
+        }
+        .ih-book-cover-desc {
+          font-size: 14px;
+          color: var(--color-text-secondary);
+          line-height: 1.7;
+        }
+        .ih-book-cover-link {
+          font-family: var(--font-mono), monospace;
+          font-size: 11px;
+          color: var(--color-primary);
+          border-bottom: 1px solid var(--color-primary);
+          padding-bottom: 1px;
+          text-decoration: none;
+          display: inline-block;
+          transition: opacity 0.15s;
+        }
+        .ih-book-cover-link:hover { opacity: 0.7; }
+        @media (max-width: 600px) {
+          .ih-book-cover-wrap { flex-direction: column; }
+          .ih-book-cover { width: 120px; }
         }
         .ih-four-card-header {
           padding: 20px 24px 16px;
