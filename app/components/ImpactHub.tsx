@@ -283,7 +283,7 @@ export default function ImpactHub() {
                 <span className="ih-card-screenshot-label">sencha.com</span>
               </a>
               <div className="ih-four-body">
-                <p className="ih-four-desc">Your product is a building block. Developers snap it together with other tools to build something larger. It has no value on its own. Every layer of the modern stack is now a Lego brick: databases, auth, payments, messaging, search, storage, monitoring. The developer experience IS the go-to-market.</p>
+                <p className="ih-four-desc">Your product is one instrument in a larger orchestra. Developers are the conductor — they choose every part of the stack and assemble them into something that plays together. No single instrument makes a symphony. Your job is to be the one they reach for, integrate cleanly, and never have to think about twice.</p>
                 <div className="ih-four-examples">Examples: Sencha Ext JS, Stripe, Auth0, Twilio</div>
                 <div className="ih-four-experience">
                   <div className="ih-four-exp-label">What I did</div>
