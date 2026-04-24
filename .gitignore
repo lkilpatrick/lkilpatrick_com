@@ -44,7 +44,7 @@ progress.txt
 # large media files (hosted via Firebase, not tracked in git)
 /public/*.mp4
 /public/*.pdf
-!/public/ResumeLukeKilpatrickDevRel2026.pdf
+!/public/Luke-Kilpatrick-DevRel2026updated.pdf
 !/public/Starting-from-Scratch-Program.pdf
 !/public/ScalingDown.pdf
 
