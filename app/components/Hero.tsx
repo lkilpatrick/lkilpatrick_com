@@ -84,7 +84,7 @@ export default function Hero() {
                   {personalInfo.availability}
                 </span>
               )}
-              <a href="/ResumeLukeKilpatrickDevRel2026.pdf" download="ResumeLukeKilpatrickDevRel2026.pdf" className="hero-resume-link">
+              <a href="/Luke-Kilpatrick-DevRel2026updated.pdf" download="Luke-Kilpatrick-DevRel2026updated.pdf" className="hero-resume-link">
                 Resume ↓
               </a>
             </div>

@@ -49,7 +49,7 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-controls">
-            <a href="/ResumeLukeKilpatrickDevRel2026.pdf" download="ResumeLukeKilpatrickDevRel2026.pdf" className="resume-btn">Resume ↓</a>
+            <a href="/Luke-Kilpatrick-DevRel2026updated.pdf" download="Luke-Kilpatrick-DevRel2026updated.pdf" className="resume-btn">Resume ↓</a>
             <button
               className="hamburger"
               onClick={() => setMenuOpen(o => !o)}
@@ -72,8 +72,8 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="/ResumeLukeKilpatrickDevRel2026.pdf"
-              download="ResumeLukeKilpatrickDevRel2026.pdf"
+              href="/Luke-Kilpatrick-DevRel2026updated.pdf"
+              download="Luke-Kilpatrick-DevRel2026updated.pdf"
               className="mobile-resume-btn"
             >
               📄 Download Resume
