@@ -26,22 +26,6 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    id: 5,
-    tag: "Full-Stack Web",
-    tagColor: "green",
-    title: "Sanctuary Cruises",
-    subtitle: "Whale Watching Website & Marine Education Platform",
-    context: "Sanctuary Cruises · 2026 · Lead Developer & Digital Strategy",
-    what: "Complete website rebuild for Monterey Bay's premier whale watching company. Custom static site with CMS, AI-powered Captain's Log for daily wildlife sightings, and comprehensive marine life educational content covering whales, dolphins, seabirds, pinnipeds, and sea otters.",
-    built: "TypeScript and Astro for the static site, Supabase and PostgreSQL for the CMS, Cloudflare hosting with GitHub Actions for automated deployments. Built the Captain's Log system where crew upload photos from the boat and Gemini AI generates sighting reports that publish to the website and all social channels simultaneously. Expanded marine life guide from just whales/dolphins to include 15+ species groups with conservation science and behavioral ecology.",
-    matters: "Built and launched a production website in 10 days using AI-assisted development. The Captain's Log transforms daily content creation from a task nobody had time for into a 2-minute workflow between trips. Positioned Sanctuary Cruises as both a tour operator and marine education resource in Monterey Bay.",
-    stack: ["TypeScript", "Astro", "Supabase", "PostgreSQL", "Cloudflare", "GitHub Actions", "Gemini AI", "Marine Science Content", "Social Media Integration"],
-    link: "https://sanctuarycruises.com",
-    featured: true,
-    status: "production",
-    screenshot: "/screenshots/work-sanctuary-cruises.jpg",
-  },
-  {
     id: 1,
     tag: "AI + Data Engineering",
     tagColor: "green",
@@ -104,6 +88,7 @@ const PROJECTS: Project[] = [
 // ─── Docs Section ─────────────────────────────────────────────────────────────
 
 const PORTAL_SCREENSHOTS: Record<string, string> = {
+  "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.jpg",
   "Nutanix.dev — Developer Portal":  "/screenshots/nutanix-dev.jpg",
   "gitStream Documentation Portal":  "/screenshots/gitstream-docs.jpg",
   "Harness CI Release Notes":        "/screenshots/harness-ci.jpg",

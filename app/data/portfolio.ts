@@ -203,6 +203,18 @@ export const contentPreviews = [
 export const onboardingDocs = {
   highlights: [
     {
+      label: "AI-Assisted Development — Built In 10 Days",
+      title: "Sanctuary Cruises",
+      link: "https://sanctuarycruises.com",
+      org: "SANCTUARY CRUISES",
+      description:
+        "Complete website rebuild for Monterey Bay's premier whale watching company, built and launched in just 10 days using AI-assisted development. TypeScript and Astro static site with Supabase CMS, deployed on Cloudflare with GitHub Actions. The AI-powered Captain's Log system lets crew upload photos from the boat and automatically generates sighting reports using Gemini AI — publishing to website and social channels simultaneously. Built using Windsurf, Cursor, and VS Code as AI development partners.",
+      extraLink: {
+        text: "AI-Powered Captain's Log System",
+        href: "https://sanctuarycruises.com/captains-log",
+      },
+    },
+    {
       label: "Developer Portal — Built From Scratch",
       title: "Nutanix.dev — Developer Portal",
       link: "https://www.nutanix.dev/",
