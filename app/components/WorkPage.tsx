@@ -21,9 +21,26 @@ type Project = {
   link: string | null;
   featured?: boolean;
   status: StatusType;
+  screenshot?: string;
 };
 
 const PROJECTS: Project[] = [
+  {
+    id: 5,
+    tag: "Full-Stack Web",
+    tagColor: "green",
+    title: "Sanctuary Cruises",
+    subtitle: "Whale Watching Website & Marine Education Platform",
+    context: "Sanctuary Cruises · 2026 · Lead Developer & Digital Strategy",
+    what: "Complete website rebuild for Monterey Bay's premier whale watching company. Custom static site with CMS, AI-powered Captain's Log for daily wildlife sightings, and comprehensive marine life educational content covering whales, dolphins, seabirds, pinnipeds, and sea otters.",
+    built: "TypeScript and Astro for the static site, Supabase and PostgreSQL for the CMS, Cloudflare hosting with GitHub Actions for automated deployments. Built the Captain's Log system where crew upload photos from the boat and Gemini AI generates sighting reports that publish to the website and all social channels simultaneously. Expanded marine life guide from just whales/dolphins to include 15+ species groups with conservation science and behavioral ecology.",
+    matters: "Built and launched a production website in 10 days using AI-assisted development. The Captain's Log transforms daily content creation from a task nobody had time for into a 2-minute workflow between trips. Positioned Sanctuary Cruises as both a tour operator and marine education resource in Monterey Bay.",
+    stack: ["TypeScript", "Astro", "Supabase", "PostgreSQL", "Cloudflare", "GitHub Actions", "Gemini AI", "Marine Science Content", "Social Media Integration"],
+    link: "https://sanctuarycruises.com",
+    featured: true,
+    status: "production",
+    screenshot: "/screenshots/work-sanctuary-cruises.jpg",
+  },
   {
     id: 1,
     tag: "AI + Data Engineering",
@@ -113,9 +130,10 @@ function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: bo
   const tc = TAG_COLORS[project.tagColor] ?? TAG_COLORS.blue;
 
   if (isFeatured) {
+    const hasScreenshot = project.screenshot;
     return (
       <div className="wp-featured">
-        <div className="wp-featured-inner">
+        <div className={`wp-featured-inner${hasScreenshot ? " wp-featured-inner--with-screenshot" : ""}`}>
           <div className="wp-featured-left">
             <div className="wp-featured-toprow">
               <span className="wp-tag" style={{ color: tc.color, background: tc.bg, border: `1px solid ${tc.border}` }}>
@@ -142,10 +160,28 @@ function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: bo
             </div>
           </div>
           <div className="wp-featured-right">
-            <div className="wp-stack-label">Stack &amp; Scope</div>
-            <div className="wp-stack">
-              {project.stack.map(s => <span key={s} className="wp-chip">{s}</span>)}
-            </div>
+            {hasScreenshot ? (
+              <div className="wp-featured-screenshot">
+                <Image
+                  src={project.screenshot!}
+                  alt={`Screenshot of ${project.title}`}
+                  width={400}
+                  height={250}
+                  style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px" }}
+                />
+                <div className="wp-stack-label" style={{ marginTop: "20px" }}>Stack &amp; Scope</div>
+                <div className="wp-stack">
+                  {project.stack.map(s => <span key={s} className="wp-chip">{s}</span>)}
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="wp-stack-label">Stack &amp; Scope</div>
+                <div className="wp-stack">
+                  {project.stack.map(s => <span key={s} className="wp-chip">{s}</span>)}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -654,9 +690,19 @@ export default function WorkPage() {
           border-color: var(--color-success);
         }
 
+        /* ── Featured screenshot ── */
+        .wp-featured-inner--with-screenshot {
+          grid-template-columns: 1fr 400px;
+        }
+        .wp-featured-screenshot {
+          display: flex;
+          flex-direction: column;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 860px) {
           .wp-featured-inner { grid-template-columns: 1fr; }
+          .wp-featured-inner--with-screenshot { grid-template-columns: 1fr; }
           .wp-featured-right { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 24px; }
           .wp-grid { grid-template-columns: 1fr; }
         }
@@ -667,6 +713,7 @@ export default function WorkPage() {
             gap: 24px;
           }
           .wp-featured-inner { padding: 24px; }
+          .wp-featured-inner--with-screenshot { padding: 24px; }
         }
       `}</style>
     </>
