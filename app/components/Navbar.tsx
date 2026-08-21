@@ -23,9 +23,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
-
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -67,6 +64,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`mobile-link${isActive(link.href) ? " mobile-link--active" : ""}`}
+                onClick={() => setMenuOpen(false)}
               >
                 {link.label}
               </Link>
@@ -75,6 +73,7 @@ export default function Navbar() {
               href="/Luke-Kilpatrick-DevRel2026updated.pdf"
               download="Luke-Kilpatrick-DevRel2026updated.pdf"
               className="mobile-resume-btn"
+              onClick={() => setMenuOpen(false)}
             >
               📄 Download Resume
             </a>

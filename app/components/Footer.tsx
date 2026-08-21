@@ -19,7 +19,7 @@ export default function Footer() {
       <footer style={{ background: "var(--color-bg-footer)", padding: "48px 0", textAlign: "center" }}>
         <div style={{ maxWidth: 860, margin: "0 auto", padding: "0 24px" }}>
           <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", alignItems: "center", gap: 0, marginBottom: 20 }}>
-            {EXT_LINKS.map((link, i) => (
+            {EXT_LINKS.map((link) => (
               <span key={link.label} style={{ display: "inline-flex", alignItems: "center" }}>
                 <a
                   href={link.href}

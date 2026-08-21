@@ -1,14 +1,91 @@
 steps:
-  - label: ":firebase: Build and deploy"
-    branches: "main"
-
-    secrets:
-      - FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM
-
+  - label: ":nodejs: Install dependencies"
+    key: install
     commands:
       - "npm ci"
+    plugins:
+      - cache#v1.11.1:
+          manifest: package-lock.json
+          path: node_modules
+          restore: file
+          save: file
+
+  - label: ":eslint: Lint"
+    key: lint
+    depends_on: install
+    commands:
+      - "npm run lint"
+    plugins:
+      - cache#v1.11.1:
+          manifest: package-lock.json
+          path: node_modules
+          restore: file
+
+  - label: ":nextjs: Build site"
+    key: build
+    depends_on: install
+    commands:
       - "npm run build"
+    plugins:
+      - cache#v1.11.1:
+          manifest: package-lock.json
+          path: node_modules
+          restore: file
+      - cache#v1.11.1:
+          manifest: package-lock.json
+          path: .next/cache
+          restore: file
+          save: file
+    artifact_paths:
+      - "out/**/*"
+    timeout_in_minutes: 10
+    retry:
+      automatic:
+        - exit_status: -1
+          limit: 2
+
+  - label: ":firebase: Deploy preview"
+    key: deploy-preview
+    depends_on: build
+    if: build.pull_request.id != null
+    commands:
       - "npm install --global firebase-tools@15.9.1"
       - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
       - "export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json"
+      - "buildkite-agent artifact download 'out/**/*' ."
+      - "firebase hosting:channel:deploy pr-$BUILDKITE_PULL_REQUEST --project lkilpatrickcom --non-interactive --expires 7d"
+    timeout_in_minutes: 10
+    retry:
+      automatic:
+        - exit_status: -1
+          limit: 2
+        - exit_status: 1
+          limit: 1
+
+  - label: ":firebase: Deploy to production"
+    key: deploy-production
+    depends_on: build
+    branches: "main"
+    if: build.pull_request.id == null
+    concurrency: 1
+    concurrency_group: "lkilpatrickcom-deploy"
+    commands:
+      - "npm install --global firebase-tools@15.9.1"
+      - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
+      - "export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json"
+      - "buildkite-agent artifact download 'out/**/*' ."
       - "firebase deploy --only hosting --project lkilpatrickcom --non-interactive"
+    timeout_in_minutes: 10
+    retry:
+      automatic:
+        - exit_status: -1
+          limit: 2
+        - exit_status: 1
+          limit: 1
+
+# Future improvements:
+# - Switch the Firebase service account JSON to Buildkite OIDC + GCP Workload Identity
+#   Federation for short-lived credentials.
+# - Add a `notify` block (email/Slack) for failed production deploys.
+# - Deploy Cloud Functions as well if you start using `functions/` in production:
+#   `firebase deploy --project lkilpatrickcom --non-interactive`.

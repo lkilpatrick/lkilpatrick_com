@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { personalInfo, stats } from "../data/portfolio";
+import { personalInfo } from "../data/portfolio";
 import ContactModal from "./ContactModal";
 
 const COMPANIES = [
