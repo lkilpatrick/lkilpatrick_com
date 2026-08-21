@@ -1,19 +1,9 @@
 steps:
-  - label: ":nodejs: Install dependencies"
-    key: install
+  - label: ":nextjs: Build and lint"
+    key: build
     commands:
       - "npm ci"
-
-  - label: ":eslint: Lint"
-    key: lint
-    depends_on: install
-    commands:
       - "npm run lint"
-
-  - label: ":nextjs: Build site"
-    key: build
-    depends_on: install
-    commands:
       - "npm run build"
     artifact_paths:
       - "out/**/*"
@@ -62,10 +52,11 @@ steps:
           limit: 1
 
 # Future improvements:
-# - Add dependency/build caching once a cache backend is configured. The Buildkite
-#   cache plugin needs a writable backend (S3, GCS, or a pre-created fs path set via
-#   BUILDKITE_PLUGIN_FS_CACHE_FOLDER); the default /var/cache/buildkite path may not
-#   exist on the agent.
+# - Add dependency/build caching once a cache backend is configured, then split
+#   install, lint, and build into separate parallel steps. The Buildkite cache
+#   plugin needs a writable backend (S3, GCS, or a pre-created fs path set via
+#   BUILDKITE_PLUGIN_FS_CACHE_FOLDER); the default /var/cache/buildkite path may
+#   not exist on the agent.
 # - Switch the Firebase service account JSON to Buildkite OIDC + GCP Workload Identity
 #   Federation for short-lived credentials.
 # - Add a `notify` block (email/Slack) for failed production deploys.
