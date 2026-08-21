@@ -17,6 +17,8 @@ steps:
     key: deploy-preview
     depends_on: build
     if: build.pull_request.id != null
+    secrets:
+      - FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM
     commands:
       - "npm install --global firebase-tools@15.9.1"
       - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
@@ -37,6 +39,8 @@ steps:
     if: build.branch == "main" && build.pull_request.id == null
     concurrency: 1
     concurrency_group: "lkilpatrickcom-deploy"
+    secrets:
+      - FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM
     commands:
       - "npm install --global firebase-tools@15.9.1"
       - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
