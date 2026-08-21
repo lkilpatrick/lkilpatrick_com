@@ -1,0 +1,5 @@
+steps: 
+  - label: ":nodejs: Build site" 
+    commands: 
+      - "npm ci" 
+      - "npm run build"
