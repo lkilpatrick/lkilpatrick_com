@@ -1,5 +1,14 @@
-steps: 
-  - label: ":nodejs: Build site" 
-    commands: 
-      - "npm ci" 
+steps:
+  - label: ":firebase: Build and deploy"
+    branches: "main"
+
+    secrets:
+      - FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM
+
+    commands:
+      - "npm ci"
       - "npm run build"
+      - "npm install --global firebase-tools@15.9.1"
+      - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
+      - "export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json"
+      - "firebase deploy --only hosting --project lkilpatrickcom --non-interactive"
