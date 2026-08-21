@@ -89,6 +89,7 @@ const PROJECTS: Project[] = [
 
 const PORTAL_SCREENSHOTS: Record<string, string> = {
   "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.jpg",
+  "Mise & Co.":                      "/screenshots/work-mise-and-co.jpg",
   "Nutanix.dev — Developer Portal":  "/screenshots/nutanix-dev.jpg",
   "gitStream Documentation Portal":  "/screenshots/gitstream-docs.jpg",
   "Harness CI Release Notes":        "/screenshots/harness-ci.jpg",

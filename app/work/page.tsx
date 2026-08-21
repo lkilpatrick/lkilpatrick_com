@@ -5,7 +5,7 @@ import WorkPage from "../components/WorkPage";
 
 export const metadata: Metadata = {
   title: "Work — Projects, Case Studies & Developer Portals — Luke Kilpatrick",
-  description: "Production systems, developer platforms, and documentation sites built from zero. Tech Challenge Kenya, MPYC RaceDay, gitStream docs, Nutanix.dev, and more.",
+  description: "Production systems, developer platforms, and documentation sites built from zero. Tech Challenge Kenya, MPYC RaceDay, gitStream docs, Nutanix.dev, Mise & Co., and more.",
   openGraph: {
     title: "Work — Luke Kilpatrick",
     description: "Production systems, developer platforms, and documentation sites built from zero.",

@@ -215,6 +215,18 @@ export const onboardingDocs = {
       },
     },
     {
+      label: "AI-Assisted Website — Built In 4 Hours",
+      title: "Mise & Co.",
+      link: "https://mise-and-co.com",
+      org: "NUBIA MAIA — PRIVATE CHEF",
+      description:
+        "Complete website for Chef Nubia Maia's private dining business in Portland, Oregon, built and deployed in 4 hours from first prompt. Astro 7.2 with TypeScript, static output, and the Cloudflare adapter; deployed to Cloudflare Workers with Static Assets. Prerendered HTML, Open Graph images, and trailing-slash routing for SEO; responsive WebP image pipeline via astro:assets; content collections for services, gallery, and site config; and a secure contact form with KV rate limiting, Turnstile verification, and Resend email delivery. CI/CD via GitHub Actions with lint, format, and astro check.",
+      extraLink: {
+        text: "GitHub Repo",
+        href: "https://github.com/lkilpatrick/mise-and-co",
+      },
+    },
+    {
       label: "Developer Portal — Built From Scratch",
       title: "Nutanix.dev — Developer Portal",
       link: "https://www.nutanix.dev/",
