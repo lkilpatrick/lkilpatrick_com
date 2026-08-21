@@ -65,8 +65,7 @@ steps:
   - label: ":firebase: Deploy to production"
     key: deploy-production
     depends_on: build
-    branches: "main"
-    if: build.pull_request.id == null
+    if: build.branch == "main" && build.pull_request.id == null
     concurrency: 1
     concurrency_group: "lkilpatrickcom-deploy"
     commands:
