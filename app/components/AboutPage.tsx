@@ -228,10 +228,10 @@ export default function AboutPage() {
           {/* ── Book cover grid ── */}
           <div className="about-mia-covers">
             {[
-              { num: "01", title: "The Octopus's Gift", price: "$12.99", img: "/screenshots/mia-book-1-octopus-gift.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-the-octopus-gift/", amazon: "https://www.amazon.com/dp/B0DSZVMYD3", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
-              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "/screenshots/mia-book-2-guardian-coast.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-guardian-of-the-coast/", amazon: "https://www.amazon.com/dp/B0DVT5PBQP", desc: "California coastline. New threats. Growing responsibility." },
-              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "/screenshots/mia-book-3-sea-of-cortez.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-journey-to-the-sea-of-cortez/", amazon: "https://www.amazon.com/dp/B0F1LY4HPT", desc: "Two months aboard Pegasus. Inspired by Steinbeck and Ricketts." },
-              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "/screenshots/mia-book-4-vanishing-sanctuary.jpg", link: "https://pitterpatterdiving.com/product/mia-kingtide-the-vanishing-sanctuary-a-story-about-marine-biology-innovation/", amazon: "https://www.amazon.com/dp/B0FY22H14T", desc: "Saving Monterey Bay. Innovation vs. exploitation." },
+              { num: "01", title: "The Octopus's Gift", price: "$12.99", img: "/screenshots/mia-book-1-octopus-gift.jpg", link: "https://miakingtide.com/books/the-octopus-gift", amazon: "https://www.amazon.com/dp/B0DSZVMYD3", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
+              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "/screenshots/mia-book-2-guardian-coast.jpg", link: "https://miakingtide.com/books/guardian-of-the-coast", amazon: "https://www.amazon.com/dp/B0DVT5PBQP", desc: "California coastline. New threats. Growing responsibility." },
+              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "/screenshots/mia-book-3-sea-of-cortez.jpg", link: "https://miakingtide.com/books/journey-to-the-sea-of-cortez", amazon: "https://www.amazon.com/dp/B0F1LY4HPT", desc: "Two months aboard Pegasus. Inspired by Steinbeck and Ricketts." },
+              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "/screenshots/mia-book-4-vanishing-sanctuary.jpg", link: "https://miakingtide.com/books/the-vanishing-sanctuary", amazon: "https://www.amazon.com/dp/B0FY22H14T", desc: "Saving Monterey Bay. Innovation vs. exploitation." },
             ].map((book) => (
               <div key={book.num} className="about-book-card">
                 <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
