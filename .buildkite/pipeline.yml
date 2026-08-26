@@ -5,8 +5,9 @@ steps:
       - "npm ci"
       - "npm run lint"
       - "npm run build"
+      - "tar -czf site.tgz -C out ."
     artifact_paths:
-      - "out/**/*"
+      - "site.tgz"
     timeout_in_minutes: 10
     retry:
       automatic:
@@ -23,7 +24,9 @@ steps:
       - "npm install --global firebase-tools@15.9.1"
       - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
       - "export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json"
-      - "buildkite-agent artifact download 'out/**/*' ."
+      - "buildkite-agent artifact download site.tgz . --step build"
+      - "mkdir -p out && tar -xzf site.tgz -C out"
+      - "test -f out/index.html"
       - "firebase hosting:channel:deploy pr-$BUILDKITE_PULL_REQUEST --project lkilpatrickcom --non-interactive --expires 7d"
     timeout_in_minutes: 10
     retry:
@@ -45,7 +48,9 @@ steps:
       - "npm install --global firebase-tools@15.9.1"
       - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
       - "export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json"
-      - "buildkite-agent artifact download 'out/**/*' ."
+      - "buildkite-agent artifact download site.tgz . --step build"
+      - "mkdir -p out && tar -xzf site.tgz -C out"
+      - "test -f out/index.html"
       - "firebase deploy --only hosting --project lkilpatrickcom --non-interactive"
     timeout_in_minutes: 10
     retry:
