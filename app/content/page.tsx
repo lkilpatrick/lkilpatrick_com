@@ -5,10 +5,10 @@ import ContentHub from "../components/ContentHub";
 
 export const metadata: Metadata = {
   title: "Content — Writing, Talks & Presentations — Luke Kilpatrick",
-  description: "Technical writing, conference talks, product launch videos, and developer content across 15+ years at Atlassian, Nutanix, LinearB, and Harness.",
+  description: "Technical writing, conference talks, product launch videos, and developer content from a technology career spanning 1996 to today.",
   openGraph: {
     title: "Content — Writing, Talks & Presentations — Luke Kilpatrick",
-    description: "Technical writing, conference talks, and developer content across 15+ years.",
+    description: "Technical writing, conference talks, and developer content from a technology career spanning 1996 to today.",
     url: "https://lkilpatrick.com/content",
   },
 };

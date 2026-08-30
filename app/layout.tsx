@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://lkilpatrick.com"),
   title: "Luke Kilpatrick | Technology Executive, AI Builder & Developer Experience Leader",
   description:
-    "Technology executive and hands-on builder with 20+ years across developer platforms, developer experience, applied AI, product strategy, and technology adoption.",
+    "Technology executive and hands-on builder working since 1996 across developer platforms, developer experience, applied AI, product strategy, and technology adoption.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Luke Kilpatrick | Technology Executive, AI Builder & Developer Experience Leader",
     description:
-      "Technology executive and hands-on builder with 20+ years across developer platforms, developer experience, applied AI, product strategy, and technology adoption.",
+      "Technology executive and hands-on builder working since 1996 across developer platforms, developer experience, applied AI, product strategy, and technology adoption.",
     url: "https://lkilpatrick.com",
     siteName: "Luke Kilpatrick",
     locale: "en_US",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Luke Kilpatrick | Technology Executive & AI Builder",
-    description: "Technology executive and hands-on builder with 20+ years across developer platforms, applied AI, product strategy, and adoption.",
+    description: "Technology executive and hands-on builder working since 1996 across developer platforms, applied AI, product strategy, and adoption.",
     site: "@lkilpatrick",
     creator: "@lkilpatrick",
   },

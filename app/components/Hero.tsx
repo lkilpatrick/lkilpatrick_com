@@ -43,14 +43,14 @@ export default function Hero() {
             <div className="hero-byline">— <a href="/about" className="hero-byline-link">Luke Kilpatrick</a></div>
 
             <p className="hero-sub">
-              I build technology and the systems that make it successful. Over 20+ years, I&apos;ve worked across engineering, developer platforms, developer experience, product marketing, and community at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.
+              I build technology and the systems that make it successful. Since 1996, I&apos;ve worked across engineering, developer platforms, developer experience, product marketing, and community at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.
             </p>
             <p className="hero-sub" style={{ marginTop: 12 }}>
               I still build — from production applications and AI systems to the organizational strategy required to get them adopted.
             </p>
 
             <div className="hero-proof-chips">
-              <a href="/about" className="hero-chip hero-chip--blue">20+ Years in Technology</a>
+              <a href="/about#early-years" className="hero-chip hero-chip--blue">Building Technology Since 1996</a>
               <a href="/about#ai-leadership" className="hero-chip hero-chip--blue">{aiLeadership.shortCredential}</a>
               <a href="/content#talks" className="hero-chip hero-chip--bold">15K+ People Presented To</a>
               <a href="/work" className="hero-chip hero-chip--amber">Builder + Executive</a>

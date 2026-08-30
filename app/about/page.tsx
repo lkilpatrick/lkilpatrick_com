@@ -5,10 +5,10 @@ import AboutPage from "../components/AboutPage";
 
 export const metadata: Metadata = {
   title: "About Luke Kilpatrick — Technology Leadership, Applied AI & Builder Life",
-  description: "Technology executive, hands-on AI builder, and developer experience leader with 20+ years of experience, plus the ocean, books, and life behind the work.",
+  description: "Technology executive, hands-on AI builder, and developer experience leader building technology since 1996, plus the ocean, books, and life behind the work.",
   openGraph: {
     title: "About Luke Kilpatrick — Technology Leadership & Applied AI",
-    description: "Technology executive and hands-on builder with 20+ years across developer platforms, applied AI, and technology adoption.",
+    description: "Technology executive and hands-on builder working across developer platforms, applied AI, and technology adoption since 1996.",
     url: "https://lkilpatrick.com/about",
   },
 };

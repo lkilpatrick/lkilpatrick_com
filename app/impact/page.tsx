@@ -5,7 +5,7 @@ import ImpactHub from "../components/ImpactHub";
 
 export const metadata: Metadata = {
   title: "Impact — Developer Programs, Ecosystems & Proof Points — Luke Kilpatrick",
-  description: "Four types of developer programs built across 15 years. Real data, linked proof, no filler.",
+  description: "Developer programs and adoption systems built across three decades. Real data, linked proof, no filler.",
   openGraph: {
     title: "Impact — Luke Kilpatrick",
     description: "Four types of developer programs. Real data, real links, real proof.",

@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Luke Kilpatrick",
   title: "Technology Executive · Applied AI Builder · Developer Experience Leader",
   tagline:
-    "20+ years building technology, developer platforms, adoption systems, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+    "Building technology, developer platforms, adoption systems, and communities since 1996 — including work at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
   intro:
     "I build technology and the systems that make it successful — from production applications and AI systems to the organizational strategy required to get them adopted.",
   location: "SF Bay Area, CA",
@@ -68,7 +68,7 @@ export const aiCoursework = [
 ];
 
 export const stats = [
-  { value: "20+", label: "Years in Technology", link: "/about" },
+  { value: "1996", label: "Building Since", link: "/about#early-years" },
   { value: "50+", label: "Speaking Events", link: "/content" },
   { value: "10K", label: "TikTok in One Summer", link: "https://www.tiktok.com/@pitterpatterdiving" },
   { value: "1,300+", label: "Books Published", link: "https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" },
@@ -500,7 +500,7 @@ export const socialAccounts = [
     platform: "LinkedIn",
     handle: "lukekilpatrick",
     url: "https://www.linkedin.com/in/lukekilpatrick/",
-    description: "15+ years of DevRel and developer marketing experience. Full work history, recommendations, and publications.",
+    description: "Technology, developer experience, and developer marketing work since 1996. Full work history, recommendations, and publications.",
     embedType: "linkedin" as const,
   },
 ];

@@ -117,8 +117,8 @@ export default function AboutPage() {
             </p>
             <div className="about-stat-row">
               <div className="about-stat">
-                <div className="about-stat-value">15+</div>
-                <div className="about-stat-label">Years Building</div>
+                <div className="about-stat-value">1996</div>
+                <div className="about-stat-label">Started Building</div>
               </div>
               <div className="about-stat">
                 <div className="about-stat-value">4</div>
@@ -150,7 +150,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-leadership section-body section-alt" id="ai-leadership">
+      <section className="about-early section-body section-alt" id="early-years">
+        <div className="content-wrap">
+          <div className="about-section-eyebrow">The Early Years · 1996–2009</div>
+          <h2 className="about-section-title">Before Silicon Valley</h2>
+          <div className="about-early-copy">
+            <p className="about-desc">
+              I started in 1996, while still a teenager, helping run some of Ontario&apos;s earliest public internet cafés in Bradford, Barrie, and Newmarket. Much of the job was teaching people what the internet was, years before it became part of everyday life.
+            </p>
+            <p className="about-desc">
+              At Seneca College in Toronto, I studied computer graphics and digital media. An internship with the SPACE.com Canada and Starry Night team led to my astronomy imagery being credited in the 2001 release of <em>Deep Space Explorer</em>. I later joined Astro-Physics, the Illinois telescope maker, providing technical support to professional and serious amateur astronomers — an early version of the translator-between-complex-systems-and-real-people role I&apos;ve held ever since.
+            </p>
+            <p className="about-desc">
+              From 2001 through 2009, I ran a freelance web development business called Digital Salamander. ColdFusion became one of my core tools, and the work connected me with the Bay Area developer communities that eventually pulled me into Developer Relations full time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-leadership section-body" id="ai-leadership">
         <div className="content-wrap">
           <div className="about-section-eyebrow">Technology &amp; Adoption</div>
           <h2 className="about-section-title">AI Technology Leadership</h2>
@@ -445,6 +463,14 @@ export default function AboutPage() {
       </section>
 
       <style>{`
+        .about-early-copy {
+          max-width: 820px;
+          columns: 2;
+          column-gap: 48px;
+        }
+        .about-early-copy .about-desc {
+          break-inside: avoid;
+        }
         .about-leadership-grid {
           display: grid;
           grid-template-columns: 0.9fr 1.1fr;
@@ -1152,6 +1178,7 @@ export default function AboutPage() {
 
         /* ── Responsive ── */
         @media (max-width: 960px) {
+          .about-early-copy { columns: 1; }
           .about-hero-inner { grid-template-columns: 1fr; gap: 48px; }
           .about-leadership-grid { grid-template-columns: 1fr; gap: 28px; }
           .about-stat-row { grid-template-columns: repeat(2, 1fr); }
