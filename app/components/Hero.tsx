@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { personalInfo } from "../data/portfolio";
+import { aiLeadership, personalInfo } from "../data/portfolio";
 import ContactModal from "./ContactModal";
 
 const COMPANIES = [
@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="hero-text">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot" />
-              Developer Relations &nbsp;&middot;&nbsp; Developer Marketing &nbsp;&middot;&nbsp; <strong style={{color:"var(--color-primary)"}}>Builder</strong>
+              Technology Executive &nbsp;&middot;&nbsp; AI Builder &nbsp;&middot;&nbsp; <strong style={{color:"var(--color-primary)"}}>Developer Experience Leader</strong>
             </div>
 
             <h1 className="hero-headline">
@@ -43,28 +43,17 @@ export default function Hero() {
             <div className="hero-byline">— <a href="/about" className="hero-byline-link">Luke Kilpatrick</a></div>
 
             <p className="hero-sub">
-              I design the systems that make that happen across{" "}
-              <a href="/impact" style={{ color: "var(--color-primary-light)" }}>developer experience</a>,{" "}
-              <a href="/content" style={{ color: "var(--color-primary-light)" }}>product marketing</a>, and{" "}
-              <a href="/impact#four-types" style={{ color: "var(--color-primary-light)" }}>community</a>{" "}
-              — turning powerful ideas into widely adopted products.
+              I build technology and the systems that make it successful. Over 20+ years, I&apos;ve worked across engineering, developer platforms, developer experience, product marketing, and community at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.
             </p>
             <p className="hero-sub" style={{ marginTop: 12 }}>
-              Over the past 20+ years, I have led this work at{" "}
-              <a href="https://www.atlassian.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Atlassian</a>,{" "}
-              <a href="https://www.nutanix.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Nutanix</a>,{" "}
-              <a href="https://hazelcast.com/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Hazelcast</a>,{" "}
-              <a href="https://linearb.io/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>LinearB</a>, and{" "}
-              <a href="https://www.harness.io/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Harness</a>. I am also the author of the{" "}
-              <a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-primary-light)" }}>Mia Kingtide series</a>,{" "}
-              making complex systems understandable, engaging, and worth exploring.
+              I still build — from production applications and AI systems to the organizational strategy required to get them adopted.
             </p>
 
             <div className="hero-proof-chips">
-              <a href="/impact#four-types" className="hero-chip hero-chip--blue">4 Program Types Framework</a>
-              <a href="/work" className="hero-chip hero-chip--blue">3 Developer Portals Built</a>
+              <a href="/about" className="hero-chip hero-chip--blue">20+ Years in Technology</a>
+              <a href="/about#ai-leadership" className="hero-chip hero-chip--blue">{aiLeadership.shortCredential}</a>
               <a href="/content#talks" className="hero-chip hero-chip--bold">15K+ People Presented To</a>
-              <a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" className="hero-chip hero-chip--amber">12+ Books Published</a>
+              <a href="/work" className="hero-chip hero-chip--amber">Builder + Executive</a>
             </div>
 
             <div className="hero-ctas">

@@ -4,11 +4,11 @@ import Footer from "../components/Footer";
 import WorkPage from "../components/WorkPage";
 
 export const metadata: Metadata = {
-  title: "Work — Projects, Case Studies & Developer Portals — Luke Kilpatrick",
-  description: "Production systems, developer platforms, and documentation sites built from zero. Tech Challenge Kenya, MPYC RaceDay, gitStream docs, Nutanix.dev, Mise & Co., and more.",
+  title: "Work — Production Systems, Applied AI & Developer Platforms — Luke Kilpatrick",
+  description: "Production applications, AI and data systems, full-stack products, and developer platforms built from architecture through adoption.",
   openGraph: {
-    title: "Work — Luke Kilpatrick",
-    description: "Production systems, developer platforms, and documentation sites built from zero.",
+    title: "Work — Production Systems & Applied AI — Luke Kilpatrick",
+    description: "Production applications, AI and data systems, full-stack products, and developer platforms built from architecture through adoption.",
     url: "https://lkilpatrick.com/work",
   },
 };

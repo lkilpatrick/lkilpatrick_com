@@ -22,18 +22,19 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Luke Kilpatrick — Developer Experience, Product Marketing & Applied AI",
+  metadataBase: new URL("https://lkilpatrick.com"),
+  title: "Luke Kilpatrick | Technology Executive, AI Builder & Developer Experience Leader",
   description:
-    "I help companies turn complex platforms into products developers understand, adopt, and want to use. 15+ years at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+    "Technology executive and hands-on builder with 20+ years across developer platforms, developer experience, applied AI, product strategy, and technology adoption.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "Luke Kilpatrick — Developer Experience, Product Marketing & Applied AI",
+    title: "Luke Kilpatrick | Technology Executive, AI Builder & Developer Experience Leader",
     description:
-      "I help companies turn complex platforms into products developers understand, adopt, and want to use. 15+ years at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+      "Technology executive and hands-on builder with 20+ years across developer platforms, developer experience, applied AI, product strategy, and technology adoption.",
     url: "https://lkilpatrick.com",
     siteName: "Luke Kilpatrick",
     locale: "en_US",
@@ -41,8 +42,28 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Luke Kilpatrick | Technology Executive & AI Builder",
+    description: "Technology executive and hands-on builder with 20+ years across developer platforms, applied AI, product strategy, and adoption.",
     site: "@lkilpatrick",
     creator: "@lkilpatrick",
+  },
+};
+
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Luke Kilpatrick",
+  url: "https://lkilpatrick.com",
+  jobTitle: "Technology Executive and Applied AI Builder",
+  description: "Technology executive and hands-on builder focused on developer platforms, applied AI, product strategy, and technology adoption.",
+  sameAs: [
+    "https://www.linkedin.com/in/lukekilpatrick/",
+    "https://github.com/lkilpatrick",
+    "https://www.youtube.com/@LukeKilpatrick",
+  ],
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "University of Waterloo",
   },
 };
 
@@ -57,7 +78,13 @@ export default function RootLayout({
       data-theme="light"
       className={`${dmSans.variable} ${dmSerif.variable} ${jetbrainsMono.variable} scroll-smooth antialiased`}
     >
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { onboardingDocs } from "../data/portfolio";
+import { aiCoursework, aiLeadership, onboardingDocs } from "../data/portfolio";
 
 // ─── Projects Section ────────────────────────────────────────────────────────
 
@@ -22,23 +22,32 @@ type Project = {
   featured?: boolean;
   status: StatusType;
   screenshot?: string;
+  roadmap?: {
+    architecture?: string;
+    evaluationMetrics?: string;
+    retrieval?: string;
+    documentIngestion?: string;
+    auditLogging?: string;
+    deployment?: string;
+    productization?: string;
+  };
 };
 
 const PROJECTS: Project[] = [
   {
-    id: 1,
-    tag: "AI + Data Engineering",
-    tagColor: "green",
-    title: "Monterey Bay Morning Report",
-    subtitle: "Daily Ocean Intelligence System",
-    context: "Personal · 2024–present · Solo Builder",
-    what: "A daily intelligence email aggregating live data from 8+ sources across Monterey Bay — tides, surf conditions, NOAA buoys, weather forecasts, fishing regulations, marine species, and boat telemetry — delivered every morning before sunrise.",
-    built: "Modular Python system on the OpenClaw agent framework, orchestrated by cron. Each data source is its own standalone skill — independently testable and deployable. Sources include: NOAA Tides & Currents, NDBC Buoys (wave height, water temp, wind), NWS Weather, Surfline (5 spots), Victron VRM (two boats, reverse-engineered API), Marine Species Database (89 species with iNaturalist), CDFW Fishing Regulations, and an AI-generated fishing brief with 250+ GPS waypoints from my Simrad chartplotter. The Victron VRM skill is published to ClawHub as an open-source reference.",
-    matters: "A real data engineering system running in production every day. Integrates 8+ live data sources — several with undocumented or non-standard APIs — into a coherent daily product. Applied AI that quietly does useful work while you sleep.",
-    stack: ["Python", "OpenClaw", "Cron", "NOAA APIs", "Surfline", "NDBC Buoys", "Victron VRM", "CDFW Regulations", "iNaturalist", "GPX Parsing", "Email Delivery", "ClawHub"],
-    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    id: 2,
+    tag: "Flutter App",
+    tagColor: "purple",
+    title: "Tech Challenge Kenya",
+    subtitle: "National STEM Competition Platform",
+    context: "The Tech Interactive · 2023–present · Lead Developer",
+    what: "Full-stack platform built for Kenya's national STEM competition — students, schools, teams, and judges across the entire country. Built for The Tech Interactive.",
+    built: "15 modules in Flutter Web + Supabase: multi-role auth with RBAC, row-level security, audit logs, survey engine, team management, live scoring, bulk communications, and national reporting. Zero to production-grade, single developer.",
+    matters: "Complex domain. National scale. Real stakes. 15 modules, 5 RBAC roles, row-level security, append-only audit logging — production-grade architecture built by a single developer.",
+    stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL RLS", "Multi-role RBAC", "15 modules"],
+    link: null,
     featured: true,
-    status: "production",
+    status: "development",
   },
   {
     id: 4,
@@ -56,18 +65,19 @@ const PROJECTS: Project[] = [
     status: "production",
   },
   {
-    id: 2,
-    tag: "Flutter App",
-    tagColor: "purple",
-    title: "Tech Challenge Kenya",
-    subtitle: "National STEM Competition Platform",
-    context: "The Tech Interactive · 2023–present · Lead Developer",
-    what: "Full-stack platform built for Kenya's national STEM competition — students, schools, teams, and judges across the entire country. Built for The Tech Interactive.",
-    built: "15 modules in Flutter Web + Supabase: multi-role auth with RBAC, row-level security, audit logs, survey engine, team management, live scoring, bulk communications, and national reporting. Zero to production-grade, single developer.",
-    matters: "Complex domain. National scale. Real stakes. 15 modules, 5 RBAC roles, row-level security, append-only audit logging — production-grade architecture built by a single developer.",
-    stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL RLS", "Multi-role RBAC", "15 modules"],
-    link: null,
-    status: "development",
+    id: 1,
+    tag: "AI + Data Engineering",
+    tagColor: "green",
+    title: "Monterey Bay Morning Report",
+    subtitle: "Daily Ocean Intelligence System",
+    context: "Personal · 2024–present · Solo Builder",
+    what: "A daily intelligence email aggregating live data from 8+ sources across Monterey Bay — tides, surf conditions, NOAA buoys, weather forecasts, fishing regulations, marine species, and boat telemetry — delivered every morning before sunrise.",
+    built: "Modular Python system on the OpenClaw agent framework, orchestrated by cron. Each data source is independently testable and deployable. Sources include NOAA, NDBC, NWS, Surfline, Victron VRM, iNaturalist, CDFW regulations, and an AI-generated fishing brief using 250+ GPS waypoints.",
+    matters: "A real data engineering system running in production every day. Integrates 8+ live sources — several undocumented or non-standard — into one useful product.",
+    stack: ["Python", "OpenClaw", "Cron", "NOAA APIs", "NDBC Buoys", "Victron VRM", "iNaturalist", "GPX Parsing", "Email Delivery"],
+    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
+    featured: true,
+    status: "production",
   },
   {
     id: 3,
@@ -78,10 +88,25 @@ const PROJECTS: Project[] = [
     context: "Monterey Peninsula Yacht Club · 2023–present · Solo Builder",
     what: "Real-time race management platform for MPYC — 5 user roles, 57 courses, live weather from 11 stations, GPS tracking, and automated scoring published to Clubspot.",
     built: "Flutter + Firebase: 25+ Firestore collections, Cloud Functions fetching weather every 60 seconds, FCM push notifications, GPS race tracking, Clubspot API sync. Android, iOS, and Web from a single codebase.",
-    matters: "One developer. SaaS-class complexity. Built for a real club solving a real problem because commercial tools cost thousands per year and still did not do what we needed. Ready for race season.",
+    matters: "One developer. SaaS-class complexity. Built for a real club solving a real problem because commercial tools cost thousands per year and still did not do what we needed.",
     stack: ["Flutter 3.x", "Firebase", "Cloud Functions", "GPS tracking", "11 weather stations", "Clubspot API"],
     link: null,
     status: "development",
+  },
+  {
+    id: 5,
+    tag: "Civic AI",
+    tagColor: "orange",
+    title: "SANDI",
+    subtitle: "AI-Assisted Municipal Planning",
+    context: "Independent Prototype · In Development",
+    what: "An AI-assisted planning submission system designed for resource-constrained municipalities. SANDI evaluates submission completeness against jurisdiction-specific source material, provides source-linked feedback, and preserves professional planning judgment for discretionary decisions.",
+    built: "Product concept · Architecture · AI engineering · Full-stack development. The implementation is in development; architecture, evaluation, retrieval, ingestion, audit logging, and deployment details will be added as they are validated.",
+    matters: "Independently developed. Not a City of Sand City system or City-sponsored project.",
+    stack: ["AI-assisted review", "Source-linked retrieval", "Document ingestion", "Auditability", "Human judgment"],
+    link: null,
+    status: "development",
+    roadmap: {},
   },
 ];
 
@@ -279,15 +304,58 @@ export default function WorkPage() {
 
   return (
     <>
-      {/* ── Section 1: Developer Portals & Documentation ── */}
-      <section className="section-body" id="docs">
-        <div className="content-wrap">
+      <section className="section-body" id="projects">
+        <div className="content-wrap--wide">
           <div className="wp-page-header">
             <div className="wp-hero-eyebrow">Work</div>
-            <h1 className="wp-hero-title">What I&apos;ve built.</h1>
+            <h1 className="wp-hero-title">I still build.</h1>
           </div>
           <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Developer Portals &amp; Documentation</div>
+            <div className="wp-section-eyebrow">Production Systems &amp; Applied AI</div>
+            <h2 className="wp-section-title">Build → architecture → product → adoption.</h2>
+          </div>
+
+          {featured.map(p => (
+            <ProjectCard key={p.id} project={p} isFeatured={true} />
+          ))}
+
+          <div className="wp-grid">
+            {rest.map(p => (
+              <ProjectCard key={p.id} project={p} isFeatured={false} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-body section-alt" id="ai-cto-coursework">
+        <div className="content-wrap">
+          <div className="wp-section-header">
+            <div className="wp-section-eyebrow">Executive AI Leadership</div>
+            <h2 className="wp-section-title">University of Waterloo AI-CTO coursework.</h2>
+            <p className="wp-section-intro">
+              {aiLeadership.description} These selected course artifacts show the analysis behind the credential: architecture choices, governance, financial discipline, operating models, and production scaling.
+            </p>
+          </div>
+          <div className="wp-coursework-grid">
+            {aiCoursework.map(item => (
+              <a key={item.file} href={item.file} download={item.download} className="wp-coursework-card">
+                <div className="wp-coursework-icon">PDF</div>
+                <div className="wp-coursework-body">
+                  <div className="wp-coursework-meta">{item.module} · {item.pages} pages</div>
+                  <h3 className="wp-coursework-title">{item.title}</h3>
+                  <p className="wp-coursework-desc">{item.description}</p>
+                  <span className="wp-coursework-download">Download class work ↓</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-body" id="docs">
+        <div className="content-wrap">
+          <div className="wp-section-header">
+            <div className="wp-section-eyebrow">Developer Platforms &amp; Adoption</div>
             <h2 className="wp-section-title">The systems that let developers self-serve.</h2>
           </div>
 
@@ -299,26 +367,6 @@ export default function WorkPage() {
                 screenshot={PORTAL_SCREENSHOTS[item.title]}
                 index={i}
               />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 2: Projects ── */}
-      <section className="section-body section-alt" id="projects">
-        <div className="content-wrap--wide">
-          <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Projects</div>
-            <h2 className="wp-section-title">Coded from scratch.</h2>
-          </div>
-
-          {featured.map(p => (
-            <ProjectCard key={p.id} project={p} isFeatured={true} />
-          ))}
-
-          <div className="wp-grid">
-            {rest.map(p => (
-              <ProjectCard key={p.id} project={p} isFeatured={false} />
             ))}
           </div>
         </div>
@@ -575,6 +623,81 @@ export default function WorkPage() {
           line-height: 1.5;
         }
 
+        .wp-section-intro {
+          max-width: 760px;
+          margin-top: 18px;
+          color: var(--text-muted);
+          font-size: 15px;
+          line-height: 1.75;
+        }
+        .wp-coursework-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 18px;
+        }
+        .wp-coursework-card {
+          display: flex;
+          align-items: flex-start;
+          gap: 16px;
+          padding: 26px;
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow-card);
+          color: inherit;
+          text-decoration: none;
+          transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+        .wp-coursework-card:hover {
+          transform: translateY(-3px);
+          border-color: var(--color-primary-light);
+          box-shadow: var(--shadow-card-hover);
+        }
+        .wp-coursework-icon {
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          border-radius: 8px;
+          background: rgba(12,74,110,0.07);
+          border: 1px solid rgba(12,74,110,0.2);
+          color: var(--color-primary);
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          font-weight: 700;
+        }
+        .wp-coursework-body { min-width: 0; }
+        .wp-coursework-meta {
+          margin-bottom: 7px;
+          color: var(--color-primary);
+          font-family: var(--font-mono), monospace;
+          font-size: 9px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        .wp-coursework-title {
+          margin-bottom: 10px;
+          color: var(--heading);
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 1.3;
+        }
+        .wp-coursework-desc {
+          margin-bottom: 16px;
+          color: var(--text-muted);
+          font-size: 13px;
+          line-height: 1.65;
+        }
+        .wp-coursework-download {
+          color: var(--color-primary);
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          font-weight: 600;
+        }
+
         /* ── Portal rows ── */
         .wp-portal-row {
           display: grid;
@@ -687,6 +810,7 @@ export default function WorkPage() {
 
         /* ── Responsive ── */
         @media (max-width: 860px) {
+          .wp-coursework-grid { grid-template-columns: 1fr; }
           .wp-featured-inner { grid-template-columns: 1fr; }
           .wp-featured-inner--with-screenshot { grid-template-columns: 1fr; }
           .wp-featured-right { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 24px; }

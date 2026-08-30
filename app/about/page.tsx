@@ -4,11 +4,11 @@ import Footer from "../components/Footer";
 import AboutPage from "../components/AboutPage";
 
 export const metadata: Metadata = {
-  title: "About Luke Kilpatrick — Ocean, Monterey Bay & Builder Life",
-  description: "PADI Divemaster, author, sailor, and builder on the Monterey Peninsula. Mia Kingtide, Pitter Patter Diving, MPYC, and the life behind the work.",
+  title: "About Luke Kilpatrick — Technology Leadership, Applied AI & Builder Life",
+  description: "Technology executive, hands-on AI builder, and developer experience leader with 20+ years of experience, plus the ocean, books, and life behind the work.",
   openGraph: {
-    title: "About Luke Kilpatrick",
-    description: "PADI Divemaster, author, sailor, and builder on the Monterey Peninsula.",
+    title: "About Luke Kilpatrick — Technology Leadership & Applied AI",
+    description: "Technology executive and hands-on builder with 20+ years across developer platforms, applied AI, and technology adoption.",
     url: "https://lkilpatrick.com/about",
   },
 };

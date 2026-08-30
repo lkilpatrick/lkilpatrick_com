@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect } from "react";
-import { socialAccounts } from "../data/portfolio";
+import { aiLeadership, publicService, socialAccounts } from "../data/portfolio";
 
 const PLATFORM_ICONS: Record<string, string> = {
   YouTube:   "▶",
@@ -147,6 +147,31 @@ export default function AboutPage() {
               />
             </div>
             </div>
+        </div>
+      </section>
+
+      <section className="about-leadership section-body section-alt" id="ai-leadership">
+        <div className="content-wrap">
+          <div className="about-section-eyebrow">Technology &amp; Adoption</div>
+          <h2 className="about-section-title">AI Technology Leadership</h2>
+          <div className="about-leadership-grid">
+            <div>
+              <p className="about-desc">
+                I&apos;ve spent most of my career at the boundary between technology and adoption. Sometimes that meant building developer platforms. Sometimes it meant building the developer community, documentation, go-to-market system, or organizational structure around them. Increasingly, it means applied AI.
+              </p>
+              <p className="about-desc">
+                I&apos;m unusual in that I still build. My recent work spans production web and mobile applications, data systems, developer infrastructure, and AI-enabled workflows developed from architecture through deployment.
+              </p>
+            </div>
+            <div className="about-leadership-card">
+              <div className="about-leadership-credential">{aiLeadership.credential}</div>
+              <p>{aiLeadership.description}</p>
+              <p>The program extended my hands-on engineering and developer-platform background into the organizational and executive questions that determine whether AI systems actually succeed in production.</p>
+              <div className="about-leadership-areas">
+                {aiLeadership.areas.map(area => <span key={area}>{area}</span>)}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -385,6 +410,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="about-public-service section-body section-alt" id="public-service">
+        <div className="content-wrap">
+          <div className="about-section-eyebrow">Leadership &amp; Governance</div>
+          <h2 className="about-section-title">Public Service</h2>
+          <div className="about-service-card">
+            <div>
+              <div className="about-service-title">{publicService.title}</div>
+              <p>{publicService.description}</p>
+            </div>
+            <a href={publicService.link} target="_blank" rel="noopener noreferrer" className="about-pill">
+              Political site →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Section 4: Social Channels ── */}
       <section className="about-social section-body" id="channels">
         <div className="content-wrap">
@@ -404,6 +445,52 @@ export default function AboutPage() {
       </section>
 
       <style>{`
+        .about-leadership-grid {
+          display: grid;
+          grid-template-columns: 0.9fr 1.1fr;
+          gap: 48px;
+          align-items: start;
+        }
+        .about-leadership-card, .about-service-card {
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
+          border-radius: var(--radius);
+          padding: 32px;
+          box-shadow: var(--shadow-card);
+        }
+        .about-leadership-credential, .about-service-title {
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 22px;
+          color: var(--heading);
+          margin-bottom: 14px;
+        }
+        .about-leadership-card p, .about-service-card p {
+          color: var(--text-muted);
+          font-size: 14px;
+          line-height: 1.75;
+          margin-bottom: 16px;
+        }
+        .about-leadership-areas {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .about-leadership-areas span {
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          color: var(--color-primary);
+          border: 1px solid var(--color-border);
+          border-radius: 4px;
+          padding: 5px 9px;
+        }
+        .about-service-card {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+        }
+        .about-service-card p { margin-bottom: 0; }
+        .about-service-card .about-pill { flex-shrink: 0; }
         /* ── Photo mosaic ── */
         .about-photo-mosaic {
           display: grid;
@@ -1066,6 +1153,7 @@ export default function AboutPage() {
         /* ── Responsive ── */
         @media (max-width: 960px) {
           .about-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+          .about-leadership-grid { grid-template-columns: 1fr; gap: 28px; }
           .about-stat-row { grid-template-columns: repeat(2, 1fr); }
           .about-mia-grid { grid-template-columns: 1fr; }
           .about-parallel { grid-template-columns: 1fr; }
@@ -1077,6 +1165,8 @@ export default function AboutPage() {
         }
         @media (max-width: 600px) {
           .about-hero-cards { grid-template-columns: 1fr; }
+          .about-leadership-card, .about-service-card { padding: 24px; }
+          .about-service-card { align-items: flex-start; flex-direction: column; }
           .about-ppd-grid { grid-template-columns: 1fr; }
           .about-stat-row { grid-template-columns: repeat(2, 1fr); }
           .about-social-card { grid-template-columns: 48px 1fr; }

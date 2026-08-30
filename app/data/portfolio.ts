@@ -1,10 +1,10 @@
 export const personalInfo = {
   name: "Luke Kilpatrick",
-  title: "Developer Experience & Product Marketing",
+  title: "Technology Executive · Applied AI Builder · Developer Experience Leader",
   tagline:
-    "15+ years building developer programs, documentation, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
+    "20+ years building technology, developer platforms, adoption systems, and communities at Atlassian, Nutanix, Hazelcast, LinearB, and Harness.",
   intro:
-    "I build the content, docs, and onboarding experiences that turn complex infrastructure products into tools developers actually want to use. I also write code, author books, and ship things.",
+    "I build technology and the systems that make it successful — from production applications and AI systems to the organizational strategy required to get them adopted.",
   location: "SF Bay Area, CA",
   availability: "Available Now",
   availableForWork: true, // Toggle this to false to hide the "Available Now" badge sitewide
@@ -13,8 +13,62 @@ export const personalInfo = {
   youtube: "https://www.youtube.com/@LukeKilpatrick",
 };
 
+export const aiLeadership = {
+  credential: "University of Waterloo — AI-CTO Program, 2026",
+  shortCredential: "AI-CTO · University of Waterloo",
+  description:
+    "Advanced executive work spanning AI architecture and model decisions, agentic systems, responsible AI and governance, FinOps, organizational scaling, technology M&A, executive influence, and AI transformation.",
+  areas: [
+    "Enterprise AI architecture",
+    "Model and vendor strategy",
+    "Agentic AI",
+    "Responsible AI governance",
+    "FinOps",
+    "Organizational scaling",
+    "Technology M&A",
+    "Executive communication",
+  ],
+};
+
+export const publicService = {
+  title: "Candidate for Sand City City Council · 2026",
+  description:
+    "Public service alongside my technology career, with an interest in economic development, effective government, and the responsible use of technology.",
+  link: "https://kilpatrick4sandcity.org",
+};
+
+export const aiCoursework = [
+  {
+    module: "Strategic AI Brief",
+    title: "Northbridge Financial Group AI Transformation Initiative",
+    description:
+      "Board-level recommendation covering AI architecture, build-versus-buy strategy, governance, data readiness, FinOps, acquisition diligence, and staged investment gates.",
+    file: "/downloads/ai-cto/strategic-ai-brief-luke-kilpatrick.pdf",
+    download: "Luke-Kilpatrick-AI-CTO-Strategic-AI-Brief.pdf",
+    pages: 12,
+  },
+  {
+    module: "Module 1",
+    title: "AI-CTO Executive Onboarding Package",
+    description:
+      "Leadership foundations, initiative definition, a first-90-days operating plan, executive communication, governance, and organizational alignment for an enterprise AI platform.",
+    file: "/downloads/ai-cto/executive-onboarding-package-luke-kilpatrick.pdf",
+    download: "Luke-Kilpatrick-AI-CTO-Executive-Onboarding-Package.pdf",
+    pages: 9,
+  },
+  {
+    module: "Module 4",
+    title: "Enterprise AI Scaling Blueprint",
+    description:
+      "A production scaling plan for systems, teams, reliability, model qualification, operations, auditability, cost controls, and safe escalation across agentic workflows.",
+    file: "/downloads/ai-cto/enterprise-ai-scaling-blueprint-luke-kilpatrick.pdf",
+    download: "Luke-Kilpatrick-AI-CTO-Scaling-Blueprint.pdf",
+    pages: 26,
+  },
+];
+
 export const stats = [
-  { value: "15+", label: "Years in DevRel", link: "/about" },
+  { value: "20+", label: "Years in Technology", link: "/about" },
   { value: "50+", label: "Speaking Events", link: "/content" },
   { value: "10K", label: "TikTok in One Summer", link: "https://www.tiktok.com/@pitterpatterdiving" },
   { value: "1,300+", label: "Books Published", link: "https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" },
