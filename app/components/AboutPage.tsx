@@ -150,7 +150,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-early section-body section-alt" id="early-years">
+      <section className="about-leadership section-body section-alt" id="ai-leadership">
+        <div className="content-wrap">
+          <div className="about-section-eyebrow">Technology &amp; Adoption</div>
+          <h2 className="about-section-title">AI Technology Leadership</h2>
+          <div className="about-leadership-grid">
+            <div>
+              <p className="about-desc">
+                I&apos;ve spent most of my career at the boundary between technology and adoption. Sometimes that meant building developer platforms. Sometimes it meant building the developer community, documentation, go-to-market system, or organizational structure around them. Increasingly, it means applied AI.
+              </p>
+              <p className="about-desc">
+                I&apos;m unusual in that I still build. My recent work spans production web and mobile applications, data systems, developer infrastructure, and AI-enabled workflows developed from architecture through deployment.
+              </p>
+            </div>
+            <div className="about-leadership-card">
+              <div className="about-leadership-credential">{aiLeadership.credential}</div>
+              <p>{aiLeadership.description}</p>
+              <p>The program extended my hands-on engineering and developer-platform background into the organizational and executive questions that determine whether AI systems actually succeed in production.</p>
+              <div className="about-leadership-areas">
+                {aiLeadership.areas.map(area => <span key={area}>{area}</span>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-early section-body" id="early-years">
         <div className="content-wrap">
           <div className="about-section-eyebrow">The Early Years · 1996–2009</div>
           <h2 className="about-section-title">Before Silicon Valley</h2>
@@ -191,31 +216,6 @@ export default function AboutPage() {
             <p className="about-desc about-early-close">
               By the time I became visible in the Bay Area ColdFusion and Adobe communities — and long before Developer Relations was a common job title — I had already spent most of a decade shipping and maintaining production software where accessibility, compliance, and operational reliability mattered.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="about-leadership section-body" id="ai-leadership">
-        <div className="content-wrap">
-          <div className="about-section-eyebrow">Technology &amp; Adoption</div>
-          <h2 className="about-section-title">AI Technology Leadership</h2>
-          <div className="about-leadership-grid">
-            <div>
-              <p className="about-desc">
-                I&apos;ve spent most of my career at the boundary between technology and adoption. Sometimes that meant building developer platforms. Sometimes it meant building the developer community, documentation, go-to-market system, or organizational structure around them. Increasingly, it means applied AI.
-              </p>
-              <p className="about-desc">
-                I&apos;m unusual in that I still build. My recent work spans production web and mobile applications, data systems, developer infrastructure, and AI-enabled workflows developed from architecture through deployment.
-              </p>
-            </div>
-            <div className="about-leadership-card">
-              <div className="about-leadership-credential">{aiLeadership.credential}</div>
-              <p>{aiLeadership.description}</p>
-              <p>The program extended my hands-on engineering and developer-platform background into the organizational and executive questions that determine whether AI systems actually succeed in production.</p>
-              <div className="about-leadership-areas">
-                {aiLeadership.areas.map(area => <span key={area}>{area}</span>)}
-              </div>
-            </div>
           </div>
         </div>
       </section>
