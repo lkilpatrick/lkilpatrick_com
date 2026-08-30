@@ -154,15 +154,42 @@ export default function AboutPage() {
         <div className="content-wrap">
           <div className="about-section-eyebrow">The Early Years · 1996–2009</div>
           <h2 className="about-section-title">Before Silicon Valley</h2>
-          <div className="about-early-copy">
-            <p className="about-desc">
-              I started in 1996, while still a teenager, helping run some of Ontario&apos;s earliest public internet cafés in Bradford, Barrie, and Newmarket. Much of the job was teaching people what the internet was, years before it became part of everyday life.
+
+          <div className="about-early-beat">
+            <div className="about-early-beat-label">Origin · 1996–2001</div>
+            <div className="about-early-copy">
+              <p className="about-desc">
+                I started in 1996, while still a teenager, helping run some of Ontario&apos;s earliest public internet cafés in Bradford, Barrie, and Newmarket. Much of the job was teaching people what the internet was, years before it became part of everyday life.
+              </p>
+              <p className="about-desc">
+                At Seneca College in Toronto, I studied computer graphics and digital media. An internship with the SPACE.com Canada and Starry Night team led to my astronomy imagery being credited in the 2001 release of <em>Deep Space Explorer</em>. I also provided technical support at Astro-Physics, helping serious amateur and professional astronomers run precision equatorial mounts — an early version of the translator-between-complex-systems-and-real-people role I&apos;ve held ever since.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-early-beat">
+            <div className="about-early-beat-label">Enterprise Engineering · 2001–2009</div>
+            <p className="about-section-intro about-early-intro">
+              Alongside running my freelance shop, Digital Salamander, I spent 2004–2008 building production ColdFusion systems inside six companies. This was enterprise engineering: commerce, accessibility, compliance, global operations, reusable frameworks, and early rich internet applications.
             </p>
-            <p className="about-desc">
-              At Seneca College in Toronto, I studied computer graphics and digital media. An internship with the SPACE.com Canada and Starry Night team led to my astronomy imagery being credited in the 2001 release of <em>Deep Space Explorer</em>. I later joined Astro-Physics, the Illinois telescope maker, providing technical support to professional and serious amateur astronomers — an early version of the translator-between-complex-systems-and-real-people role I&apos;ve held ever since.
-            </p>
-            <p className="about-desc">
-              From 2001 through 2009, I ran a freelance web development business called Digital Salamander. ColdFusion became one of my core tools, and the work connected me with the Bay Area developer communities that eventually pulled me into Developer Relations full time.
+            <div className="about-enterprise-grid">
+              {[
+                { company: "Tripp Lite", role: "ColdFusion Developer · Chicago", detail: "Upgraded and maintained a production ColdFusion commerce site." },
+                { company: "Follett Software", role: "Enterprise Developer · McHenry, IL", detail: "Built a Section 508-accessible CMS and SOX-compliant rights-management tooling for education technology." },
+                { company: "Marshall & Swift/Boeckh", role: "Web Developer · New Berlin, WI", detail: "Redeveloped corporate web properties and interfaces for insurance software." },
+                { company: "Kohler", role: "Application Developer · Wisconsin", detail: "Standardized an internal application framework used across global manufacturing operations and trained other developers on it." },
+                { company: "ODA", role: "Senior Developer · San Francisco", detail: "Built more than 30 custom CMS modules and helped launch over a dozen client sites in a senior agency role." },
+                { company: "BroadChoice", role: "RIA Engineer · San Mateo", detail: "Built across ColdFusion, Flex/AIR, and the early mobile web." },
+              ].map(item => (
+                <div className="about-enterprise-card" key={item.company}>
+                  <div className="about-enterprise-company">{item.company}</div>
+                  <div className="about-enterprise-role">{item.role}</div>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="about-desc about-early-close">
+              By the time I became visible in the Bay Area ColdFusion and Adobe communities — and long before Developer Relations was a common job title — I had already spent most of a decade shipping and maintaining production software where accessibility, compliance, and operational reliability mattered.
             </p>
           </div>
         </div>
@@ -463,14 +490,60 @@ export default function AboutPage() {
       </section>
 
       <style>{`
+        .about-early-beat + .about-early-beat {
+          margin-top: 44px;
+          padding-top: 40px;
+          border-top: 1px solid var(--color-border);
+        }
+        .about-early-beat-label {
+          margin-bottom: 18px;
+          color: var(--color-primary);
+          font-family: var(--font-mono), monospace;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+        }
         .about-early-copy {
-          max-width: 820px;
+          max-width: 900px;
           columns: 2;
           column-gap: 48px;
         }
-        .about-early-copy .about-desc {
-          break-inside: avoid;
+        .about-early-copy .about-desc { break-inside: avoid; }
+        .about-early-intro { max-width: 820px; margin-bottom: 28px; }
+        .about-enterprise-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 14px;
         }
+        .about-enterprise-card {
+          padding: 22px;
+          background: var(--color-bg-card);
+          border: 1px solid var(--color-border-light);
+          border-radius: 10px;
+          box-shadow: var(--shadow-card);
+        }
+        .about-enterprise-company {
+          margin-bottom: 4px;
+          color: var(--heading);
+          font-family: var(--font-serif), Georgia, serif;
+          font-size: 18px;
+        }
+        .about-enterprise-role {
+          margin-bottom: 12px;
+          color: var(--color-primary);
+          font-family: var(--font-mono), monospace;
+          font-size: 9px;
+          line-height: 1.5;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        }
+        .about-enterprise-card p {
+          color: var(--text-muted);
+          font-size: 13px;
+          line-height: 1.65;
+        }
+        .about-early-close { max-width: 860px; margin-top: 28px; }
         .about-leadership-grid {
           display: grid;
           grid-template-columns: 0.9fr 1.1fr;
@@ -1179,6 +1252,7 @@ export default function AboutPage() {
         /* ── Responsive ── */
         @media (max-width: 960px) {
           .about-early-copy { columns: 1; }
+          .about-enterprise-grid { grid-template-columns: repeat(2, 1fr); }
           .about-hero-inner { grid-template-columns: 1fr; gap: 48px; }
           .about-leadership-grid { grid-template-columns: 1fr; gap: 28px; }
           .about-stat-row { grid-template-columns: repeat(2, 1fr); }
@@ -1191,6 +1265,7 @@ export default function AboutPage() {
           .about-civic-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
+          .about-enterprise-grid { grid-template-columns: 1fr; }
           .about-hero-cards { grid-template-columns: 1fr; }
           .about-leadership-card, .about-service-card { padding: 24px; }
           .about-service-card { align-items: flex-start; flex-direction: column; }
