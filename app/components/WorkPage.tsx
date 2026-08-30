@@ -291,8 +291,9 @@ export default function WorkPage() {
   const featured = PROJECTS.filter(p => p.featured);
   const rest     = PROJECTS.filter(p => !p.featured);
 
+  const latestWebsites = onboardingDocs.highlights.slice(0, 2);
   const allDocs = [
-    ...onboardingDocs.highlights,
+    ...onboardingDocs.highlights.slice(2),
     ...onboardingDocs.cards.map(c => ({
       label: c.tag,
       title: c.title,
@@ -304,24 +305,24 @@ export default function WorkPage() {
 
   return (
     <>
-      <section className="section-body" id="projects">
-        <div className="content-wrap--wide">
+      <section className="section-body" id="latest-websites">
+        <div className="content-wrap">
           <div className="wp-page-header">
             <div className="wp-hero-eyebrow">Work</div>
-            <h1 className="wp-hero-title">I still build.</h1>
+            <h1 className="wp-hero-title">Latest websites.</h1>
           </div>
           <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Production Systems &amp; Applied AI</div>
-            <h2 className="wp-section-title">Build → architecture → product → adoption.</h2>
+            <div className="wp-section-eyebrow">Recent Client Work</div>
+            <h2 className="wp-section-title">From first prompt to production.</h2>
           </div>
-
-          {featured.map(p => (
-            <ProjectCard key={p.id} project={p} isFeatured={true} />
-          ))}
-
-          <div className="wp-grid">
-            {rest.map(p => (
-              <ProjectCard key={p.id} project={p} isFeatured={false} />
+          <div style={{ display: "grid", gap: 72 }}>
+            {latestWebsites.map((item, i) => (
+              <PortalRow
+                key={item.title}
+                item={item}
+                screenshot={PORTAL_SCREENSHOTS[item.title]}
+                index={i}
+              />
             ))}
           </div>
         </div>
@@ -352,7 +353,26 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section className="section-body" id="docs">
+      <section className="section-body" id="projects">
+        <div className="content-wrap--wide">
+          <div className="wp-section-header">
+            <div className="wp-section-eyebrow">Production Systems &amp; Applied AI</div>
+            <h2 className="wp-section-title">Build → architecture → product → adoption.</h2>
+          </div>
+
+          {featured.map(p => (
+            <ProjectCard key={p.id} project={p} isFeatured={true} />
+          ))}
+
+          <div className="wp-grid">
+            {rest.map(p => (
+              <ProjectCard key={p.id} project={p} isFeatured={false} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-body section-alt" id="docs">
         <div className="content-wrap">
           <div className="wp-section-header">
             <div className="wp-section-eyebrow">Developer Platforms &amp; Adoption</div>
