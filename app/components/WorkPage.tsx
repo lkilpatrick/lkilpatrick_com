@@ -6,10 +6,10 @@ import { onboardingDocs } from "../data/portfolio";
 // ─── Docs Section ─────────────────────────────────────────────────────────────
 
 const PORTAL_SCREENSHOTS: Record<string, string> = {
-  "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.jpg",
+  "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.png",
   "Mise & Co.":                      "/screenshots/work-mise-and-co.jpg",
-  "Mia Kingtide":                    "/screenshots/builder-mia-kingtide.jpg",
-  "Kilpatrick for Sand City Council": "/screenshots/work-sand-city-council.jpg",
+  "Mia Kingtide":                    "/screenshots/work-mia-kingtide.png",
+  "Kilpatrick for Sand City Council": "/screenshots/work-sand-city-council.png",
   "Nutanix.dev — Developer Portal":  "/screenshots/nutanix-dev.jpg",
   "gitStream Documentation Portal":  "/screenshots/gitstream-docs.jpg",
   "Harness CI Release Notes":        "/screenshots/harness-ci.jpg",
