@@ -1,0 +1,28 @@
+name: Capture Sand City live website screenshot
+on:
+  push:
+    branches: [improve/portfolio-story-mia-site-20261118]
+    paths:
+      - '.github/workflows/capture-sand-city.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture real live website with Chrome
+        run: |
+          set -eu
+          mkdir -p public/screenshots
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
+          "$CHROME" --headless --no-sandbox --disable-gpu --hide-scrollbars --window-size=1440,900 --virtual-time-budget=9000 --screenshot=public/screenshots/work-sand-city-council.png https://kilpatrick4sandcity.org/
+          test "$(stat -c%s public/screenshots/work-sand-city-council.png)" -gt 30000
+      - name: Commit screenshot to working branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/screenshots/work-sand-city-council.png
+          git commit -m "Add real live screenshot of Sand City website" || exit 0
+          git push
