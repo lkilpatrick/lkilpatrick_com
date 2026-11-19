@@ -169,8 +169,8 @@ export const selectedSystems = [
     title: "Mia Kingtide Ocean Adventures",
     subtitle: "Books, Games, Audiobooks, and Ocean Education",
     description:
-      "Built an original IP from zero across books, interactive games, audiobooks, YouTube, and a commerce ecosystem. 4 books published, 1,300+ copies sold, audiobooks on Spotify and INaudio, OceanMatch browser game, and a TikTok/YouTube audience built around ocean storytelling.",
-    highlights: ["4 published books", "Browser game", "Audiobooks", "Audience building"],
+      "Built an original ocean-education publishing brand, including four novels, a coloring book, Ocean Explorer activity books, audiobooks, reader resources, games and an owned commerce website. More than 1,300 copies sold, with the website connecting discovery, education and purchase.",
+    highlights: ["Original publishing IP", "Astro + Cloudflare website", "Educator resources", "Commerce"],
     link: "https://miakingtide.com/",
     proof: "Content systems. Brand building. Creative execution at scale.",
     screenshot: "/screenshots/builder-mia-kingtide.jpg",
@@ -257,12 +257,24 @@ export const contentPreviews = [
 export const onboardingDocs = {
   highlights: [
     {
+      label: "Publishing Platform · Ocean Education · Commerce",
+      title: "Mia Kingtide",
+      link: "https://miakingtide.com/",
+      org: "MIA KINGTIDE — INDEPENDENT PUBLISHING",
+      description:
+        "Built and operate the complete digital home for the Mia Kingtide ocean-adventure universe: an Astro and TypeScript site deployed on Cloudflare Workers, with a book catalog, reader and educator resources, downloadable activity samples, a connected storefront, and integrations involving Supabase and Stripe. The site connects novels, audiobooks, games, coloring and Ocean Explorer activity books into one audience journey. It demonstrates the same product and adoption discipline I bring to developer platforms: useful content, clear onboarding, direct distribution and systems built for repeatable growth.",
+      extraLink: {
+        text: "Explore the Ocean Explorer Books",
+        href: "https://miakingtide.com/books/",
+      },
+    },
+    {
       label: "AI-Assisted Development — Built In 10 Days",
       title: "Sanctuary Cruises",
       link: "https://sanctuarycruises.com",
       org: "SANCTUARY CRUISES",
       description:
-        "Complete website rebuild for Monterey Bay's premier whale watching company, built and launched in just 10 days using AI-assisted development. TypeScript and Astro static site with Supabase CMS, deployed on Cloudflare with GitHub Actions. The AI-powered Captain's Log system lets crew upload photos from the boat and automatically generates sighting reports using Gemini AI — publishing to website and social channels simultaneously. Built using Windsurf, Cursor, and VS Code as AI development partners.",
+        "Rebuilt and launched Sanctuary Cruises' website in 10 days, then developed the AI-assisted Captain's Log workflow for crew photos, wildlife reports and website/social publishing. Sanctuary reported 98% year-over-year growth during the broader marketing transformation. Built with Astro, TypeScript, Supabase, Gemini AI, Cloudflare and GitHub Actions; the growth is a business result, not a claim of website-only attribution.",
       extraLink: {
         text: "AI-Powered Captain's Log System",
         href: "https://sanctuarycruises.com/captains-log",
