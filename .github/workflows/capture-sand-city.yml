@@ -28,5 +28,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/screenshots/work-sand-city-council.png public/screenshots/work-sanctuary-cruises.png public/screenshots/work-mia-kingtide.png
-          git commit -m "Add real live screenshot of Sand City website" || exit 0
-          git push
+          git commit -m "Refresh live website screenshots for Work portfolio" || exit 0
+          git pull --rebase origin improve/portfolio-story-mia-site-20261118
+          git push origin HEAD:improve/portfolio-story-mia-site-20261118
