@@ -50,6 +50,9 @@ export default function Hero() {
             </p>
 
             <div className="hero-proof-chips">
+              <a href="/impact" className="hero-chip hero-chip--bold">Atlassian Marketplace: $500K → $250M</a>
+              <a href="/work#latest-websites" className="hero-chip hero-chip--amber">Sanctuary Cruises: 98% YoY Business Growth</a>
+              <a href="/work#docs" className="hero-chip hero-chip--blue">Built nutanix.dev from Zero</a>
               <a href="/about#early-years" className="hero-chip hero-chip--blue">Building Technology Since 1996</a>
               <a href="/about#ai-leadership" className="hero-chip hero-chip--blue">{aiLeadership.shortCredential}</a>
               <a href="/content#talks" className="hero-chip hero-chip--bold">15K+ People Presented To</a>
