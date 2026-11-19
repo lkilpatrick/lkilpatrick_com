@@ -6,7 +6,7 @@ import { onboardingDocs } from "../data/portfolio";
 // ─── Docs Section ─────────────────────────────────────────────────────────────
 
 const PORTAL_SCREENSHOTS: Record<string, string> = {
-  "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.png",
+  "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.jpg",
   "Mise & Co.":                      "/screenshots/work-mise-and-co.jpg",
   "Mia Kingtide":                    "/screenshots/work-mia-kingtide.png",
   "Kilpatrick for Sand City Council": "/screenshots/work-sand-city-council.png",
