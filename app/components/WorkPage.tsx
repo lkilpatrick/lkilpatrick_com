@@ -115,6 +115,7 @@ const PROJECTS: Project[] = [
 const PORTAL_SCREENSHOTS: Record<string, string> = {
   "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.jpg",
   "Mise & Co.":                      "/screenshots/work-mise-and-co.jpg",
+  "Mia Kingtide":                    "/screenshots/builder-mia-kingtide.jpg",
   "Nutanix.dev — Developer Portal":  "/screenshots/nutanix-dev.jpg",
   "gitStream Documentation Portal":  "/screenshots/gitstream-docs.jpg",
   "Harness CI Release Notes":        "/screenshots/harness-ci.jpg",
@@ -157,15 +158,15 @@ function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: bo
             <div className="wp-featured-context">{project.context}</div>
             <div className="wp-wbm">
               <div className="wp-wbm-row">
-                <span className="wp-wbm-label">What</span>
+                <span className="wp-wbm-label">Problem</span>
                 <span className="wp-wbm-text">{project.what}</span>
               </div>
               <div className="wp-wbm-row">
-                <span className="wp-wbm-label">Built</span>
+                <span className="wp-wbm-label">Solution</span>
                 <span className="wp-wbm-text">{project.built}</span>
               </div>
               <div className="wp-wbm-row wp-wbm-row--matters">
-                <span className="wp-wbm-label">Why</span>
+                <span className="wp-wbm-label">Impact</span>
                 <span className="wp-wbm-text">{project.matters}</span>
               </div>
             </div>
@@ -291,9 +292,9 @@ export default function WorkPage() {
   const featured = PROJECTS.filter(p => p.featured);
   const rest     = PROJECTS.filter(p => !p.featured);
 
-  const latestWebsites = onboardingDocs.highlights.slice(0, 2);
+  const latestWebsites = onboardingDocs.highlights.slice(0, 3);
   const allDocs = [
-    ...onboardingDocs.highlights.slice(2),
+    ...onboardingDocs.highlights.slice(3),
     ...onboardingDocs.cards.map(c => ({
       label: c.tag,
       title: c.title,
@@ -309,13 +310,13 @@ export default function WorkPage() {
         <div className="content-wrap">
           <div className="wp-page-header">
             <div className="wp-hero-eyebrow">Work</div>
-            <h1 className="wp-hero-title">Latest websites.</h1>
+            <h1 className="wp-hero-title">Products, platforms, and adoption.</h1>
           </div>
           <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Recent Client Work</div>
-            <h2 className="wp-section-title">From first prompt to production.</h2>
+            <div className="wp-section-eyebrow">Recent Work &amp; Independent Builds</div>
+            <h2 className="wp-section-title">What I built, who it serves, and why it matters.</h2>
           </div>
-          <div style={{ display: "grid", gap: 72 }}>
+          <div style={{ display: "grid", gap: 52 }}>
             {latestWebsites.map((item, i) => (
               <PortalRow
                 key={item.title}
@@ -465,7 +466,7 @@ export default function WorkPage() {
         }
         .wp-wbm-row {
           display: grid;
-          grid-template-columns: 44px 1fr;
+          grid-template-columns: 66px 1fr;
           gap: 16px;
           align-items: start;
         }
