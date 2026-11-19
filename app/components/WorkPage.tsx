@@ -1,114 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { aiCoursework, aiLeadership, onboardingDocs } from "../data/portfolio";
-
-// ─── Projects Section ────────────────────────────────────────────────────────
-
-type StatusType = "production" | "development";
-
-type Project = {
-  id: number;
-  tag: string;
-  tagColor: string;
-  title: string;
-  subtitle: string;
-  context: string;
-  what: string;
-  built: string;
-  matters: string;
-  stack: string[];
-  link: string | null;
-  featured?: boolean;
-  status: StatusType;
-  screenshot?: string;
-  roadmap?: {
-    architecture?: string;
-    evaluationMetrics?: string;
-    retrieval?: string;
-    documentIngestion?: string;
-    auditLogging?: string;
-    deployment?: string;
-    productization?: string;
-  };
-};
-
-const PROJECTS: Project[] = [
-  {
-    id: 2,
-    tag: "Flutter App",
-    tagColor: "purple",
-    title: "Tech Challenge Kenya",
-    subtitle: "National STEM Competition Platform",
-    context: "The Tech Interactive · 2023–present · Lead Developer",
-    what: "Full-stack platform built for Kenya's national STEM competition — students, schools, teams, and judges across the entire country. Built for The Tech Interactive.",
-    built: "15 modules in Flutter Web + Supabase: multi-role auth with RBAC, row-level security, audit logs, survey engine, team management, live scoring, bulk communications, and national reporting. Zero to production-grade, single developer.",
-    matters: "Complex domain. National scale. Real stakes. 15 modules, 5 RBAC roles, row-level security, append-only audit logging — production-grade architecture built by a single developer.",
-    stack: ["Flutter Web", "Supabase", "Riverpod", "PostgreSQL RLS", "Multi-role RBAC", "15 modules"],
-    link: null,
-    featured: true,
-    status: "development",
-  },
-  {
-    id: 4,
-    tag: "Full-Stack SaaS",
-    tagColor: "teal",
-    title: "OpenSTR",
-    subtitle: "Short-Term Rental Operations Platform",
-    context: "Personal · 2024–present · Solo Builder",
-    what: "Full-stack platform that handles the real operational workflow between checkout and guest-ready. Scheduling, checklists, photo verification, and cleaner coordination across properties — built from the problems I ran into operating my own Airbnb.",
-    built: "TypeScript and Express API, React admin panel, Flutter mobile app, PostgreSQL. Marketing site on Firebase. Core platform designed to run locally on a home server for full data control and security. Includes a MkDocs-based developer portal with API reference and self-hosting guides.",
-    matters: "Running on a real property, solving a real operational gap. Full-stack depth across web, mobile, backend, and docs — built from a problem I actually had.",
-    stack: ["TypeScript", "Express", "React", "Flutter", "PostgreSQL", "Firebase", "MkDocs", "Self-hosted"],
-    link: "https://openstr.dev",
-    featured: true,
-    status: "production",
-  },
-  {
-    id: 1,
-    tag: "AI + Data Engineering",
-    tagColor: "green",
-    title: "Monterey Bay Morning Report",
-    subtitle: "Daily Ocean Intelligence System",
-    context: "Personal · 2024–present · Solo Builder",
-    what: "A daily intelligence email aggregating live data from 8+ sources across Monterey Bay — tides, surf conditions, NOAA buoys, weather forecasts, fishing regulations, marine species, and boat telemetry — delivered every morning before sunrise.",
-    built: "Modular Python system on the OpenClaw agent framework, orchestrated by cron. Each data source is independently testable and deployable. Sources include NOAA, NDBC, NWS, Surfline, Victron VRM, iNaturalist, CDFW regulations, and an AI-generated fishing brief using 250+ GPS waypoints.",
-    matters: "A real data engineering system running in production every day. Integrates 8+ live sources — several undocumented or non-standard — into one useful product.",
-    stack: ["Python", "OpenClaw", "Cron", "NOAA APIs", "NDBC Buoys", "Victron VRM", "iNaturalist", "GPX Parsing", "Email Delivery"],
-    link: "https://pitterpatterdiving.com/i-built-an-ai-agent-that-monitors-my-boats-while-i-sleep-and-you-can-use-it-too/",
-    featured: true,
-    status: "production",
-  },
-  {
-    id: 3,
-    tag: "Race Management",
-    tagColor: "teal",
-    title: "MPYC RaceDay",
-    subtitle: "Real-Time Sailing Race Platform",
-    context: "Monterey Peninsula Yacht Club · 2023–present · Solo Builder",
-    what: "Real-time race management platform for MPYC — 5 user roles, 57 courses, live weather from 11 stations, GPS tracking, and automated scoring published to Clubspot.",
-    built: "Flutter + Firebase: 25+ Firestore collections, Cloud Functions fetching weather every 60 seconds, FCM push notifications, GPS race tracking, Clubspot API sync. Android, iOS, and Web from a single codebase.",
-    matters: "One developer. SaaS-class complexity. Built for a real club solving a real problem because commercial tools cost thousands per year and still did not do what we needed.",
-    stack: ["Flutter 3.x", "Firebase", "Cloud Functions", "GPS tracking", "11 weather stations", "Clubspot API"],
-    link: null,
-    status: "development",
-  },
-  {
-    id: 5,
-    tag: "Civic AI",
-    tagColor: "orange",
-    title: "SANDI",
-    subtitle: "AI-Assisted Municipal Planning",
-    context: "Independent Prototype · In Development",
-    what: "An AI-assisted planning submission system designed for resource-constrained municipalities. SANDI evaluates submission completeness against jurisdiction-specific source material, provides source-linked feedback, and preserves professional planning judgment for discretionary decisions.",
-    built: "Product concept · Architecture · AI engineering · Full-stack development. The implementation is in development; architecture, evaluation, retrieval, ingestion, audit logging, and deployment details will be added as they are validated.",
-    matters: "Independently developed. Not a City of Sand City system or City-sponsored project.",
-    stack: ["AI-assisted review", "Source-linked retrieval", "Document ingestion", "Auditability", "Human judgment"],
-    link: null,
-    status: "development",
-    roadmap: {},
-  },
-];
+import { onboardingDocs } from "../data/portfolio";
 
 // ─── Docs Section ─────────────────────────────────────────────────────────────
 
@@ -116,124 +9,12 @@ const PORTAL_SCREENSHOTS: Record<string, string> = {
   "Sanctuary Cruises":               "/screenshots/work-sanctuary-cruises.jpg",
   "Mise & Co.":                      "/screenshots/work-mise-and-co.jpg",
   "Mia Kingtide":                    "/screenshots/builder-mia-kingtide.jpg",
+  "Kilpatrick for Sand City Council": "/screenshots/work-sand-city-council.jpg",
   "Nutanix.dev — Developer Portal":  "/screenshots/nutanix-dev.jpg",
   "gitStream Documentation Portal":  "/screenshots/gitstream-docs.jpg",
   "Harness CI Release Notes":        "/screenshots/harness-ci.jpg",
   "OpenSTR":                         "/screenshots/openstr.jpg",
-  "Pitter Patter Diving":            "/screenshots/builder-pitterpatter-blog.jpg",
 };
-
-const TAG_COLORS: Record<string, { color: string; bg: string; border: string }> = {
-  purple: { color: "var(--color-primary)",       bg: "rgba(12,74,110,0.07)",    border: "rgba(12,74,110,0.2)" },
-  teal:   { color: "var(--color-primary-light)", bg: "rgba(3,105,161,0.07)",    border: "rgba(3,105,161,0.2)" },
-  blue:   { color: "var(--color-primary-light)", bg: "rgba(3,105,161,0.07)",    border: "rgba(3,105,161,0.2)" },
-  orange: { color: "var(--color-accent)",        bg: "rgba(217,119,6,0.08)",    border: "rgba(217,119,6,0.2)" },
-  green:  { color: "var(--color-success)",       bg: "rgba(5,150,105,0.08)",    border: "rgba(5,150,105,0.2)" },
-};
-
-function StatusBadge({ status }: { status: StatusType }) {
-  if (status === "production") {
-    return <span className="wp-status-badge wp-status-production">● In Production</span>;
-  }
-  return <span className="wp-status-badge wp-status-development">○ In Development</span>;
-}
-
-function ProjectCard({ project, isFeatured }: { project: Project; isFeatured: boolean }) {
-  const tc = TAG_COLORS[project.tagColor] ?? TAG_COLORS.blue;
-
-  if (isFeatured) {
-    const hasScreenshot = project.screenshot;
-    return (
-      <div className="wp-featured">
-        <div className={`wp-featured-inner${hasScreenshot ? " wp-featured-inner--with-screenshot" : ""}`}>
-          <div className="wp-featured-left">
-            <div className="wp-featured-toprow">
-              <span className="wp-tag" style={{ color: tc.color, background: tc.bg, border: `1px solid ${tc.border}` }}>
-                {project.tag}
-              </span>
-              <StatusBadge status={project.status} />
-            </div>
-            <h3 className="wp-featured-title">{project.title}</h3>
-            <div className="wp-featured-sub">{project.subtitle}</div>
-            <div className="wp-featured-context">{project.context}</div>
-            <div className="wp-wbm">
-              <div className="wp-wbm-row">
-                <span className="wp-wbm-label">Problem</span>
-                <span className="wp-wbm-text">{project.what}</span>
-              </div>
-              <div className="wp-wbm-row">
-                <span className="wp-wbm-label">Solution</span>
-                <span className="wp-wbm-text">{project.built}</span>
-              </div>
-              <div className="wp-wbm-row wp-wbm-row--matters">
-                <span className="wp-wbm-label">Impact</span>
-                <span className="wp-wbm-text">{project.matters}</span>
-              </div>
-            </div>
-          </div>
-          <div className="wp-featured-right">
-            {hasScreenshot ? (
-              <div className="wp-featured-screenshot">
-                <Image
-                  src={project.screenshot!}
-                  alt={`Screenshot of ${project.title}`}
-                  width={400}
-                  height={250}
-                  style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px" }}
-                />
-                <div className="wp-stack-label" style={{ marginTop: "20px" }}>Stack &amp; Scope</div>
-                <div className="wp-stack">
-                  {project.stack.map(s => <span key={s} className="wp-chip">{s}</span>)}
-                </div>
-              </div>
-            ) : (
-              <>
-                <div className="wp-stack-label">Stack &amp; Scope</div>
-                <div className="wp-stack">
-                  {project.stack.map(s => <span key={s} className="wp-chip">{s}</span>)}
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  const card = (
-    <div className="wp-card">
-      <div className="wp-card-top">
-        <span className="wp-tag" style={{ color: tc.color, background: tc.bg, border: `1px solid ${tc.border}` }}>
-          {project.tag}
-        </span>
-        <StatusBadge status={project.status} />
-      </div>
-      <h3 className="wp-card-title">{project.title}</h3>
-      <div className="wp-card-sub">{project.subtitle}</div>
-      <div className="wp-card-context">{project.context}</div>
-      <div className="wp-wbm-card">
-        <div className="wp-wbm-card-row">
-          <span className="wp-wbm-label">What</span>
-          <span className="wp-wbm-text">{project.what}</span>
-        </div>
-        <div className="wp-wbm-card-row">
-          <span className="wp-wbm-label">Built</span>
-          <span className="wp-wbm-text">{project.built}</span>
-        </div>
-      </div>
-      <div className="wp-stack" style={{ marginTop: "auto", paddingTop: 16 }}>
-        {project.stack.map(s => <span key={s} className="wp-chip">{s}</span>)}
-      </div>
-      <div className="wp-proof">{project.matters}</div>
-    </div>
-  );
-
-  return project.link ? (
-    <a href={project.link} target="_blank" rel="noopener noreferrer" className="wp-card-link">
-      {card}
-    </a>
-  ) : <div>{card}</div>;
-}
 
 function PortalRow({ item, screenshot, index }: {
   item: { label: string; title: string; link: string; org: string; description: string; primaryLinkText?: string; extraLink?: { text: string; href: string }; secondaryLink?: { text: string; href: string } };
@@ -289,12 +70,9 @@ function PortalRow({ item, screenshot, index }: {
 }
 
 export default function WorkPage() {
-  const featured = PROJECTS.filter(p => p.featured);
-  const rest     = PROJECTS.filter(p => !p.featured);
-
-  const latestWebsites = onboardingDocs.highlights.slice(0, 3);
+  const latestWebsites = onboardingDocs.highlights.slice(0, 4);
   const allDocs = [
-    ...onboardingDocs.highlights.slice(3),
+    ...onboardingDocs.highlights.slice(4).filter(item => item.title !== "Pitter Patter Diving"),
     ...onboardingDocs.cards.map(c => ({
       label: c.tag,
       title: c.title,
@@ -324,50 +102,6 @@ export default function WorkPage() {
                 screenshot={PORTAL_SCREENSHOTS[item.title]}
                 index={i}
               />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-body section-alt" id="ai-cto-coursework">
-        <div className="content-wrap">
-          <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Executive AI Leadership</div>
-            <h2 className="wp-section-title">University of Waterloo AI-CTO coursework.</h2>
-            <p className="wp-section-intro">
-              {aiLeadership.description} These selected course artifacts show the analysis behind the credential: architecture choices, governance, financial discipline, operating models, and production scaling.
-            </p>
-          </div>
-          <div className="wp-coursework-grid">
-            {aiCoursework.map(item => (
-              <a key={item.file} href={item.file} download={item.download} className="wp-coursework-card">
-                <div className="wp-coursework-icon">PDF</div>
-                <div className="wp-coursework-body">
-                  <div className="wp-coursework-meta">{item.module} · {item.pages} pages</div>
-                  <h3 className="wp-coursework-title">{item.title}</h3>
-                  <p className="wp-coursework-desc">{item.description}</p>
-                  <span className="wp-coursework-download">Download class work ↓</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-body" id="projects">
-        <div className="content-wrap--wide">
-          <div className="wp-section-header">
-            <div className="wp-section-eyebrow">Production Systems &amp; Applied AI</div>
-            <h2 className="wp-section-title">Build → architecture → product → adoption.</h2>
-          </div>
-
-          {featured.map(p => (
-            <ProjectCard key={p.id} project={p} isFeatured={true} />
-          ))}
-
-          <div className="wp-grid">
-            {rest.map(p => (
-              <ProjectCard key={p.id} project={p} isFeatured={false} />
             ))}
           </div>
         </div>
