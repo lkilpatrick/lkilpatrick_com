@@ -1,73 +1,8 @@
+# Buildkite deployment intentionally disabled.
+# Firebase Hosting production and PR preview deployments are now handled by
+# .github/workflows/firebase-hosting-merge.yml and
+# .github/workflows/firebase-hosting-pull-request.yml.
+# Leave a no-op pipeline so an existing Buildkite webhook cannot deploy.
 steps:
-  - label: ":nextjs: Build and lint"
-    key: build
-    commands:
-      - "npm ci"
-      - "npm run lint"
-      - "npm run build"
-      - "tar -czf site.tgz -C out ."
-    artifact_paths:
-      - "site.tgz"
-    timeout_in_minutes: 10
-    retry:
-      automatic:
-        - exit_status: -1
-          limit: 2
-
-  - label: ":firebase: Deploy preview"
-    key: deploy-preview
-    depends_on: build
-    if: build.pull_request.id != null
-    secrets:
-      - FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM
-    commands:
-      - "npm install --global firebase-tools@15.9.1"
-      - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
-      - "export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json"
-      - "buildkite-agent artifact download site.tgz . --step build"
-      - "mkdir -p out && tar -xzf site.tgz -C out"
-      - "test -f out/index.html"
-      - "firebase hosting:channel:deploy pr-$BUILDKITE_PULL_REQUEST --project lkilpatrickcom --non-interactive --expires 7d"
-    timeout_in_minutes: 10
-    retry:
-      automatic:
-        - exit_status: -1
-          limit: 2
-        - exit_status: 1
-          limit: 1
-
-  - label: ":firebase: Deploy to production"
-    key: deploy-production
-    depends_on: build
-    if: build.branch == "main" && build.pull_request.id == null
-    concurrency: 1
-    concurrency_group: "lkilpatrickcom-deploy"
-    secrets:
-      - FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM
-    commands:
-      - "npm install --global firebase-tools@15.9.1"
-      - 'echo "$$FIREBASE_SERVICE_ACCOUNT_LKILPATRICKCOM" > /tmp/firebase-service-account.json'
-      - "export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json"
-      - "buildkite-agent artifact download site.tgz . --step build"
-      - "mkdir -p out && tar -xzf site.tgz -C out"
-      - "test -f out/index.html"
-      - "firebase deploy --only hosting --project lkilpatrickcom --non-interactive"
-    timeout_in_minutes: 10
-    retry:
-      automatic:
-        - exit_status: -1
-          limit: 2
-        - exit_status: 1
-          limit: 1
-
-# Future improvements:
-# - Add dependency/build caching once a cache backend is configured, then split
-#   install, lint, and build into separate parallel steps. The Buildkite cache
-#   plugin needs a writable backend (S3, GCS, or a pre-created fs path set via
-#   BUILDKITE_PLUGIN_FS_CACHE_FOLDER); the default /var/cache/buildkite path may
-#   not exist on the agent.
-# - Switch the Firebase service account JSON to Buildkite OIDC + GCP Workload Identity
-#   Federation for short-lived credentials.
-# - Add a `notify` block (email/Slack) for failed production deploys.
-# - Deploy Cloud Functions as well if you start using `functions/` in production:
-#   `firebase deploy --project lkilpatrickcom --non-interactive`.
+  - label: ":no_entry: Firebase deployment moved to GitHub Actions"
+    command: "echo 'Buildkite deployment disabled; use GitHub Actions for Firebase Hosting.'"
