@@ -103,7 +103,7 @@ export default function AboutPage() {
               <a href="https://hazelcast.com" target="_blank" rel="noopener noreferrer" className="about-inline-link">Hazelcast</a> that
               meant developer portals, onboarding flows, and programs that turned engineers into
               advocates. Outside work, it means the{" "}
-              <a href="https://pitterpatterdiving.com/shop/" target="_blank" rel="noopener noreferrer" className="about-inline-link">Mia Kingtide Ocean Adventures</a>{" "}
+              <a href="https://miakingtide.com/books/" target="_blank" rel="noopener noreferrer" className="about-inline-link">Mia Kingtide Ocean Adventures</a>{" "}
               series, where a 12-year-old dives Monterey Bay, sails to the Sea of Cortez, and
               fights to protect the ocean. The marine biology is reviewed by scientists at{" "}
               <a href="https://www.mbari.org" target="_blank" rel="noopener noreferrer" className="about-inline-link">MBARI</a> and{" "}
@@ -121,8 +121,8 @@ export default function AboutPage() {
                 <div className="about-stat-label">Started Building</div>
               </div>
               <div className="about-stat">
-                <div className="about-stat-value">4</div>
-                <div className="about-stat-label">Books Published</div>
+                <div className="about-stat-value">7</div>
+                <div className="about-stat-label">Featured Books Published</div>
               </div>
               <div className="about-stat">
                 <div className="about-stat-value">2</div>
@@ -234,8 +234,8 @@ export default function AboutPage() {
           <div className="about-section-eyebrow">Books &amp; IP</div>
           <h2 className="about-section-title">Mia Kingtide Ocean Adventures</h2>
           <p className="about-section-intro">
-            An original conservation IP built from zero. Four novels, two illustrated children&apos;s books,
-            four audiobooks on Spotify — reviewed by scientists at MBARI, Hopkins Marine Station, and Moss
+            An original conservation IP built from zero. Four novels, a coloring book,
+            Ocean Explorer activity books and four audiobooks on Spotify — reviewed by scientists at MBARI, Hopkins Marine Station, and Moss
             Landing Marine Labs, sailed aboard the restored Western Flyer to the Sea of Cortez, and
             featured in Monterey County NOW.
           </p>
@@ -259,13 +259,14 @@ export default function AboutPage() {
 
               <div className="about-mia-stats">
                 <div className="about-mini-stat"><strong>4</strong> novels</div>
-                <div className="about-mini-stat"><strong>2</strong> illustrated children&apos;s books</div>
+                <div className="about-mini-stat"><strong>3</strong> Ocean Explorer books (Lab coming Nov 21)</div>
+                <div className="about-mini-stat"><strong>1</strong> ocean coloring book</div>
                 <div className="about-mini-stat"><strong>4</strong> audiobooks on Spotify</div>
                 <div className="about-mini-stat"><strong>1,300+</strong> copies sold</div>
               </div>
 
               <div className="about-mia-links">
-                <a href="https://pitterpatterdiving.com/shop/" target="_blank" rel="noopener noreferrer" className="about-pill-primary">
+                <a href="https://miakingtide.com/books/" target="_blank" rel="noopener noreferrer" className="about-pill-primary">
                   Buy the Books ↗
                 </a>
                 <a href="https://www.amazon.com/stores/Luke-Kilpatrick/author/B0DNBNF2ZK" target="_blank" rel="noopener noreferrer" className="about-pill">
@@ -295,55 +296,51 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* ── Book cover grid ── */}
+          {/* ── Novels ── */}
+          <div className="about-section-eyebrow" style={{ marginTop: 42 }}>The Four Novels</div>
           <div className="about-mia-covers">
             {[
-              { num: "01", title: "The Octopus's Gift", price: "$12.99", img: "/screenshots/mia-book-1-octopus-gift.jpg", link: "https://miakingtide.com/books/the-octopus-gift", amazon: "https://www.amazon.com/dp/B0DSZVMYD3", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
-              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "/screenshots/mia-book-2-guardian-coast.jpg", link: "https://miakingtide.com/books/guardian-of-the-coast", amazon: "https://www.amazon.com/dp/B0DVT5PBQP", desc: "California coastline. New threats. Growing responsibility." },
-              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "/screenshots/mia-book-3-sea-of-cortez.jpg", link: "https://miakingtide.com/books/journey-to-the-sea-of-cortez", amazon: "https://www.amazon.com/dp/B0F1LY4HPT", desc: "Two months aboard Pegasus. Inspired by Steinbeck and Ricketts." },
-              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "/screenshots/mia-book-4-vanishing-sanctuary.jpg", link: "https://miakingtide.com/books/the-vanishing-sanctuary", amazon: "https://www.amazon.com/dp/B0FY22H14T", desc: "Saving Monterey Bay. Innovation vs. exploitation." },
+              { num: "01", title: "The Octopus' Gift", price: "$12.99", img: "https://miakingtide.com/media/books/the-octopus-gift.jpg", link: "https://miakingtide.com/books/the-octopus-gift/", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
+              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "https://miakingtide.com/media/books/guardian-of-the-coast.jpg", link: "https://miakingtide.com/books/guardian-of-the-coast/", desc: "California coastline. New threats. Growing responsibility." },
+              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "https://miakingtide.com/media/books/journey-to-the-sea-of-cortez.jpg", link: "https://miakingtide.com/books/journey-to-the-sea-of-cortez/", desc: "A voyage aboard Pegasus, following Steinbeck and Ricketts." },
+              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "https://miakingtide.com/media/books/the-vanishing-sanctuary.jpg", link: "https://miakingtide.com/books/the-vanishing-sanctuary/", desc: "Protecting Monterey Bay from deep-sea exploitation." },
             ].map((book) => (
               <div key={book.num} className="about-book-card">
                 <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
-                  <Image src={book.img} alt={book.title} width={220} height={350} className="about-book-cover" />
+                  <Image src={book.img} alt={`Cover of ${book.title}`} width={220} height={350} unoptimized className="about-book-cover" />
                   <div className="about-book-num">{book.num}</div>
                 </a>
                 <div className="about-book-meta">
                   <div className="about-book-title">{book.title}</div>
                   <div className="about-book-desc">{book.desc}</div>
                   <div className="about-book-actions">
-                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">Buy {book.price} ↗</a>
-                    <a href={book.amazon} target="_blank" rel="noopener noreferrer" className="about-book-amz">Amazon →</a>
+                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">Explore / Buy {book.price} ↗</a>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* ── Picture books ── */}
-          <div className="about-section-eyebrow" style={{ marginTop: 48 }}>Illustrated Children&apos;s Books</div>
-          <div className="about-mia-covers about-mia-covers--landscape">
+          {/* ── Coloring book and Ocean Explorer series ── */}
+          <div className="about-section-eyebrow" style={{ marginTop: 48 }}>Coloring &amp; Ocean Explorer Books</div>
+          <p className="about-section-intro">Screen-free ways for young readers to explore ocean life, from coloring scenes to hands-on observation, puzzles and science experiments.</p>
+          <div className="about-mia-covers">
             {[
-              { num: "PB1", title: "The Octopus' Gift: Where it all began", price: "$9.99", img: "/screenshots/mia-book-pb-self-confidence.jpg", link: "https://www.amazon.com/Mia-Kingtide-Self-Confidence-Illustrated-Adventures-ebook/dp/B0GGDFGHLJ/", amazon: "https://www.amazon.com/Mia-Kingtide-Self-Confidence-Illustrated-Adventures-ebook/dp/B0GGDFGHLJ/", desc: "A beautifully illustrated picture book for younger readers. Mia meets a magical octopus and discovers the power of self-confidence." },
-              { num: "PB2", title: "The Octopus' Gift: The Secret of the Shell", price: "$9.99", img: "/screenshots/mia-book-pb-discovery.jpg", link: "https://www.amazon.com/Mia-Kingtide-Discovery-Illustrated-Adventures-ebook/dp/B0FTXFRJLF/", amazon: "https://www.amazon.com/Mia-Kingtide-Discovery-Illustrated-Adventures-ebook/dp/B0FTXFRJLF/", desc: "Mia dives deeper into the mystery of the glowing shell. A vibrant illustrated adventure celebrating curiosity and ocean discovery." },
+              { num: "COLOR", title: "Ocean Adventure Coloring Book", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-adventure-coloring-book.jpg", link: "https://miakingtide.com/books/activity/ocean-adventure-coloring-book/", desc: "Color 90 pages of marine adventures inspired by Mia's stories.", comingSoon: false },
+              { num: "EXP 1", title: "Ocean Explorer Activities", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-explorer-activities.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-activities/", desc: "80 puzzles and games across four ocean habitats, with real marine science.", comingSoon: false },
+              { num: "EXP 2", title: "Ocean Explorer Field Log", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-explorer-field-log.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-field-log/", desc: "20 field missions and 17 adventure logs for discoveries at the water's edge.", comingSoon: false },
+              { num: "EXP 3", title: "Ocean Explorer Lab", price: "", img: "https://miakingtide.com/media/covers/ocean-explorer-lab.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-lab/", desc: "20 at-home ocean science experiments. Coming November 21, 2026.", comingSoon: true },
             ].map((book) => (
-              <div key={book.num} className="about-book-card about-book-card--landscape">
+              <div key={book.num} className="about-book-card">
                 <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
-                  <Image
-                    src={book.img}
-                    alt={book.title}
-                    width={340}
-                    height={220}
-                    className="about-book-cover about-book-cover--landscape"
-                  />
+                  <Image src={book.img} alt={`Cover of ${book.title}`} width={220} height={350} unoptimized className="about-book-cover" />
                   <div className="about-book-num">{book.num}</div>
                 </a>
                 <div className="about-book-meta">
                   <div className="about-book-title">{book.title}</div>
                   <div className="about-book-desc">{book.desc}</div>
                   <div className="about-book-actions">
-                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">Buy {book.price} ↗</a>
-                    <a href={book.amazon} target="_blank" rel="noopener noreferrer" className="about-book-amz">Amazon →</a>
+                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">{book.comingSoon ? "Coming soon · Preview ↗" : `Explore / Buy ${book.price} ↗`}</a>
                   </div>
                 </div>
               </div>
