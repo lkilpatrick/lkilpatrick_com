@@ -169,8 +169,8 @@ export const selectedSystems = [
     title: "Mia Kingtide Ocean Adventures",
     subtitle: "Books, Games, Audiobooks, and Ocean Education",
     description:
-      "Built an original IP from zero across books, interactive games, audiobooks, YouTube, and a commerce ecosystem. 4 books published, 1,300+ copies sold, audiobooks on Spotify and INaudio, OceanMatch browser game, and a TikTok/YouTube audience built around ocean storytelling.",
-    highlights: ["4 published books", "Browser game", "Audiobooks", "Audience building"],
+      "Built an original ocean-education publishing brand, including four novels, a coloring book, Ocean Explorer activity books, audiobooks, reader resources, games and an owned commerce website. More than 1,300 copies sold, with the website connecting discovery, education and purchase.",
+    highlights: ["Original publishing IP", "Astro + Cloudflare website", "Educator resources", "Commerce"],
     link: "https://miakingtide.com/",
     proof: "Content systems. Brand building. Creative execution at scale.",
     screenshot: "/screenshots/builder-mia-kingtide.jpg",
@@ -257,16 +257,37 @@ export const contentPreviews = [
 export const onboardingDocs = {
   highlights: [
     {
-      label: "AI-Assisted Development — Built In 10 Days",
+      label: "Website Rebuild · Marketing Transformation",
       title: "Sanctuary Cruises",
       link: "https://sanctuarycruises.com",
       org: "SANCTUARY CRUISES",
       description:
-        "Complete website rebuild for Monterey Bay's premier whale watching company, built and launched in just 10 days using AI-assisted development. TypeScript and Astro static site with Supabase CMS, deployed on Cloudflare with GitHub Actions. The AI-powered Captain's Log system lets crew upload photos from the boat and automatically generates sighting reports using Gemini AI — publishing to website and social channels simultaneously. Built using Windsurf, Cursor, and VS Code as AI development partners.",
+        "Rebuilt and launched the Sanctuary Cruises website in just 10 days, creating a faster path from discovering Monterey Bay wildlife experiences to booking a tour. Added an AI-assisted Captain's Log publishing system, with crew photos and sightings feeding the website and social channels. The wider marketing transformation coincided with 98% year-over-year business growth; the result is not attributed to the website alone. Built with Astro, TypeScript, Supabase, Gemini, Cloudflare and GitHub Actions.",
       extraLink: {
         text: "AI-Powered Captain's Log System",
         href: "https://sanctuarycruises.com/captains-log",
       },
+    },
+    {
+      label: "Publishing Platform · Education · Commerce",
+      title: "Mia Kingtide",
+      link: "https://miakingtide.com/",
+      org: "MIA KINGTIDE — INDEPENDENT PUBLISHING",
+      description:
+        "Designed and built the online home for the Mia Kingtide ocean-adventure books, connecting a catalog of novels and activity books with educator resources, free printable samples, audiobooks and online sales. The publishing brand has sold more than 1,300 copies. Built on Astro, TypeScript and Cloudflare Workers, with Supabase and Stripe commerce integrations.",
+      extraLink: {
+        text: "Explore Books & Activities",
+        href: "https://miakingtide.com/books/",
+      },
+    },
+    {
+      label: "Campaign Website · Civic Engagement",
+      title: "Kilpatrick for Sand City Council",
+      link: "https://kilpatrick4sandcity.org/",
+      org: "SAND CITY — 2026 LOCAL CAMPAIGN",
+      description:
+        "Researched, designed and built my own Sand City Council campaign website without an agency. The site brought my background, years of local advocacy and detailed positions into one accessible resource for residents, with ways to make contact and share input. I believe the website contributed to my campaign result by helping residents evaluate my candidacy; the November 2026 count was still awaiting certification when this portfolio was updated. The site is evolving into an ongoing civic feedback channel.",
+      primaryLinkText: "View Campaign Site",
     },
     {
       label: "AI-Assisted Website — Built In 4 Hours",
