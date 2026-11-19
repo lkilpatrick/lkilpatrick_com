@@ -257,37 +257,37 @@ export const contentPreviews = [
 export const onboardingDocs = {
   highlights: [
     {
-      label: "Publishing Platform · Ocean Education · Commerce",
-      title: "Mia Kingtide",
-      link: "https://miakingtide.com/",
-      org: "MIA KINGTIDE — INDEPENDENT PUBLISHING",
-      description:
-        "Built and operate the complete digital home for the Mia Kingtide ocean-adventure universe: an Astro and TypeScript site deployed on Cloudflare Workers, with a book catalog, reader and educator resources, downloadable activity samples, a connected storefront, and integrations involving Supabase and Stripe. The site connects novels, audiobooks, games, coloring and Ocean Explorer activity books into one audience journey. It demonstrates the same product and adoption discipline I bring to developer platforms: useful content, clear onboarding, direct distribution and systems built for repeatable growth.",
-      extraLink: {
-        text: "Explore the Ocean Explorer Books",
-        href: "https://miakingtide.com/books/",
-      },
-    },
-    {
-      label: "Civic Website · Public Communication",
-      title: "Kilpatrick for Sand City Council",
-      link: "https://kilpatrick4sandcity.org/",
-      org: "SAND CITY — COMMUNITY & CIVIC ENGAGEMENT",
-      description:
-        "Built a public-facing city council campaign website to communicate local priorities, share background and advocacy, explain policy proposals, and invite resident input. Following the 2026 election, the site is transitioning into an ongoing channel for community feedback and council agenda information. A working example of clear communication and digital engagement for a small coastal community.",
-      primaryLinkText: "Visit Civic Site",
-    },
-    {
-      label: "AI-Assisted Development — Built In 10 Days",
+      label: "Website Rebuild · Marketing Transformation",
       title: "Sanctuary Cruises",
       link: "https://sanctuarycruises.com",
       org: "SANCTUARY CRUISES",
       description:
-        "Rebuilt and launched Sanctuary Cruises' website in 10 days, then developed the AI-assisted Captain's Log workflow for crew photos, wildlife reports and website/social publishing. Sanctuary reported 98% year-over-year growth during the broader marketing transformation. Built with Astro, TypeScript, Supabase, Gemini AI, Cloudflare and GitHub Actions; the growth is a business result, not a claim of website-only attribution.",
+        "Rebuilt and launched the Sanctuary Cruises website in just 10 days, creating a faster path from discovering Monterey Bay wildlife experiences to booking a tour. Added an AI-assisted Captain's Log publishing system, with crew photos and sightings feeding the website and social channels. The wider marketing transformation coincided with 98% year-over-year business growth; the result is not attributed to the website alone. Built with Astro, TypeScript, Supabase, Gemini, Cloudflare and GitHub Actions.",
       extraLink: {
         text: "AI-Powered Captain's Log System",
         href: "https://sanctuarycruises.com/captains-log",
       },
+    },
+    {
+      label: "Publishing Platform · Education · Commerce",
+      title: "Mia Kingtide",
+      link: "https://miakingtide.com/",
+      org: "MIA KINGTIDE — INDEPENDENT PUBLISHING",
+      description:
+        "Designed and built the online home for the Mia Kingtide ocean-adventure books, connecting a catalog of novels and activity books with educator resources, free printable samples, audiobooks and online sales. The publishing brand has sold more than 1,300 copies. Built on Astro, TypeScript and Cloudflare Workers, with Supabase and Stripe commerce integrations.",
+      extraLink: {
+        text: "Explore Books & Activities",
+        href: "https://miakingtide.com/books/",
+      },
+    },
+    {
+      label: "Campaign Website · Civic Engagement",
+      title: "Kilpatrick for Sand City Council",
+      link: "https://kilpatrick4sandcity.org/",
+      org: "SAND CITY — 2026 LOCAL CAMPAIGN",
+      description:
+        "Researched, designed and built my own Sand City Council campaign website without an agency. The site brought my background, years of local advocacy and detailed positions into one accessible resource for residents, with ways to make contact and share input. I believe the website contributed to my campaign result by helping residents evaluate my candidacy; the November 2026 count was still awaiting certification when this portfolio was updated. The site is evolving into an ongoing civic feedback channel.",
+      primaryLinkText: "View Campaign Site",
     },
     {
       label: "AI-Assisted Website — Built In 4 Hours",
