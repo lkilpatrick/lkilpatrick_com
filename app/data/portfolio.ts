@@ -269,6 +269,15 @@ export const onboardingDocs = {
       },
     },
     {
+      label: "Civic Website · Public Communication",
+      title: "Kilpatrick for Sand City Council",
+      link: "https://kilpatrick4sandcity.org/",
+      org: "SAND CITY — COMMUNITY & CIVIC ENGAGEMENT",
+      description:
+        "Built a public-facing city council campaign website to communicate local priorities, share background and advocacy, explain policy proposals, and invite resident input. Following the 2026 election, the site is transitioning into an ongoing channel for community feedback and council agenda information. A working example of clear communication and digital engagement for a small coastal community.",
+      primaryLinkText: "Visit Civic Site",
+    },
+    {
       label: "AI-Assisted Development — Built In 10 Days",
       title: "Sanctuary Cruises",
       link: "https://sanctuarycruises.com",
