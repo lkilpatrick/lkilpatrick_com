@@ -300,10 +300,10 @@ export default function AboutPage() {
           <div className="about-section-eyebrow" style={{ marginTop: 42 }}>The Four Novels</div>
           <div className="about-mia-covers">
             {[
-              { num: "01", title: "The Octopus' Gift", price: "$12.99", img: "https://miakingtide.com/media/covers/the-octopus-gift.jpg", link: "https://miakingtide.com/books/the-octopus-gift/", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
-              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "https://miakingtide.com/media/covers/guardian-of-the-coast.jpg", link: "https://miakingtide.com/books/guardian-of-the-coast/", desc: "California coastline. New threats. Growing responsibility." },
-              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "https://miakingtide.com/media/covers/journey-to-the-sea-of-cortez.jpg", link: "https://miakingtide.com/books/journey-to-the-sea-of-cortez/", desc: "A voyage aboard Pegasus, following Steinbeck and Ricketts." },
-              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "https://miakingtide.com/media/covers/the-vanishing-sanctuary.jpg", link: "https://miakingtide.com/books/the-vanishing-sanctuary/", desc: "Protecting Monterey Bay from deep-sea exploitation." },
+              { num: "01", title: "The Octopus' Gift", price: "$12.99", img: "https://miakingtide.com/media/books/the-octopus-gift.jpg", link: "https://miakingtide.com/books/the-octopus-gift/", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
+              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "https://miakingtide.com/media/books/guardian-of-the-coast.jpg", link: "https://miakingtide.com/books/guardian-of-the-coast/", desc: "California coastline. New threats. Growing responsibility." },
+              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "https://miakingtide.com/media/books/journey-to-the-sea-of-cortez.jpg", link: "https://miakingtide.com/books/journey-to-the-sea-of-cortez/", desc: "A voyage aboard Pegasus, following Steinbeck and Ricketts." },
+              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "https://miakingtide.com/media/books/the-vanishing-sanctuary.jpg", link: "https://miakingtide.com/books/the-vanishing-sanctuary/", desc: "Protecting Monterey Bay from deep-sea exploitation." },
             ].map((book) => (
               <div key={book.num} className="about-book-card">
                 <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
@@ -326,9 +326,9 @@ export default function AboutPage() {
           <p className="about-section-intro">Screen-free ways for young readers to explore ocean life, from coloring scenes to hands-on observation, puzzles and science experiments.</p>
           <div className="about-mia-covers">
             {[
-              { num: "COLOR", title: "Ocean Adventure Coloring Book", price: "$9.99", img: "https://miakingtide.com/media/covers/ocean-adventure-coloring-book.jpg", link: "https://miakingtide.com/books/activity/ocean-adventure-coloring-book/", desc: "Color 90 pages of marine adventures inspired by Mia's stories.", comingSoon: false },
-              { num: "EXP 1", title: "Ocean Explorer Activities", price: "$9.99", img: "https://miakingtide.com/media/covers/ocean-explorer-activities.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-activities/", desc: "80 puzzles and games across four ocean habitats, with real marine science.", comingSoon: false },
-              { num: "EXP 2", title: "Ocean Explorer Field Log", price: "$9.99", img: "https://miakingtide.com/media/covers/ocean-explorer-field-log.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-field-log/", desc: "20 field missions and 17 adventure logs for discoveries at the water's edge.", comingSoon: false },
+              { num: "COLOR", title: "Ocean Adventure Coloring Book", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-adventure-coloring-book.jpg", link: "https://miakingtide.com/books/activity/ocean-adventure-coloring-book/", desc: "Color 90 pages of marine adventures inspired by Mia's stories.", comingSoon: false },
+              { num: "EXP 1", title: "Ocean Explorer Activities", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-explorer-activities.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-activities/", desc: "80 puzzles and games across four ocean habitats, with real marine science.", comingSoon: false },
+              { num: "EXP 2", title: "Ocean Explorer Field Log", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-explorer-field-log.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-field-log/", desc: "20 field missions and 17 adventure logs for discoveries at the water's edge.", comingSoon: false },
               { num: "EXP 3", title: "Ocean Explorer Lab", price: "", img: "https://miakingtide.com/media/covers/ocean-explorer-lab.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-lab/", desc: "20 at-home ocean science experiments. Coming November 21, 2026.", comingSoon: true },
             ].map((book) => (
               <div key={book.num} className="about-book-card">
