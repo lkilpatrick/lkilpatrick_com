@@ -296,54 +296,33 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* ── Novels ── */}
+          {/* ── Novels: image-only cover gallery ── */}
           <div className="about-section-eyebrow" style={{ marginTop: 42 }}>The Four Novels</div>
-          <div className="about-mia-covers">
+          <div className="about-mia-covers about-mia-covers--art-only">
             {[
-              { num: "01", title: "The Octopus' Gift", price: "$12.99", img: "https://miakingtide.com/media/books/the-octopus-gift.jpg", link: "https://miakingtide.com/books/the-octopus-gift/", desc: "Monterey Bay. A mysterious gift. Mia's powers begin." },
-              { num: "02", title: "Guardian of the Coast", price: "$12.99", img: "https://miakingtide.com/media/books/guardian-of-the-coast.jpg", link: "https://miakingtide.com/books/guardian-of-the-coast/", desc: "California coastline. New threats. Growing responsibility." },
-              { num: "03", title: "Journey to the Sea of Cortez", price: "$15.99", img: "https://miakingtide.com/media/books/journey-to-the-sea-of-cortez.jpg", link: "https://miakingtide.com/books/journey-to-the-sea-of-cortez/", desc: "A voyage aboard Pegasus, following Steinbeck and Ricketts." },
-              { num: "04", title: "The Vanishing Sanctuary", price: "$12.99", img: "https://miakingtide.com/media/books/the-vanishing-sanctuary.jpg", link: "https://miakingtide.com/books/the-vanishing-sanctuary/", desc: "Protecting Monterey Bay from deep-sea exploitation." },
+              { title: "The Octopus' Gift", img: "https://miakingtide.com/media/books/the-octopus-gift.jpg", link: "https://miakingtide.com/books/the-octopus-gift/" },
+              { title: "Guardian of the Coast", img: "https://miakingtide.com/media/books/guardian-of-the-coast.jpg", link: "https://miakingtide.com/books/guardian-of-the-coast/" },
+              { title: "Journey to the Sea of Cortez", img: "https://miakingtide.com/media/books/journey-to-the-sea-of-cortez.jpg", link: "https://miakingtide.com/books/journey-to-the-sea-of-cortez/" },
+              { title: "The Vanishing Sanctuary", img: "https://miakingtide.com/media/books/the-vanishing-sanctuary.jpg", link: "https://miakingtide.com/books/the-vanishing-sanctuary/" },
             ].map((book) => (
-              <div key={book.num} className="about-book-card">
-                <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
-                  <Image src={book.img} alt={`Cover of ${book.title}`} width={220} height={350} unoptimized className="about-book-cover" />
-                  <div className="about-book-num">{book.num}</div>
-                </a>
-                <div className="about-book-meta">
-                  <div className="about-book-title">{book.title}</div>
-                  <div className="about-book-desc">{book.desc}</div>
-                  <div className="about-book-actions">
-                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">Explore / Buy {book.price} ↗</a>
-                  </div>
-                </div>
-              </div>
+              <a key={book.title} href={book.link} target="_blank" rel="noopener noreferrer" aria-label={`Explore ${book.title} on Mia Kingtide`} className="about-book-cover-link about-book-cover-link--art-only">
+                <Image src={book.img} alt={`Cover of ${book.title}`} width={420} height={630} unoptimized className="about-book-cover about-book-cover--art-only" />
+              </a>
             ))}
           </div>
 
-          {/* ── Coloring book and Ocean Explorer series ── */}
+          {/* ── Coloring book and Ocean Explorer series: image-only gallery ── */}
           <div className="about-section-eyebrow" style={{ marginTop: 48 }}>Coloring &amp; Ocean Explorer Books</div>
-          <p className="about-section-intro">Screen-free ways for young readers to explore ocean life, from coloring scenes to hands-on observation, puzzles and science experiments.</p>
-          <div className="about-mia-covers">
+          <div className="about-mia-covers about-mia-covers--art-only">
             {[
-              { num: "COLOR", title: "Ocean Adventure Coloring Book", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-adventure-coloring-book.jpg", link: "https://miakingtide.com/books/activity/ocean-adventure-coloring-book/", desc: "Color 90 pages of marine adventures inspired by Mia's stories.", comingSoon: false },
-              { num: "EXP 1", title: "Ocean Explorer Activities", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-explorer-activities.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-activities/", desc: "80 puzzles and games across four ocean habitats, with real marine science.", comingSoon: false },
-              { num: "EXP 2", title: "Ocean Explorer Field Log", price: "$9.99", img: "https://miakingtide.com/media/books/ocean-explorer-field-log.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-field-log/", desc: "20 field missions and 17 adventure logs for discoveries at the water's edge.", comingSoon: false },
-              { num: "EXP 3", title: "Ocean Explorer Lab", price: "", img: "https://miakingtide.com/media/covers/ocean-explorer-lab.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-lab/", desc: "20 at-home ocean science experiments. Coming November 21, 2026.", comingSoon: true },
+              { title: "Ocean Adventure Coloring Book", img: "https://miakingtide.com/media/books/ocean-adventure-coloring-book.jpg", link: "https://miakingtide.com/books/activity/ocean-adventure-coloring-book/" },
+              { title: "Ocean Explorer Activities", img: "https://miakingtide.com/media/books/ocean-explorer-activities.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-activities/" },
+              { title: "Ocean Explorer Field Log", img: "https://miakingtide.com/media/books/ocean-explorer-field-log.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-field-log/" },
+              { title: "Ocean Explorer Lab", img: "https://miakingtide.com/media/covers/ocean-explorer-lab.jpg", link: "https://miakingtide.com/books/activity/ocean-explorer-lab/" },
             ].map((book) => (
-              <div key={book.num} className="about-book-card">
-                <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-cover-link">
-                  <Image src={book.img} alt={`Cover of ${book.title}`} width={220} height={350} unoptimized className="about-book-cover" />
-                  <div className="about-book-num">{book.num}</div>
-                </a>
-                <div className="about-book-meta">
-                  <div className="about-book-title">{book.title}</div>
-                  <div className="about-book-desc">{book.desc}</div>
-                  <div className="about-book-actions">
-                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="about-book-buy">{book.comingSoon ? "Coming soon · Preview ↗" : `Explore / Buy ${book.price} ↗`}</a>
-                  </div>
-                </div>
-              </div>
+              <a key={book.title} href={book.link} target="_blank" rel="noopener noreferrer" aria-label={`Explore ${book.title} on Mia Kingtide`} className="about-book-cover-link about-book-cover-link--art-only">
+                <Image src={book.img} alt={`Cover of ${book.title}`} width={420} height={630} unoptimized className="about-book-cover about-book-cover--art-only" />
+              </a>
             ))}
           </div>
 
@@ -940,6 +919,24 @@ export default function AboutPage() {
           width: 100%;
           height: auto;
           display: block;
+        }
+        /* Consistent large covers, without overlays, captions or cropping. */
+        .about-mia-covers--art-only {
+          align-items: start;
+          gap: 20px;
+        }
+        .about-book-cover-link--art-only {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          aspect-ratio: 2 / 3;
+          background: transparent;
+        }
+        .about-book-cover--art-only {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
         }
         .about-book-num {
           position: absolute;
